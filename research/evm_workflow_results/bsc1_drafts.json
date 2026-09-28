@@ -1,0 +1,3457 @@
+{
+ "part": "bsc1",
+ "chain": "bsc",
+ "input_count": 124,
+ "covered_ranges": [
+  [
+   0,
+   9
+  ],
+  [
+   10,
+   19
+  ],
+  [
+   20,
+   29
+  ],
+  [
+   30,
+   39
+  ],
+  [
+   40,
+   49
+  ],
+  [
+   50,
+   59
+  ],
+  [
+   60,
+   69
+  ],
+  [
+   70,
+   79
+  ]
+ ],
+ "reviewed": false,
+ "results": [
+  {
+   "record": {
+    "id": "chainswap-2021-07",
+    "date": "2021-07-10",
+    "project": "Chainswap",
+    "project_type": "bridge",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "signature_message_verification",
+    "attack_vector": "Bridge logic flaw: forged cross-chain receive() message signed by an unauthorized signatory",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC claims 500,000 bridged tokens to the attacker via receive())",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 7 月 10 日，跨鏈橋 Chainswap 在 BNB Smart Chain 上的映射代幣合約遭到攻擊。PoC 顯示攻擊者直接呼叫跨鏈橋代理合約的 receive 函式，偽稱一筆來自鏈 ID 1（以太坊）的跨鏈轉帳，並附上一組自行提供的簽章，就能替自己領取 50 萬顆代幣。DeFiHackLabs 條目未記載損失金額。",
+    "root_cause_zh": "跨鏈橋的 receive 函式在驗證跨鏈訊息時，只確認簽章與參數中指定的簽署者相符，卻未有效確認該簽署者是否為經授權的跨鏈驗證者，因此攻擊者能以自己控制的位址簽署偽造的跨鏈提領訊息，使合約放行代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause label 'Bridge, logic flaw') and PoC Chainswap_exp2.sol, which calls receive(1, exploiter, 0, 500000e18, sigs) on the BSC proxy at block 9,042,274. The entry gives no loss figure, so loss_usd is null. The detail that the signatory was not checked against the authorized set is inferred from the PoC and label.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Chainswap",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-07/Chainswap_exp2.sol"
+     },
+     {
+      "title": "Chainswap incident analysis",
+      "publisher": "Medium",
+      "url": "https://chain-swap.medium.com/chainswap-exploit-11-july-2021-post-mortem-6e4e346e5a32"
+     },
+     {
+      "title": "Chainswap incident analysis",
+      "publisher": "rekt.news",
+      "url": "https://rekt.news/chainswap-rekt/"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Chainswap"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "levyathan-finance-2021-07",
+    "date": "2021-07-28",
+    "project": "Levyathan Finance",
+    "project_type": "yield_vault",
+    "category": "private_key_compromise",
+    "vuln_pattern": null,
+    "attack_vector": "Leaked deployer private key used to hijack MasterChef ownership via timelock and mint LEV; flawed emergencyWithdraw",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (LEV minted after MasterChef ownership hijack; staked funds withdrawn through emergencyWithdraw)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 7 月 28 日，BSC 上的收益農場 Levyathan Finance 遭到攻擊。開發者把具有鑄幣能力的部署者錢包私鑰遺留在 GitHub 上，攻擊者藉此透過時間鎖（Timelock）排程並執行 MasterChef 的所有權轉移，取回 LEV 代幣所有權後大量增發。此外，MasterChef 的 emergencyWithdraw 也存在缺陷，可被重複呼叫提領。",
+    "root_cause_zh": "主要原因是私鑰外洩：擁有時間鎖排程與執行權限的部署者私鑰被公開在 GitHub，攻擊者得以把 MasterChef 所有權轉給自己，再呼叫 recoverLevOwnership 並任意鑄造 LEV。PoC 另顯示同一使用者能連續兩次成功呼叫 emergencyWithdraw，表示提領紀錄未被正確歸零。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause '(I) Lost keys and minting (II) Vulnerable emergencyWithdraw') and PoC Levyathan_exp.sol, whose header quotes rekt: 'The Levyathan developers left the private keys to a wallet with minting capability available on Github.' The PoC mints 1e26 base units of LEV to the attacker. No loss figure is given, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Levyathan Finance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-07/Levyathan_exp.sol"
+     },
+     {
+      "title": "Levyathan Finance incident analysis",
+      "publisher": "Medium",
+      "url": "https://levyathan-index.medium.com/post-mortem-levyathan-c3ff7f9a6f65"
+     },
+     {
+      "title": "Levyathan Finance attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xe6e504208ba90d121c3212a4f2547ae28e69790ab541d459c080ec8b1f3efab2"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Levyathan Finance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "wault-finance-2021-08",
+    "date": "2021-08-04",
+    "project": "Wault Finance",
+    "project_type": "stablecoin",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash loan price manipulation of WEX through repeated WUSDMaster.stake() swaps",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC profit taken in USDT/BUSD from WUSDMaster and WaultSwap pools)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 8 月 4 日，Wault Finance 穩定幣 WUSD 的 WUSDMaster 合約遭閃電貸價格操縱攻擊。攻擊者先從 WaultSwap 借出 WUSD 並贖回為 USDT 與 WEX，再從 PancakeSwap 借入 4,000 萬 USDT，以其中 2,300 萬 USDT 買進 WEX 拉抬價格。接著連續呼叫 WUSDMaster.stake 68 次，讓合約以被抬高的價格持續買入 WEX，最後把 WEX 高價賣回 USDT，歸還閃電貸後獲利。",
+    "root_cause_zh": "WUSDMaster 的 stake 函式會把使用者存入的部分 USDT 直接在 WaultSwap 的 WEX/USDT 池依即時價格換成 WEX，缺乏防範價格操縱的機制，也未限制同一交易內重複呼叫。因此攻擊者能先抬高 WEX 價格，再利用合約的連續買盤推升價格並從中套利。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'FlashLoan price manipulation') and PoC WaultFinance_exp.sol (BSC fork block 9,728,755). The entry name is misspelled 'WaultFinace'. No loss figure is given, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: WaultFinace",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-08/WaultFinance_exp.sol"
+     },
+     {
+      "title": "WaultFinace incident analysis",
+      "publisher": "Medium",
+      "url": "https://inspexco.medium.com/wault-finance-incident-analysis-wex-price-manipulation-using-wusdmaster-contract-c344be3ed376"
+     },
+     {
+      "title": "WaultFinace attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x31262f15a5b82999bf8d9d0f7e58dcb1656108e6031a2797b612216a95e1670e"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "WaultFinace"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "xsurge-2021-08",
+    "date": "2021-08-17",
+    "project": "XSURGE",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "reentrancy",
+    "attack_vector": "Flash loan + reentrancy in SURGE sell()",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (BNB drained from the SURGE token contract, profit in WBNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 8 月 17 日，BSC 上的 XSURGE（SURGE 代幣）遭到攻擊。攻擊者從 PancakeSwap 閃電貸借入 1 萬 WBNB，換成 BNB 後買進 SURGE，再反覆呼叫 sell；每次合約轉出 BNB 時，攻擊者都在回呼中重入並以 BNB 再次買進 SURGE。循環多次後，攻擊者換回 WBNB，歸還閃電貸並獲利。",
+    "root_cause_zh": "SURGE 代幣合約的 sell 函式在更新持幣與總供給等狀態之前，就先用低階 call 把 BNB 轉給賣方。攻擊者在 receive 回呼中直接轉 BNB 給合約以觸發買入，此時價格仍依未更新的狀態計算，能用過低的價格取得大量 SURGE，屬於典型的重入漏洞。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloan Attack + Reentrancy') and PoC XSURGE_exp.sol (BSC fork block 10,087,723), which re-enters the SURGE contract from receive() during sell(). No loss figure is given, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: XSURGE",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-08/XSURGE_exp.sol"
+     },
+     {
+      "title": "XSURGE incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/@Knownsec_Blockchain_Lab/knownsec-blockchain-lab-comprehensive-analysis-of-xsurge-attacks-c83d238fbc55"
+     },
+     {
+      "title": "XSURGE incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x8c93d6e5d6b3ec7478b4195123a696dbc82a3441be090e048fe4b33a242ef09d"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "XSURGE"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "ploutoz-2021-11",
+    "date": "2021-11-23",
+    "project": "Ploutoz",
+    "project_type": "lending",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash loan pump of DOP collateral price to over-borrow from lending pools",
+    "loss_usd": 365000,
+    "assets_stolen": "365K (CAKE, DOLLY, WETH, BTCB, USDT and BUSD borrowed from Ploutoz loan pools)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 11 月 23 日，BSC 借貸協議 Ploutoz 遭閃電貸價格操縱攻擊，DeFiHackLabs 記載損失約 36.5 萬美元。攻擊者從 PancakeSwap 閃電貸借入約 100 萬 BUSD，在 Twindex 與 PancakeSwap 大量買進 DOP 拉抬價格，再以少量被高估的 DOP 作為抵押品，從多個借貸池借出 CAKE、DOLLY、WETH、BTCB、USDT 與 BUSD。最後賣出 DOP 償還閃電貸，把借來的資產換成穩定幣獲利。",
+    "root_cause_zh": "Ploutoz 接受 DOP 作為抵押品，但其估價取自可在單筆交易內被操縱的 DEX 交易池即時價格。攻擊者用大額買單推高 DOP 價格後，抵押品價值被嚴重高估，因而得以超額借款且無須償還。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flash Loan', lost '365K') and PoC Ploutoz_exp.sol ('@KeyInfo - Total Lost : 365K'; vulnerable contract is the DOP token address). The lost text has no currency unit; it is taken as USD (~$365,000), following DeFiHackLabs' convention.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Ploutoz",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-11/Ploutoz_exp.sol"
+     },
+     {
+      "title": "Ploutoz incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://x.com/peckshield/status/1463113809111896065"
+     },
+     {
+      "title": "Ploutoz attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x7fe46c2746855dd57e18f4d33522849ff192e4e26c74835799ba8dab89099457"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Ploutoz"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "nerve-bridge-2021-12",
+    "date": "2021-12-14",
+    "project": "Nerve Bridge",
+    "project_type": "dex_amm",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Swap metapool attack: repeated swap/removeLiquidity/swapUnderlying loop on Nerve fUSDT MetaSwap, flash-loan funded",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC profit in BUSD extracted from the Nerve fUSDT metapool)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 12 月 14 日，Nerve 在 BSC 上的 fUSDT 元池（MetaSwap）遭到攻擊。攻擊者從 ForTube 閃電貸借入 5 萬 BUSD，在 Ellipsis 換成 fUSDT，再重複七次以下循環：在元池用 fUSDT 換取 Nerve 3LP、從 Nerve 3pool 贖回 BUSD、再用 swapUnderlying 把 BUSD 換回 fUSDT。每一輪都能拿回多於投入的 fUSDT，最後換回 BUSD、歸還閃電貸並獲利。",
+    "root_cause_zh": "MetaSwap 元池在 swap（元池代幣兌換基礎池 LP）與 swapUnderlying（直接兌換基礎池底層資產）兩條路徑中，對基礎池 LP 價值的計算不一致，導致兌換結果有誤。攻擊者因此能靠來回兌換，持續從池中套取資產。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Swap Metapool Attack') and PoC NerveBridge_exp.sol (BSC fork block 12,653,565; ForTube flash loan of 50,000 BUSD). The exact pricing flaw is summarized at a high level from the PoC flow and the referenced BlockSec analysis title. No loss figure is given, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Nerve Bridge",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-12/NerveBridge_exp.sol"
+     },
+     {
+      "title": "Nerve Bridge incident analysis",
+      "publisher": "Medium",
+      "url": "https://blocksecteam.medium.com/the-analysis-of-nerve-bridge-security-incident-ead361a21025"
+     },
+     {
+      "title": "Nerve Bridge attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xea95925eb0438e04d0d81dc270a99ca9fa18b94ca8c6e34272fc9e09266fcf1d"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Nerve Bridge"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "paraluni-2022-03",
+    "date": "2022-03-13",
+    "project": "Paraluni",
+    "project_type": "yield_vault",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "reentrancy",
+    "attack_vector": "Flash loan + reentrancy via malicious token in MasterChef depositByAddLiquidity",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (USDT and BUSD from the Paraluni MasterChef USDT-BUSD pool)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 3 月 13 日，BSC 上 Paraluni 收益農場的 MasterChef 合約遭到攻擊。攻擊者部署兩個惡意代幣合約，透過 PancakeSwap 閃電貸借入 USDT 與 BUSD，呼叫 depositByAddLiquidity 時傳入惡意代幣位址。在惡意代幣的 transferFrom 回呼中，攻擊者重入同一函式，用真實的 USDT/BUSD 添加流動性，使同一筆 LP 被重複記帳，之後提領兩份 LP 拆回 USDT 與 BUSD 獲利。",
+    "root_cause_zh": "MasterChef 的 depositByAddLiquidity 未驗證傳入的代幣位址是否與該池 LP 的代幣一致，也缺乏重入保護；它以添加流動性前後的 LP 餘額差計算存入數量。攻擊者在惡意代幣的 transferFrom 中重入，使重入呼叫新增的 LP 同時被記入惡意合約與外層攻擊者的存款，造成重複記帳。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloan & Reentrancy') and PoC Paraluni_exp.sol (BSC fork block 16,008,280; EvilToken re-enters depositByAddLiquidity on pool 18). No loss figure is given, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Paraluni",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-03/Paraluni_exp.sol"
+     },
+     {
+      "title": "Paraluni incident analysis",
+      "publisher": "halborn.com",
+      "url": "https://halborn.com/explained-the-paraluni-hack-march-2022/"
+     },
+     {
+      "title": "Paraluni incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1502815435498176514"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Paraluni"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "gym-network-2022-04",
+    "date": "2022-04-09",
+    "project": "GYM Network",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Flash loan + token migration flaw in LiquidityMigrationV2.migrate()",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (GYMNET held by LiquidityMigrationV2, sold for WBNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 4 月 9 日，BSC 上 GYM Network 的流動性遷移合約 LiquidityMigrationV2 遭到攻擊。攻擊者以閃電貸借入 2,400 WBNB，先買進 GYM，並依遷移合約持有的 GYMNET 數量在 WBNB/GYM 池添加流動性。接著呼叫 migrate 把這些 LP 遷移成 WBNB/GYMNET LP，再移除流動性，把 GYM 與 GYMNET 賣成 WBNB，歸還閃電貸後獲利。",
+    "root_cause_zh": "LiquidityMigrationV2 的 migrate 函式允許任何人把 WBNB/GYM LP 換成 WBNB/GYMNET LP，並由合約自身持有的 GYMNET 按數量配對。合約既未限制只能遷移原有的 LP 部位，也未檢查兩種代幣的實際價值，攻擊者因此能臨時建立大額 LP 後遷移，取走合約中的 GYMNET。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloan + token migrate flaw') and PoC Gym_1_exp.sol (BSC fork block 16,798,806), where the attacker sizes the added GYM to the migration contract's GYMNET balance before calling migrate(). No loss figure is given, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: GYMNetwork",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Gym_1_exp.sol"
+     },
+     {
+      "title": "GYMNetwork incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1512832398643265537"
+     },
+     {
+      "title": "GYMNetwork incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/@Beosin_com/beosin-analysis-of-the-attack-on-gymdefi-e5a23bfd93fe"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "GYMNetwork"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "creat-future-2022-04",
+    "date": "2022-04-11",
+    "project": "Creat Future",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Publicly callable _transfer() lets anyone move tokens out of the liquidity pair (DeFiHackLabs label: Overflow)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (CF tokens moved out of the CF liquidity pair)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 4 月 11 日，BSC 上的 Creat Future（CF）代幣遭到攻擊。PoC 顯示任何人都能直接呼叫 CF 代幣合約的 _transfer 函式，把 CF 交易對中的代幣轉給自己；範例轉出 1,000 顆，扣除手續費後實得 930 顆。攻擊者可藉此掏空流動性池中的 CF 代幣。",
+    "root_cause_zh": "CF 代幣合約把原本應只供內部使用的 _transfer 函式設為對外可呼叫，也未檢查呼叫者是否為轉出位址或已獲授權，任何人都能指定任意 from 位址搬走他人（包括流動性池）的代幣。DeFiHackLabs 將此事件標記為「Overflow」，但 PoC 呈現的其實是存取控制缺失。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause label 'Overflow') and PoC cftoken_exp.sol (BSC fork block 16,841,980), which calls ICFToken._transfer(cfpair, attacker, 1000e18) directly and yields 930 CF after fees. The PoC shows an access-control flaw rather than an overflow, so vuln_pattern follows the PoC. The candidate BlockSec tweet appears to date from August 2022, so it was not cited. No loss figure is given, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Creat Future",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/cftoken_exp.sol"
+     },
+     {
+      "title": "Creat Future incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xc7647406542f8f2473a06fea142d223022370aa5722c044c2b7ea030b8965dd0"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Creat Future"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "elephant-money-2022-04",
+    "date": "2022-04-12",
+    "project": "Elephant Money",
+    "project_type": "stablecoin",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flashloan & price oracle manipulation of ELEPHANT around TRUNK mint/redeem",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (BUSD and ELEPHANT drained from the Elephant Money TRUNK reserve, profit in WBNB/BUSD)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 4 月 12 日，BSC 上的 Elephant Money 遭閃電貸價格操縱攻擊。攻擊者借入 10 萬 WBNB 與 9,000 萬 BUSD，先用 WBNB 大量買進 ELEPHANT 拉抬價格，再用 BUSD 呼叫其未驗證合約的 mint 鑄造穩定幣 TRUNK。接著攻擊者賣出 ELEPHANT 壓低價格，隨即用 TRUNK 呼叫 redeem 贖回 BUSD 與大量 ELEPHANT，再賣出 ELEPHANT 換回 WBNB，歸還閃電貸後獲利。",
+    "root_cause_zh": "Elephant Money 的 TRUNK 鑄造與贖回合約，是依 PancakeSwap 上 ELEPHANT 的即時價格計價。攻擊者能在同一筆交易中先抬價再壓價，使 redeem 發放遠多於應得數量的 ELEPHANT，進而掏空儲備。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloan & Price Oracle Manipulation') and PoC Elephant_Money_exp.sol (BSC fork block 16,886,438; unverified contract 0xD520...f834 mint/redeem). No loss figure is given in the entry, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: ElephantMoney",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Elephant_Money_exp.sol"
+     },
+     {
+      "title": "ElephantMoney incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/elephant-money/reserve-exploit-52fd36ccc7e8"
+     },
+     {
+      "title": "ElephantMoney incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1513966074357698563"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "ElephantMoney"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "uranium-finance-2021-04",
+    "date": "2021-04-28",
+    "project": "Uranium Finance",
+    "project_type": "dex_amm",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "arithmetic",
+    "attack_vector": "Miscalculation: inconsistent fee constant in the AMM constant-product (K) check",
+    "loss_usd": 50000000,
+    "assets_stolen": "$50M (WBNB and BUSD drained from UraniumSwap pairs per PoC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 4 月 28 日，BSC 上的 Uranium Finance（Uniswap V2 分叉的去中心化交易所）交易對合約出現計算錯誤，攻擊者只需轉入極少量代幣，就能從交易對換出約 99% 的儲備資產。DeFiHackLabs 記錄的損失約 5,000 萬美元。",
+    "root_cause_zh": "交易對的 swap() 將手續費計算基數由 1000 改為 10000（balance × 10000 − amountIn × 16），但 K 值檢查仍與 reserve0 × reserve1 × 1000² 比較，使調整後的乘積被放大 100 倍。結果 K 值檢查幾乎必定通過，攻擊者可用 1 單位代幣換出池中 99% 的對手代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "high",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Miscalculation', lost '$50 M') and the PoC Uranium_exp.sol, which quotes the vulnerable K-check code and drains WBNB/BUSD pairs from the Uranium factory at BSC block 6,920,000. loss_usd taken from the parsed DeFiHackLabs value. The attacker address in the PoC header is malformed and is not reproduced.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Uranium",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-04/Uranium_exp.sol"
+     },
+     {
+      "title": "Uranium incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/immunefi/building-a-poc-for-the-uranium-heist-ec83fbd83e9f"
+     },
+     {
+      "title": "Uranium attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x5a504fe72ef7fc76dfeb4d979e533af4e23fe37e90b5516186d5787893c37991"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Uranium"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "spartan-protocol-2021-05",
+    "date": "2021-05-02",
+    "project": "Spartan Protocol",
+    "project_type": "dex_amm",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Logic flaw: LP share calculation using spot balances (donation + removeLiquidity)",
+    "loss_usd": 30500000,
+    "assets_stolen": "$30.5M (WBNB and SPARTA from the SPARTA/WBNB pool)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 5 月 2 日，Spartan Protocol 的 SPARTA/WBNB 流動性池遭攻擊。攻擊者從 PancakeSwap 閃電貸借入 10 萬 WBNB，透過多次兌換、新增流動性、捐贈代幣與移除流動性的組合操作，重複約 8 輪抽乾資金池，損失約 3,050 萬美元。",
+    "root_cause_zh": "Spartan 池合約計算移除流動性可取回的數量時，使用 balanceOf() 的即時餘額而非已同步的儲備量，且 removeLiquidity() 不會把所有即時餘額同步回儲備。攻擊者先把 WBNB 與 SPARTA 直接捐入池中再贖回 LP，便能取回超出份額的資產，並透過緊接的 addLiquidity() 收回先前捐贈的代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "high",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Logic Flaw', lost '$30.5M') and the PoC Spartan_exp.sol (attacker 0x3b6e77722e2bbe97c1cfa337b42c0939aeb83671, vulnerable pool 0x3de669c4f1f167a8afbc9993e4753b84b576426f). loss_usd taken from the parsed DeFiHackLabs value. Classified as business_logic (spot-balance vs reserve accounting); it could also be viewed as a donation-style share inflation issue.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Spartan",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/Spartan_exp.sol"
+     },
+     {
+      "title": "Spartan incident analysis",
+      "publisher": "rekt.news",
+      "url": "https://rekt.news/spartan-rekt/"
+     },
+     {
+      "title": "Spartan incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/amber-group/exploiting-spartan-protocols-lp-share-calculation-flaws-391437855e74"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Spartan"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "value-defi-2021-05",
+    "date": "2021-05-08",
+    "project": "Value DeFi",
+    "project_type": "yield_vault",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "reentrancy",
+    "attack_vector": "Cross-contract reentrancy via Alpaca WBNB vault work()",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in DeFiHackLabs entry (PoC shows attacker gaining WBNB and vSafeWBNB shares)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 5 月 8 日，Value DeFi 在 BSC 上的 vSafe WBNB 金庫相關合約遭攻擊。攻擊者以 1 BNB 呼叫 Alpaca Finance WBNB 金庫的 work() 函式，指定特定的 worker 與策略合約並帶入約 39.4 萬 WBNB 的借款參數，於單筆交易中取得 WBNB 與 vSafeWBNB 份額。DeFiHackLabs 未記載損失金額。",
+    "root_cause_zh": "DeFiHackLabs 將根因標記為「跨合約重入」：攻擊者經由 Alpaca 金庫 work() 的外部呼叫流程，在相關合約狀態暫時不一致時與 Value DeFi vSafe WBNB 金庫互動獲利。PoC 僅以原始 calldata 重放攻擊交易，具體重入路徑無法從 PoC 完整確認。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Cross Contract Reentrancy', lost field empty) and the PoC ValueDefi_exp.sol, which only replays the attack by calling Alpaca WBNB vault 0xd7D069493685A581d27824Fc46EdA46B7EfC0063 work() with raw calldata (attacker 0xCB36b1ee0Af68Dce5578a487fF2Da81282512233, vSafeVaultWBNB 0xD4BBF439d3EAb5155Ca7c0537E583088fB4CFCe8); the exact reentrancy path is not visible. No loss amount in source material, so loss_usd is null. The rekt.news candidate link points to the Rari Capital article and was not used.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Value Defi",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/ValueDefi_exp.sol"
+     },
+     {
+      "title": "Value Defi incident analysis",
+      "publisher": "phalcon.blocksec.com",
+      "url": "https://phalcon.blocksec.com/tx/bsc/0xa00def91954ba9f1a1320ef582420d41ca886d417d996362bf3ac3fe2bfb9006"
+     },
+     {
+      "title": "Value Defi attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xa00def91954ba9f1a1320ef582420d41ca886d417d996362bf3ac3fe2bfb9006"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Value Defi"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "bearn-2021-05",
+    "date": "2021-05-16",
+    "project": "bEarn",
+    "project_type": "yield_vault",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Logic flaw: repeated deposit/emergencyWithdraw with flash-loaned BUSD",
+    "loss_usd": 11000000,
+    "assets_stolen": "11M (BUSD drained from the bVaults BUSD-Alpaca strategy)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 5 月 16 日，bEarn 的 bVaults BUSD（Alpaca 策略）金庫遭攻擊。攻擊者從 CREAM Finance 閃電貸借出所有可用 BUSD，對 bVault 第 13 號池重複 10 次「存入後立即 emergencyWithdraw」的操作以抽取資金。DeFiHackLabs 記錄損失為 11M（以 BUSD 計，約 1,100 萬美元）。",
+    "root_cause_zh": "bVault BUSD-Alpaca 策略在存款與緊急提領之間的會計邏輯有缺陷，存入後立即呼叫 emergencyWithdraw() 取回的 BUSD 多於存入金額。攻擊者以閃電貸放大本金並循環存提，每一輪都從策略中多拿走資金。",
+    "aftermath_zh": "bEarn 已發布事後檢討文章，並在其中提出對受影響使用者的補償計畫。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Logic Flaw', lost '11M') and the PoC bEarn_exp.sol (attacker 0x47f341d896b08daacb344d9021f955247e50d089, vulnerable bVault 0xb390b07fcf76678089cb12d8e615d5fe494b01fb). The lost text has no unit; since the PoC drains BUSD (a USD stablecoin), 11M is treated as approximately USD 11,000,000 at 1 BUSD = 1 USD. The compensation plan is inferred from the title of the cited bEarn post-mortem; no recovery amount is stated.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: bEarn",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/bEarn_exp.sol"
+     },
+     {
+      "title": "bEarn incident analysis",
+      "publisher": "Medium",
+      "url": "https://bearndao.medium.com/bvaults-busd-alpaca-strategy-exploit-post-mortem-and-bearn-s-compensation-plan-b0b38c3b5540"
+     },
+     {
+      "title": "bEarn attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x603b2bbe2a7d0877b22531735ff686a7caad866f6c0435c37b7b49e4bfd9a36c"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "bEarn"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "pancakebunny-2021-05",
+    "date": "2021-05-19",
+    "project": "PancakeBunny",
+    "project_type": "yield_vault",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash-loan spot price manipulation of BUNNY reward minting",
+    "loss_usd": 45000000,
+    "assets_stolen": "Not stated in DeFiHackLabs entry (PoC: WBNB and USDT profit from dumping inflated BUNNY rewards); widely reported as about $45M",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 5 月 19 日，收益聚合器 PancakeBunny 遭閃電貸價格操縱攻擊。攻擊者向 7 個 PancakeSwap 交易對與 ForTube 借入大量 WBNB 與 USDT，操縱 WBNB/USDT 價格後領取獎勵，使 BunnyMinter 鑄造出大量 BUNNY 並立即拋售，獲利以 WBNB 與 USDT 帶走。此事件廣泛報導的損失約 4,500 萬美元。",
+    "root_cause_zh": "BunnyMinter 在計算績效費並鑄造 BUNNY 獎勵時，依賴 PancakeSwap 交易對的即時儲備（現貨價格）估算 LP 代幣與 WBNB 的價值。攻擊者先將大量 WBNB-USDT LP 轉入交易對本身，再於 v1 池大量拋售 WBNB 扭曲價格，使 getReward() 算出的獎勵被嚴重高估。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "high",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Price Oracle Manipulation', lost field empty) and the PoC PancakeBunny_exp.sol (VaultFlipToFlip 0x633e538EcF0bee1a18c2EDFE10C4Da0d6E71e77B; flash loans from 7 PancakeSwap pairs plus ForTube USDT). The DeFiHackLabs lost field is empty; loss_usd uses the widely documented figure of about USD 45M for this famous incident, not a computed estimate.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: PancakeBunny",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/PancakeBunny_exp.sol"
+     },
+     {
+      "title": "PancakeBunny incident analysis",
+      "publisher": "rekt.news",
+      "url": "https://rekt.news/pancakebunny-rekt/"
+     },
+     {
+      "title": "PancakeBunny incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x897c2de73dd55d7701e1b69ffb3a17b0f4801ced88b0c75fe1551c5fcce6a979"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "PancakeBunny"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "julswap-2021-05",
+    "date": "2021-05-27",
+    "project": "JulSwap",
+    "project_type": "dex_amm",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash-loan price manipulation of JulProtocolV2 addBNB()",
+    "loss_usd": null,
+    "assets_stolen": "1.5M (unit not specified; PoC profit realized in BNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 5 月 27 日，JulSwap 遭閃電貸攻擊。攻擊者從 BSCswap 交易對閃電借入 7 萬枚 JULb，在 JulSwap 賣出換成 BNB 壓低 JULb 價格後，呼叫 JulProtocolV2 的 addBNB() 投入 515 BNB，再用 BNB 買回 JULb 償還借款並獲利。DeFiHackLabs 記錄損失為「1.5M」，未註明單位。",
+    "root_cause_zh": "從 PoC 流程判斷，JulProtocolV2 的 addBNB() 會依 JULb/BNB 池的即時價格，將協議持有的 JULb 搭配使用者存入的 BNB 加入流動性，未防範同一筆交易內的價格操縱。攻擊者先壓低 JULb 價格再呼叫 addBNB()，使協議以扭曲的價格注入大量 JULb，之後再以較低成本買回 JULb 獲利。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Flash Loan', lost '1.5M') and the PoC JulSwap_exp.sol (attacker 0xc3bc29941677db01b9645f7b8b72d27e3ba75372, JULb token 0x32dffc3fe8e3ef3571bf8a72c0d0015c5373f41d, JulProtocolV2 0x41a2F9AB325577f92e8653853c12823b35fb35c4). The PoC shows the attack steps but not the addBNB() internals, so the root-cause description is inferred from the call sequence. The lost text has no unit and no stablecoin is involved, so loss_usd is left null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: JulSwap",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/JulSwap_exp.sol"
+     },
+     {
+      "title": "JulSwap incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://x.com/tg_cryptos/status/1398090345368408064"
+     },
+     {
+      "title": "JulSwap attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x1751268e620767ff117c5c280e9214389b7c1961c42e77fc704fd88e22f4f77a"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "JulSwap"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "burgerswap-2021-05",
+    "date": "2021-05-27",
+    "project": "BurgerSwap",
+    "project_type": "dex_amm",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "reentrancy",
+    "attack_vector": "Reentrancy via malicious token with stale precomputed multi-hop swap amounts",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in DeFiHackLabs entry (PoC: about 2,416 WBNB and 110,997 BURGER removed from the Demax WBNB/BURGER pair)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 5 月 27 日，BurgerSwap（Demax 平台）的 WBNB/BURGER 交易對遭攻擊。攻擊者以閃電貸借入約 6,047 WBNB 買入 BURGER 拉抬價格，再利用自行部署的假代幣在多跳兌換中重入平台，讓同一批 BURGER 以相同高價兩度換成 WBNB。PoC 顯示該交易對儲備由約 164,603 BURGER／3,038 WBNB 降至約 53,606 BURGER／622 WBNB。",
+    "root_cause_zh": "DemaxPlatform 路由在執行多跳兌換前，就依當下儲備預先算好整條路徑每一段的輸出數量，交易對也未獨立驗證恆定乘積（K 值）。攻擊者在假代幣的 transferFrom() 中重入，先完成一筆 BURGER→WBNB 兌換，外層兌換仍沿用過期的預算數量，因此以未計滑價的價格再換出一次 WBNB。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Mathematical flaw + Reentrancy', lost field empty) and the PoC BurgerSwap_exp.sol (attacker 0x6c9f2b95ca3432e5ec5bcd9c19de0636a23a4994, vulnerable Demax WBNB<>BURGER pair 0x7ac55ac530f2c29659573bde0700c6758d69e677). The DeFiHackLabs lost field is empty, so loss_usd is null; assets_stolen is derived from the pair reserve comments in the PoC (before 164,603 BURGER / 3,038 WBNB, after 53,606 / 622) and covers only this transaction.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BurgerSwap",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/BurgerSwap_exp.sol"
+     },
+     {
+      "title": "BurgerSwap incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/Mudit__Gupta/status/1398156036574306304"
+     },
+     {
+      "title": "BurgerSwap attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xac8a739c1f668b13d065d56a03c37a686e0aa1c9339e79fcbc5a2d0a6311e333"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BurgerSwap"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "pancakehunny-2021-06",
+    "date": "2021-06-03",
+    "project": "PancakeHunny",
+    "project_type": "yield_vault",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Incorrect reward calculation using balanceOf() in HUNNY minter",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in DeFiHackLabs entry (PoC: excess HUNNY minted and sold for BNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 6 月 3 日，PancakeHunny 的 HUNNY Minter 遭攻擊。攻擊者先把約 59.88 枚 CAKE 直接轉入 HUNNY Minter 合約，再從 CAKE-BNB Hive 金庫領取獎勵，使 Minter 鑄造出遠超應得數量的 HUNNY，隨即在 PancakeSwap 拋售換成 BNB。",
+    "root_cause_zh": "HunnyMinter.mintFor() 收取績效費後，以 IBEP20(flip).balanceOf(address(this)) 計算要換算並鑄造的 HUNNY 數量，而非實際收到的費用 feeSum。攻擊者預先轉入合約的 CAKE 也被計入，導致 HUNNY 獎勵被大幅灌水。",
+    "aftermath_zh": "PancakeHunny 團隊已發布事後分析報告；資料來源未記載資金追回情形。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Incorrect calculation', lost field empty) and the PoC PancakeHunny_exp.sol, which quotes the vulnerable mintFor() code (HUNNY Minter 0x109Ea28dbDea5E6ec126FbC8c33845DFe812a300, attacker contract 0xb9b0090aaa81f374d66d94a8138d80caa2002950). No loss amount in source material, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: PancakeHunny",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-06/PancakeHunny_exp.sol"
+     },
+     {
+      "title": "PancakeHunny incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/hunnyfinance/pancakehunny-post-mortem-analysis-de78967401d8"
+     },
+     {
+      "title": "PancakeHunny attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x765de8357994a206bb90af57dcf427f48a2021f2f28ca81f2c00bc3b9842be8e"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "PancakeHunny"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "eleven-finance-2021-06",
+    "date": "2021-06-22",
+    "project": "Eleven Finance",
+    "project_type": "yield_vault",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "emergencyBurn() does not burn shares, allowing double withdrawal",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in DeFiHackLabs entry (PoC: BUSD profit from the NRV-BUSD NeverSell vault)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 6 月 22 日，Eleven Finance 的 NRV-BUSD「NeverSell」金庫遭閃電貸攻擊。攻擊者從 ApeSwap 閃電借入約 95.4 萬 BUSD，換成 NRV 並加入 PancakeSwap 流動性後將 LP 存入金庫，接著先呼叫 emergencyBurn() 再呼叫 withdrawAll()，對同一筆存款提領兩次。",
+    "root_cause_zh": "金庫的 emergencyBurn() 會把使用者存入的 LP 代幣退還，卻沒有銷毀對應的金庫份額；攻擊者因此能以同一批份額再呼叫 withdrawAll()，額外提走屬於其他存款人的資產。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Doesn't burn shares', lost field empty) and the PoC Eleven_exp.sol (ElevenNeverSellVault 0x27DD6E51BF715cFc0e2fe96Af26fC9DED89e4BE8, NRV-BUSD Cake LP 0x401479091d0F7b8AE437Ee8B054575cd33ea72Bd). The PoC header cites tx 0x6450d8f4..., which differs from the BscScan candidate tx, so only the PoC and PeckShield analysis are cited. No loss amount in source material, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Eleven Finance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-06/Eleven_exp.sol"
+     },
+     {
+      "title": "Eleven Finance incident analysis",
+      "publisher": "Medium",
+      "url": "https://peckshield.medium.com/eleven-finance-incident-root-cause-analysis-123b5675fa76"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Eleven Finance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "xwin-finance-2021-06",
+    "date": "2021-06-25",
+    "project": "xWin Finance",
+    "project_type": "yield_vault",
+    "category": "economic_exploit",
+    "vuln_pattern": null,
+    "attack_vector": "Flash-loan abuse of subscription/referral incentive mechanism with invalid slippage control",
+    "loss_usd": 300000,
+    "assets_stolen": "~$300k (XWIN rewards sold for BNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2021 年 6 月 25 日，xWin Finance 遭閃電貸攻擊。攻擊者從 ForTube 閃電借入 76,000 BNB，並建立子帳戶作為推薦人，以全部 BNB 反覆 20 次申購 xWin 基金（PCLPXWIN）、賣出取得的 XWIN 並贖回，累積申購與推薦獎勵後出售，損失約 30 萬美元。",
+    "root_cause_zh": "PoC 摘要指出，事件源於協議的滑價控制無效（使用者可自行將 priceImpactTolerance 設為 10000），加上 XWIN 申購獎勵與推薦獎勵按申購金額發放、未限制同一交易內的申購／贖回循環。攻擊者因此能以閃電貸資金反覆申購贖回，套取額外 XWIN 獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'subscription-incentive-mechanism', lost '~$300k') and the PoC xWin_exp.sol (attacker 0xb63f0d8b9aa0c4e68d5630f54bfefc6cf2c2ad19, xWinDefi 0x1Bf7fe7568211ecfF68B6bC7CCAd31eCd8fe8092), whose summary attributes the incident to invalid slippage control exploited with a flash loan to obtain extra xWin rewards. loss_usd taken from the parsed DeFiHackLabs value. Classified as economic_exploit (incentive design abuse); it could alternatively be classed as a business-logic bug.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: xWin Finance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-06/xWin_exp.sol"
+     },
+     {
+      "title": "xWin Finance incident analysis",
+      "publisher": "Medium",
+      "url": "https://peckshield.medium.com/xwin-finance-incident-root-cause-analysis-71d0820e6bc1"
+     },
+     {
+      "title": "xWin Finance attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xba0fa8c150b2408eec9bbbbfe63f9ca63e99f3ff53ac46ee08d691883ac05c1d"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "xWin Finance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "rikkei-finance-2022-04",
+    "date": "2022-04-15",
+    "project": "Rikkei Finance",
+    "project_type": "lending",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Access control & Price Oracle Manipulation (unprotected SimplePriceOracle.setOracleData)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC drains the rUSDC market's USDC cash)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Rikkei Finance 是 BNB Smart Chain 上採類 Compound 架構的借貸協定。攻擊者存入極少量 BNB（0.0001 BNB）取得 rBNB 作為抵押，接著呼叫 SimplePriceOracle 的 setOracleData，把 rBNB 的價格來源改成自己部署的合約，使抵押品價值被放大 10^10 倍，再將 rUSDC 市場的可借資金全數借出。",
+    "root_cause_zh": "SimplePriceOracle 合約的 setOracleData 函式缺乏存取權限控管，任何人都能替任一市場指定價格來源；攻擊者指向一個回傳「Chainlink BNB 價格乘以 1e10」的假價格來源合約，讓借貸協定以灌水後的抵押品價值放款。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (Rikkei_exp.sol, BSC fork block 16956474). The entry's lost field is blank, so loss_usd is null; the PoC only demonstrates draining the rUSDC market.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Rikkei Finance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Rikkei_exp.sol"
+     },
+     {
+      "title": "Rikkei Finance incident analysis",
+      "publisher": "Medium",
+      "url": "https://rikkeifinance.medium.com/rikkei-finance-incident-investigation-report-b5b1745b0155"
+     },
+     {
+      "title": "Rikkei Finance incident analysis",
+      "publisher": "blockmagnates.com",
+      "url": "https://blockmagnates.com/rikkei-finance-hack/"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Rikkei Finance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "zeed-finance-2022-04",
+    "date": "2022-04-21",
+    "project": "Zeed Finance",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Incorrect calculation in YEED token transfer logic abused via repeated skim across LP pairs",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC converts surplus YEED to USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Zeed Finance 的 YEED 代幣在 BNB Smart Chain 上與 USDT、HO、ZEED 等代幣組成多個 DEX 交易對。攻擊者先以閃電兌換自 USDT/YEED（HoSwap）交易對借出幾乎全部 YEED，轉入另一個 USDT/YEED 交易對後，在三個交易對之間反覆呼叫 skim 循環轉移代幣 10 輪，使可取出的 YEED 不斷增加。最後歸還借款並將多出的 YEED 經路由換成 USDT 獲利。",
+    "root_cause_zh": "依 DeFiHackLabs 標註的「計算錯誤」，YEED 代幣在由交易對轉出時的手續費／獎勵分配計算有誤，使每次 skim 轉移後各交易對可被取出的 YEED 總量增加；攻擊者以迴圈 skim 將此錯誤放大並提走多出的代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Incorrect calculation') and PoC (Zeed_exp.sol, BSC fork block 17132514). The exact faulty formula in the YEED token is not shown in the PoC, so the root-cause description is kept general. Lost field blank, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Zeed Finance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Zeed_exp.sol"
+     },
+     {
+      "title": "Zeed Finance incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/@zeedcommunity/the-solution-for-the-yeed-lp-pool-attack-a120c53948cd"
+     },
+     {
+      "title": "Zeed Finance incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x0507476234193a9a5c7ae2c47e4c4b833a7c3923cefc6fd7667b72f3ca3fa83a"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Zeed Finance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "wiener-doge-2022-04",
+    "date": "2022-04-24",
+    "project": "Wiener DOGE",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Flashloan + skim/sync abuse of WDOGE transfer-fee logic",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC yields ~70.66 WBNB net profit)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Wiener DOGE（WDOGE）是 BNB Smart Chain 上帶有轉帳扣費機制的代幣。攻擊者透過 PancakeSwap 閃電兌換借入 2,900 WBNB，在 WDOGE/WBNB 交易對買入大量 WDOGE，再將部分 WDOGE 轉回交易對並呼叫 skim 與 sync，壓低交易對記錄的 WDOGE 儲備。最後再賣出 WDOGE 換出約 2,978.66 WBNB，歸還 2,908 WBNB 後獲利約 70.66 WBNB。",
+    "root_cause_zh": "WDOGE 的轉帳扣費機制與 AMM 交易對的 skim／sync 不相容：由交易對轉出代幣時額外扣除的數量會使交易對實際餘額低於帳面儲備，sync 後儲備被壓低、WDOGE 價格被人為拉高，攻擊者得以高價賣出 WDOGE 抽走 WBNB。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloan') and PoC (Wdoge_exp.sol, BSC fork block 17248705). The entry's lost field is blank, so loss_usd is null; the PoC's net profit (~70.66 WBNB = 2,978.66 WBNB out minus 2,908 WBNB repaid) is derived from the PoC constants, not an official loss figure. Fee mechanism described from the skim/sync pattern in the PoC.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Wiener DOGE",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Wdoge_exp.sol"
+     },
+     {
+      "title": "Wiener DOGE incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x4f2005e3815c15d1a9abd8588dd1464769a00414a6b7adcbfd75a5331d378e1d"
+     },
+     {
+      "title": "Wiener DOGE incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/solid_group_1/status/1519034573354676224"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Wiener DOGE"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "hackdao-2022-05",
+    "date": "2022-05-24",
+    "project": "HackDao",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Skim token balance (skim-triggered burn in LP + sync)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC profits in WBNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "HackDao 是 BNB Smart Chain 上的代幣，同時有 HackDao/WBNB 與 HackDao/USDT 兩個 PancakeSwap 交易對。攻擊者從 DODO 閃電貸借入 1,900 WBNB 買入 HackDao，將代幣轉入 HackDao/WBNB 交易對後呼叫 skim 轉到 HackDao/USDT 交易對並 sync，再由 USDT 交易對 skim 回 WBNB 交易對。最後以交易對中多出的 HackDao 換出 WBNB 並償還閃電貸獲利。",
+    "root_cause_zh": "HackDao 代幣在由交易對轉出時會銷毀交易對中的代幣（PoC 註解：call skim() to burn HackDao in lp），攻擊者利用 skim 觸發銷毀並以 sync 更新儲備，壓低交易對的 HackDao 儲備、抬高價格後賣出獲利。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Skim token balance') and PoC (HackDao_exp.sol, BSC fork block 18073756). Lost field blank, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: HackDao",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-05/HackDao_exp.sol"
+     },
+     {
+      "title": "HackDao incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1529084919976034304"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "HackDao"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "novo-protocol-2022-05",
+    "date": "2022-05-29",
+    "project": "NOVO Protocol",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Flashloan & Price Oracle Manipulation via unrestricted NOVO transferFrom (no check on `from`)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC profits in WBNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "NOVO Protocol 的 NOVO 代幣部署於 BNB Smart Chain。攻擊者透過 PancakeSwap 閃電兌換借入 17.2 WBNB 買入 NOVO，接著直接呼叫 NOVO 的 transferFrom，將約 1.14 億枚 NOVO 從 NOVO/WBNB 交易對轉到 NOVO 合約本身。之後呼叫 sync 使交易對的 NOVO 儲備驟減、價格暴漲，再把手上的 NOVO 賣回換取 WBNB 並償還借款。",
+    "root_cause_zh": "NOVO 代幣的 transferFrom 未過濾 from 參數、未檢查呼叫者是否獲得 from 地址授權，任何人都能把交易對持有的 NOVO 轉走，進而操縱 PancakeSwap 的現貨價格。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloan & Price Oracle Manipulation') and PoC (Novo_exp.sol, BSC fork block 18225002; attack tx 0xc346adf1...). Classified as smart_contract_bug/access_control because the PoC shows the enabling flaw is NOVO's transferFrom not filtering `from`. Lost field blank, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: NOVO Protocol",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-05/Novo_exp.sol"
+     },
+     {
+      "title": "NOVO Protocol incident analysis",
+      "publisher": "panewslab.com",
+      "url": "https://www.panewslab.com/zh_hk/articledetails/f40t9xb4.html"
+     },
+     {
+      "title": "NOVO Protocol incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xc346adf14e5082e6df5aeae650f3d7f606d7e08247c2b856510766b4dfcdc57f"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "NOVO Protocol"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "discover-2022-06",
+    "date": "2022-06-06",
+    "project": "Discover",
+    "project_type": "staking",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flashloan & Price Oracle Manipulation (ETHpledge pledgein priced from PancakeSwap spot reserves)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC obtains Discover tokens via pledgein)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Discover 是 BNB Smart Chain 上的代幣，其 ETHpledge 質押合約讓使用者以 USDT 認購並取得 Discover。攻擊者透過 PancakeSwap 閃電兌換自交易對借出約 19,810 USDT 扭曲交易對價格，再呼叫 pledgein 投入 2,000 USDT，以失真的價格取得大量 Discover 代幣。",
+    "root_cause_zh": "ETHpledge 合約依 PancakeSwap 交易對的即時現貨價格計算應發放的 Discover 數量，沒有防操縱機制，閃電貸即可在同一筆交易中扭曲價格並低價換得大量代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloan & Price Oracle Manipulation') and PoC (Discover_exp.sol, BSC fork block 18446845). The PoC is incomplete (it intentionally does not repay the flash swap and does not show final profit), so the pricing mechanism is summarized at a high level. Lost field blank, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Discover",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-06/Discover_exp.sol"
+     },
+     {
+      "title": "Discover incident analysis",
+      "publisher": "anquanke.com",
+      "url": "https://www.anquanke.com/post/id/274003"
+     },
+     {
+      "title": "Discover incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x8a33a1f8c7af372a9c81ede9e442114f0aabb537e5c3a22c0fd7231c4820f1e9"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Discover"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "gymnetwork-2022-06",
+    "date": "2022-06-08",
+    "project": "GYMNetwork",
+    "project_type": "staking",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Access control: unprotected depositFromOtherContract in GymSinglePool",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in the DeFiHackLabs entry (PoC withdraws GYMNET from GymSinglePool)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "GYM Network 的 GymSinglePool 是 BNB Smart Chain 上的 GYMNET 單幣質押池。攻擊者直接呼叫 depositFromOtherContract，在未轉入任何代幣的情況下替自己登記約 80 億枚 GYMNET 的存款，待時間推進後呼叫 withdraw 將池中的 GYMNET 提走。",
+    "root_cause_zh": "depositFromOtherContract 原本應只供協定內部合約呼叫，卻缺乏存取權限檢查，也不向呼叫者收取代幣，使任何人都能憑空記帳存款並在之後提領池中資產。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Accesscontrol') and PoC (Gym_2_exp.sol, BSC fork block 18501049). The deposit amount 8,000,000,000.000000000000000666 GYMNET is taken from the PoC. Lost field blank, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: GYMNetwork",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-06/Gym_2_exp.sol"
+     },
+     {
+      "title": "GYMNetwork incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1534423219607719936"
+     },
+     {
+      "title": "GYMNetwork incident analysis",
+      "publisher": "jinse.com",
+      "url": "https://www.jinse.com/news/blockchain/1658455.html"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "GYMNetwork"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "spacegodzilla-2022-07",
+    "date": "2022-07-13",
+    "project": "SpaceGodzilla",
+    "project_type": "other",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flashloans & Price Manipulation via publicly callable swapTokensForOther / swapAndLiquifyStepv1",
+    "loss_usd": 25378,
+    "assets_stolen": "25,378 BUSD (per PoC header; entry lost field blank)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "SpaceGodzilla 是 BNB Smart Chain 上內建自動換幣與加流動性機制的代幣。攻擊者從 16 個流動性池以閃電貸籌得約 295 萬 USDT，先呼叫代幣合約公開的 swapTokensForOther 讓合約賣出代幣，再投入大量 USDT 換走交易對中的 SpaceGodzilla，接著呼叫 swapAndLiquifyStepv1 讓合約在被操縱的價格下執行換幣與加流動性。最後將 SpaceGodzilla 賣回交易對取回 USDT，造成約 25,378 BUSD 損失。",
+    "root_cause_zh": "SpaceGodzilla 合約的 swapTokensForOther 與 swapAndLiquifyStepv1 可由任何人呼叫，且直接依 PancakeSwap 現貨價格執行換幣、沒有滑價保護；攻擊者可在自行操縱價格後強迫合約以不利價格交易，從中套利。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Flashloans & Price Manipulation') and PoC (SpaceGodzilla_exp.sol, BSC fork block 19523980). Loss taken from the PoC header 'Total Lost: 25,378 BUSD', valued at 1 BUSD = 1 USD. The PoC skips the 16-pool flash loan and simulates the ~2.95M USDT starting capital.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: SpaceGodzilla",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-07/SpaceGodzilla_exp.sol"
+     },
+     {
+      "title": "SpaceGodzilla incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/numen-cyber-labs/spacegodzilla-attack-event-analysis-d29a061b17e1"
+     },
+     {
+      "title": "SpaceGodzilla attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x7f183df11f1a0225b5eb5bb2296b5dc51c0f3570e8cc15f0754de8e6f8b4cca4"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "SpaceGodzilla"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "lpc-2022-07",
+    "date": "2022-07-25",
+    "project": "LPC",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Business Logic Flaw: incorrect recipient balance check, no sender != recipient check in transfer (self-transfer inflation)",
+    "loss_usd": 45715,
+    "assets_stolen": "178 BNB (~45,715 USD)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "LPC 是 BNB Smart Chain 上的代幣。攻擊者從 PancakeSwap LPC/USDT 交易對以閃電兌換借出幾乎全部 LPC，對自己連續轉帳 10 次使 LPC 餘額大幅膨脹，歸還借款（含約 10% 轉帳手續費）後，再於下一筆交易把多出的 LPC 換成 USDT。此事件損失約 178 BNB（約 45,715 美元）。",
+    "root_cause_zh": "LPC 的 transfer 對收款方餘額的檢查與更新有誤，且未檢查 sender 與 recipient 是否相同；自我轉帳時餘額會被重複計入，使攻擊者每轉一次餘額就憑空增加。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (LPC_exp.sol, BSC fork block 19852596; attack tx 0x0e970ed8...). loss_usd uses the entry's parsed value (178 BNB ~ 45,715 USD).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: LPC",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-07/LPC_exp.sol"
+     },
+     {
+      "title": "LPC incident analysis",
+      "publisher": "panewslab.com",
+      "url": "https://www.panewslab.com/zh_hk/articledetails/uwv4sma2.html"
+     },
+     {
+      "title": "LPC incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BeosinAlert/status/1551535854681718784"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "LPC"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "qixi-2022-08",
+    "date": "2022-08-03",
+    "project": "Qixi",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "arithmetic",
+    "attack_vector": "Underflow in token transfer used to satisfy AMM K check",
+    "loss_usd": 1972,
+    "assets_stolen": "~6.8 BNB (per PoC header; entry lost field blank)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Qixi 是 BNB Smart Chain 上的代幣。攻擊者以閃電兌換借出 QIXI/WBNB 交易對中幾乎全部 WBNB，並在回呼中把 999,999,999,999,999 枚遠超過自身持有量的 QIXI 轉入交易對。由於餘額下溢讓轉帳成功，交易對的恆定乘積檢查得以通過，攻擊者無須歸還 WBNB，造成約 6.8 BNB 損失。",
+    "root_cause_zh": "Qixi 代幣的轉帳函式扣減寄件方餘額時沒有防止整數下溢（未檢查餘額是否足夠），餘額不足的地址也能轉出任意數量代幣；攻擊者藉此憑空轉入巨量代幣，滿足 AMM 交易對的 K 值檢查。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry (root cause 'Underflow') and PoC (Qixi_exp.sol, BSC fork block 20120884). Loss taken from the PoC header 'Total Lost: ~6.8 BNB' and valued at an approximate BNB price of ~290 USD on 2022-08-03 (6.8 x 290 = ~1,972 USD).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Qixi",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/Qixi_exp.sol"
+     },
+     {
+      "title": "Qixi incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://x.com/8olidity/status/1555366421693345792"
+     },
+     {
+      "title": "Qixi incident analysis",
+      "publisher": "app.blocksec.com",
+      "url": "https://app.blocksec.com/explorer/tx/bsc/0x16be4fe1c8fcab578fcb999cbc40885ba0d4ba9f3782a67bd215fb56dc579062"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Qixi"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "etnproduct-2022-08",
+    "date": "2022-08-04",
+    "project": "EtnProduct",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Business logic flaw in ETN shop/product flow (Business Logic Flaw)",
+    "loss_usd": 3074,
+    "assets_stolen": "~3,074 USD (attacker profit taken in BUSDT, per PoC header; DeFiHackLabs lost field empty)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 8 月 4 日，BSC 上的 EtnProduct 相關合約遭到攻擊。攻擊者自 DODO 閃電貸借入 9,400 BUSDT，依序鑄造 ETN NFT、邀請自身、建立商店，並以極高價格（10,000,000,000）呼叫 newProduct 上架商品，接著將合約持有的 60 萬枚交易對 LP 代幣轉回交易對並 burn 取出 U 代幣，再透過 Market 合約的 saleU 換成 BUSDT 獲利。依 PoC 標頭記載，損失約 3,074 美元。",
+    "root_cause_zh": "DeFiHackLabs 將其歸類為商業邏輯缺陷：PoC 顯示攻擊者可經由鑄造 NFT、自我邀請、建立商店及以任意極高價格建立商品等低成本流程，取得可贖回的 LP 代幣與 U 代幣並兌換成 BUSDT，推測相關結算或獎勵邏輯未對價格等參數做合理限制；PoC 未附程式碼說明，確切缺陷細節有待查證。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (EtnProduct_exp.sol). DeFiHackLabs lost field is empty; loss_usd taken from the PoC header line 'Total Lost : ~3074 USD'. PoC header lists attacker 0xde703797fe9219b0485fb31eda627aa182b1601e and attack contract 0x178bf96e303fb31aef1b586271a63acd33e4eaf7. The PoC does not explain how the attack contract obtains the LP tokens it burns, so the exact bug is inferred and confidence is low.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: EtnProduct",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/EtnProduct_exp.sol"
+     },
+     {
+      "title": "EtnProduct incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://x.com/BeosinAlert/status/1555439220474642432"
+     },
+     {
+      "title": "EtnProduct incident analysis",
+      "publisher": "app.blocksec.com",
+      "url": "https://app.blocksec.com/explorer/tx/bsc/0x72321a3b50bb68ac3b46b0ab973b0e87b6c48ab73d23c4ba2cb73527f978d995"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "EtnProduct"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "egd-finance-2022-08",
+    "date": "2022-08-07",
+    "project": "EGD Finance",
+    "project_type": "staking",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash loan spot-price manipulation of reward price oracle (Flashloans & Price Manipulation)",
+    "loss_usd": 36044,
+    "assets_stolen": "~36,044 USD (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 8 月 7 日，BSC 上的質押獎勵專案 EGD Finance 遭到閃電貸價格操縱攻擊，損失約 36,044 美元。攻擊者先質押 100 USDT，之後從 USDT/WBNB 交易對閃電借入 2,000 USDT，再以閃電兌換借出 EGD/USDT 交易對中 99.99999925% 的 USDT，使 EGD 價格被壓到極低，趁機呼叫 claimAllReward 領取大量 EGD 獎勵，最後換回 USDT 並償還兩筆閃電貸。",
+    "root_cause_zh": "EGD Finance 的 getEGDPrice 以 EGD/USDT PancakeSwap 交易對的即時代幣餘額計算 EGD 價格，並據此將以 USDT 計價的獎勵換算成 EGD 發放數量；攻擊者在閃電兌換期間抽乾交易對的 USDT 使價格失真，claimAllReward 因而發放遠超正常數量的 EGD。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (EGD_Finance_exp.sol); loss_usd uses loss_usd_parsed. PoC header lists attacker 0xee0221d76504aec40f63ad7e36855eebf5ea5edd, attack contract 0xc30808d9373093fbfcec9e026457c6a9dab706a7, vulnerable proxy 0x34bd6dba456bc31c2b3393e499fa10bed32a9370 and attack tx 0x50da0b1b...a2b3. The BscScan candidate link is the attacker's preparatory stake tx, not the attack tx.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: EGD Finance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/EGD_Finance_exp.sol"
+     },
+     {
+      "title": "EGD Finance incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1556483435388350464"
+     },
+     {
+      "title": "EGD Finance incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/PeckShieldAlert/status/1556486817406283776"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "EGD Finance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "anch-2022-08",
+    "date": "2022-08-09",
+    "project": "ANCH",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Repeated skim to the pair itself inflating token balance (Skim token balance)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in source (attacker profit taken in USDT per PoC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 8 月 9 日，BSC 上的 ANCH 代幣遭到攻擊。攻擊者自 DODO 閃電貸借入 50,000 USDT 買入 ANCH，將全部 ANCH 轉入 ANCH/USDT 交易對後，連續 60 次呼叫 skim 並把多餘代幣轉回交易對本身，再將累積的超額 ANCH skim 給自己並賣出換取 USDT，償還閃電貸後獲利。資料來源未記載損失金額。",
+    "root_cause_zh": "PoC 顯示 ANCH 代幣的自訂轉帳邏輯在交易對將代幣 skim 給自己時處理錯誤，使交易對的 ANCH 餘額可透過反覆 skim 不斷累積而超出儲備量；攻擊者放大超額餘額後一次提走並賣出，屬於代幣轉帳邏輯與 AMM skim 機制互動的缺陷。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (ANCH_exp.sol). DeFiHackLabs lost field is empty and the PoC has no Total Lost line, so loss_usd is null. The PoC does not include the ANCH token source; the exact transfer-logic flaw is inferred from the repeated skim(address(Pair)) loop.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: ANCH",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/ANCH_exp.sol"
+     },
+     {
+      "title": "ANCH incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/AnciliaInc/status/1557846766682140672"
+     },
+     {
+      "title": "ANCH incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/AnciliaInc/status/1557527183966408706"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "ANCH"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "ddc-2022-08",
+    "date": "2022-08-28",
+    "project": "DDC",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Unprotected handleDeductFee drains pair balance before sync (Unchecked External Calls)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in source (attacker profit taken in USDT per PoC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 8 月 28 日，BSC 上的 DDC 代幣遭到攻擊。攻擊者先以 0.1 BNB 經專案路由器買入少量 DDC，接著直接呼叫 DDC 合約公開的 handleDeductFee 函式，將 DDC/USDT 交易對的 DDC 餘額扣到只剩最小單位，再呼叫 sync 更新儲備，最後以被扭曲的高價賣出手上的 DDC，換走交易對中的 USDT。資料來源未記載損失金額。",
+    "root_cause_zh": "DDC 的 handleDeductFee(actionType, feeAmount, from, user) 函式缺乏呼叫者權限檢查，任何人都能指定任意地址（包括流動性交易對）作為扣費來源並扣除其代幣；交易對餘額被清空後經 sync 寫入儲備，導致 DDC 價格被嚴重扭曲。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (DDC_exp.sol). DeFiHackLabs labels the root cause 'Unchecked External Calls'; the PoC shows the effective bug is a publicly callable fee-deduction function, so vuln_pattern is access_control. Lost field empty and no Total Lost line in the PoC, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: DDC",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/DDC_exp.sol"
+     },
+     {
+      "title": "DDC incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://x.com/BeosinAlert/status/1564240190851383302"
+     },
+     {
+      "title": "DDC incident analysis",
+      "publisher": "immunebytes.com",
+      "url": "https://immunebytes.com/blog/ddc-token-hack-aug-28-2022-detailed-analysis/"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "DDC"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "shadowfi-2022-09",
+    "date": "2022-09-02",
+    "project": "ShadowFi",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Public burn of the pair's SDF followed by sync (Access Control)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in source (attacker profit taken in WBNB per PoC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 9 月 2 日，BSC 上的 ShadowFi（SDF）代幣遭到攻擊。攻擊者以少量 WBNB 買入 SDF 後，呼叫 SDF 合約公開的 burn 函式，將 SDF/WBNB 交易對中幾乎全部的 SDF 銷毀，再呼叫 sync 更新儲備使 SDF 價格暴漲，接著賣出手上的 SDF 換走池中的 WBNB。資料來源未記載損失金額。",
+    "root_cause_zh": "SDF 代幣的 burn(address, uint256) 函式未檢查呼叫者權限，任何人都能銷毀任意地址（包括流動性交易對）持有的代幣；交易對餘額被銷毀並 sync 後儲備比例嚴重失衡，攻擊者可用極少量 SDF 換出大量 WBNB。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (Shadowfi_exp.sol). DeFiHackLabs lost field is empty and the PoC has no Total Lost line, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: ShadowFi",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/Shadowfi_exp.sol"
+     },
+     {
+      "title": "ShadowFi incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/PeckShieldAlert/status/1565549688509861888"
+     },
+     {
+      "title": "ShadowFi incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xe30dc75253eecec3377e03c532aa41bae1c26909bc8618f21fb83d4330a01018"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "ShadowFi"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "zoomprofinance-2022-09",
+    "date": "2022-09-05",
+    "project": "ZoomproFinance",
+    "project_type": "other",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash loan + fake-USDT injection into pricing pair via public batchToken (Flashloans & Price Manipulation)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in source (attacker profit taken in USDT per PoC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 9 月 5 日，BSC 上的 ZoomproFinance 遭到閃電貸價格操縱攻擊。攻擊者向 PancakeSwap 交易對閃電借入 300 萬 USDT，透過專案的交換合約買入 Zoom，接著呼叫 Batch Token 合約的 batchToken，將 100 萬枚假 USDT（fUSDT）轉入 fUSDT/Zoom 交易對並呼叫 sync，使 Zoom 報價大幅拉高，再把 Zoom 賣回交換合約換取真 USDT，償還閃電貸後獲利。資料來源未記載損失金額。",
+    "root_cause_zh": "ZoomproFinance 交換合約以 fUSDT/Zoom 交易對的即時儲備作為 Zoom 的買賣價格來源，而 Batch Token 合約的 batchToken 可被任何人呼叫並將假 USDT 轉入指定地址；攻擊者藉此向定價交易對灌入 fUSDT 並 sync，操縱價格後以高價賣出 Zoom。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (ZoomproFinance_exp.sol). DeFiHackLabs lost field is empty and the PoC has no Total Lost line, so loss_usd is null. PoC lists attacker 0xc578d755cd56255d3ff6e92e1b6371ba945e3984 and attack contract 0xb8d700f30d93fab242429245e892600dcc03935d. Categorized as price manipulation per the DeFiHackLabs label; the unprotected batchToken is the enabling flaw.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: ZoomproFinance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/ZoomproFinance_exp.sol"
+     },
+     {
+      "title": "ZoomproFinance incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/blocksecteam/status/1567027459207606273"
+     },
+     {
+      "title": "ZoomproFinance incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xe176bd9cfefd40dc03508e91d856bd1fe72ffc1e9260cd63502db68962b4de1a"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "ZoomproFinance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "yyds-2022-09",
+    "date": "2022-09-08",
+    "project": "YYDS",
+    "project_type": "other",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash swap pair manipulation during reward claims (pair manipulate)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in source (attacker profit taken in USDT per PoC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 9 月 8 日，BSC 上的 YYDS 代幣相關合約遭到攻擊。攻擊者自 YYDS/USDT 交易對以閃電兌換借出幾乎全部 USDT，在回呼中呼叫目標合約的 claim 以及 withdrawReturnAmountByReferral、ByMerchant、ByConsumer 等提領函式領取大量 YYDS，再將 YYDS 轉入交易對並補足 USDT 完成還款，賺取差額。資料來源未記載損失金額。",
+    "root_cause_zh": "目標合約的 claim 及 withdrawReturnAmountBy* 函式依賴 YYDS/USDT 交易對的即時狀態計算應發放的 YYDS 數量；攻擊者在閃電兌換期間抽走交易對的 USDT 使價格失真，因而領得超額 YYDS。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (Yyds_exp.sol). DeFiHackLabs lost field is empty and the PoC has no Total Lost line, so loss_usd is null. The PoC does not include the target contracts' source; the reliance on the pair's instantaneous state is inferred from claims being made inside the flash-swap callback.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: YYDS",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/Yyds_exp.sol"
+     },
+     {
+      "title": "YYDS incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1567928377432051713"
+     },
+     {
+      "title": "YYDS incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x04a1f0d1694242515ecb14faa71053901f11a1286cd21c27fe5542f9eeb62356"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "YYDS"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "ragnarok-online-invasion-2022-09",
+    "date": "2022-09-08",
+    "project": "Ragnarok Online Invasion",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Unprotected transferOwnership then reflection-fee manipulation (Broken Access Control)",
+    "loss_usd": 44000,
+    "assets_stolen": "157.98 BNB (~44,000 USD)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 9 月 8 日，BSC 上的 Ragnarok Online Invasion（ROI）代幣遭到攻擊，損失 157.98 BNB（約 44,000 美元）。攻擊者呼叫任何人都能執行的 transferOwnership 取得 ROI 代幣合約的擁有者權限，將各項手續費歸零、把主要持有人排除於反射獎勵之外，再把稅率調到 99%，利用 BUSD/ROI 交易對的閃電兌換讓稅費由交易對承擔。最後透過 includeInReward 繞過餘額記帳，在帳面餘額為零的情況下賣出大量 ROI 換得 BNB。",
+    "root_cause_zh": "ROI 代幣合約的 transferOwnership 缺少擁有者權限檢查，任何人都能成為擁有者並任意修改稅率與反射獎勵設定；再搭配反射型代幣 _rOwned／_tOwned 雙重記帳的邏輯缺陷（includeInReward 會將 _tOwned 歸零而保留 _rOwned），攻擊者得以賣出實際不應持有的 ROI。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (ROI_exp.sol); loss_usd uses loss_usd_parsed. PoC header lists attacker 0x91b7f203ed71c5eccf83b40563e409d2f3531114, attack contract 0x158af3d23d96e3104bcc65b76d1a6f53d0f74ed0, vulnerable ROIToken 0xe48b75dc1b131fd3a8364b0580f76efd04cf6e9c. project_type set to 'other' because the exploited contract is a reflection token; the project's game nature is not described in the source material.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Ragnarok Online Invasion",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/ROI_exp.sol"
+     },
+     {
+      "title": "Ragnarok Online Invasion incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1567746825616236544"
+     },
+     {
+      "title": "Ragnarok Online Invasion incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/CertiKAlert/status/1567754904663429123"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Ragnarok Online Invasion"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "newfreedao-2022-09",
+    "date": "2022-09-08",
+    "project": "NewFreeDAO",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Flash-loaned balance recycled across fresh contracts to farm balance-based rewards (Flashloans Attack)",
+    "loss_usd": 1250000,
+    "assets_stolen": "4,481 BNB (three attack txs: 2,952.97 + 1,412.77 + 115.57 BNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 9 月 8 日，BSC 上的 NewFreeDAO（NFD）獎勵合約遭到閃電貸攻擊，攻擊者分三筆交易共獲利約 4,481 BNB（約 125 萬美元）。攻擊者自 DODO 閃電貸借入 250 WBNB 換成 NFD，接著循環建立 50 個新合約，每次把全部 NFD 轉入新合約並呼叫獎勵函式（selector 0x6811e3b9）依持幣量領取 NFD 獎勵後再轉回，最後賣出 NFD 換回 WBNB 並償還閃電貸。",
+    "root_cause_zh": "獎勵合約的領取函式只依呼叫者當下的 NFD 餘額計算獎勵，且新地址的上次領取時間預設為全域起始時間，使剛建立的合約可立即依經過的期數領取獎勵；合約未要求持幣鎖定或檢查持有期間，因此同一筆閃電貸資金可在多個新地址間轉移並重複領獎。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (NewFreeDAO_exp.sol, including the decompiled reward contract 0x8b068e22e9a4a9bca3c321e0ec428abf32691d1e). DEVIATION: the DeFiHackLabs lost text reads '4481 BNB (~125M US$)' and loss_usd_parsed is 125,000,000, which is inconsistent with 4,481 BNB at roughly US$280/BNB on 2022-09-08 (about US$1.25M); treated as a typo for ~1.25M and loss_usd set to 1,250,000. Revert to 125000000 only if the parsed value must be kept verbatim. PoC lists attacker 0x22c9736d4fc73a8fa0eb436d2ce919f5849d6fd2 and attack contract 0xa35ef9fa2f5e0527cb9fbb6f9d3a24cfed948863.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: NewFreeDAO",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/NewFreeDAO_exp.sol"
+     },
+     {
+      "title": "NewFreeDAO incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/SlowMist_Team/status/1567854876633309186"
+     },
+     {
+      "title": "NewFreeDAO incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BeosinAlert/status/1567757251024396288"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "NewFreeDAO"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "dpc-2022-09",
+    "date": "2022-09-09",
+    "project": "DPC",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Incorrect LP staking reward calculation via repeated claimStakeLp (Incorrect Reward calculation)",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in source (attacker profit taken in WBNB per PoC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 9 月 9 日，BSC 上的 DPC 代幣質押獎勵機制遭到攻擊。攻擊者以 2 BNB 換成 USDT 與 DPC，呼叫 tokenAirdrop 後加入 USDT/DPC 流動性，並以 stakeLp 質押取得的 LP，一天後連續 9 次呼叫 claimStakeLp 並領取空投獎勵，最後將大量 DPC 賣出換回 WBNB。資料來源未記載損失金額。",
+    "root_cause_zh": "DPC 合約的 LP 質押獎勵計算有誤：PoC 顯示在同一時間點重複呼叫 claimStakeLp 仍會重複累計獎勵額度，可領額度未正確更新或重置，使攻擊者能以少量質押放大領取的 DPC 數量。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (DPC_exp.sol). DeFiHackLabs lost field is empty and the PoC has no Total Lost line, so loss_usd is null. The PoC does not include the DPC contract source; the reward-accumulation flaw is inferred from the repeated claimStakeLp calls and the DeFiHackLabs label 'Incorrect Reward calculation'.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: DPC",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/DPC_exp.sol"
+     },
+     {
+      "title": "DPC incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BeosinAlert/status/1568429355919089664"
+     },
+     {
+      "title": "DPC incident analysis",
+      "publisher": "learnblockchain.cn",
+      "url": "https://learnblockchain.cn/article/4733"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "DPC"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "inuko-2022-10",
+    "date": "2022-10-14",
+    "project": "INUKO",
+    "project_type": "other",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "FlashLoan price manipulation of Bond LP valuation",
+    "loss_usd": 50000,
+    "assets_stolen": "$50k",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 10 月，BSC 上 INUKO 代幣的 Bond（債券）合約遭攻擊，損失約 5 萬美元。攻擊者先建立 USDT/INUKO 流動性，再串接多個 DODO 閃電貸並把資產存入 Venus 借出大量 USDT，將 USDT 直接轉入交易對來扭曲 LP 的估值後購買債券，數日後領取大量 INUKO 並賣出換成 USDT 獲利。",
+    "root_cause_zh": "Bond 合約的 buyBond 依交易對當下可被瞬間操縱的餘額／價格估算 LP 價值。攻擊者在購買前把大量 USDT 直接轉入交易對，購買後再用 skim 取回，就能以少量 LP 換得超額的債券獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (INUKO_exp.sol, BSC fork block 22,169,169). PoC chains 8 DODO flash loans, supplies to Venus, borrows USDT, transfers USDT to the USDT/INUKO pair, calls Bond.buyBond, skims the pair, then warps 3 days and claims/sells INUKO. Loss uses the DeFiHackLabs parsed value.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: INUKO",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/INUKO_exp.sol"
+     },
+     {
+      "title": "INUKO incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/AnciliaInc/status/1587848874076430336"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "INUKO"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "hpay-2022-10",
+    "date": "2022-10-18",
+    "project": "HPAY",
+    "project_type": "staking",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Access Control - unprotected setToken in staking bonus contract",
+    "loss_usd": 31280,
+    "assets_stolen": "115 BNB",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 10 月，HPAY 的質押獎勵合約（MintableAutoCompundRelockBonus）因缺乏權限控管遭攻擊，損失約 115 BNB。攻擊者先把質押代幣改成自行鑄造的假代幣並大量質押，經過一段區塊後再把代幣改回 HPAY、提領 HPAY，最後在 PancakeSwap 換成 WBNB。",
+    "root_cause_zh": "質押合約的 setToken 函式沒有存取控制，任何人都能更換質押代幣地址。攻擊者因此能用毫無價值的代幣累積質押部位，再提領真正的 HPAY。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (HPAY_exp.sol, BSC fork block 22,280,853). PoC notes the real attack spanned multiple transactions and the attacker moved out 105.98 BNB + 10 BNB. USD estimated at ~$272/BNB (approximate BNB price on 2022-10-18): 115 x 272 = ~$31,280.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: HPAY",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/HPAY_exp.sol"
+     },
+     {
+      "title": "HPAY incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/Supremacy_CA/status/1582345448190140417"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "HPAY"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "pltd-2022-10",
+    "date": "2022-10-18",
+    "project": "PLTD",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Transfer Logic Flaw (transfer-to-pair + skim)",
+    "loss_usd": 24000,
+    "assets_stolen": "$24k (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 10 月，BSC 上的 PLTD 代幣因轉帳邏輯缺陷遭攻擊，損失約 2.4 萬美元。攻擊者透過兩筆 DODO 閃電貸借入 66 萬 USDT 買入 PLTD，再把特定數量的 PLTD 轉入 PancakeSwap 交易對並呼叫 skim，使池內 PLTD 的餘額與價格失衡，最後賣出 PLTD 換回 USDT 獲利。",
+    "root_cause_zh": "PLTD 的 transfer 在代幣轉入交易對時有特殊處理邏輯，且這段邏輯有缺陷。攻擊者轉入相當於交易對餘額兩倍減一的數量並搭配 skim，就能讓交易對內的 PLTD 餘額與準備金失衡，進而推高 PLTD 價格。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (PLTD_exp.sol, BSC fork block 22,252,045). PoC borrows 220k + 440k USDT from two DODO pools, buys PLTD, transfers (pair balance x 2 - 1) PLTD to the pair, calls skim, then sells. The exact internal transfer logic is not shown in the PoC. Loss uses the DeFiHackLabs parsed value.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: PLTD",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/PLTD_exp.sol"
+     },
+     {
+      "title": "PLTD incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BeosinAlert/status/1582181583343484928"
+     },
+     {
+      "title": "PLTD attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x8385625e9d8011f4ad5d023d64dc7985f0315b6a4be37424c7212fe4c10dafe0"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "PLTD"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "health-2022-10",
+    "date": "2022-10-20",
+    "project": "HEALTH",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Transfer Logic Flaw - burn from pair on every transfer",
+    "loss_usd": 4493,
+    "assets_stolen": "~16.64 BNB",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 10 月，HEALTH 代幣因 _transfer 函式的邏輯缺陷遭攻擊，損失約 16.64 BNB。攻擊者用 DODO 閃電貸借入 40 WBNB 買入 HEALTH，再對自己轉帳 0 枚 HEALTH 共 1,000 次，每次都會觸發從交易對銷毀 HEALTH，價格被推高後賣出獲利。",
+    "root_cause_zh": "HEALTH 的 _transfer 每次轉帳都會銷毀交易對持有的 HEALTH，而且沒有限制轉帳金額，連 0 金額的轉帳也會觸發。攻擊者因此能任意減少交易對的 HEALTH 餘額來操縱價格。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (HEALTH_exp.sol, BSC fork block 22,337,425; Total Lost ~16.64 BNB). USD estimated at ~$270/BNB (approximate BNB price on 2022-10-20): 16.64 x 270 = ~$4,493.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: HEALTH",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/HEALTH_exp.sol"
+     },
+     {
+      "title": "HEALTH incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1583073442433495040"
+     },
+     {
+      "title": "HEALTH attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xae8ca9dc8258ae32899fe641985739c3fa53ab1f603973ac74b424e165c66ccf"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "HEALTH"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "bego-2022-10",
+    "date": "2022-10-20",
+    "project": "BEGO",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "signature_message_verification",
+    "attack_vector": "Incorrect signature verification in mint (empty signature arrays)",
+    "loss_usd": 3240,
+    "assets_stolen": "~12 WBNB",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 10 月，BEGO 代幣的 mint 函式因簽章驗證錯誤遭攻擊，損失約 12 WBNB。攻擊者傳入空的簽章陣列就繞過了驗證，鑄造 1 兆枚 BEGO，再到 PancakeSwap 賣出換取 WBNB。",
+    "root_cause_zh": "mint 函式會逐一驗證傳入的 r、s、v 簽章陣列，卻沒有檢查陣列長度或最少簽章數。傳入空陣列時驗證迴圈完全不執行，直接被視為通過，任何人都能任意鑄幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (BEGO_exp.sol, BSC fork block 22,315,679; Total Lost ~12 WBNB). PoC calls mint(1e12 * 1e18, \"t\", attacker, [], [], []) and dumps the minted BEGO. USD estimated at ~$270/BNB (approximate BNB price on 2022-10-20): 12 x 270 = ~$3,240.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BEGO",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/BEGO_exp.sol"
+     },
+     {
+      "title": "BEGO incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1582892058800685058"
+     },
+     {
+      "title": "BEGO attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x9f4ef3cc55b016ea6b867807a09f80d1b2e36f6cd6fccfaf0182f46060332c57"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BEGO"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "ulme-2022-10",
+    "date": "2022-10-25",
+    "project": "ULME",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Access Control - buyMiner spends arbitrary users' USDT approvals",
+    "loss_usd": 250000,
+    "assets_stolen": "~250k US$ of users' USDT (attacker profit ~50k US$)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 10 月，ULME 代幣的 buyMiner 函式因缺乏權限檢查遭利用，約 25 萬美元的用戶 USDT 被動用，攻擊者獲利約 5 萬美元。攻擊者用 DODO 閃電貸借入 USDT 先買入 ULME，再對上百個曾授權 USDT 給 ULME 合約的地址呼叫 buyMiner，強迫這些地址用 USDT 買入 ULME 來推高價格，最後賣出 ULME 獲利。",
+    "root_cause_zh": "buyMiner(user, usdt) 沒有驗證呼叫者是否就是 user 本人，任何人都能動用其他用戶授權給 ULME 合約的 USDT 替對方下單，形成可被操控的強制買盤。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (ULME_exp.sol, BSC fork block 22,476,695). PoC lists 101 victim addresses and calls ULME.buyMiner(victim, 100*take/110-1) for each, sandwiched between a USDT->ULME buy and ULME->USDT sell. Loss uses the DeFiHackLabs parsed value (~$250k of victims' USDT; attacker profit ~$50k).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: ULME",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/ULME_exp.sol"
+     },
+     {
+      "title": "ULME incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1584839309781135361"
+     },
+     {
+      "title": "ULME incident analysis",
+      "publisher": "Medium",
+      "url": "https://medium.com/neptune-mutual/decoding-ulme-token-flash-loan-attack-56470d261787"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "ULME"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "vtf-token-2022-10",
+    "date": "2022-10-27",
+    "project": "VTF Token",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Incorrect reward calculation (reward claimed repeatedly across pre-registered contracts)",
+    "loss_usd": 50000,
+    "assets_stolen": "$50k (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 10 月，VTF 代幣因獎勵計算錯誤遭攻擊，損失約 5 萬美元。攻擊者事先用 CREATE2 部署 400 個合約並呼叫 updateUserBalance 登記，兩天後用 DODO 閃電貸借入 10 萬 USDT 買入 VTF，把同一批 VTF 依序轉過各合約並逐一領取獎勵，最後賣出換回 USDT。",
+    "root_cause_zh": "VTF 的 updateUserBalance 依地址當下的餘額與距上次更新的時間來計算獎勵，卻沒有確認這段期間是否真的持有代幣。同一筆代幣因此能在各個早已登記的地址重複領取獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (VTF_exp.sol, BSC fork block 22,535,101). PoC deploys 400 claimReward contracts, warps 2 days, flash-loans 100k USDT, and passes VTF through each contract calling updateUserBalance before selling. Loss uses the DeFiHackLabs parsed value.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: VTF Token",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/VTF_exp.sol"
+     },
+     {
+      "title": "VTF Token incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1585575129936977920"
+     },
+     {
+      "title": "VTF Token attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xc2d2d7164a9d3cfce1e1dac7dc328b350c693feb0a492a6989ceca7104eef9b7"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "VTF Token"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "bdex-2022-11",
+    "date": "2022-11-05",
+    "project": "BDEX (bVaults strategy)",
+    "project_type": "yield_vault",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Business Logic Flaw - public convertDustToEarned swap sandwiched",
+    "loss_usd": 5600,
+    "assets_stolen": "16 WBNB",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月，與 BDEX 相關的 bVaults 策略合約遭三明治式攻擊，損失約 16 WBNB。攻擊者先用 34 WBNB 買入 BDEX 推高價格，再呼叫公開的 convertDustToEarned，讓策略合約以被抬高的價格把持有的代幣換成 BDEX，接著賣出 BDEX 獲利。",
+    "root_cause_zh": "BvaultsStrategy 的 convertDustToEarned 任何人都能呼叫，而且直接以交易對的即時價格兌換、沒有滑價保護。攻擊者因此能在同一筆交易中先後操縱價格，讓策略合約用高價買入。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (BDEX_exp.sol, BSC fork block 22,629,431). PoC swaps 34 WBNB for BDEX on the BDEX/WBNB pair, calls BvaultsStrategy.convertDustToEarned(), then swaps BDEX back to WBNB. USD estimated at ~$350/BNB (approximate BNB price on 2022-11-05): 16 x 350 = ~$5,600.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BDEX",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/BDEX_exp.sol"
+     },
+     {
+      "title": "BDEX incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BeosinAlert/status/1588579143830343683"
+     },
+     {
+      "title": "BDEX attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xe7b7c974e51d8bca3617f927f86bf907a25991fe654f457991cbf656b190fe94"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BDEX"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "moocakectx-2022-11",
+    "date": "2022-11-07",
+    "project": "MooCAKECTX (Beefy vault)",
+    "project_type": "yield_vault",
+    "category": "economic_exploit",
+    "vuln_pattern": null,
+    "attack_vector": "FlashLoan Attack on vault reward harvesting",
+    "loss_usd": 140000,
+    "assets_stolen": "$140k (CAKE)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月，BSC 上 Beefy 的 mooCakeCTX 金庫遭閃電貸攻擊，損失約 14 萬美元。攻擊者先買入 CTK 轉入 PancakeSwap 的 SmartChef 獎勵池，再用 DODO 閃電貸借入 40 萬 BUSD 存入 Venus 並借出 5 萬 CAKE，把 CAKE 存入金庫、觸發策略 harvest 後全數提領，再歸還借款。",
+    "root_cause_zh": "金庫策略在存提款及 harvest 時會結算 SmartChef 的 CTK 獎勵並複投。攻擊者以閃電貸資金瞬間持有金庫的大部分份額，攫取原本屬於其他存款人的累積獎勵；PoC 並未明確呈現確切的計價缺陷。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (MooCAKECTX_exp.sol, BSC fork block 22,832,427). PoC buys CTK and sends it to SmartChef, flash-loans 400k BUSD from DODO, mints vBUSD, borrows 50k CAKE from Venus, calls BeefyVault.depositAll, StrategySyrup.harvest (via a helper contract), withdrawAll, then repays. A PoC comment notes profit may be higher without the harvest step, so the precise value-extraction mechanism is not clear from the PoC. Loss uses the DeFiHackLabs parsed value.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: MooCAKECTX",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/MooCAKECTX_exp.sol"
+     },
+     {
+      "title": "MooCAKECTX incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BeosinAlert/status/1589501207181393920"
+     },
+     {
+      "title": "MooCAKECTX attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x03d363462519029cf9a544d44046cad0c7e64c5fb1f2adf5dd5438a9a0d2ec8e"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "MooCAKECTX"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "sheepfarm-2022-11",
+    "date": "2022-11-16",
+    "project": "SheepFarm",
+    "project_type": "nft_gaming",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "input_validation",
+    "attack_vector": "No input validation - repeated register() calls",
+    "loss_usd": 275,
+    "assets_stolen": "~1 BNB",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月，BSC 上的農場遊戲 SheepFarm 因缺乏輸入驗證遭攻擊，損失約 1 BNB。攻擊者以同一個推薦人地址重複呼叫 register 200 次，再用 0.0005 BNB 購買寶石、升級村莊並出售，最後提領超額的 BNB。",
+    "root_cause_zh": "register 函式沒有檢查使用者是否已經註冊，攻擊者能重複註冊並累積註冊獎勵，再藉此升級村莊並換成 BNB 提領。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Record based on the DeFiHackLabs entry and PoC (SheepFarm_exp.sol, BSC fork block 23,088,156). PoC calls register(neighbor) 200 times, addGems with 0.0005 BNB, upgradeVillage x3, sellVillage and withdrawMoney(20000). USD estimated at ~$275/BNB (approximate BNB price on 2022-11-16): 1 x 275 = ~$275.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: SheepFarm",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/SheepFarm_exp.sol"
+     },
+     {
+      "title": "SheepFarm incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1592734292727455744"
+     },
+     {
+      "title": "SheepFarm attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x5735026e5de6d1968ab5baef0cc436cc0a3f4de4ab735335c5b1bd31fa60c582"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "SheepFarm"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "mevbot-private-tx-2022-09",
+    "date": "2022-09-13",
+    "project": "MevBot private tx",
+    "project_type": "trading_bot",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Unprotected pancakeCall on MEV bot drains its funds",
+    "loss_usd": 140000,
+    "assets_stolen": "~$140K in USDT, WBNB, BUSD and USDC held by the MEV bot",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "MEV 套利機器人合約（0x64dD...E1d）的 pancakeCall 函式缺乏呼叫者權限檢查，任何人都能傳入自訂參數觸發資金轉出。攻擊者藉此指定代幣，將機器人持有的 USDT、WBNB、BUSD、USDC 全數提領，損失約 14 萬美元。",
+    "root_cause_zh": "pancakeCall 未驗證呼叫來源，並將 token0/token1 交由外部呼叫者控制，使攻擊者能指定任意代幣並把機器人餘額轉走。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (BNB48MEVBot_exp.sol). PoC forks BSC block 21297409 and repeatedly calls the bot's pancakeCall with attacker-controlled token0/token1, draining each ERC20 balance. Loss taken from DeFiHackLabs parsed value ($140K).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: MevBot private tx",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/BNB48MEVBot_exp.sol"
+     },
+     {
+      "title": "MevBot private tx incident analysis",
+      "publisher": "Medium",
+      "url": "https://blocksecteam.medium.com/the-two-sides-of-the-private-tx-service-on-binance-smart-chain-a76917c3ce51"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "MevBot private tx"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "radt-dao-2022-09",
+    "date": "2022-09-23",
+    "project": "RADT-DAO",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Flash-loan funded pair reserve (skim/sync) manipulation",
+    "loss_usd": null,
+    "assets_stolen": "Undisclosed amount of USDT (loss figure not recorded)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "攻擊者以 DODO 閃電貸借入 USDT，先買入 RADT 代幣，再透過 wrap 合約將額外的 RADT 注入 USDT/RADT 交易對並呼叫 sync() 竄改儲備，之後高價賣出 RADT 套利。DeFiHackLabs 未記載明確損失金額。",
+    "root_cause_zh": "交易對可被 skim/sync 操縱——攻擊者將額外 RADT（一種手續費轉帳代幣）灌入 pair 後強制 sync 更新儲備，使現貨價格失真而能低買高賣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'pair manipulate') and PoC (RADT_exp.sol). PoC takes a 200,000 USDT DODO flash loan, buys RADT, uses wrap.withdraw to move RADT into the pair, calls pair.sync() to reprice, then sells. Loss amount not stated in the source material, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: RADT-DAO",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/RADT_exp.sol"
+     },
+     {
+      "title": "RADT-DAO incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1573252869322846209"
+     },
+     {
+      "title": "RADT-DAO incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xd692f71de2768017390395db815d34033013136c378177c05d0d46ef3b6f0897"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "RADT-DAO"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "bxh-2022-09",
+    "date": "2022-09-28",
+    "project": "BXH",
+    "project_type": "dex_amm",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flashloan spot-price manipulation of staking-pool reward",
+    "loss_usd": 40305,
+    "assets_stolen": "~40,085 USDT (DeFiHackLabs parsed $40,305)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "攻擊者從 USDT/WBNB 交易對取得閃電貸，透過 BXH 自有路由器在 BXH/USDT 交易對進行大額買賣以操縱現貨價格，再對 BXH 代幣質押池（TokenStakingPoolDelegate）呼叫 deposit 觸發以受操縱價格計算的獎勵，套走約 4 萬美元 USDT。",
+    "root_cause_zh": "質押池的獎勵計算依賴可被閃電貸即時操縱的交易對現貨價格，缺乏抗操縱的價格來源，使攻擊者能在拉抬價格後領取超額獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Flashloan & Price Oracle Manipulation') and PoC (BXH_exp.sol). PoC forks BSC block 21727289, flash-swaps USDT from the USDT/WBNB pair, trades on the BXH router to skew price, and calls the staking pool's deposit to harvest inflated rewards. PoC header states 40,085 USDT lost; used the DeFiHackLabs parsed value of $40,305 as instructed.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BXH",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/BXH_exp.sol"
+     },
+     {
+      "title": "BXH incident analysis",
+      "publisher": "jinse.com",
+      "url": "https://www.jinse.com/lives/319392.html"
+     },
+     {
+      "title": "BXH incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xa13c8c7a0c97093dba3096c88044273c29cebeee109e23622cd412dcca8f50f4"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BXH"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "babyswap-2022-10",
+    "date": "2022-10-01",
+    "project": "BabySwap",
+    "project_type": "dex_amm",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "input_validation",
+    "attack_vector": "Unvalidated factory parameter fakes swap-mining rewards",
+    "loss_usd": null,
+    "assets_stolen": "BABY reward tokens (amount not recorded), swapped to USDT",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "BabySwap 路由器允許呼叫者自行指定 factory 位址參數，攻擊者傳入自製的假 factory（回傳偽造的 pair 與儲備），透過 swapExactTokensForTokens 累積交易挖礦獎勵，再呼叫 takerWithdraw 領取 BABY 獎勵代幣並換成 USDT。DeFiHackLabs 未記載明確損失金額。",
+    "root_cause_zh": "交易挖礦獎勵邏輯信任使用者傳入且未經驗證的 factory 位址參數，攻擊者可用假 factory 偽造交易量以騙取獎勵代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Parameter Access Control') and PoC (BabySwap_exp.sol). PoC deploys a FakeFactory returning fake reserves, passes it in the router's factories[] parameter to accrue swap-mining rewards, then calls SwapMining.takerWithdraw and dumps BABY for USDT. Loss amount not stated in the source, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BabySwap",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/BabySwap_exp.sol"
+     },
+     {
+      "title": "BabySwap incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1576441612812836865"
+     },
+     {
+      "title": "BabySwap attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xcca7ea9d48e00e7e32e5d005b57ec3cac28bc3ad0181e4ca208832e62aa52efe"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BabySwap"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "rl-token-2022-10",
+    "date": "2022-10-01",
+    "project": "RL Token",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Repeated airdrop reward claim via LP token reuse",
+    "loss_usd": null,
+    "assets_stolen": "RL tokens / airdrop rewards, swapped to USDT (amount not recorded)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "攻擊者以 DODO 閃電貸買入 RL 並添加流動性取得 LP 代幣，接著用 create2 部署上百個合約，將同一批 LP 代幣在合約間轉移並各自呼叫 distributeAirdrop 重複領取空投獎勵，最後移除流動性並賣出 RL。DeFiHackLabs 未記載明確損失金額。",
+    "root_cause_zh": "空投獎勵（distributeAirdrop）依當下 LP 持有量發放卻未記錄已領取狀態，攻擊者藉由在多個合約間轉移同一批 LP 代幣而重複領獎。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Incorrect Reward calculation') and PoC (RL_exp.sol). PoC forks BSC block 21794289, takes a 450,000 USDT DODO flash loan, adds RL/USDT liquidity, warps 24h to pass a time check, deploys 100 create2 helper contracts and moves the same LP token between them to claim distributeAirdrop repeatedly. Loss amount not stated, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: RL Token",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/RL_exp.sol"
+     },
+     {
+      "title": "RL Token incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/CertiKAlert/status/1576195971003858944"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "RL Token"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "thunder-brawl-2022-10",
+    "date": "2022-10-01",
+    "project": "Thunder Brawl",
+    "project_type": "nft_gaming",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "reentrancy",
+    "attack_vector": "Reentrancy in claimReward via onERC721Received callback",
+    "loss_usd": null,
+    "assets_stolen": "Repeated game reward payouts (amount not recorded)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Thunder Brawl 遊戲的 HouseWallet 合約在發放獎勵並轉出 NFT 時，會觸發接收方的 onERC721Received 回呼，攻擊者於回呼中再次呼叫 claimReward，形成重入而重複領取獎勵。DeFiHackLabs 未記載明確損失金額。",
+    "root_cause_zh": "claimReward 在轉出 NFT（外部呼叫）後才更新狀態且缺乏重入防護，使 onERC721Received 回呼能在餘額尚未清零前重複領獎。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Reentrancy') and PoC (THB_exp.sol). PoC forks BSC block 21785004, calls houseWallet.shoot then claimReward; the contract's onERC721Received re-enters claimReward when the house balance still covers the payout. Loss amount not stated in the source, so loss_usd is null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Thunder Brawl",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/THB_exp.sol"
+     },
+     {
+      "title": "Thunder Brawl incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1575890733373849601"
+     },
+     {
+      "title": "Thunder Brawl incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x57aa9c85e03eb25ac5d94f15f22b3ba3ab2ef60b603b97ae76f855072ea9e3a0"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Thunder Brawl"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "transit-swap-2022-10",
+    "date": "2022-10-02",
+    "project": "Transit Swap",
+    "project_type": "dex_amm",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "input_validation",
+    "attack_vector": "Missing owner-address validation in transferFrom drains user approvals",
+    "loss_usd": 21000000,
+    "assets_stolen": "over $21 Million in user tokens (e.g. BUSDT) that had been approved to the swap contract",
+    "recovered_usd": null,
+    "recovery_status": "partial",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Transit Swap 的代幣領取合約（0xed1afc8...）在執行 transferFrom 時未正確驗證持有人位址，攻擊者可指定任何先前對該合約授權的無辜使用者，將其代幣轉給自己，造成逾 2100 萬美元損失。",
+    "root_cause_zh": "合約未驗證 transferFrom 的來源持有人位址，任由呼叫者傳入任意已授權使用者位址，直接盜取其授權額度內的代幣。",
+    "aftermath_zh": "依廣泛報導，攻擊者事後歸還大部分被盜資金（本資料來源未列明確切追回金額）。",
+    "confidence": "high",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Incorrect owner address validation') and PoC (TransitSwap_exp.sol). PoC forks BSC block 21816545 and sends crafted calldata to the TransitSwap contract so the Claimtokens helper (0xed1afc8...) transferFroms an arbitrary approving victim to the attacker. This matches the 'draining users' approvals' input_validation pattern. loss_usd from DeFiHackLabs parsed value ($21M). recovery_status set to 'partial' because it is widely documented that the Transit Swap attacker returned most of the stolen funds; exact recovered amount not in the source material, so recovered_usd left null.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Transit Swap",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/TransitSwap_exp.sol"
+     },
+     {
+      "title": "Transit Swap incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/TransitFinance/status/1576463550557483008"
+     },
+     {
+      "title": "Transit Swap attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x181a7882aac0eab1036eedba25bc95a16e10f61b5df2e99d240a16c334b9b189"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Transit Swap"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "res-token-2022-10",
+    "date": "2022-10-06",
+    "project": "RES-Token",
+    "project_type": "other",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash-loan pair price manipulation abusing token conversion logic",
+    "loss_usd": 290671,
+    "assets_stolen": "290,671 USDT",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "攻擊者以 USDT/WBNB 交易對閃電貸借入大量 USDT，反覆對 USDT/RES 交易對進行操縱性交易拉抬 RES 價格，並利用 RES 代幣的 thisAToB 轉換邏輯與 ALL 代幣互換，最終套走約 29 萬美元 USDT。",
+    "root_cause_zh": "RES 代幣的價格與 A/B 轉換機制受可被閃電貸即時操縱的交易對現貨價格影響，缺乏抗操縱設計，使攻擊者能低買高賣套利。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'pair manipulate') and PoC (RES_exp.sol). PoC forks BSC block 21948016, flash-swaps ~10M USDT from the USDT/WBNB pair, executes many swaps into the USDT/RES pair against a target user address, calls RES.thisAToB() and converts to ALL token before selling. The PoC is complex and the exact conversion mechanic is not fully clear, hence low confidence. loss_usd from DeFiHackLabs parsed value (290,671 USDT).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: RES-Token",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/RES_exp.sol"
+     },
+     {
+      "title": "RES-Token incident analysis",
+      "publisher": "Medium",
+      "url": "https://quillaudits.medium.com/res-token-290k-flash-loan-exploit-quillaudits-9300657fff7b"
+     },
+     {
+      "title": "RES-Token incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xe59fa48212c4ee716c03e648e04f0ca390f4a4fc921a890fded0e01afa4ba96d"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "RES-Token"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "carrot-2022-10",
+    "date": "2022-10-10",
+    "project": "Carrot",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Unprotected public function grants fee-exclusion, bypassing allowance check",
+    "loss_usd": 31318,
+    "assets_stolen": "31,318 BUSDT",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Carrot 代幣的 transReward 為無權限保護的公開函式，攻擊者藉其將自己設為 Pool 擁有者；當轉帳觸發 _beforeTransfer 時，攻擊者位址被加入免手續費名單，進而在 transferFrom 中略過授權額度檢查，盜走使用者代幣並換成約 3.1 萬美元 BUSDT。",
+    "root_cause_zh": "transReward 公開函式缺乏存取控制，讓攻擊者取得 Pool 擁有者身分後被列入 _isExcludedFromFee，使 transferFrom 略過 allowance 檢查而能任意轉走他人代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "high",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'Public functionCall') and PoC (Carrot_exp.sol), which includes a detailed root-cause writeup. PoC forks BSC block 22055611, calls the unprotected transReward to set itself as pool owner; _beforeTransfer then adds it to _isExcludedFromFee, so transferFrom skips the allowance sub() and drains a victim's CARROT, swapped to BUSDT. NOTE: the DeFiHackLabs loss_usd_parsed field (31318000000000) is an erroneous parse; BUSDT is a ~$1 stablecoin and the PoC header states '$31,318 BUSDT was lost', so loss_usd is set to 31318.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Carrot",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/Carrot_exp.sol"
+     },
+     {
+      "title": "Carrot incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1579908411235237888"
+     },
+     {
+      "title": "Carrot incident analysis",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xa624660c29ee97f3f4ebd36232d8199e7c97533c9db711fa4027994aa11e01b9"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Carrot"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "atk-2022-10",
+    "date": "2022-10-12",
+    "project": "ATK",
+    "project_type": "yield_vault",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flashloan manipulation of getPrice() inflates claim reward",
+    "loss_usd": 127000,
+    "assets_stolen": "~127K BUSDT",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "Journey of Awakening（ATK）的獎勵領取合約以 ATK 代幣的 getPrice() 計價，攻擊者以閃電貸操縱 ATK/BUSDT 交易對價格後呼叫 claimToken1() 領取被高估的獎勵，損失約 12.7 萬美元 BUSDT。",
+    "root_cause_zh": "獎勵計算所用的 getPrice() 直接取自可被閃電貸操縱的交易對現貨價格，缺乏抗操縱來源，使攻擊者能拉高價格後領取超額獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (root cause 'FlashLoan manipulate price') and PoC (ATK_exp.sol). PoC forks BSC block 22102838, flash-swaps BUSDT out of the ATK/BUSDT pair to skew price, then has the exploit contract call claimToken1() on the deposit/claim reward contract which prices rewards via ATK.getPrice(). loss_usd is an estimate: the source lost text is '~127K BUSD' and BUSD is a ~$1 stablecoin, so approximately $127,000.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: ATK",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/ATK_exp.sol"
+     },
+     {
+      "title": "ATK incident analysis",
+      "publisher": "certik.com",
+      "url": "https://www.certik.com/resources/blog/1YsQo8TnxCvwalqvtkFLtC-journey-of-awakening-incident-analysis"
+     },
+     {
+      "title": "ATK attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x55983d8701e40353fee90803688170a16424ee702f6b21bb198bb8e7282112cd"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "ATK"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "uearnpool-2022-11",
+    "date": "2022-11-17",
+    "project": "UEarnPool",
+    "project_type": "staking",
+    "category": "economic_exploit",
+    "vuln_pattern": null,
+    "attack_vector": "Flash loan + sybil referral chain to farm team (invitation) rewards",
+    "loss_usd": 24000,
+    "assets_stolen": "$24k (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月 17 日，BSC 上的 UEarnPool 質押合約遭攻擊，損失約 2.4 萬美元。攻擊者以 create2 部署 22 個合約並依序互相綁定邀請關係，再透過 PancakeSwap 閃電兌換借入 242 萬 USDT，先在邀請鏈末端的合約大額質押 240 萬 USDT，讓整條邀請鏈的團隊業績達到最高等級。接著由各合約逐一質押 2 萬 USDT 並領取團隊獎勵，把池中的 USDT 套走。",
+    "root_cause_zh": "claimTeamReward() 依下線當下的團隊質押量（teamAmount）計算各等級獎勵並立即發放，沒有防範自建的女巫邀請鏈，也擋不住用閃電貸瞬間墊高業績。結果每個帳號只要質押 2 萬 USDT，就能一次領取約 16.2 萬 USDT 的團隊獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (UEarnPool_exp.sol). Loss uses the parsed DeFiHackLabs figure. The PoC header explains the level-based team reward math (162,000 USDT reward per claim vs 20,000 USDT stake). Classified as economic_exploit because the reward code works as written but the referral design is abusable with flash loans; it could also be read as business_logic.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: UEarnPool",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/UEarnPool_exp.sol"
+     },
+     {
+      "title": "UEarnPool incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/CertiKAlert/status/1593094922160128000"
+     },
+     {
+      "title": "UEarnPool attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x824de0989f2ce3230866cb61d588153e5312151aebb1e905ad775864885cd418"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "UEarnPool"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "annex-finance-2022-11",
+    "date": "2022-11-19",
+    "project": "Annex Finance",
+    "project_type": "lending",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "input_validation",
+    "attack_vector": "Unverified flash-swap callback in Liquidator contract",
+    "loss_usd": 3000,
+    "assets_stolen": "$3k (WBNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月 19 日，Annex Finance 在 BSC 上的清算合約（Liquidator）遭攻擊，損失約 3,000 美元。攻擊者以 DODO 閃電貸借入 8 WBNB，和自己發行的代幣建立 PancakeSwap 交易對，再發起閃電兌換，把 Liquidator 設成接收者並附上偽造的回呼資料。觸發回呼後，攻擊者用 transferFrom 取走 Liquidator 持有的 WBNB。",
+    "root_cause_zh": "Liquidator 的閃電兌換回呼函式沒有驗證呼叫者是否為合法交易對，也沒有檢查回呼資料是否由自己發起。攻擊者可傳入自己控制的偽造 cToken 等地址（PoC 中的 liquidateBorrow、redeem 都直接回傳 0）；從 PoC 事後能以 transferFrom 轉走 WBNB 來看，回呼流程讓 Liquidator 對攻擊者的地址授權了 WBNB。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (Annex_exp.sol). Loss uses the parsed DeFiHackLabs figure. The approval mechanism is inferred from the PoC's final WBNB.transferFrom(Liquidator, attacker, ...) call; the Liquidator source is not included in the PoC.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: AnnexFinance",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/Annex_exp.sol"
+     },
+     {
+      "title": "AnnexFinance incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/AnciliaInc/status/1593690338526273536"
+     },
+     {
+      "title": "AnnexFinance attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x3757d177482171dcfad7066c5e88d6f0f0fe74b28f32e41dd77137cad859c777"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "AnnexFinance"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "sdao-2022-11",
+    "date": "2022-11-21",
+    "project": "sDAO",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Business logic flaw in LP staking reward calculation (balance-based reward per token + public withdrawTeam)",
+    "loss_usd": 13000,
+    "assets_stolen": "$13k (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月 21 日，BSC 上 sDAO 代幣內建的 LP 質押獎勵機制遭攻擊，損失約 1.3 萬美元。攻擊者以 DODO 閃電貸借入 500 USDT，買入 sDAO、加入流動性後質押一半 LP，並把 sDAO 轉入交易對以墊高 totalStakeReward。接著呼叫 withdrawTeam() 把合約持有的 LP 轉走，只轉回極少量 LP，使每單位獎勵暴增，領到大量 sDAO 後換成 USDT。",
+    "root_cause_zh": "sDAO 以合約當下持有的 LP 餘額計算每單位質押獎勵，而不是以內部記帳的總質押量計算。withdrawTeam() 又可由攻擊者呼叫、清空合約內的 LP，使分母變得極小，攻擊者的質押部位因此能領取遠超應得的獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (SDAO_exp.sol). Loss uses the parsed DeFiHackLabs figure. Mechanism inferred from PoC call sequence (stakeLP, transfer to pair, withdrawTeam(Pair), tiny LP transfer, getReward).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: sDAO",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/SDAO_exp.sol"
+     },
+     {
+      "title": "sDAO incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/CertiKAlert/status/1594615286556393478"
+     },
+     {
+      "title": "sDAO attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xb3ac111d294ea9dedfd99349304a9606df0b572d05da8cedf47ba169d10791ed"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "sDAO"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "aur-2022-11",
+    "date": "2022-11-22",
+    "project": "AUR (AurumNodePool)",
+    "project_type": "staking",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Lack of permission check on changeNodePrice / changeRewardPerNode",
+    "loss_usd": 13000,
+    "assets_stolen": "$13k (BNB via dumped AUR)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月 22 日，BSC 上 Aurum（AUR）的節點獎勵合約 AurumNodePool 遭攻擊，損失約 1.3 萬美元。攻擊者只用 0.01 BNB 買入少量 AUR，就直接呼叫 changeNodePrice() 修改節點價格並建立節點。接著呼叫 changeRewardPerNode() 把每個節點的獎勵設成極大值，領取巨額 AUR 後賣成 BNB。",
+    "root_cause_zh": "AurumNodePool 的 changeNodePrice() 與 changeRewardPerNode() 等管理參數函式缺少權限檢查（例如 onlyOwner），任何人都能任意修改節點價格與獎勵參數，並立即領取灌大的獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (AUR_exp.sol). Loss uses the parsed DeFiHackLabs figure. The PoC references two attack transactions.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: AUR",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/AUR_exp.sol"
+     },
+     {
+      "title": "AUR incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/AnciliaInc/status/1595142246570958848"
+     },
+     {
+      "title": "AUR incident analysis",
+      "publisher": "phalcon.blocksec.com",
+      "url": "https://phalcon.blocksec.com/tx/bsc/0xb3bc6ca257387eae1cea3b997eb489c1a9c208d09ec4d117198029277468e25d"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "AUR"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "mbc-zzsh-2022-11",
+    "date": "2022-11-29",
+    "project": "MBC & ZZSH",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Unprotected swapAndLiquifyStepv1() combined with flash-loan price manipulation",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in DeFiHackLabs entry (USDT drained from MBC/USDT and ZZSH/USDT pools)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月 29 日，BSC 上的 MBC 與 ZZSH 兩個代幣遭同一手法攻擊。攻擊者以 DODO 閃電貸借入 USDT，先用 15 萬 USDT 大量買入代幣、拉高價格，再呼叫公開的 swapAndLiquifyStepv1()，迫使代幣合約在被操縱的價格下把持有的資金注入交易對，隨後賣出手上的代幣，換回比投入更多的 USDT。DeFiHackLabs 條目未記載損失金額。",
+    "root_cause_zh": "swapAndLiquifyStepv1() 沒有存取控制，任何人都能在任意時機觸發代幣合約的換幣和加流動性流程。攻擊者在自己大量買入之後觸發（PoC 註解顯示 MBC/USDT 比率由約 1.137 降到約 0.0053），並先轉入 1001 wei USDT 影響 _isAddLiquidityV1() 的判斷，再以高價賣出。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (MBC_ZZSH_exp.sol). The DeFiHackLabs entry gives no loss figure, so loss_usd is null. DeFiHackLabs label: Business Logic Flaw & Access Control; the purpose of the 1001-wei USDT transfer (_isAddLiquidityV1 check, likely to avoid sell fees) is inferred from the PoC comment.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: MBC & ZZSH",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/MBC_ZZSH_exp.sol"
+     },
+     {
+      "title": "MBC & ZZSH incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/CertiKAlert/status/1597639717096460288"
+     },
+     {
+      "title": "MBC & ZZSH incident analysis",
+      "publisher": "phalcon.blocksec.com",
+      "url": "https://phalcon.blocksec.com/tx/bsc/0xdc53a6b5bf8e2962cf0e0eada6451f10956f4c0845a3ce134ddb050365f15c86"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "MBC & ZZSH"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "seaman-2022-11",
+    "date": "2022-11-29",
+    "project": "SEAMAN",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Business logic flaw: tiny transfers repeatedly trigger token's internal swap, pumping GVC price",
+    "loss_usd": null,
+    "assets_stolen": "Not stated in DeFiHackLabs entry (USDT profit via GVC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 11 月 29 日，BSC 上的 SEAMAN 代幣遭攻擊。攻擊者以 DODO 閃電貸借入 80 萬 USDT，先少量買入 SEAMAN，再用 50 萬 USDT 大量買入 GVC。接著連續 20 次把 1 wei 的 SEAMAN 轉入交易對，每次轉帳都觸發 SEAMAN 合約的內部換幣邏輯並推高 GVC 價格，最後把 GVC 賣回 USDT 獲利。DeFiHackLabs 條目未記載損失金額。",
+    "root_cause_zh": "SEAMAN 每次轉帳都會自動執行合約內的換幣或分紅流程，PoC 顯示這會買入 GVC、推高其價格，而且任何人用極小金額轉帳就能反覆觸發。攻擊者事先大量持有 GVC 後觸發這個流程，等於讓合約的資金替攻擊者拉抬價格。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (SEAMAN_exp.sol). The DeFiHackLabs entry gives no loss figure, so loss_usd is null. The exact internal swap behavior of SEAMAN is inferred from the PoC flow (20 x 1-wei transfers to the pair followed by profitable GVC sale).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: SEAMAN",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/SEAMAN_exp.sol"
+     },
+     {
+      "title": "SEAMAN incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1597493955939405825"
+     },
+     {
+      "title": "SEAMAN attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x6f1af27d08b10caa7e96ec3d580bf39e29fd5ece00abda7d8955715403bf34a8"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "SEAMAN"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "apc-2022-12",
+    "date": "2022-12-01",
+    "project": "APC",
+    "project_type": "dex_amm",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash loan & spot price manipulation of APC/MUSD swap contract",
+    "loss_usd": 6000,
+    "assets_stolen": "$6k (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 1 日，BSC 上負責 APC 與 MUSD 互換的兌換合約（TransparentUpgradeableProxy）遭攻擊，損失約 6,000 美元。攻擊者以 DODO 閃電貸借入 50 萬 USDT，在 PancakeSwap 買入 APC 拉高價格，隨即在兌換合約用被灌高的價格把 10 萬 APC 換成 MUSD。接著賣出 APC 壓低價格，再以正常價格把 MUSD 換回 APC 並賣出獲利，共發動兩筆攻擊交易。",
+    "root_cause_zh": "該兌換合約直接以 PancakeSwap APC/USDT 交易對的即時現貨價格作為 APC 與 MUSD 的兌換報價，可在同一筆交易內用閃電貸操縱。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (APC_exp.sol). Loss uses the parsed DeFiHackLabs figure. PoC lists a first and a second attack transaction.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: APC",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/APC_exp.sol"
+     },
+     {
+      "title": "APC incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1598262002010378241"
+     },
+     {
+      "title": "APC attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xbcaecea2044101c80f186ce5327bec796cd9e054f0c240ddce93e2aead337370"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "APC"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "rfb-2022-12",
+    "date": "2022-12-05",
+    "project": "RFB",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Predictable on-chain randomness exploited with try/revert loop",
+    "loss_usd": 3480,
+    "assets_stolen": "12 BNB",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 5 日，BSC 上的 RFB 代幣遭攻擊，損失約 12 BNB。攻擊者以 DODO 閃電貸借入 20 WBNB，在迴圈中用略有差異的金額反覆「買入 RFB 後立即賣出」。每一輪都以 try/catch 搭配 require 檢查，只保留有獲利的結果；無利可圖時就讓該輪交易回滾。",
+    "root_cause_zh": "RFB 在買賣時用可預測的鏈上資料產生隨機結果（DeFiHackLabs 標註為隨機數可被預測）。攻擊者可在同一筆交易內試算，只接受有利的結果、不利時整輪回滾，等於零風險地反覆抽中獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (RFB_exp.sol). USD estimate: 12 BNB x ~$290 (approximate BNB price in early December 2022) = ~$3,480. Predictable randomness mapped to business_logic as the closest available pattern.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: RFB",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/RFB_exp.sol"
+     },
+     {
+      "title": "RFB incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1599991294947778560"
+     },
+     {
+      "title": "RFB attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xcc8fdb3c6af8bb9dfd87e913b743a13bbf138a143c27e0f387037887d28e3c7a"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "RFB"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "bbox-2022-12",
+    "date": "2022-12-05",
+    "project": "BBOX",
+    "project_type": "other",
+    "category": "economic_exploit",
+    "vuln_pattern": null,
+    "attack_vector": "FlashLoan price manipulation with helper contract bypassing sell time limit",
+    "loss_usd": null,
+    "assets_stolen": "12k (unit not specified; WBNB profit)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 5 日，BSC 上的 BBOX 代幣遭閃電貸攻擊，DeFiHackLabs 記載損失為「12k」（未註明單位）。攻擊者從 DODO 借出池中全部 WBNB，用 1,300 WBNB 買入 BBOX 並直接送到自己部署的輔助合約，以繞過 BBOX 的賣出時間限制。之後由輔助合約把 BBOX 轉回攻擊者，再賣出其中 90% 換回 WBNB 獲利。",
+    "root_cause_zh": "PoC 顯示 BBOX 設有「買入後一段時間內不得賣出」的限制，但攻擊者只要用另一個合約收幣再轉出就能繞過，因此能在同一筆交易內完成買入、轉帳與賣出的價格操縱套利。確切的獲利機制，PoC 並未完整呈現。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "low",
+    "notes": "Based on the DeFiHackLabs entry and PoC (BBOX_exp.sol). The lost text '12k' has no unit (possibly USD), so loss_usd is left null rather than assumed. The PoC does not show BBOX token internals, so the precise profit mechanism is unclear; category chosen from the DeFiHackLabs label 'FlashLoan price manipulation'.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BBOX",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/BBOX_exp.sol"
+     },
+     {
+      "title": "BBOX incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/AnciliaInc/status/1599599614490877952"
+     },
+     {
+      "title": "BBOX attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xac57c78881a7c00dfbac0563e21b5ae3a8e3f9d1b07198a27313722a166cc0a3"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BBOX"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "aes-2022-12",
+    "date": "2022-12-07",
+    "project": "AES",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Deflationary fee logic abuse via skim loop + distributeFee() + sync() (flash-loan funded)",
+    "loss_usd": 60000,
+    "assets_stolen": "$60k (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 7 日，BSC 上的通縮型代幣 AES 遭攻擊，損失約 6 萬美元。攻擊者以 DODO 閃電貸借入 10 萬 USDT 買入 AES，把一半的 AES 轉入 AES/USDT 交易對，再連續 37 次呼叫 skim() 把多出的代幣轉回交易對自己，最後一次 skim 給自己。接著呼叫 distributeFee() 與 sync()，使交易對的 AES 儲備大減、價格暴漲，再賣出 AES 換得大量 USDT。",
+    "root_cause_zh": "AES 在交易對轉出代幣時會累計手續費，distributeFee() 則直接從交易對地址扣除這些累計的代幣。攻擊者用 skim() 讓交易對反覆轉帳給自己來灌大累計手續費，再觸發 distributeFee() 與 sync()，削減交易對的 AES 儲備、操縱價格。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry and PoC (AES_exp.sol). Loss uses the parsed DeFiHackLabs figure. The fee-accrual mechanism is inferred from the PoC sequence (37 x skim to pair, skim to self, distributeFee, sync, sell).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: AES (Deflationary token)",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/AES_exp.sol"
+     },
+     {
+      "title": "AES (Deflationary token) incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1600442137811689473"
+     },
+     {
+      "title": "AES (Deflationary token) attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xca4d0d24aa448329b7d4eb81be653224a59e7b081fc7a1c9aad59c5a38d0ae19"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "AES (Deflationary token)"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "tifitoken-2022-12",
+    "date": "2022-12-10",
+    "project": "TIFI Finance (TIFIToken)",
+    "project_type": "lending",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "Flash loan price manipulation of lending collateral pricing (getReserves)",
+    "loss_usd": 24969,
+    "assets_stolen": "87 WBNB",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 10 日，TIFI Finance 的借貸合約遭閃電貸價格操縱攻擊，攻擊者借出合約內全部 TIFI 代幣並換成 WBNB，損失約 87 WBNB。攻擊者先以閃電兌換取得 WBNB 與 BUSD，將 BUSD 存入作為抵押，再於 TIFI 自有路由器的 WBNB/BUSD 池大量兌換以扭曲儲備量，隨即借出 TIFI 並在 PancakeSwap 賣出。",
+    "root_cause_zh": "TIFI Finance 的 borrow() 直接讀取 WBNB/BUSD 流動性池 getReserves() 的即時儲備量作為定價依據，攻擊者在同一筆交易中以大額兌換改變儲備比例，使抵押品與借款的相對估值失真，因而能借出合約中全部的 TIFI 代幣。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (FlashLoan price manipulation) and PoC TIFI_exp.sol. USD estimated as 87 WBNB x ~US$287/BNB (approximate BNB price on 2022-12-10).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: TIFIToken",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/TIFI_exp.sol"
+     },
+     {
+      "title": "TIFIToken incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1601492605535399936"
+     },
+     {
+      "title": "TIFIToken attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x1c5272ce35338c57c6b9ea710a09766a17bbf14b61438940c3072ed49bfec402"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "TIFIToken"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "bgld-2022-12",
+    "date": "2022-12-12",
+    "project": "BGLD",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "FlashLoan price manipulation via deflationary token skim/sync",
+    "loss_usd": 18000,
+    "assets_stolen": "~$18k (WBNB and USDT extracted from BGLD pools)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 12 日，通縮型代幣 BGLD 遭閃電貸攻擊，損失約 1.8 萬美元。攻擊者自 DODO 借入 125 WBNB 換成舊版 BGLD，利用代幣轉帳機制搭配交易對的 skim() 與 sync() 壓低池中 BGLD 儲備，再以極少量 BGLD 換出大量 WBNB；並對 BGLD/DEBT 交易對重複同樣手法，最後透過 migrate() 將舊 BGLD 轉為新 BGLD，換成 DEBT 再換成 USDT 獲利。",
+    "root_cause_zh": "舊版 BGLD 的通縮轉帳邏輯在交易對以 skim() 轉出超額代幣時會額外扣減交易對的餘額，攻擊者先向交易對轉入約池中餘額 10 倍的 BGLD，再呼叫 skim() 與 sync()，使池中 BGLD 儲備被壓到極低，AMM 價格嚴重失真，得以用少量 BGLD 換走池中大部分 WBNB 與 DEBT。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (FlashLoan price manipulation, lost $18k) and PoC BGLD_exp.sol. Classified as a token business-logic bug (deflationary transfer + skim/sync) rather than oracle manipulation, since no external oracle is read; the exact fee mechanism is inferred from the PoC steps.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BGLD (Deflationary token)",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/BGLD_exp.sol"
+     },
+     {
+      "title": "BGLD (Deflationary token) incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1602335214356660225"
+     },
+     {
+      "title": "BGLD (Deflationary token) attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xea108fe94bfc9a71bb3e4dee4a1b0fd47572e6ad6aba8b2155ac44861be628ae"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BGLD (Deflationary token)"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "nmbplatform-2022-12",
+    "date": "2022-12-14",
+    "project": "Nmbplatform (Nimbus)",
+    "project_type": "staking",
+    "category": "oracle_price_manipulation",
+    "vuln_pattern": null,
+    "attack_vector": "FlashLoan price manipulation of fixed-APY staking rewards",
+    "loss_usd": null,
+    "assets_stolen": "76k (unit not specified in source; GNIMB/NIMB rewards sold for WBNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 14 日，Nimbus 平台（Nmbplatform）的固定年化質押獎勵合約遭價格操縱攻擊，DeFiHackLabs 記載損失為「76k」。攻擊者事先以三個合約分別質押 GNIMB，約 8 天後透過 DODO 閃電貸與 Biswap 閃電兌換借入大量 WBNB，在 Nimbus 路由器中大量買入 NIMB 拉抬價格，再領取被放大的 GNIMB 獎勵並賣出獲利。",
+    "root_cause_zh": "StakingRewardFixedAPY 與 LockStakingRewardFixedAPY 等獎勵合約依據 Nimbus DEX 交易對的即時兌換價格換算應發放的獎勵數量，攻擊者可在同一筆交易中以閃電貸資金操縱 NBU_WBNB/NIMB 價格，使 earned() 計算出的 GNIMB 獎勵遠高於正常值。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (FlashLoan price manipulation) and PoC Nmbplatform_exp.sol (comment 'Reward Price Manipulation'). The entry's lost text is '76k' with no unit, so loss_usd is left null; it is likely ~US$76k but this is not stated. The PoC uses deal() to top up one reward contract, which is a test simplification.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: Nmbplatform",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/Nmbplatform_exp.sol"
+     },
+     {
+      "title": "Nmbplatform incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1602877048124735489"
+     },
+     {
+      "title": "Nmbplatform attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x42f56d3e86fb47e1edffa59222b33b73e7407d4b5bb05e23b83cb1771790f6c1"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "Nmbplatform"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "fpr-2022-12",
+    "date": "2022-12-14",
+    "project": "FPR",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "access_control",
+    "attack_vector": "Access control: unprotected setAdmin() then remaining() withdrawal",
+    "loss_usd": 29000,
+    "assets_stolen": "~$29k (FPR tokens and FPR/USDT LP tokens, sold for USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 14 日，與 FPR 代幣相關的四個合約遭攻擊，損失約 2.9 萬美元。攻擊者對每個合約呼叫未受保護的 setAdmin() 將自己設為管理員，再呼叫 remaining() 提走合約中的 FPR 代幣與 FPR/USDT LP 代幣，最後移除流動性並將 FPR 全數換成 USDT。",
+    "root_cause_zh": "這些合約的 setAdmin() 缺乏任何權限檢查，任何人都能把自己設為管理員，進而呼叫原本僅限管理員使用的 remaining(to, token)，將合約內全部代幣轉到任意地址。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (Access Control, $29k) and PoC FPR_exp.sol, whose header lists Total Lost ~$29k, attacker 0xE3104e645BC3f6fD821930a6a39EE509a0E87D3b and four attack transactions.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: FPR",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/FPR_exp.sol"
+     },
+     {
+      "title": "FPR incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1603226968706936832"
+     },
+     {
+      "title": "FPR incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/chainlight_io/status/1603282848311480320"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "FPR"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "dfs-2022-12",
+    "date": "2022-12-30",
+    "project": "DFS",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Insufficient validation + flashloan (repeated skim to the pair itself)",
+    "loss_usd": 1450,
+    "assets_stolen": "~$1,450 (USDT from the DFS/USDT pool)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2022 年 12 月 30 日，DFS 代幣遭閃電貸攻擊，損失約 1,450 美元。攻擊者自 USDT/CCDS 交易對閃電兌換借入 USDT，轉入 DFS/USDT 交易對後換出近半 DFS，再將 DFS 轉回交易對並連續 12 次以交易對本身為接收者呼叫 skim()，最後以放大後的 DFS 換走池中 99.9% 的 USDT 並歸還閃電貸。",
+    "root_cause_zh": "DFS 代幣合約的轉帳邏輯驗證不足（DeFiHackLabs 標記為 Insufficient validation），當交易對以 skim() 將超額 DFS 轉給自己時，其餘額會被異常放大，攻擊者藉此累積大量 DFS，再用來兌換交易對中的 USDT。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (Insufficient validation + flashloan, $1450) and PoC DFS_exp.sol, whose header lists Total Lost ~1,450 US$ and vulnerable contract 0x2B806e6D78D8111dd09C58943B9855910baDe005. The exact balance-inflation mechanism on self-skim is inferred from the PoC steps.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: DFS",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/DFS_exp.sol"
+     },
+     {
+      "title": "DFS incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/CertiKAlert/status/1608788290785665024"
+     },
+     {
+      "title": "DFS attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0xcddcb447d64c2ce4b3ac5ebaa6d42e26d3ed0ff3831c08923c53ea998f598a7c"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "DFS"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "gds-2023-01",
+    "date": "2023-01-03",
+    "project": "GDS",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Business logic flaw: LP reward claimed repeatedly with the same flash-loaned LP tokens",
+    "loss_usd": 180000,
+    "assets_stolen": "~$180k (USDT)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2023 年 1 月 3 日，GDS 代幣的 LP 獎勵機制遭攻擊，損失約 18 萬美元。攻擊者先部署 100 個輔助合約，各自持有 LP 並將等值約 100 USDT 的 GDS 轉入銷毀地址；約 1,100 個區塊後透過兩層閃電貸借入大量 USDT 加入 GDS/USDT 流動性，再將同一批 LP 代幣依序轉入每個輔助合約觸發獎勵，最後移除流動性並將 GDS 賣回 USDT。",
+    "root_cause_zh": "GDS 合約依據觸發獎勵當下地址持有的 LP 代幣餘額分配獎勵，未考量持有時間，也未防止同一批 LP 在不同地址間轉移後重複領取，使攻擊者能以閃電貸取得的單一批 LP 代幣在 100 個合約間輪流領取獎勵。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (Business Logic Flaw, $180k) and PoC GDS_exp.sol; the reward-eligibility details are inferred from the PoC's ClaimReward helper contracts.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: GDS",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/GDS_exp.sol"
+     },
+     {
+      "title": "GDS incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/peckshield/status/1610095490368180224"
+     },
+     {
+      "title": "GDS incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1610167174978760704"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "GDS"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "bra-2023-01",
+    "date": "2023-01-10",
+    "project": "BRA",
+    "project_type": "other",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "business_logic",
+    "attack_vector": "Business logic flaw: double tax credited to LP pair without sync(), drained via skim()",
+    "loss_usd": 224000,
+    "assets_stolen": "819 BNB (~$224k)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2023 年 1 月 10 日，BRA 代幣遭閃電貸攻擊，損失 819 BNB（約 22.4 萬美元），分兩筆交易分別獲利約 675 與 144 WBNB。攻擊者自 DODO 借入 1,400 WBNB，將其中 1,000 BNB 換成 BRA 後全數轉入 BRA/USDT 交易對，再以交易對本身為接收者連續呼叫 skim() 101 次，使交易對的 BRA 餘額不斷膨脹，最後將多出的 BRA 換成 USDT 再換回 WBNB。",
+    "root_cause_zh": "BRA 代幣在 _transfer() 中實作稅費邏輯，當發送方或接收方為 LP 交易對時會將雙倍稅費計入交易對，卻未呼叫 sync() 更新儲備；攻擊者因此能反覆以 skim() 讓交易對自我轉帳、累積失衡的超額餘額，再將其兌換取走。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (Business Logic Flaw, 819 BNB ~224k$) and PoC BRA_exp.sol, whose header gives the root cause, attacker 0x67a909f2953fb1138bea4b60894b51291d2d0795 and two attack txs (675 + 144 WBNB). loss_usd uses the entry's own ~US$224k figure (about US$273/BNB).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: BRA",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/BRA_exp.sol"
+     },
+     {
+      "title": "BRA incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/CertiKAlert/status/1612674916070858753"
+     },
+     {
+      "title": "BRA incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1612701106982862849"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "BRA"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "ufdao-2023-01",
+    "date": "2023-01-11",
+    "project": "UFDao",
+    "project_type": "dao_governance",
+    "category": "operational_error",
+    "vuln_pattern": null,
+    "attack_vector": "Incorrect parameter setting (public offer of DAO LP tokens)",
+    "loss_usd": 90000,
+    "assets_stolen": "~$90k (USDC from the UF DAO treasury)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2023 年 1 月 11 日，UF DAO 遭攻擊，損失約 9 萬美元。攻擊者僅以 0.4 BNB 換得 USDC，透過 Shop 合約的 buyPublicOffer() 購買 UF DAO 的 LP 代幣（UFT），再呼叫 burn() 依比例贖回 DAO 金庫中的 USDC，接著以取得的 USDC 再購買 1,000 枚 LP 並銷毀，以此套利。",
+    "root_cause_zh": "DeFiHackLabs 將根因標記為「參數設定錯誤」：UF DAO 公開募售（public offer）的參數設定使 LP 代幣的售價低於每單位 LP 可贖回的金庫資產價值，攻擊者因此能以低價購入 LP，再透過 burn() 按比例提領金庫中的 USDC。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (Incorrect Parameter Setting, $90k) and PoC UFDao_exp.sol. Categorized as operational_error (misconfigured public-offer parameters); the precise misconfigured value is inferred from the buy-then-burn flow in the PoC.",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: UFDao",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/UFDao_exp.sol"
+     },
+     {
+      "title": "UFDao incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1613507804412940289"
+     },
+     {
+      "title": "UFDao attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x933d19d7d822e84e34ca47ac733226367fbee0d9c0c89d88d431c4f99629d77a"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "UFDao"
+   },
+   "facts": null,
+   "scope": null
+  },
+  {
+   "record": {
+    "id": "omniestate-2023-01",
+    "date": "2023-01-17",
+    "project": "OmniEstate",
+    "project_type": "staking",
+    "category": "smart_contract_bug",
+    "vuln_pattern": "input_validation",
+    "attack_vector": "No input parameter check in staking invest()",
+    "loss_usd": 70000,
+    "assets_stolen": "~$70k (236 BNB)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "bsc_only",
+    "summary_zh": "2023 年 1 月 17 日，OmniEstate 的 ORT 質押池遭攻擊，損失約 7 萬美元（236 BNB）。攻擊者以 1 WBNB 換得 ORT，呼叫 invest(0, 1) 以結束日期 0、數量 1 建立質押，接著立即呼叫 withdrawAndClaim() 提領，取得大量 ORT 並換回 WBNB。",
+    "root_cause_zh": "OmniStakingPool 的 invest() 未檢查 end_date 等輸入參數是否為合法的鎖倉期間，攻擊者傳入 end_date = 0 即可建立異常質押紀錄，使獎勵計算失真，並透過 withdrawAndClaim() 立即領取遠超投入的 ORT。",
+    "aftermath_zh": "資料來源未記載資金追回或後續處理。",
+    "confidence": "medium",
+    "notes": "Based on the DeFiHackLabs entry (No Input Parameter Check, $70k / 236 BNB) and PoC OmniEstate_exp.sol (invest and withdraw transactions).",
+    "sources": [
+     {
+      "title": "DeFiHackLabs PoC: OmniEstate",
+      "publisher": "DeFiHackLabs (GitHub)",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/OmniEstate_exp.sol"
+     },
+     {
+      "title": "OmniEstate incident analysis",
+      "publisher": "X (Twitter)",
+      "url": "https://twitter.com/BlockSecTeam/status/1615232012834705408"
+     },
+     {
+      "title": "OmniEstate attack transaction",
+      "publisher": "BscScan",
+      "url": "https://bscscan.com/tx/0x49bed801b9a9432728b1939951acaa8f2e874453d39c7d881a62c2c157aa7613"
+     }
+    ],
+    "in_scope": true,
+    "candidate_name": "OmniEstate"
+   },
+   "facts": null,
+   "scope": null
+  }
+ ],
+ "rejected": [
+  {
+   "candidate": "NOVAToken",
+   "reason": "Based on the DeFiHackLabs entry (root cause label 'Malicious Unlimted Minting (Rugged)') and PoC NovaExchange_exp.sol, which only demonstrates the rewardHolders() mint (the sell step is commented out). USD estimated as 330 BNB x ~US$290/BNB (approximate BNB price on 2022-12-09). Marked out of scope because it is classified as a rug pull / deployer backdoor rather than an exploit of a third party."
+  }
+ ],
+ "missing_global_indexes": [
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  90,
+  91,
+  92,
+  93,
+  94,
+  95,
+  96,
+  97,
+  98,
+  99,
+  100,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106,
+  107,
+  108,
+  109,
+  110,
+  111,
+  112,
+  113,
+  114,
+  115,
+  116,
+  117,
+  118,
+  119,
+  120,
+  121,
+  122,
+  123
+ ],
+ "missing_note": "Indexes refer to research/defihacklabs/bsc_inputs.json"
+}

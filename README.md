@@ -13,14 +13,16 @@
 | 目錄 | 說明 | 狀態 |
 |---|---|---|
 | [`solana_hacks/`](solana_hacks/README.md) | Solana 資安事件案例庫：SQLite、CSV、中文摘要、根因、漏洞模式與防禦建議 | ✅ 111 起 |
-| `ethereum_hacks/` | 以太坊案例庫 | ⏳ 匯入 DeFiHackLabs 345 起中 |
-| `bsc_hacks/` | BSC 案例庫 | ⏳ 匯入 DeFiHackLabs 371 起中 |
+| [`ethereum_hacks/`](ethereum_hacks/README.md) | 以太坊案例庫（DeFiHackLabs 初稿，尚未獨立審查） | 🟡 236 起初稿，105 起待寫 |
+| [`bsc_hacks/`](bsc_hacks/README.md) | BSC 案例庫（DeFiHackLabs 初稿，尚未獨立審查） | 🟡 266 起初稿，101 起待寫 |
 | `crypto_hacks.db` | 三條鏈合併的跨鏈資料庫，可依鏈、年份、攻擊類別比較 | ✅ 自動產生 |
 | [`hack_db/`](hack_db/README.md) | 共用工具：資料結構、驗證、建置、合併研究結果、統計報告、DeFiHackLabs 匯入、研究 workflow 腳本 | ✅ |
 | [`solana_monitor/`](solana_monitor/README.md) | Solana 新流動池收集與過濾（Raydium、Pump.fun、PumpSwap、Meteora、Orca） | ✅ |
 | [`evm_monitor/`](evm_monitor/README.md) | Ethereum / BSC 新流動池收集與過濾（Uniswap、SushiSwap、PancakeSwap V2 / V3），合約安全檢查使用 GoPlus | ✅ |
 | `monitor_common/` | 兩個監控工具共用的元件：DexScreener、AVE、規則框架、儲存 | ✅ |
 | [`research/`](research/README.md) | 原始收集資料：每輪調查的原始輸出、DeFiHackLabs 匯入資料 | ✅ |
+
+> 接手請先看 [`HANDOFF.md`](HANDOFF.md)：目前進度、未完成事項與接續步驟。
 
 ## 快速開始
 

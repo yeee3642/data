@@ -1,0 +1,2687 @@
+[
+ {
+  "date": "2022-10-26",
+  "name": "N00d Token",
+  "dhl_root_cause": "Reentrancy",
+  "lost": "",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: N00d Token",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/N00d_exp.sol"
+   },
+   {
+    "title": "N00d Token incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1584959295829180416"
+   },
+   {
+    "title": "N00d Token incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/AnciliaInc/status/1584955717877784576"
+   },
+   {
+    "title": "N00d Token attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x8037b3dc0bf9d5d396c10506824096afb8125ea96ada011d35faa89fa3893aea"
+   }
+  ],
+  "poc": "src/test/2022-10/N00d_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/N00d_exp.sol"
+ },
+ {
+  "date": "2022-10-27",
+  "name": "Team Finance",
+  "dhl_root_cause": "Liquidity Migration Exploit",
+  "lost": "Multiple Tokens ~$15.8M US$",
+  "loss_usd_parsed": 15800000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Team Finance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/TeamFinance_exp.sol"
+   },
+   {
+    "title": "Team Finance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/TeamFinance_/status/1585770918873542656"
+   },
+   {
+    "title": "Team Finance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1585587858978623491"
+   },
+   {
+    "title": "Team Finance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/solid_group_1/status/1585643249305518083"
+   },
+   {
+    "title": "Team Finance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xb2e3ea72d353da43a2ac9a8f1670fd16463ab370e563b9b5b26119b2601277ce"
+   }
+  ],
+  "poc": "src/test/2022-10/TeamFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/TeamFinance_exp.sol"
+ },
+ {
+  "date": "2022-11-08",
+  "name": "MEV_0ad8",
+  "dhl_root_cause": "Arbitrary call",
+  "lost": "$282k",
+  "loss_usd_parsed": 282000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: MEV_0ad8",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/MEV_0ad8_exp.sol"
+   },
+   {
+    "title": "MEV_0ad8 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/Supremacy_CA/status/1590337718755954690"
+   },
+   {
+    "title": "MEV_0ad8 incident analysis",
+    "publisher": "phalcon.blocksec.com",
+    "url": "https://phalcon.blocksec.com/tx/eth/0x674f74b30a3d7bdf15fa60a7c29d96a402ea894a055f624164a8009df98386a0"
+   },
+   {
+    "title": "MEV_0ad8 attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x674f74b30a3d7bdf15fa60a7c29d96a402ea894a055f624164a8009df98386a0"
+   }
+  ],
+  "poc": "src/test/2022-11/MEV_0ad8_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/MEV_0ad8_exp.sol"
+ },
+ {
+  "date": "2022-11-08",
+  "name": "Kashi",
+  "dhl_root_cause": "Price-caching Design Defect",
+  "lost": "$110k",
+  "loss_usd_parsed": 110000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Kashi",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/Kashi_exp.sol"
+   },
+   {
+    "title": "Kashi incident analysis",
+    "publisher": "eigenphi.substack.com",
+    "url": "https://eigenphi.substack.com/p/casting-a-magic-spell-on-abracadabra"
+   },
+   {
+    "title": "Kashi incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1603633067876155393"
+   },
+   {
+    "title": "Kashi attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x3d163bfbec5686d428a6d43e45e2626a220cc4fcfac7620c620b82c1f2537c78"
+   }
+  ],
+  "poc": "src/test/2022-11/Kashi_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/Kashi_exp.sol"
+ },
+ {
+  "date": "2022-11-09",
+  "name": "BrahTOPG",
+  "dhl_root_cause": "Arbitrary External Call Vulnerability",
+  "lost": "$89k",
+  "loss_usd_parsed": 89000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: BrahTOPG",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/BrahTOPG_exp.sol"
+   },
+   {
+    "title": "BrahTOPG incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/SlowMist_Team/status/1590685173477101570"
+   },
+   {
+    "title": "BrahTOPG incident analysis",
+    "publisher": "Medium",
+    "url": "https://medium.com/neptune-mutual/decoding-brahma-brahtopg-smart-contract-vulnerability-7b7c364b79d8"
+   },
+   {
+    "title": "BrahTOPG attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xeaef2831d4d6bca04e4e9035613be637ae3b0034977673c1c2f10903926f29c0"
+   }
+  ],
+  "poc": "src/test/2022-11/BrahTOPG_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/BrahTOPG_exp.sol"
+ },
+ {
+  "date": "2022-11-10",
+  "name": "DFXFinance",
+  "dhl_root_cause": "Reentrancy",
+  "lost": "$4M",
+  "loss_usd_parsed": 4000000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: DFXFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/DFX_exp.sol"
+   },
+   {
+    "title": "DFXFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1590960299246780417"
+   },
+   {
+    "title": "DFXFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BeosinAlert/status/1591012525914861570"
+   },
+   {
+    "title": "DFXFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/AnciliaInc/status/1590839104731684865"
+   },
+   {
+    "title": "DFXFinance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x6bfd9e286e37061ed279e4f139fbc03c8bd707a2cdd15f7260549052cbba79b7"
+   }
+  ],
+  "poc": "src/test/2022-11/DFX_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/DFX_exp.sol"
+ },
+ {
+  "date": "2022-11-23",
+  "name": "NUM",
+  "dhl_root_cause": "Protocol Token incompatible",
+  "lost": "",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: NUM",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/NUM_exp.sol"
+   },
+   {
+    "title": "NUM incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1595346020237352960"
+   },
+   {
+    "title": "NUM attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x8a8145ab28b5d2a2e61d74c02c12350731f479b3175893de2014124f998bff32"
+   }
+  ],
+  "poc": "src/test/2022-11/NUM_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/NUM_exp.sol"
+ },
+ {
+  "date": "2022-12-11",
+  "name": "MEVbot_0x28d9",
+  "dhl_root_cause": "Insufficient validation",
+  "lost": "$2k $USDT",
+  "loss_usd_parsed": 2000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: MEVbot_0x28d9",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/MEVbot_0x28d9_exp.sol"
+   },
+   {
+    "title": "MEVbot_0x28d9 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/8olidity/status/1601795241433964544"
+   },
+   {
+    "title": "MEVbot_0x28d9 attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x313d23bdd9277717e3088f32c976479c09d4b8a94d5d94deb835d157fd0850ce"
+   }
+  ],
+  "poc": "src/test/2022-12/MEVbot_0x28d9_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/MEVbot_0x28d9_exp.sol"
+ },
+ {
+  "date": "2022-12-25",
+  "name": "Rubic",
+  "dhl_root_cause": "Arbitrary External Call Vulnerability",
+  "lost": "$1.5M",
+  "loss_usd_parsed": 1500000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Rubic",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/Rubic_exp.sol"
+   },
+   {
+    "title": "Rubic incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1606993118901198849"
+   },
+   {
+    "title": "Rubic incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1606937055761952770"
+   },
+   {
+    "title": "Rubic attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x9a97d85642f956ad7a6b852cf7bed6f9669e2c2815f3279855acf7f1328e7d46"
+   }
+  ],
+  "poc": "src/test/2022-12/Rubic_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/Rubic_exp.sol"
+ },
+ {
+  "date": "2022-12-29",
+  "name": "JAY",
+  "dhl_root_cause": "Insufficient validation + Reentrancy",
+  "lost": "~15.32 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: JAY",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/JAY_exp.sol"
+   },
+   {
+    "title": "JAY incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1608372475225866240"
+   },
+   {
+    "title": "JAY attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xd4fafa1261f6e4f9c8543228a67caf9d02811e4ad3058a2714323964a8db61f6"
+   }
+  ],
+  "poc": "src/test/2022-12/JAY_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/JAY_exp.sol"
+ },
+ {
+  "date": "2023-01-11",
+  "name": "RoeFinance",
+  "dhl_root_cause": "FlashLoan price manipulation",
+  "lost": "$80k",
+  "loss_usd_parsed": 80000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: RoeFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/RoeFinance_exp.sol"
+   },
+   {
+    "title": "RoeFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1613267000913960976"
+   },
+   {
+    "title": "RoeFinance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x927b784148b60d5233e57287671cdf67d38e3e69e5b6d0ecacc7c1aeaa98985b"
+   }
+  ],
+  "poc": "src/test/2023-01/RoeFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/RoeFinance_exp.sol"
+ },
+ {
+  "date": "2023-01-18",
+  "name": "QTNToken",
+  "dhl_root_cause": "business logic flaw",
+  "lost": "~2ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: QTNToken",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/QTN_exp.sol"
+   },
+   {
+    "title": "QTNToken incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1615625901739511809"
+   },
+   {
+    "title": "QTNToken attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x37cb8626e45f0749296ef080acb218e5ccc7efb2ae4d39c952566dc378ca1c4c"
+   }
+  ],
+  "poc": "src/test/2023-01/QTN_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/QTN_exp.sol"
+ },
+ {
+  "date": "2023-01-18",
+  "name": "UPSToken",
+  "dhl_root_cause": "business logic flaw",
+  "lost": "~22 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: UPSToken",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/Upswing_exp.sol"
+   },
+   {
+    "title": "UPSToken incident analysis",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x4b3df6e9c68ae482c71a02832f7f599ff58ff877ec05fed0abd95b31d2d7d912"
+   },
+   {
+    "title": "UPSToken incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/QuillAudits/status/1615634917802807297"
+   },
+   {
+    "title": "UPSToken attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x4b3df6e9c68ae482c71a02832f7f599ff58ff877ec05fed0abd95b31d2d7d912"
+   }
+  ],
+  "poc": "src/test/2023-01/Upswing_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/Upswing_exp.sol"
+ },
+ {
+  "date": "2023-01-19",
+  "name": "SHOCO",
+  "dhl_root_cause": "Reflection token",
+  "lost": "~4ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: SHOCO",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/SHOCO_exp.sol"
+   },
+   {
+    "title": "SHOCO incident analysis",
+    "publisher": "GitHub",
+    "url": "https://github.com/Autosaida/DeFiHackAnalysis/blob/master/analysis/230119_SHOCO.md"
+   },
+   {
+    "title": "SHOCO attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x2e832f044b4a0a0b8d38166fe4d781ab330b05b9efa9e72a7a0895f1b984084b"
+   }
+  ],
+  "poc": "src/test/2023-01/SHOCO_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/SHOCO_exp.sol"
+ },
+ {
+  "date": "2023-01-26",
+  "name": "TINU",
+  "dhl_root_cause": "Reflection token",
+  "lost": "22 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: TINU",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/TINU_exp.sol"
+   },
+   {
+    "title": "TINU incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/libevm/status/1618718156343873536"
+   },
+   {
+    "title": "TINU incident analysis",
+    "publisher": "phalcon.blocksec.com",
+    "url": "https://phalcon.blocksec.com/tx/eth/0x6200bf5c43c214caa1177c3676293442059b4f39eb5dbae6cfd4e6ad16305668"
+   },
+   {
+    "title": "TINU incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/libevm/status/1618731761894309889"
+   },
+   {
+    "title": "TINU attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x6200bf5c43c214caa1177c3676293442059b4f39eb5dbae6cfd4e6ad16305668"
+   }
+  ],
+  "poc": "src/test/2023-01/TINU_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/TINU_exp.sol"
+ },
+ {
+  "date": "2023-02-03",
+  "name": "Orion Protocol",
+  "dhl_root_cause": "Reentrancy",
+  "lost": "$3M",
+  "loss_usd_parsed": 3000000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Orion Protocol",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/Orion_exp.sol"
+   },
+   {
+    "title": "Orion Protocol incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1621337925228306433"
+   },
+   {
+    "title": "Orion Protocol incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1621263393054420992"
+   },
+   {
+    "title": "Orion Protocol incident analysis",
+    "publisher": "numencyber.com",
+    "url": "https://www.numencyber.com/analysis-of-orionprotocol-reentrancy-attack-with-poc/"
+   },
+   {
+    "title": "Orion Protocol attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xa6f63fcb6bec8818864d96a5b1bb19e8bd85ee37b2cc916412e720988440b2aa"
+   }
+  ],
+  "poc": "src/test/2023-02/Orion_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/Orion_exp.sol"
+ },
+ {
+  "date": "2023-02-07",
+  "name": "CowSwap",
+  "dhl_root_cause": "Arbitrary External Call Vulnerability",
+  "lost": "~$120k",
+  "loss_usd_parsed": 120000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: CowSwap",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/CowSwap_exp.sol"
+   },
+   {
+    "title": "CowSwap incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/MevRefund/status/1622793836291407873"
+   },
+   {
+    "title": "CowSwap incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1622801412727148544"
+   },
+   {
+    "title": "CowSwap attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x90b468608fbcc7faef46502b198471311baca3baab49242a4a85b73d4924379b"
+   }
+  ],
+  "poc": "src/test/2023-02/CowSwap_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/CowSwap_exp.sol"
+ },
+ {
+  "date": "2023-02-17",
+  "name": "Dexible",
+  "dhl_root_cause": "Arbitrary External Call Vulnerability",
+  "lost": "~$1.5M",
+  "loss_usd_parsed": 1500000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Dexible",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/Dexible_exp.sol"
+   },
+   {
+    "title": "Dexible incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1626493024879673344"
+   },
+   {
+    "title": "Dexible incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/MevRefund/status/1626450002254958592"
+   },
+   {
+    "title": "Dexible attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x138daa4cbeaa3db42eefcec26e234fc2c89a4aa17d6b1870fc460b2856fd11a6"
+   }
+  ],
+  "poc": "src/test/2023-02/Dexible_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/Dexible_exp.sol"
+ },
+ {
+  "date": "2023-02-18",
+  "name": "RevertFinance",
+  "dhl_root_cause": "Arbitrary External Call Vulnerability",
+  "lost": "~$30k",
+  "loss_usd_parsed": 30000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: RevertFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/RevertFinance_exp.sol"
+   },
+   {
+    "title": "RevertFinance incident analysis",
+    "publisher": "mirror.xyz",
+    "url": "https://mirror.xyz/revertfinance.eth/3sdpQ3v9vEKiOjaHXUi3TdEfhleAXXlAEWeODrRHJtU"
+   },
+   {
+    "title": "RevertFinance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xdaccbc437cb07427394704fbcc8366589ffccf974ec6524f3483844b043f31d5"
+   }
+  ],
+  "poc": "src/test/2023-02/RevertFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/RevertFinance_exp.sol"
+ },
+ {
+  "date": "2023-02-24",
+  "name": "EFVault",
+  "dhl_root_cause": "Storage Collision",
+  "lost": "~$5.1M",
+  "loss_usd_parsed": 5100000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: EFVault",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/EFVault_exp.sol"
+   },
+   {
+    "title": "EFVault incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1630490333716029440"
+   },
+   {
+    "title": "EFVault incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/drdr_zz/status/1630500170373685248"
+   },
+   {
+    "title": "EFVault incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/gbaleeeee/status/1630587522698080257"
+   },
+   {
+    "title": "EFVault attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x1fe5a53405d00ce2f3e15b214c7486c69cbc5bf165cf9596e86f797f62e81914"
+   }
+  ],
+  "poc": "src/test/2023-02/EFVault_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-02/EFVault_exp.sol"
+ },
+ {
+  "date": "2023-03-13",
+  "name": "EulerFinance",
+  "dhl_root_cause": "Business Logic Flaw",
+  "lost": "~$200M",
+  "loss_usd_parsed": 200000000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: EulerFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-03/Euler_exp.sol"
+   },
+   {
+    "title": "EulerFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/FrankResearcher/status/1635241475989721089"
+   },
+   {
+    "title": "EulerFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/nomorebear/status/1635230621856600064"
+   },
+   {
+    "title": "EulerFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1635229594596036608"
+   },
+   {
+    "title": "EulerFinance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+   }
+  ],
+  "poc": "src/test/2023-03/Euler_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-03/Euler_exp.sol"
+ },
+ {
+  "date": "2023-03-17",
+  "name": "ParaSpace NFT",
+  "dhl_root_cause": "Flashloan + scaledBalanceOf Manipulation",
+  "lost": "",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: ParaSpace NFT",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-03/paraspace_exp.sol"
+   },
+   {
+    "title": "ParaSpace NFT incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1636650252844294144"
+   },
+   {
+    "title": "ParaSpace NFT attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xe3f0d14cfb6076cabdc9057001c3fafe28767a192e88005bc37bd7d385a1116a"
+   }
+  ],
+  "poc": "src/test/2023-03/paraspace_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-03/paraspace_exp.sol"
+ },
+ {
+  "date": "2023-04-09",
+  "name": "SushiSwap",
+  "dhl_root_cause": "Unchecked User Input",
+  "lost": ">$3.3M",
+  "loss_usd_parsed": 3300000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: SushiSwap",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/Sushi_Router_exp.sol"
+   },
+   {
+    "title": "SushiSwap incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/peckshield/status/1644907207530774530"
+   },
+   {
+    "title": "SushiSwap incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/SlowMist_Team/status/1644936375924584449"
+   },
+   {
+    "title": "SushiSwap incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/AnciliaInc/status/1644925421006520320"
+   }
+  ],
+  "poc": "src/test/2023-04/Sushi_Router_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/Sushi_Router_exp.sol"
+ },
+ {
+  "date": "2023-04-13",
+  "name": "yearnFinance",
+  "dhl_root_cause": "Misconfiguration",
+  "lost": "$11.6M",
+  "loss_usd_parsed": 11600000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: yearnFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/YearnFinance_exp.sol"
+   },
+   {
+    "title": "yearnFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/cmichelio/status/1646422861219807233"
+   },
+   {
+    "title": "yearnFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BeosinAlert/status/1646481687445114881"
+   },
+   {
+    "title": "yearnFinance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x055cec4fa4614836e54ea2e5cd3d14247ff3d61b85aa2a41f8cc876d131e0328"
+   }
+  ],
+  "poc": "src/test/2023-04/YearnFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/YearnFinance_exp.sol"
+ },
+ {
+  "date": "2023-04-16",
+  "name": "Swapos V2",
+  "dhl_root_cause": "error k value Attack",
+  "lost": "~$468k",
+  "loss_usd_parsed": 468000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Swapos V2",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/Swapos_exp.sol"
+   },
+   {
+    "title": "Swapos V2 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/CertiKAlert/status/1647530789947469825"
+   },
+   {
+    "title": "Swapos V2 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BeosinAlert/status/1647552192243728385"
+   }
+  ],
+  "poc": "src/test/2023-04/Swapos_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/Swapos_exp.sol"
+ },
+ {
+  "date": "2023-04-27",
+  "name": "Silo finance",
+  "dhl_root_cause": "Business Logic Flaw",
+  "lost": "None",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Silo finance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/silo_finance_exp.sol"
+   },
+   {
+    "title": "Silo finance incident analysis",
+    "publisher": "Medium",
+    "url": "https://medium.com/immunefi/silo-finance-logic-error-bugfix-review-35de29bd934a"
+   }
+  ],
+  "poc": "src/test/2023-04/silo_finance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-04/silo_finance_exp.sol"
+ },
+ {
+  "date": "2023-05-09",
+  "name": "MCC",
+  "dhl_root_cause": "Reflection token",
+  "lost": "~$10 ETH",
+  "loss_usd_parsed": 10.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: MCC",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/MultiChainCapital_exp.sol"
+   },
+   {
+    "title": "MCC incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BeosinAlert/status/1655846558762692608"
+   },
+   {
+    "title": "MCC attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xf72f1d10fc6923f87279ce6c0aef46e372c6652a696f280b0465a301a92f2e26"
+   }
+  ],
+  "poc": "src/test/2023-05/MultiChainCapital_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/MultiChainCapital_exp.sol"
+ },
+ {
+  "date": "2023-05-09",
+  "name": "HODL",
+  "dhl_root_cause": "Reflection token",
+  "lost": "~$2.3 ETH",
+  "loss_usd_parsed": 2.3,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: HODL",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/HODLCapital_exp.sol"
+   },
+   {
+    "title": "HODL incident analysis",
+    "publisher": "explorer.phalcon.xyz",
+    "url": "https://explorer.phalcon.xyz/tx/eth/0xedc214a62ff6fd764200ddaa8ceae54f842279eadab80900be5f29d0b75212df"
+   },
+   {
+    "title": "HODL incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/numencyber/status/1655825767392247808"
+   },
+   {
+    "title": "HODL attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xedc214a62ff6fd764200ddaa8ceae54f842279eadab80900be5f29d0b75212df"
+   }
+  ],
+  "poc": "src/test/2023-05/HODLCapital_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/HODLCapital_exp.sol"
+ },
+ {
+  "date": "2023-05-29",
+  "name": "NOON (NO)",
+  "dhl_root_cause": "Wrong visibility in function",
+  "lost": "~$2K",
+  "loss_usd_parsed": 2000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: NOON (NO)",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/NOON_exp.sol"
+   },
+   {
+    "title": "NOON (NO) incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/hexagate_/status/1663501545105702912"
+   }
+  ],
+  "poc": "src/test/2023-05/NOON_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/NOON_exp.sol"
+ },
+ {
+  "date": "2023-05-31",
+  "name": "ERC20TokenBank",
+  "dhl_root_cause": "Price Manipulation",
+  "lost": "~$111k",
+  "loss_usd_parsed": 111000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: ERC20TokenBank",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/ERC20TokenBank_exp.sol"
+   },
+   {
+    "title": "ERC20TokenBank incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1663810037788311561"
+   },
+   {
+    "title": "ERC20TokenBank attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x578a195e05f04b19fd8af6358dc6407aa1add87c3167f053beb990d6b4735f26"
+   }
+  ],
+  "poc": "src/test/2023-05/ERC20TokenBank_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-05/ERC20TokenBank_exp.sol"
+ },
+ {
+  "date": "2023-06-06",
+  "name": "VINU",
+  "dhl_root_cause": "Price Manipulation",
+  "lost": "~$6k",
+  "loss_usd_parsed": 6000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: VINU",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/VINU_exp.sol"
+   },
+   {
+    "title": "VINU incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/hexagate_/status/1666051854386511873?cxt=HHwWgoC24bPVgJ8uAAAA"
+   },
+   {
+    "title": "VINU attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xaf46a42fe1ed7193b25c523723dc047c7500e50a00ecb7bbb822d665adb3e1f3"
+   }
+  ],
+  "poc": "src/test/2023-06/VINU_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/VINU_exp.sol"
+ },
+ {
+  "date": "2023-06-07",
+  "name": "CompounderFinance",
+  "dhl_root_cause": "Manipulation of funds through fluctuations in the amount of exchangeable assets",
+  "lost": "~$27,174",
+  "loss_usd_parsed": 27174.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: CompounderFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/CompounderFinance_exp.sol"
+   },
+   {
+    "title": "CompounderFinance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/numencyber/status/1666346419702362112"
+   },
+   {
+    "title": "CompounderFinance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xcff84cc137c92e427f720ca1f2b36fbad793f34ec5117eed127060686e6797b1"
+   }
+  ],
+  "poc": "src/test/2023-06/CompounderFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/CompounderFinance_exp.sol"
+ },
+ {
+  "date": "2023-06-12",
+  "name": "Sturdy Finance",
+  "dhl_root_cause": "Read-Only-Reentrancy",
+  "lost": "~$800k",
+  "loss_usd_parsed": 800000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Sturdy Finance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/Sturdy_exp.sol"
+   },
+   {
+    "title": "Sturdy Finance incident analysis",
+    "publisher": "Medium",
+    "url": "https://sturdyfinance.medium.com/exploit-post-mortem-49261493307a"
+   },
+   {
+    "title": "Sturdy Finance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/AnciliaInc/status/1668081008615325698"
+   },
+   {
+    "title": "Sturdy Finance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1668084629654638592"
+   },
+   {
+    "title": "Sturdy Finance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xeb87ebc0a18aca7d2a9ffcabf61aa69c9e8d3c6efade9e2303f8857717fb9eb7"
+   }
+  ],
+  "poc": "src/test/2023-06/Sturdy_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/Sturdy_exp.sol"
+ },
+ {
+  "date": "2023-06-15",
+  "name": "DEPUSDT_LEVUSDC",
+  "dhl_root_cause": "Incorrect access control",
+  "lost": "~$105k",
+  "loss_usd_parsed": 105000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: DEPUSDT_LEVUSDC",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/DEPUSDT_LEVUSDC_exp.sol"
+   },
+   {
+    "title": "DEPUSDT_LEVUSDC incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/numencyber/status/1669278694744150016?cxt=HHwWgMDS9Z2IvKouAAAA"
+   },
+   {
+    "title": "DEPUSDT_LEVUSDC attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xf0a13b445674094c455de9e947a25bade75cac9f5176695fca418898ea25742f"
+   }
+  ],
+  "poc": "src/test/2023-06/DEPUSDT_LEVUSDC_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/DEPUSDT_LEVUSDC_exp.sol"
+ },
+ {
+  "date": "2023-06-17",
+  "name": "Pawnfi",
+  "dhl_root_cause": "Business Logic Flaw",
+  "lost": "~$820K",
+  "loss_usd_parsed": 820000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Pawnfi",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/Pawnfi_exp.sol"
+   },
+   {
+    "title": "Pawnfi incident analysis",
+    "publisher": "blog.solidityscan.com",
+    "url": "https://blog.solidityscan.com/pawnfi-hack-analysis-38ac9160cbb4"
+   },
+   {
+    "title": "Pawnfi attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x8d3036371ccf27579d3cb3d4b4b71e99334cae8d7e8088247517ec640c7a59a5"
+   }
+  ],
+  "poc": "src/test/2023-06/Pawnfi_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/Pawnfi_exp.sol"
+ },
+ {
+  "date": "2023-06-19",
+  "name": "Contract_0x7657",
+  "dhl_root_cause": "Business Logic",
+  "lost": "~$20k $USDT",
+  "loss_usd_parsed": 20000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Contract_0x7657",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/Contract_0x7657_exp.sol"
+   },
+   {
+    "title": "Contract_0x7657 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/DecurityHQ/status/1670806260550184962"
+   },
+   {
+    "title": "Contract_0x7657 attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x74279a131dccd6479378b3454ea189a6ce350cce51de47d81a0ef23db1b134d5"
+   }
+  ],
+  "poc": "src/test/2023-06/Contract_0x7657_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/Contract_0x7657_exp.sol"
+ },
+ {
+  "date": "2023-06-20",
+  "name": "MIMSpell",
+  "dhl_root_cause": "Arbitrary External Call Vulnerability",
+  "lost": "~$17k",
+  "loss_usd_parsed": 17000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: MIMSpell",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/MIMSpell_exp.sol"
+   },
+   {
+    "title": "MIMSpell incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/hexagate_/status/1671188024607100928?cxt=HHwWgMC--e2poLEuAAAA"
+   },
+   {
+    "title": "MIMSpell attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x2c9f87e285026601a2c8903cf5f10e5b3655fbd0264490c41514ce073c42a9c3"
+   }
+  ],
+  "poc": "src/test/2023-06/MIMSpell_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/MIMSpell_exp.sol"
+ },
+ {
+  "date": "2023-07-03",
+  "name": "AzukiDAO",
+  "dhl_root_cause": "Invalid signature verification",
+  "lost": "~$69k",
+  "loss_usd_parsed": 69000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: AzukiDAO",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/AzukiDAO_exp.sol"
+   },
+   {
+    "title": "AzukiDAO incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/sharkteamorg/status/1676892088930271232"
+   },
+   {
+    "title": "AzukiDAO attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x6233c9315dd3b6a6fcc7d653f4dca6c263e684a76b4ad3d93595e3b8e8714d34"
+   }
+  ],
+  "poc": "src/test/2023-07/AzukiDAO_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/AzukiDAO_exp.sol"
+ },
+ {
+  "date": "2023-07-08",
+  "name": "CIVNFT",
+  "dhl_root_cause": "Lack of access control",
+  "lost": "~$180k",
+  "loss_usd_parsed": 180000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: CIVNFT",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/CIVNFT_exp.sol"
+   },
+   {
+    "title": "CIVNFT incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/Phalcon_xyz/status/1677722208893022210"
+   },
+   {
+    "title": "CIVNFT incident analysis",
+    "publisher": "news.civfund.org",
+    "url": "https://news.civfund.org/civtrade-hack-analysis-9a2398a6bc2e"
+   },
+   {
+    "title": "CIVNFT incident analysis",
+    "publisher": "blog.solidityscan.com",
+    "url": "https://blog.solidityscan.com/civnft-hack-analysis-4ee79b8c33d1"
+   },
+   {
+    "title": "CIVNFT attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x93a033917fcdbd5fe8ae24e9fe22f002949cba2f621a1c43a54f6519479caceb"
+   }
+  ],
+  "poc": "src/test/2023-07/CIVNFT_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/CIVNFT_exp.sol"
+ },
+ {
+  "date": "2023-07-08",
+  "name": "Civfund",
+  "dhl_root_cause": "Lack of access control",
+  "lost": "~$165k",
+  "loss_usd_parsed": 165000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Civfund",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Civfund_exp.sol"
+   },
+   {
+    "title": "Civfund incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/HypernativeLabs/status/1677529544062803969"
+   },
+   {
+    "title": "Civfund incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BeosinAlert/status/1677548773269213184"
+   },
+   {
+    "title": "Civfund attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xc42fc0e22a0f60cc299be80eb0c0ddce83c21c14a3dddd8430628011c3e20d6b"
+   }
+  ],
+  "poc": "src/test/2023-07/Civfund_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Civfund_exp.sol"
+ },
+ {
+  "date": "2023-07-15",
+  "name": "USDTStakingContract28",
+  "dhl_root_cause": "Lack of access control",
+  "lost": "~20999 USD",
+  "loss_usd_parsed": 20999.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: USDTStakingContract28",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/USDTStakingContract28_exp.sol"
+   },
+   {
+    "title": "USDTStakingContract28 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/DecurityHQ/status/1680117291013267456"
+   },
+   {
+    "title": "USDTStakingContract28 incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0xfc872bf5ca8f04b18b82041ec563e4abf2e31e1fc27d1ea5dee39bc8a79d2d06"
+   }
+  ],
+  "poc": "src/test/2023-07/USDTStakingContract28_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/USDTStakingContract28_exp.sol"
+ },
+ {
+  "date": "2023-07-21",
+  "name": "Conic Finance",
+  "dhl_root_cause": "Read-Only-Reentrancy && MisConfiguration",
+  "lost": "~$3.25M",
+  "loss_usd_parsed": 3250000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Conic Finance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Conic_exp.sol"
+   },
+   {
+    "title": "Conic Finance incident analysis",
+    "publisher": "Medium",
+    "url": "https://medium.com/@ConicFinance/post-mortem-eth-and-crvusd-omnipool-exploits-c9c7fa213a3d"
+   },
+   {
+    "title": "Conic Finance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/BlockSecTeam/status/1682356244299010049"
+   },
+   {
+    "title": "Conic Finance attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+   }
+  ],
+  "poc": "src/test/2023-07/Conic_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Conic_exp.sol"
+ },
+ {
+  "date": "2023-07-22",
+  "name": "Conic Finance 02",
+  "dhl_root_cause": "Price Manipulation",
+  "lost": "~$934K",
+  "loss_usd_parsed": 934000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Conic Finance 02",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Conic02_exp.sol"
+   },
+   {
+    "title": "Conic Finance 02 incident analysis",
+    "publisher": "Medium",
+    "url": "https://medium.com/@ConicFinance/post-mortem-eth-and-crvusd-omnipool-exploits-c9c7fa213a3d"
+   },
+   {
+    "title": "Conic Finance 02 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/spreekaway/status/1682467603518726144"
+   },
+   {
+    "title": "Conic Finance 02 attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x37acd17a80a5f95728459bfea85cb2e1f64b4c75cf4a4c8dcb61964e26860882"
+   }
+  ],
+  "poc": "src/test/2023-07/Conic02_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Conic02_exp.sol"
+ },
+ {
+  "date": "2023-07-30",
+  "name": "Curve",
+  "dhl_root_cause": "Vyper Compiler Bug && Reentrancy",
+  "lost": "~ $41M",
+  "loss_usd_parsed": 41000000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Curve",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Curve_exp01.sol"
+   },
+   {
+    "title": "Curve incident analysis",
+    "publisher": "hackmd.io",
+    "url": "https://hackmd.io/@LlamaRisk/BJzSKHNjn"
+   },
+   {
+    "title": "Curve incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/vyperlang/status/1685692973051498497"
+   },
+   {
+    "title": "Curve attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xa84aa065ce61dbb1eb50ab6ae67fc31a9da50dd2c74eefd561661bfce2f1620c"
+   }
+  ],
+  "poc": "src/test/2023-07/Curve_exp01.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Curve_exp01.sol"
+ },
+ {
+  "date": "2023-08-02",
+  "name": "CurveBurner",
+  "dhl_root_cause": "Lack Slippage Protection",
+  "lost": "~$36K",
+  "loss_usd_parsed": 36000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: CurveBurner",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-08/CurveBurner_exp.sol"
+   },
+   {
+    "title": "CurveBurner incident analysis",
+    "publisher": "Medium",
+    "url": "https://medium.com/@Hypernative/exotic-culinary-hypernative-systems-caught-a-unique-sandwich-attack-against-curve-finance-6d58c32e436b"
+   },
+   {
+    "title": "CurveBurner attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xd493c73397952049644c531309df3dd4134bf3db1e64eb6f0b68b016ee0bffde"
+   }
+  ],
+  "poc": "src/test/2023-08/CurveBurner_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-08/CurveBurner_exp.sol"
+ },
+ {
+  "date": "2024-07-24",
+  "name": "Spectra_finance",
+  "dhl_root_cause": "Incorrect input validation",
+  "lost": "~73K USD",
+  "loss_usd_parsed": 73000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Spectra_finance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-07/Spectra_finance_exp.sol"
+   },
+   {
+    "title": "Spectra_finance incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/shoucccc/status/1815981585637990899"
+   },
+   {
+    "title": "Spectra_finance incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0x491cf8b2a5753fdbf3096b42e0a16bc109b957dc112d6537b1ed306e483d0744"
+   }
+  ],
+  "poc": "src/test/2024-07/Spectra_finance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-07/Spectra_finance_exp.sol"
+ },
+ {
+  "date": "2024-08-01",
+  "name": "Convergence",
+  "dhl_root_cause": "Incorrect input validation",
+  "lost": "~200K USD",
+  "loss_usd_parsed": 200000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Convergence",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/Convergence_exp.sol"
+   },
+   {
+    "title": "Convergence incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/DecurityHQ/status/1819030089012527510"
+   },
+   {
+    "title": "Convergence attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x636be30e58acce0629b2bf975b5c3133840cd7d41ffc3b903720c528f01c65d9"
+   }
+  ],
+  "poc": "src/test/2024-08/Convergence_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/Convergence_exp.sol"
+ },
+ {
+  "date": "2024-08-13",
+  "name": "VOW",
+  "dhl_root_cause": "Misconfiguration",
+  "lost": "~ 1M USD",
+  "loss_usd_parsed": 1000000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: VOW",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/VOW_exp.sol"
+   },
+   {
+    "title": "VOW incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/Vowcurrency/status/1823407231658025300"
+   },
+   {
+    "title": "VOW attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x758efef41e60c0f218682e2fa027c54d8b67029d193dd7277d6a881a24b9a561"
+   }
+  ],
+  "poc": "src/test/2024-08/VOW_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/VOW_exp.sol"
+ },
+ {
+  "date": "2024-08-14",
+  "name": "YodlRouter",
+  "dhl_root_cause": "Arbitrary Call",
+  "lost": "~5k",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: YodlRouter",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/YodlRouter_exp.sol"
+   },
+   {
+    "title": "YodlRouter attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x54f659773dae6e01f83184d4b6d717c7f1bb71c0aa59e8c8f4a57c25271424b3"
+   }
+  ],
+  "poc": "src/test/2024-08/YodlRouter_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/YodlRouter_exp.sol"
+ },
+ {
+  "date": "2024-08-16",
+  "name": "Zenterest",
+  "dhl_root_cause": "Price Out Of Date",
+  "lost": "~21000 USD",
+  "loss_usd_parsed": 21000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Zenterest",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/Zenterest_exp.sol"
+   },
+   {
+    "title": "Zenterest attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xfe8bc757d87e97a5471378c90d390df47e1b29bb9fca918b94acd8ecfaadc598"
+   }
+  ],
+  "poc": "src/test/2024-08/Zenterest_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/Zenterest_exp.sol"
+ },
+ {
+  "date": "2024-08-16",
+  "name": "OMPx Contract",
+  "dhl_root_cause": "FlashLoan",
+  "lost": "4.37 ETH (~11527 USD)",
+  "loss_usd_parsed": 11527.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: OMPx Contract",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/OMPxContract_exp.sol"
+   },
+   {
+    "title": "OMPx Contract incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0xd927843e30c6b2bf43103d83bca6abead648eac3cad0d05b1b0eb84cd87de9b6?line=0"
+   }
+  ],
+  "poc": "src/test/2024-08/OMPxContract_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/OMPxContract_exp.sol"
+ },
+ {
+  "date": "2024-08-28",
+  "name": "AAVE",
+  "dhl_root_cause": "Arbitrary Call Error",
+  "lost": "52000",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: AAVE",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/AAVE_Repay_Adapter.sol"
+   },
+   {
+    "title": "AAVE incident analysis",
+    "publisher": "vibraniumaudits.com",
+    "url": "https://www.vibraniumaudits.com/post/aave-hacked-via-periphery-contract-56kstolenfromtipjar"
+   },
+   {
+    "title": "AAVE incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/quillaudits_ai/status/1828741457525530968"
+   },
+   {
+    "title": "AAVE attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xc27c3ec61c61309c9af35af062a834e0d6914f9352113617400577c0f2b0e9de"
+   }
+  ],
+  "poc": "src/test/2024-08/AAVE_Repay_Adapter.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-08/AAVE_Repay_Adapter.sol"
+ },
+ {
+  "date": "2024-09-02",
+  "name": "Pythia",
+  "dhl_root_cause": "Logic Flaw",
+  "lost": "21 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Pythia",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Pythia_exp.sol"
+   },
+   {
+    "title": "Pythia incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/QuillAudits_AI/status/1830976830607892649"
+   },
+   {
+    "title": "Pythia attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x7e19f8edb1f1666322113f15d7674593950ac94bbc25d2aff96adabdcae0a6c3"
+   }
+  ],
+  "poc": "src/test/2024-09/Pythia_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Pythia_exp.sol"
+ },
+ {
+  "date": "2024-09-03",
+  "name": "Penpiexyz_io",
+  "dhl_root_cause": "Reentrancy and Reward Manipulation",
+  "lost": "11,113.6 ETH (~$27,348,259 USD)",
+  "loss_usd_parsed": 27348259.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Penpiexyz_io",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Penpiexyzio_exp.sol"
+   },
+   {
+    "title": "Penpiexyz_io incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/peckshield/status/1831072098669953388"
+   },
+   {
+    "title": "Penpiexyz_io incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/AnciliaInc/status/1831080555292856476"
+   },
+   {
+    "title": "Penpiexyz_io incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/hackenclub/status/1831383106554573099"
+   }
+  ],
+  "poc": "src/test/2024-09/Penpiexyzio_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Penpiexyzio_exp.sol"
+ },
+ {
+  "date": "2024-09-04",
+  "name": "Unverified_16d0",
+  "dhl_root_cause": "Access control",
+  "lost": "329 USD",
+  "loss_usd_parsed": 329.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Unverified_16d0",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_16d0.sol"
+   },
+   {
+    "title": "Unverified_16d0 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1831511554619273630"
+   },
+   {
+    "title": "Unverified_16d0 incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0xf5f251fd4ed77e24d803d8241e2e852f0781a145891411dd4eb45306eacf12a8"
+   }
+  ],
+  "poc": "src/test/2024-09/unverified_16d0.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_16d0.sol"
+ },
+ {
+  "date": "2024-09-05",
+  "name": "Unverified_a89f",
+  "dhl_root_cause": "Access control",
+  "lost": "1.5k",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Unverified_a89f",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_a89f_exp.sol"
+   },
+   {
+    "title": "Unverified_a89f incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1831637553415610877"
+   },
+   {
+    "title": "Unverified_a89f incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0x83c71a83656b0fecfa860e76a9becf738930b3f1b2510c7d0339ab585090a82d"
+   },
+   {
+    "title": "Unverified_a89f incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0xf93db4cdee0ed2af06067a9c953ebc62dd17f70be37961636c42d698cc23e932"
+   }
+  ],
+  "poc": "src/test/2024-09/unverified_a89f_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_a89f_exp.sol"
+ },
+ {
+  "date": "2024-09-05",
+  "name": "PLN",
+  "dhl_root_cause": "Access control",
+  "lost": "400K USD",
+  "loss_usd_parsed": 400000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: PLN",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/PLN_exp.sol"
+   },
+   {
+    "title": "PLN incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1831525062253654300"
+   },
+   {
+    "title": "PLN attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xcc36283cee837a8a0d4af0357d1957dc561913e44ad293ea9da8acf15d874ed5"
+   }
+  ],
+  "poc": "src/test/2024-09/PLN_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/PLN_exp.sol"
+ },
+ {
+  "date": "2024-09-05",
+  "name": "HANAToken",
+  "dhl_root_cause": "Price Manipulation",
+  "lost": "283 USD",
+  "loss_usd_parsed": 283.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: HANAToken",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/HANAToken_exp.sol"
+   },
+   {
+    "title": "HANAToken incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1838963740731203737"
+   },
+   {
+    "title": "HANAToken incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0xe8cee3450545a865b4a8fffd93938ae93429574dc8e01b02bc6a02f2f4490e4e"
+   }
+  ],
+  "poc": "src/test/2024-09/HANAToken_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/HANAToken_exp.sol"
+ },
+ {
+  "date": "2024-09-11",
+  "name": "INUMI",
+  "dhl_root_cause": "Access control",
+  "lost": "~11.7k USD",
+  "loss_usd_parsed": 11700.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: INUMI",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/INUMI_exp.sol"
+   },
+   {
+    "title": "INUMI incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1834504921561100606"
+   },
+   {
+    "title": "INUMI attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xbeef352f716973043236f73dd5104b9d905fd04b7fc58d9958ac5462e7e3dbc1"
+   }
+  ],
+  "poc": "src/test/2024-09/INUMI_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/INUMI_exp.sol"
+ },
+ {
+  "date": "2024-09-12",
+  "name": "Unverified_03f9",
+  "dhl_root_cause": "Access Control",
+  "lost": "1.7k",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Unverified_03f9",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_03f9_exp.sol"
+   },
+   {
+    "title": "Unverified_03f9 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1834488796953673862"
+   },
+   {
+    "title": "Unverified_03f9 attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x1a3e9eb5e00f39e84f90ca23bd851aa194b1e7a90003e3f6b9b17bbb66dabbb9"
+   }
+  ],
+  "poc": "src/test/2024-09/unverified_03f9_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_03f9_exp.sol"
+ },
+ {
+  "date": "2024-09-13",
+  "name": "Unverified_5697",
+  "dhl_root_cause": "Access Control",
+  "lost": "12K",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Unverified_5697",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_5697_exp.sol"
+   },
+   {
+    "title": "Unverified_5697 incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1834432197375533433"
+   },
+   {
+    "title": "Unverified_5697 incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0x3f0dc68dc89fce3250b9d2de2611384b8af258e83f7a711f666917c5590d13d2"
+   }
+  ],
+  "poc": "src/test/2024-09/unverified_5697_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/unverified_5697_exp.sol"
+ },
+ {
+  "date": "2024-09-13",
+  "name": "OTSeaStaking",
+  "dhl_root_cause": "Logic Flaw",
+  "lost": "26k",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: OTSeaStaking",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/OTSeaStaking_exp.sol"
+   }
+  ],
+  "poc": "src/test/2024-09/OTSeaStaking_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/OTSeaStaking_exp.sol"
+ },
+ {
+  "date": "2024-09-20",
+  "name": "DOGGO",
+  "dhl_root_cause": "Logic Flaw",
+  "lost": "7K USD",
+  "loss_usd_parsed": 7000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: DOGGO",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/DOGGO_exp.sol"
+   },
+   {
+    "title": "DOGGO incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1837358462076080521"
+   },
+   {
+    "title": "DOGGO incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0x9e074d70e4f9022cba33c1417a6f6338d8248b67d6141c9a32913ca567d0efca?line=0"
+   }
+  ],
+  "poc": "src/test/2024-09/DOGGO_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/DOGGO_exp.sol"
+ },
+ {
+  "date": "2024-09-20",
+  "name": "Shezmu",
+  "dhl_root_cause": "Access Control",
+  "lost": "4.9M USD",
+  "loss_usd_parsed": 4900000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Shezmu",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Shezmu_exp.sol"
+   },
+   {
+    "title": "Shezmu incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/shoucccc/status/1837228053862437244"
+   },
+   {
+    "title": "Shezmu incident analysis",
+    "publisher": "Medium",
+    "url": "https://medium.com/coinmonks/decoding-shezmus-4-9-million-exploit-10dc0266b25b"
+   },
+   {
+    "title": "Shezmu attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x39328ea4377a8887d3f6ce91b2f4c6b19a851e2fc5163e2f83bbc2fc136d0c71"
+   }
+  ],
+  "poc": "src/test/2024-09/Shezmu_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Shezmu_exp.sol"
+ },
+ {
+  "date": "2024-09-23",
+  "name": "PestoToken",
+  "dhl_root_cause": "Price Manipulation",
+  "lost": "1.4K",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: PestoToken",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/PestoToken_exp.sol"
+   },
+   {
+    "title": "PestoToken incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/1838225968009527652"
+   },
+   {
+    "title": "PestoToken incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0x3d5b4a0d560e8dd750239b578e2b85921b523835b644714dc239a2db70cf067c"
+   }
+  ],
+  "poc": "src/test/2024-09/PestoToken_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/PestoToken_exp.sol"
+ },
+ {
+  "date": "2024-09-26",
+  "name": "OnyxDAO",
+  "dhl_root_cause": "Fake Market",
+  "lost": "4.1M VUSD, 7.35M XCN, 5K DAI, 0.23 WBTC, 50K USDT (>$3.8M USD)",
+  "loss_usd_parsed": 50000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: OnyxDAO",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/OnyxDAO_exp.sol"
+   },
+   {
+    "title": "OnyxDAO incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/peckshield/status/1839302663680438342"
+   },
+   {
+    "title": "OnyxDAO incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/rotcivegaf"
+   },
+   {
+    "title": "OnyxDAO attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x46567c731c4f4f7e27c4ce591f0aebdeb2d9ae1038237a0134de7b13e63d8729"
+   }
+  ],
+  "poc": "src/test/2024-09/OnyxDAO_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/OnyxDAO_exp.sol"
+ },
+ {
+  "date": "2024-09-26",
+  "name": "Bedrock_DeFi",
+  "dhl_root_cause": "Swap ETH/BTC 1/1 in mint function",
+  "lost": "27.83925883 BTC (~$1.7M USD)",
+  "loss_usd_parsed": 1700000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Bedrock_DeFi",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Bedrock_DeFi_exp.sol"
+   },
+   {
+    "title": "Bedrock_DeFi incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/certikalert/status/1839403126694326374"
+   },
+   {
+    "title": "Bedrock_DeFi incident analysis",
+    "publisher": "BscScan",
+    "url": "https://bscscan.com/tx/0x0fe3716431f8c2e43217c3ca6d25eed87e14d0fbfa9c9ee8ce4cef2e5ec4583c"
+   },
+   {
+    "title": "Bedrock_DeFi incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/rotcivegaf"
+   },
+   {
+    "title": "Bedrock_DeFi attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x725f0d65340c859e0f64e72ca8260220c526c3e0ccde530004160809f6177940"
+   }
+  ],
+  "poc": "src/test/2024-09/Bedrock_DeFi_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-09/Bedrock_DeFi_exp.sol"
+ },
+ {
+  "date": "2024-10-01",
+  "name": "FireToken",
+  "dhl_root_cause": "Pair Manipulation With Transfer Function",
+  "lost": "8.45 ETH (~$20K USD)",
+  "loss_usd_parsed": 20000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: FireToken",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/FireToken_exp.sol"
+   },
+   {
+    "title": "FireToken incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://twitter.com/rotcivegaf"
+   },
+   {
+    "title": "FireToken attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xd20b3b31a682322eb0698ecd67a6d8a040ccea653ba429ec73e3584fa176ff2b"
+   }
+  ],
+  "poc": "src/test/2024-10/FireToken_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/FireToken_exp.sol"
+ },
+ {
+  "date": "2024-10-06",
+  "name": "SASHAToken",
+  "dhl_root_cause": "Price Manipulation",
+  "lost": "",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: SASHAToken",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/SASHAToken_exp.sol"
+   },
+   {
+    "title": "SASHAToken incident analysis",
+    "publisher": "app.blocksec.com",
+    "url": "https://app.blocksec.com/explorer/tx/eth/0xd9fdc7d03eec28fc2453c5fa68eff82d4c297f436a6a5470c54ca3aecd2db17e"
+   }
+  ],
+  "poc": "src/test/2024-10/SASHAToken_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/SASHAToken_exp.sol"
+ },
+ {
+  "date": "2024-10-13",
+  "name": "MorphoBlue",
+  "dhl_root_cause": "Overpriced Asset in Oracle",
+  "lost": "$230,000",
+  "loss_usd_parsed": 230000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: MorphoBlue",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/MorphoBlue_exp.sol"
+   },
+   {
+    "title": "MorphoBlue incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/omeragoldberg/status/1845515843787960661"
+   },
+   {
+    "title": "MorphoBlue attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x256979ae169abb7fbbbbc14188742f4b9debf48b48ad5b5207cadcc99ccb493b"
+   }
+  ],
+  "poc": "src/test/2024-10/MorphoBlue_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/MorphoBlue_exp.sol"
+ },
+ {
+  "date": "2026-05-20",
+  "name": "MAPProtocol",
+  "dhl_root_cause": "Arbitrary Mint",
+  "lost": "~$180K",
+  "loss_usd_parsed": 180000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: MAPProtocol",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/MAPProtocol_exp.sol"
+   },
+   {
+    "title": "MAPProtocol incident analysis",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x31e56b4737649e0acdb0ebb4eca44d16aeca25f60c022cbde85f092bde27664a"
+   },
+   {
+    "title": "MAPProtocol incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/MapProtocol/status/2059587998409490510"
+   },
+   {
+    "title": "MAPProtocol attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x31e56b4737649e0acdb0ebb4eca44d16aeca25f60c022cbde85f092bde27664a"
+   }
+  ],
+  "poc": "src/test/2026-05/MAPProtocol_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/MAPProtocol_exp.sol"
+ },
+ {
+  "date": "2026-05-21",
+  "name": "MureDistribution",
+  "dhl_root_cause": "Signature Verification Bypass",
+  "lost": "~5.45 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: MureDistribution",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/MureDistribution_exp.sol"
+   },
+   {
+    "title": "MureDistribution incident analysis",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xb83040361a0ec72fa2d06ad69493226518a5f8b5d96c19b400626248f9c5b798"
+   },
+   {
+    "title": "MureDistribution incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/DefimonAlerts/status/2058211424761942226"
+   },
+   {
+    "title": "MureDistribution attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xb83040361a0ec72fa2d06ad69493226518a5f8b5d96c19b400626248f9c5b798"
+   }
+  ],
+  "poc": "src/test/2026-05/MureDistribution_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/MureDistribution_exp.sol"
+ },
+ {
+  "date": "2026-05-25",
+  "name": "SquidRouterModule",
+  "dhl_root_cause": "Missing caller check",
+  "lost": "0.25 WBTC + 0.29 wTAO + 0.02 WETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: SquidRouterModule",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/SquidRouterModule_exp.sol"
+   },
+   {
+    "title": "SquidRouterModule incident analysis",
+    "publisher": "t.me",
+    "url": "https://t.me/defimon_alerts/3045"
+   },
+   {
+    "title": "SquidRouterModule attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x2d52984706d5ac567d554d40a62beeeda9e3901dd3847e93dd2a3117902abfeb"
+   }
+  ],
+  "poc": "src/test/2026-05/SquidRouterModule_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/SquidRouterModule_exp.sol"
+ },
+ {
+  "date": "2026-05-25",
+  "name": "New Market Trading",
+  "dhl_root_cause": "SquidRouterModule Missing Caller Check",
+  "lost": "~$3.98M USD",
+  "loss_usd_parsed": 3980000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: New Market Trading",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/NewMarketTrading_exp.sol"
+   },
+   {
+    "title": "New Market Trading incident analysis",
+    "publisher": "rekt.news",
+    "url": "https://rekt.news/newmarkettrading-rekt"
+   }
+  ],
+  "poc": "src/test/2026-05/NewMarketTrading_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/NewMarketTrading_exp.sol"
+ },
+ {
+  "date": "2026-05-25",
+  "name": "WUSD.fi",
+  "dhl_root_cause": "_englove Sybil Incentive Abuse",
+  "lost": "~$200K USD (GLOVE emissions + LP drain)",
+  "loss_usd_parsed": 200000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: WUSD.fi",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/WUSD_exp.sol"
+   },
+   {
+    "title": "WUSD.fi incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/exvulsec/status/2058803971947385330"
+   }
+  ],
+  "poc": "src/test/2026-05/WUSD_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/WUSD_exp.sol"
+ },
+ {
+  "date": "2026-06-07",
+  "name": "AmbientCrocSwapDex",
+  "dhl_root_cause": "Native surplus accounting flaw",
+  "lost": "67.85 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: AmbientCrocSwapDex",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AmbientCrocSwapDex_exp.sol"
+   },
+   {
+    "title": "AmbientCrocSwapDex incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/2063816231023427861"
+   },
+   {
+    "title": "AmbientCrocSwapDex attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xb2fc668c42623261074de6fc30d583efede2b0e20d7aded42b7b634f9322ff52"
+   }
+  ],
+  "poc": "src/test/2026-06/AmbientCrocSwapDex_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AmbientCrocSwapDex_exp.sol"
+ },
+ {
+  "date": "2026-06-09",
+  "name": "TOPBPool",
+  "dhl_root_cause": "Governance-controlled token mint and Balancer pool drain",
+  "lost": "944.20 WETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: TOPBPool",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/TOPBPool_exp.sol"
+   },
+   {
+    "title": "TOPBPool incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/DefimonAlerts/status/2064616112822583505"
+   },
+   {
+    "title": "TOPBPool attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x967aa34c69b7775c718545c7f94d92e965eb5fc553c0f27f6f1a9c65c93ac156"
+   }
+  ],
+  "poc": "src/test/2026-06/TOPBPool_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/TOPBPool_exp.sol"
+ },
+ {
+  "date": "2026-06-09",
+  "name": "NovaBox",
+  "dhl_root_cause": "Constructor Dividend Checkpoint Bypass",
+  "lost": "56.73 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: NovaBox",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/NovaBox_exp.sol"
+   },
+   {
+    "title": "NovaBox incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/DefimonAlerts/status/2064616360466919793"
+   },
+   {
+    "title": "NovaBox attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x0cfa357e9e4db1540246f17cb6bfa0634ff8727d7cf241b63fb22605021c8844"
+   }
+  ],
+  "poc": "src/test/2026-06/NovaBox_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/NovaBox_exp.sol"
+ },
+ {
+  "date": "2026-06-14",
+  "name": "Aztec Connect",
+  "dhl_root_cause": "numRealTxs Proof/Settlement Mismatch (permissionless RollupProcessorV3)",
+  "lost": "~$2.19M (this PoC reproduces the 908.99 ETH leg)",
+  "loss_usd_parsed": 2190000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Aztec Connect",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AztecConnect_exp.sol"
+   },
+   {
+    "title": "Aztec Connect incident analysis",
+    "publisher": "cryptotimes.io",
+    "url": "https://www.cryptotimes.io/2026/06/15/aztec-exploit-drains-2-19m-from-dormant-privacy-protocol/"
+   },
+   {
+    "title": "Aztec Connect incident analysis",
+    "publisher": "dev.to",
+    "url": "https://dev.to/cryip/how-a-single-validation-mismatch-can-drain-millions-lessons-from-the-aztec-connect-exploit-2598"
+   },
+   {
+    "title": "Aztec Connect incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/aztecFND/status/2066175938887619055"
+   }
+  ],
+  "poc": "src/test/2026-06/AztecConnect_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AztecConnect_exp.sol"
+ },
+ {
+  "date": "2026-06-15",
+  "name": "Thetanuts",
+  "dhl_root_cause": "Index vault component-share accounting flaw",
+  "lost": "105471.50 USDC",
+  "loss_usd_parsed": 105471.5,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Thetanuts",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/Thetanuts_exp.sol"
+   },
+   {
+    "title": "Thetanuts incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/PeckShieldAlert/status/2066540451126190312"
+   },
+   {
+    "title": "Thetanuts attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xbba9f138fe39503bfd1aa62932dbd6ab35d37d23d48e4b7bf2988a9d5dc39fec"
+   }
+  ],
+  "poc": "src/test/2026-06/Thetanuts_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/Thetanuts_exp.sol"
+ },
+ {
+  "date": "2026-06-17",
+  "name": "Aztec V1",
+  "dhl_root_cause": "escapeHatch Proof-Forgery (permissionless RollupProcessor exit)",
+  "lost": "~$2.2M (1158 ETH + 150,000 DAI + 0.4696 renBTC)",
+  "loss_usd_parsed": 2200000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Aztec V1",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AztecEscapeHatch_exp.sol"
+   },
+   {
+    "title": "Aztec V1 attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xab306cd2184d23b6ba3e151b10b3b9a0b81f211cc16f4f3b0c79f0b17a59c2b5"
+   }
+  ],
+  "poc": "src/test/2026-06/AztecEscapeHatch_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AztecEscapeHatch_exp.sol"
+ },
+ {
+  "date": "2026-06-22",
+  "name": "Aztec Escape Hatch",
+  "dhl_root_cause": "proof_id Accounting Bypass (whitehat reproduction)",
+  "lost": "N/A (purely educational; worst-case impact would have been ~$2M, matching the separate vulnerability that actually drained the contracts)",
+  "loss_usd_parsed": 2000000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Aztec Escape Hatch",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AztecEscapeHatch_exp2.sol"
+   },
+   {
+    "title": "Aztec Escape Hatch incident analysis",
+    "publisher": "GitHub",
+    "url": "https://github.com/AztecProtocol/aztec-2.0"
+   },
+   {
+    "title": "Aztec Escape Hatch incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/ivanbogatyy/status/2069159603942596830"
+   }
+  ],
+  "poc": "src/test/2026-06/AztecEscapeHatch_exp2.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/AztecEscapeHatch_exp2.sol"
+ },
+ {
+  "date": "2026-06-25",
+  "name": "LixirPermitDrain",
+  "dhl_root_cause": "Broken Signature Verification",
+  "lost": "2.60 ETH, 4,477.72 USDC, 3,609.95 USDT, 24,182.56 LIX",
+  "loss_usd_parsed": 4477.72,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: LixirPermitDrain",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/LixirPermitDrain_exp.sol"
+   },
+   {
+    "title": "LixirPermitDrain incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/DefimonAlerts/status/2070362661691207935"
+   },
+   {
+    "title": "LixirPermitDrain attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x17026faca0b8e4cb7531e4fb277c390eb165e81229628e0192923ad1d90a41da"
+   }
+  ],
+  "poc": "src/test/2026-06/LixirPermitDrain_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/LixirPermitDrain_exp.sol"
+ },
+ {
+  "date": "2026-07-01",
+  "name": "edel-xstock",
+  "dhl_root_cause": "Price Oracle Manipulation",
+  "lost": "204,215.57 USDC",
+  "loss_usd_parsed": 204215.57,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: edel-xstock",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-07/edel-xstock_exp.sol"
+   },
+   {
+    "title": "edel-xstock incident analysis",
+    "publisher": "X (Twitter)",
+    "url": "https://x.com/TenArmorAlert/status/2072130807356129726"
+   },
+   {
+    "title": "edel-xstock attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xe2320086b2815d21b0927839bd0e306466c29a68d38d5361e99dd21ec5472612"
+   }
+  ],
+  "poc": "src/test/2026-07/edel-xstock_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-07/edel-xstock_exp.sol"
+ },
+ {
+  "date": "2026-07-06",
+  "name": "SummerFi",
+  "dhl_root_cause": "FleetCommander NAV Inflation via Depegged xUSD",
+  "lost": "~$6M (DAI + LVUSDC shares)",
+  "loss_usd_parsed": 6000000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: SummerFi",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-07/SummerFi_exp.sol"
+   },
+   {
+    "title": "SummerFi incident analysis",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x0db528c44f23fc7fa4544684a2fab81096450a14aae8bc89f42cd0592d43da12"
+   },
+   {
+    "title": "SummerFi attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0x0db528c44f23fc7fa4544684a2fab81096450a14aae8bc89f42cd0592d43da12"
+   }
+  ],
+  "poc": "src/test/2026-07/SummerFi_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-07/SummerFi_exp.sol"
+ },
+ {
+  "date": "2026-08-06",
+  "name": "UnistreetLaunchpad",
+  "dhl_root_cause": "arbitrary call injection via unvalidated launch forwarding",
+  "lost": "~17,743.91 USDC + ~0.0072 WETH (~$17.75K)",
+  "loss_usd_parsed": 17743.91,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: UnistreetLaunchpad",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/UnistreetLaunchpad_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-08/UnistreetLaunchpad_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/UnistreetLaunchpad_exp.sol"
+ },
+ {
+  "date": "2026-08-09",
+  "name": "USM",
+  "dhl_root_cause": "defund() price split-invariance rounding exploit",
+  "lost": "~70.83 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: USM",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/USM_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-08/USM_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/USM_exp.sol"
+ },
+ {
+  "date": "2026-08-23",
+  "name": "ArrakisGUNI",
+  "dhl_root_cause": "Uniswap V3 spot-price manipulation of vault mint/burn",
+  "lost": "~2.9414 ETH net attacker surplus (Arrakis V1 / G-UNI ENS-WETH vault)",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: ArrakisGUNI",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/ArrakisGUNI_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-08/ArrakisGUNI_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/ArrakisGUNI_exp.sol"
+ },
+ {
+  "date": "2026-08-28",
+  "name": "AjnaFinance",
+  "dhl_root_cause": "liquidation accounting manipulation via self-controlled auction",
+  "lost": "~$124.8K for this cbETH pool (1 of 7 pools hit by the same bug the same day, ~$775K aggregate)",
+  "loss_usd_parsed": 124800.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: AjnaFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/AjnaFinance_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-08/AjnaFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/AjnaFinance_exp.sol"
+ },
+ {
+  "date": "2026-08-31",
+  "name": "FloatProtocol",
+  "dhl_root_cause": "Uniswap V3 spot price manipulation of Hypervisor LP shares",
+  "lost": "~$28,000 (10.71 ETH)",
+  "loss_usd_parsed": 28000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: FloatProtocol",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/FloatProtocol_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-08/FloatProtocol_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/FloatProtocol_exp.sol"
+ },
+ {
+  "date": "2026-08-31",
+  "name": "BalancerV1BPool",
+  "dhl_root_cause": "joinswapPoolAmountOut rounding drain across 5 pools",
+  "lost": "~$110,839 for this DPI/USDC/WETH/WBTC pool (~$234K aggregate across all 5 vulnerable pools)",
+  "loss_usd_parsed": 110839.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: BalancerV1BPool",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/BalancerV1BPool_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-08/BalancerV1BPool_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/BalancerV1BPool_exp.sol"
+ },
+ {
+  "date": "2026-09-01",
+  "name": "ReflexerGEB",
+  "dhl_root_cause": "Shared GebProxyActions library registered as SAFE owner",
+  "lost": "~5.9436 ETH (~$14K, drained from 4 SAFEs in one tx: IDs 3, 5, 8, 18)",
+  "loss_usd_parsed": 14000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: ReflexerGEB",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/ReflexerGEB_exp.sol"
+   },
+   {
+    "title": "ReflexerGEB attack transaction",
+    "publisher": "Etherscan",
+    "url": "https://etherscan.io/tx/0xfbce28e35c26358110dd9ed91f9ceef588acb264c3cf6c573df65ca21335058f"
+   }
+  ],
+  "poc": "src/test/2026-08/ReflexerGEB_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-08/ReflexerGEB_exp.sol"
+ },
+ {
+  "date": "2026-09-03",
+  "name": "NotionalFinance",
+  "dhl_root_cause": "ERC1155 fCash mint overflow drains escrow",
+  "lost": "~69,257.37 DAI + ~1,658,524.86 USDC (~$1.73M)",
+  "loss_usd_parsed": 1658524.86,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: NotionalFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/NotionalFinance_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/NotionalFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/NotionalFinance_exp.sol"
+ },
+ {
+  "date": "2026-09-05",
+  "name": "Reddio",
+  "dhl_root_cause": "cross-share-class balance double-count via permissionless registerErc20",
+  "lost": "~9.25 ETH",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Reddio",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/Reddio_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/Reddio_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/Reddio_exp.sol"
+ },
+ {
+  "date": "2026-09-05",
+  "name": "SecuredFi",
+  "dhl_root_cause": "same-block self-trade manipulates getMarketUnitPrice to fabricate collateral",
+  "lost": "~0.9 WBTC (~$72K single-drain; ~$104K across all actors exploiting the same public bug)",
+  "loss_usd_parsed": 72000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: SecuredFi",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/SecuredFi_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/SecuredFi_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/SecuredFi_exp.sol"
+ },
+ {
+  "date": "2026-09-08",
+  "name": "OrderFactory",
+  "dhl_root_cause": "missing access control on createOrderForBuyer drains buyer accounts",
+  "lost": "~20.247 ETH this tx (5 buyers drained; reported incident total ~24.7 ETH)",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: OrderFactory",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/OrderFactory_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/OrderFactory_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/OrderFactory_exp.sol"
+ },
+ {
+  "date": "2026-09-09",
+  "name": "EtherFiAtomicQueue",
+  "dhl_root_cause": "missing solver access control drains victim allowances",
+  "lost": "~15.45 ETH (9 real victims' standing liquidETH allowances drained)",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: EtherFiAtomicQueue",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/EtherFiAtomicQueue_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/EtherFiAtomicQueue_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/EtherFiAtomicQueue_exp.sol"
+ },
+ {
+  "date": "2026-09-09",
+  "name": "OMNI404",
+  "dhl_root_cause": "ERC-404 dual ID/amount transfer interpretation drains pool WETH",
+  "lost": "2.427 WETH (run() leg reproduced here; ~3.02 ETH across the full 4-tx block)",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: OMNI404",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/OMNI404_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/OMNI404_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/OMNI404_exp.sol"
+ },
+ {
+  "date": "2026-09-09",
+  "name": "EnsoFinance",
+  "dhl_root_cause": "short-window Uniswap V3 TWAP oracle enables ~9x overvalued strategy deposit",
+  "lost": "~5.6 ETH (5.277 ETH realized in this PoC after slippage selling looted UNI/AAVE/MKR back to WETH)",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: EnsoFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/EnsoFinance_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/EnsoFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/EnsoFinance_exp.sol"
+ },
+ {
+  "date": "2026-09-12",
+  "name": "SpiralHookV2",
+  "dhl_root_cause": "Uniswap V4 spot-price borrow plus tx.origin-keyed same-block guard bypass",
+  "lost": "~10.70728 ETH (reproduced exact to the wei)",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: SpiralHookV2",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/SpiralHookV2_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/SpiralHookV2_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/SpiralHookV2_exp.sol"
+ },
+ {
+  "date": "2026-09-12",
+  "name": "YamFinance",
+  "dhl_root_cause": "dormant-DAO quorum governance takeover drains legacy UMA farming contracts",
+  "lost": "~$121K (48.085 WETH + 763.101 UMA)",
+  "loss_usd_parsed": 121000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: YamFinance",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/YamFinance_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/YamFinance_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/YamFinance_exp.sol"
+ },
+ {
+  "date": "2026-09-15",
+  "name": "RsETHSafeModule",
+  "dhl_root_cause": "nested self-referential multicall authorization bypass drains Gnosis Safe via DELEGATECALL",
+  "lost": "2,900 aEthrsETH (~$7.8M gross; 2,882.37 rsETH / ~$7.73M net to the MEV frontrunner)",
+  "loss_usd_parsed": 7800000.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: RsETHSafeModule",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/RsETHSafeModule_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/RsETHSafeModule_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/RsETHSafeModule_exp.sol"
+ },
+ {
+  "date": "2026-09-16",
+  "name": "Startale",
+  "dhl_root_cause": "transient storage init flag outlives the constructor and lets anyone reinitialize an ERC7579 account and drain it",
+  "lost": "427.551160 USDC drained in this batch tx (32.555561 USDC reproduced across 3 of 23 victim accounts; ~$2,876 USDC+USDT aggregate across 41 known batches)",
+  "loss_usd_parsed": 427.55,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Startale",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/Startale_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/Startale_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/Startale_exp.sol"
+ },
+ {
+  "date": "2026-09-16",
+  "name": "Flamincome",
+  "dhl_root_cause": "permissionless Convex stakeFor inflates Strategy NAV and lets VaultYUSDT overpay on withdrawAll",
+  "lost": "~$345.9K USDT net attacker profit (gross Strategy loss ~$595K in aUSDT+USDT)",
+  "loss_usd_parsed": 345900.0,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: Flamincome",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/Flamincome_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/Flamincome_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/Flamincome_exp.sol"
+ },
+ {
+  "date": "2026-09-26",
+  "name": "DAOstack",
+  "dhl_root_cause": "permissionless newOrganization lets an attacker hijack an existing Reputation contract and drain the Avatar",
+  "lost": "4.025 ETH (full Genesis Alpha treasury); attacker minted 20,000 REP against the victim's real Reputation contract (supply 9,738.6 to 29,738.6, ~67% majority after a 200 REP GenesisProtocol vote-cost burn) and used it to self-install as a full-permission scheme",
+  "loss_usd_parsed": null,
+  "candidate_sources": [
+   {
+    "title": "DeFiHackLabs PoC: DAOstack",
+    "publisher": "DeFiHackLabs (GitHub)",
+    "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/DAOstack_exp.sol"
+   }
+  ],
+  "poc": "src/test/2026-09/DAOstack_exp.sol",
+  "poc_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-09/DAOstack_exp.sol"
+ }
+]

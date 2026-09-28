@@ -1,0 +1,6 @@
+﻿category,category_zh,incidents,total_loss_usd,single_chain_loss_usd
+smart_contract_bug,合約 / 程式邏輯漏洞,218,139168906.03,139168906.03
+oracle_price_manipulation,預言機 / 價格操縱,41,48593134.21,48593134.21
+economic_exploit,經濟模型攻擊,5,600000.0,600000.0
+operational_error,操作失誤,1,90000.0,90000.0
+private_key_compromise,私鑰外洩 / 盜用,1,0,0

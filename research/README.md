@@ -31,4 +31,13 @@ PoC 原始碼沒有複製進來，需要時可以用 `poc_url` 查看，或用 `
 
 ## `evm_workflow_results/`：Ethereum / BSC 紀錄撰寫結果
 
-`dhl_case_records` workflow 的原始輸出（每筆紀錄附審查者的判定與修正），用 `python -m hack_db.merge` 合併進 `ethereum_hacks` / `bsc_hacks`。
+`dhl_case_records` workflow 的撰寫結果：
+
+| 檔案 | 內容 |
+|---|---|
+| `eth{1,2,3}_drafts.json` | 以太坊 236 筆初稿（`reviewed: false`，`facts` / `scope` 審查欄位為空），已用 `--draft` 合併 |
+| `bsc{1,2,3}_drafts.json` | BSC 266 筆初稿，同上 |
+| `ethereum_remaining_inputs.json` | 還沒寫的 105 起以太坊事件（workflow 輸入格式） |
+| `bsc_remaining_inputs.json` | 還沒寫的 101 起 BSC 事件 |
+
+審查完成後，用 `python -m hack_db.merge`（不加 `--draft`）合併審查結果，取代初稿。

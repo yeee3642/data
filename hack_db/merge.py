@@ -31,6 +31,7 @@ CLASSIFICATION_FIELDS = {
 }
 RECORD_FIELDS = (*INCIDENT_FIELDS, "sources")
 FACT_FIELDS = set(RECORD_FIELDS) - CLASSIFICATION_FIELDS
+DRAFT_NOTE = "[Draft: not yet independently reviewed.]"
 
 
 def apply_verdicts(record: dict, facts: dict | None, scope: dict | None):
@@ -55,7 +56,7 @@ def _unique_id(base: str, taken: set[str]) -> str:
 
 
 def merge_results(
-    existing: list[dict], results: list[dict]
+    existing: list[dict], results: list[dict], draft_note: str = ""
 ) -> tuple[list[dict], list[str]]:
     """Merge workflow ``results`` entries ({record, facts, scope}) into existing."""
     taken = {r["id"] for r in existing}
@@ -68,6 +69,8 @@ def merge_results(
         if record is None:
             log.append(f"dropped {rid}: {reason}")
             continue
+        if draft_note:
+            record["notes"] = f"{record.get('notes') or ''} {draft_note}".strip()
         record["id"] = _unique_id(record["id"], taken)
         taken.add(record["id"])
         added.append(record)
@@ -85,6 +88,11 @@ def main(argv=None) -> None:
         "results", nargs="+", type=Path, help="workflow result JSON files"
     )
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--draft",
+        action="store_true",
+        help="results have not been independently reviewed; mark them in notes",
+    )
     args = parser.parse_args(argv)
 
     ds = Dataset(args.dataset)
@@ -94,7 +102,7 @@ def main(argv=None) -> None:
         data = json.loads(path.read_text(encoding="utf-8"))
         # Accept either {results: [...]} (EVM era) or {sweep: {results: [...]}} (Solana).
         results += data.get("results") or (data.get("sweep") or {}).get("results") or []
-    merged, log = merge_results(existing, results)
+    merged, log = merge_results(existing, results, DRAFT_NOTE if args.draft else "")
     print("\n".join(log))
     errors = validate(merged, ds.lookups())
     if errors:

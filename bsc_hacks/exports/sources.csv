@@ -1,0 +1,750 @@
+﻿incident_id,publisher,title,url
+3913token-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: 3913Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/3913_exp.sol
+3913token-2023-11,defimon.xyz,3913Token incident analysis,https://defimon.xyz/attack/bsc/0x8163738d6610ca32f048ee9d30f4aa1ffdb3ca1eddf95c0eba086c3e936199ed
+3913token-2023-11,BscScan,3913Token attack transaction,https://bscscan.com/tx/0x8163738d6610ca32f048ee9d30f4aa1ffdb3ca1eddf95c0eba086c3e936199ed
+98token-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: 98Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/98Token_exp.sol
+98token-2025-01,X (Twitter),98Token incident analysis,https://x.com/TenArmorAlert/status/1875462686353363435
+98token-2025-01,app.blocksec.com,98Token incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x61da5b502a62d7e9038d73e31ceb3935050430a7f9b7e29b9b3200db3095f91d
+abcc-app-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ABCCApp,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/ABCCApp_exp.sol
+abcc-app-2025-08,X (Twitter),ABCCApp incident analysis,https://x.com/TenArmorAlert/status/1959457212914352530
+abcc-app-2025-08,BscScan,ABCCApp attack transaction,https://bscscan.com/tx/0xee4eae6f70a6894c09fda645fb24ab841e9847a788b1b2e8cb9cc50c1866fb12
+aes-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: AES (Deflationary token),https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/AES_exp.sol
+aes-2022-12,X (Twitter),AES (Deflationary token) incident analysis,https://twitter.com/BlockSecTeam/status/1600442137811689473
+aes-2022-12,BscScan,AES (Deflationary token) attack transaction,https://bscscan.com/tx/0xca4d0d24aa448329b7d4eb81be653224a59e7b081fc7a1c9aad59c5a38d0ae19
+airwa-2025-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: AIRWA,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-04/AIRWA_exp.sol
+airwa-2025-04,X (Twitter),AIRWA incident analysis,https://x.com/TenArmorAlert/status/1908086092772900909
+airwa-2025-04,BscScan,AIRWA attack transaction,https://bscscan.com/tx/0x5cf050cba486ec48100d5e5ad716380660e8c984d80f73ba888415bb540851a4
+ais-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: AIS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/AIS_exp.sol
+ais-2023-11,X (Twitter),AIS incident analysis,https://twitter.com/Phalcon_xyz/status/1729861048004391306
+ak1111-2024-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Ak1111,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-11/Ak1111_exp.sol
+ak1111-2024-11,X (Twitter),Ak1111 incident analysis,https://x.com/TenArmorAlert/status/1860554838897197135
+ak1111-2024-11,BscScan,Ak1111 attack transaction,https://bscscan.com/tx/0xc29c98da0c14f4ca436d38f8238f8da1c84c4b1ee6480c4b4facc4b81a013438
+alp-2024-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ALP,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/ALP_exp.sol
+alp-2024-03,app.blocksec.com,ALP incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x9983ca8eaee9ee69629f74537eaf031272af75f1e5a7725911d8b06df17c67ca
+anch-2022-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ANCH,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/ANCH_exp.sol
+anch-2022-08,X (Twitter),ANCH incident analysis,https://twitter.com/AnciliaInc/status/1557846766682140672
+anch-2022-08,X (Twitter),ANCH incident analysis,https://twitter.com/AnciliaInc/status/1557527183966408706
+annex-finance-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: AnnexFinance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/Annex_exp.sol
+annex-finance-2022-11,X (Twitter),AnnexFinance incident analysis,https://twitter.com/AnciliaInc/status/1593690338526273536
+annex-finance-2022-11,BscScan,AnnexFinance attack transaction,https://bscscan.com/tx/0x3757d177482171dcfad7066c5e88d6f0f0fe74b28f32e41dd77137cad859c777
+apc-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: APC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/APC_exp.sol
+apc-2022-12,X (Twitter),APC incident analysis,https://twitter.com/BlockSecTeam/status/1598262002010378241
+apc-2022-12,BscScan,APC attack transaction,https://bscscan.com/tx/0xbcaecea2044101c80f186ce5327bec796cd9e054f0c240ddce93e2aead337370
+apedao-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: APEDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/ApeDAO_exp.sol
+apedao-2023-07,X (Twitter),APEDAO incident analysis,https://twitter.com/BeosinAlert/status/1681316257034035201
+apedao-2023-07,BscScan,APEDAO attack transaction,https://bscscan.com/tx/0x8d35dfd9968ce61fb969ffe8dcc29eeeae864e466d2cb0b7d26ce63644691994
+apig-2023-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: APIG,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-09/APIG_exp.sol
+apig-2023-09,X (Twitter),APIG incident analysis,https://twitter.com/CertiKAlert/status/1700128158647734745
+apig-2023-09,BscScan,APIG attack transaction,https://bscscan.com/tx/0x66dee84591aeeba6e5f31e12fe728f2ddc79a06426036793487a980c3b952947
+ark-2024-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ARK,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/ARK_exp.sol
+ark-2024-03,X (Twitter),ARK incident analysis,https://twitter.com/Phalcon_xyz/status/1771728823534375249
+ark-2024-03,app.blocksec.com,ARK incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xe8b0131fa14d0a96327f6b5690159ffa7650d66376db87366ba78d91f17cd677
+aros-2026-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: AROS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/AROS_exp.sol
+aros-2026-05,X (Twitter),AROS incident analysis,https://x.com/TenArmorAlert/status/2061289921990570349
+aros-2026-05,BscScan,AROS attack transaction,https://bscscan.com/tx/0xe89fe640ec5241edfca7d8dcae77a0a4270dee15e4bbd043fc60e393aabf41e1
+ast-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Ast,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/Ast_exp.sol
+ast-2025-01,Medium,Ast incident analysis,https://medium.com/@joichiro.sai/ast-token-hack-how-a-faulty-transfer-logic-led-to-a-65k-exploit-da75aed59a43
+ast-2025-01,BscScan,Ast attack transaction,https://bscscan.com/tx/0x80dd9362d211722b578af72d551f0a68e0dc1b1e077805353970b2f65e793927
+atk-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ATK,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/ATK_exp.sol
+atk-2022-10,certik.com,ATK incident analysis,https://www.certik.com/resources/blog/1YsQo8TnxCvwalqvtkFLtC-journey-of-awakening-incident-analysis
+atk-2022-10,BscScan,ATK attack transaction,https://bscscan.com/tx/0x55983d8701e40353fee90803688170a16424ee702f6b21bb198bb8e7282112cd
+atm-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ATM,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/ATM_exp.sol
+atm-2024-04,app.blocksec.com,ATM incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xee10553c26742bec9a4761fd717642d19012bab1704cbced048425070ee21a8a?line=2
+atmblindbox-2026-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ATMBlindBox,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-03/ATMBlindBox_exp.sol
+atmblindbox-2026-03,t.me,ATMBlindBox incident analysis,https://t.me/defimon_alerts/2808
+atmblindbox-2026-03,BscScan,ATMBlindBox attack transaction,https://bscscan.com/tx/0xb74a572967ce997afa5920811e6a9dc8b82a6e41ee31fa4d1a24a85aec89e342
+aur-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: AUR,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/AUR_exp.sol
+aur-2022-11,X (Twitter),AUR incident analysis,https://twitter.com/AnciliaInc/status/1595142246570958848
+aur-2022-11,phalcon.blocksec.com,AUR incident analysis,https://phalcon.blocksec.com/tx/bsc/0xb3bc6ca257387eae1cea3b997eb489c1a9c208d09ec4d117198029277468e25d
+babyloogn-2024-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Babyloogn,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-02/Babyloogn_exp.sol
+babyloogn-2024-02,app.blocksec.com,Babyloogn incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xd081d6bb96326be5305a6c00dd51d1799971794941576554341738abc1ceb202
+babyswap-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BabySwap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/BabySwap_exp.sol
+babyswap-2022-10,X (Twitter),BabySwap incident analysis,https://twitter.com/BlockSecTeam/status/1576441612812836865
+babyswap-2022-10,BscScan,BabySwap attack transaction,https://bscscan.com/tx/0xcca7ea9d48e00e7e32e5d005b57ec3cac28bc3ad0181e4ca208832e62aa52efe
+bambooia-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BambooIA,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Bamboo_exp.sol
+bambooia-2023-07,X (Twitter),BambooIA incident analysis,https://twitter.com/Phalcon_xyz/status/1676220090142916611
+bankroll-network-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BankrollNetwork,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/BankrollNetwork_exp.sol
+bankroll-network-2025-06,X (Twitter),BankrollNetwork incident analysis,https://x.com/TenArmorAlert/status/1935618109802459464
+bankroll-network-2025-06,BscScan,BankrollNetwork attack transaction,https://bscscan.com/tx/0x7226b3947c7e8651982e5bd777bca52d03ea31d19b515dec123595a4435ae22c
+bankroll-stack-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BankrollStack,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/BankrollStack_exp.sol
+bankroll-stack-2025-06,X (Twitter),BankrollStack incident analysis,https://x.com/Phalcon_xyz/status/1943518566831296566
+bankroll-stack-2025-06,BscScan,BankrollStack attack transaction,https://bscscan.com/tx/0x0706425beba4b3f28d5a8af8be26287aa412d076828ec73d8003445c087af5fd
+base-price-pool-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BasePricePool,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/BasePricePool_exp.sol
+base-price-pool-2025-06,t.me,BasePricePool incident analysis,https://t.me/defimon_alerts/1306
+base-price-pool-2025-06,BscScan,BasePricePool attack transaction,https://bscscan.com/tx/0x21cbcc96cd7e31bcb5a724c7ae2ad886c0782d73f83dcbf49cf64f2c2eee4a51
+bbox-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BBOX,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/BBOX_exp.sol
+bbox-2022-12,X (Twitter),BBOX incident analysis,https://twitter.com/AnciliaInc/status/1599599614490877952
+bbox-2022-12,BscScan,BBOX attack transaction,https://bscscan.com/tx/0xac57c78881a7c00dfbac0563e21b5ae3a8e3f9d1b07198a27313722a166cc0a3
+bbxtoken-2025-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BBXToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-03/BBXToken_exp.sol
+bbxtoken-2025-03,X (Twitter),BBXToken incident analysis,https://x.com/TenArmorAlert/status/1902651550733906379
+bbxtoken-2025-03,BscScan,BBXToken attack transaction,https://bscscan.com/tx/0x0dd486368444598610239b934dd9e8c6474a06d11380d1cfec4d91568b5ac581
+bce-2026-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BCE,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-03/bce_exp.sol
+bce-2026-03,t.me,BCE incident analysis,https://t.me/defimon_alerts/2814
+bce-2026-03,skylens.certik.com,BCE incident analysis,https://skylens.certik.com/tx/bsc/0x85ac5d15f16d49ae08f90ab0e554ebfcb145712342c5b7704e305d602146d452
+bct-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BCT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/BCT_exp.sol
+bct-2023-12,BscScan,BCT incident analysis,https://bscscan.com/tx/0xdae0b85e01670e6b6b317657a72fb560fc388664cf8bfdd9e1b0ae88e0679103
+bct-2023-12,BscScan,BCT attack transaction,https://bscscan.com/tx/0xd4c19d575ea5b3a415cc288ce09942299ca3a3b49ef9718cda17e4033dd4c250
+bdex-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BDEX,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/BDEX_exp.sol
+bdex-2022-11,X (Twitter),BDEX incident analysis,https://twitter.com/BeosinAlert/status/1588579143830343683
+bdex-2022-11,BscScan,BDEX attack transaction,https://bscscan.com/tx/0xe7b7c974e51d8bca3617f927f86bf907a25991fe654f457991cbf656b190fe94
+bearn-2021-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: bEarn,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/bEarn_exp.sol
+bearn-2021-05,Medium,bEarn incident analysis,https://bearndao.medium.com/bvaults-busd-alpaca-strategy-exploit-post-mortem-and-bearn-s-compensation-plan-b0b38c3b5540
+bearn-2021-05,BscScan,bEarn attack transaction,https://bscscan.com/tx/0x603b2bbe2a7d0877b22531735ff686a7caad866f6c0435c37b7b49e4bfd9a36c
+bearndao-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BEARNDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/BEARNDAO_exp.sol
+bearndao-2023-12,X (Twitter),BEARNDAO incident analysis,https://twitter.com/AnciliaInc/status/1732159377749180646
+bego-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BEGO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/BEGO_exp.sol
+bego-2022-10,X (Twitter),BEGO incident analysis,https://twitter.com/peckshield/status/1582892058800685058
+bego-2022-10,BscScan,BEGO attack transaction,https://bscscan.com/tx/0x9f4ef3cc55b016ea6b867807a09f80d1b2e36f6cd6fccfaf0182f46060332c57
+betapresale-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BetaPresale,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/BetaPresale_exp.sol
+betapresale-2025-05,t.me,BetaPresale incident analysis,https://t.me/defimon_alerts/1092
+betapresale-2025-05,BscScan,BetaPresale attack transaction,https://bscscan.com/tx/0x47670c20325924e89aa87fcdd41df88c21246bd972056736e7964799831abf12
+bfctoken-2023-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BFCToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-09/BFCToken_exp.sol
+bfctoken-2023-09,X (Twitter),BFCToken incident analysis,https://twitter.com/CertiKAlert/status/1700621314246017133
+bfctoken-2023-09,BscScan,BFCToken attack transaction,https://bscscan.com/tx/0x8ee76291c1b46d267431d2a528fa7f3ea7035629500bba4f87a69b88fcaf6e23
+bgld-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BGLD (Deflationary token),https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/BGLD_exp.sol
+bgld-2022-12,X (Twitter),BGLD (Deflationary token) incident analysis,https://twitter.com/BlockSecTeam/status/1602335214356660225
+bgld-2022-12,BscScan,BGLD (Deflationary token) attack transaction,https://bscscan.com/tx/0xea108fe94bfc9a71bb3e4dee4a1b0fd47572e6ad6aba8b2155ac44861be628ae
+bh-2023-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BH,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-10/BH_exp.sol
+bh-2023-10,X (Twitter),BH incident analysis,https://twitter.com/BeosinAlert/status/1712139760813375973
+bh-2023-10,BscScan,BH attack transaction,https://bscscan.com/tx/0xc11e4020c0830bcf84bfa197696d7bfad9ff503166337cb92ea3fade04007662
+bigbangswap-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BigBangSwap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/BigBangSwap_exp.sol
+bigbangswap-2024-04,X (Twitter),BigBangSwap incident analysis,https://x.com/DecurityHQ/status/1778075039293727143
+bigbangswap-2024-04,app.blocksec.com,BigBangSwap incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x94055664287a565d4867a97ba6d5d2e28c55d10846e3f83355ba84bd1b9280fc
+binemon-2024-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Binemon,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/Binemon_exp.sol
+binemon-2024-03,app.blocksec.com,Binemon incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x1999bb5c11a8d8bfa7620fc5cc37f5bc59c1a99d7a9250a8d6076c93bbdbeb5f
+biswap-2023-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Biswap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/Biswap_exp.sol
+biswap-2023-06,X (Twitter),Biswap incident analysis,https://twitter.com/MetaTrustAlert/status/1674814217122349056?s=20
+biswap-2023-06,BscScan,Biswap attack transaction,https://bscscan.com/tx/0xebe5248820241d8de80bcf66f4f1bfaaca62962824efaaa662db84bd27f5e47e
+bit-crown-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BitCrown,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/BitCrown_exp.sol
+bit-crown-2025-06,t.me,BitCrown incident analysis,https://t.me/defimon_alerts/1243
+bit-crown-2025-06,BscScan,BitCrown attack transaction,https://bscscan.com/tx/0x442ce0af4d10b23968a66b0b53d7b95f5bb611d55f19dc5a1963c763f65128f0
+bitallx-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Bitallx,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/bitallx_exp.sol
+bitallx-2025-05,t.me,Bitallx incident analysis,https://t.me/defimon_alerts/1065
+bitallx-2025-05,BscScan,Bitallx attack transaction,https://bscscan.com/tx/0x1fe893e4d8370a8d6da590b32f66bd032217bac2e56bd2bf0de2a9df9c7117dd
+bitdog-2025-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: bitdog,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-04/bitdog_exp.sol
+bitdog-2025-04,t.me,bitdog incident analysis,https://t.me/defimon_alerts/931
+bitdog-2025-04,BscScan,bitdog attack transaction,https://bscscan.com/tx/0xc0dcad5927446b9fa560be74a76efa0805e67d4c4cd486a48e9e4248287d777e
+bno-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BNO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/BNO_exp.sol
+bno-2023-07,X (Twitter),BNO incident analysis,https://twitter.com/BeosinAlert/status/1681116206663876610
+bno-2023-07,BscScan,BNO attack transaction,https://bscscan.com/tx/0x33fed54de490797b99b2fc7a159e43af57e9e6bdefc2c2d052dc814cfe0096b9
+bob-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Bob,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/Bob_exp.sol
+bob-2023-12,BscScan,Bob attack transaction,https://bscscan.com/tx/0xfb14292a531411f852993e5a3ba4e7eb63ed548220267b9b3f4aacc5572d3a58
+bra-2023-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BRA,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/BRA_exp.sol
+bra-2023-01,X (Twitter),BRA incident analysis,https://twitter.com/CertiKAlert/status/1612674916070858753
+bra-2023-01,X (Twitter),BRA incident analysis,https://twitter.com/BlockSecTeam/status/1612701106982862849
+brand-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BRAND,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/BRAND_exp.sol
+brand-2023-11,X (Twitter),BRAND incident analysis,https://x.com/MetaSec_xyz/status/1720035913009709473
+brand-2023-11,app.blocksec.com,BRAND incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x19ef4febcd272643642925d5d7e9ab8fd3ed8785c5e3268f5b6fee44ae6b4a34
+bsc-initcode-token-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BscInitcodeToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/BscInitcodeToken_exp.sol
+bsc-initcode-token-2025-08,t.me,BscInitcodeToken incident analysis,https://t.me/defimon_alerts/1619
+bsc-initcode-token-2025-08,BscScan,BscInitcodeToken attack transaction,https://bscscan.com/tx/0x33fa83ae1029a82ae4b46eb37432847f270a8e3690f2e9ba71a1e5172ff62a59
+btnft-2025-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BTNFT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-04/BTNFT_exp.sol
+btnft-2025-04,X (Twitter),BTNFT incident analysis,https://x.com/TenArmorAlert/status/1913500336301502542
+btnft-2025-04,BscScan,BTNFT attack transaction,https://bscscan.com/tx/0x1e90cbff665c43f91d66a56b4aa9ba647486a5311bb0b4381de4d653a9d8237d
+burgerswap-2021-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BurgerSwap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/BurgerSwap_exp.sol
+burgerswap-2021-05,X (Twitter),BurgerSwap incident analysis,https://twitter.com/Mudit__Gupta/status/1398156036574306304
+burgerswap-2021-05,BscScan,BurgerSwap attack transaction,https://bscscan.com/tx/0xac8a739c1f668b13d065d56a03c37a686e0aa1c9339e79fcbc5a2d0a6311e333
+burnsdefi-2024-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BurnsDefi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-02/BurnsDefi_exp.sol
+burnsdefi-2024-02,X (Twitter),BurnsDefi incident analysis,https://twitter.com/pennysplayer/status/1754342573815238946
+burnsdefi-2024-02,app.blocksec.com,BurnsDefi incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x1d0af3a963682748493f21bf9e955ce3a950bee5817401bf2486db7a0af104b4
+bxh-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BXH,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/BXH_exp.sol
+bxh-2022-09,jinse.com,BXH incident analysis,https://www.jinse.com/lives/319392.html
+bxh-2022-09,BscScan,BXH incident analysis,https://bscscan.com/tx/0xa13c8c7a0c97093dba3096c88044273c29cebeee109e23622cd412dcca8f50f4
+bytoken-2026-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: BYToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-06/BYToken_exp.sol
+bytoken-2026-06,hacked.slowmist.io,BYToken incident analysis,https://hacked.slowmist.io
+carrot-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Carrot,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/Carrot_exp.sol
+carrot-2022-10,X (Twitter),Carrot incident analysis,https://twitter.com/BlockSecTeam/status/1579908411235237888
+carrot-2022-10,BscScan,Carrot incident analysis,https://bscscan.com/tx/0xa624660c29ee97f3f4ebd36232d8199e7c97533c9db711fa4027994aa11e01b9
+carson-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Carson,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Carson_exp.sol
+carson-2023-07,X (Twitter),Carson incident analysis,https://twitter.com/BeosinAlert/status/1684393202252402688
+carson-2023-07,X (Twitter),Carson incident analysis,https://twitter.com/Phalcon_xyz/status/1684503154023448583
+ccv-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: CCV,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/CCV_exp.sol
+ccv-2023-12,app.blocksec.com,CCV incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x6ba4152db9da45f5751f2c083bf77d4b3385373d5660c51fe2e4382718afd9b4
+ccv-2023-12,BscScan,CCV attack transaction,https://bscscan.com/tx/0x6ba4152db9da45f5751f2c083bf77d4b3385373d5660c51fe2e4382718afd9b4
+chainge-finance-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ChaingeFinance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/ChaingeFinance_exp.sol
+chainge-finance-2024-04,X (Twitter),ChaingeFinance incident analysis,https://x.com/CertiKAlert/status/1779863821122691519
+chainge-finance-2024-04,GitHub,ChaingeFinance incident analysis,https://github.com/Autosaida/DeFiHackAnalysis/blob/master/analysis/240415_ChaingeFinance.md
+chainswap-2021-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Chainswap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-07/Chainswap_exp2.sol
+chainswap-2021-07,Medium,Chainswap incident analysis,https://chain-swap.medium.com/chainswap-exploit-11-july-2021-post-mortem-6e4e346e5a32
+chainswap-2021-07,rekt.news,Chainswap incident analysis,https://rekt.news/chainswap-rekt/
+channels-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Channels,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/Channels_exp.sol
+channels-2023-12,app.blocksec.com,Channels incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xcf729a9392b0960cd315d7d49f53640f000ca6b8a0bd91866af5821fdf36afc5
+channels-2023-12,BscScan,Channels attack transaction,https://bscscan.com/tx/0xcf729a9392b0960cd315d7d49f53640f000ca6b8a0bd91866af5821fdf36afc5
+channels-finance-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ChannelsFinance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/ChannelsFinance_exp.sol
+channels-finance-2023-12,X (Twitter),ChannelsFinance incident analysis,https://twitter.com/AnciliaInc/status/1741353303542501455
+channels-finance-2023-12,app.blocksec.com,ChannelsFinance incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x711cc4ceb9701d317fe9aa47187425e16dae7d5a0113f1430e891018262f8fb5
+creat-future-2022-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Creat Future,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/cftoken_exp.sol
+creat-future-2022-04,BscScan,Creat Future incident analysis,https://bscscan.com/tx/0xc7647406542f8f2473a06fea142d223022370aa5722c044c2b7ea030b8965dd0
+crosswise-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Crosswise,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/crosswise_exp.sol
+crosswise-2025-05,t.me,Crosswise incident analysis,https://t.me/defimon_alerts/1002
+crosswise-2025-05,BscScan,Crosswise attack transaction,https://bscscan.com/tx/0xfe88443d73e8ae6d4799c4d3cc42488730c084624fd2daa5f035c1ad2927ea0f
+d3xai-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: d3xai,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/d3xai_exp.sol
+d3xai-2025-08,X (Twitter),d3xai incident analysis,https://x.com/suplabsyi/status/1956695597546893598
+d3xai-2025-08,BscScan,d3xai attack transaction,https://bscscan.com/tx/0x26bcefc152d8cd49f4bb13a9f8a6846be887d7075bc81fa07aa8c0019bd6591f
+dcftoken-2025-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DCFToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-03/DCFToken_exp.sol
+dcftoken-2025-03,X (Twitter),DCFToken incident analysis,https://x.com/Phalcon_xyz/status/1860890801909190664
+dcftoken-2025-03,BscScan,DCFToken attack transaction,https://bscscan.com/tx/0xb375932951c271606360b6bf4287d080c5601f4f59452b0484ea6c856defd6fd
+ddc-2022-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DDC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/DDC_exp.sol
+ddc-2022-08,X (Twitter),DDC incident analysis,https://x.com/BeosinAlert/status/1564240190851383302
+ddc-2022-08,immunebytes.com,DDC incident analysis,https://immunebytes.com/blog/ddc-token-hack-aug-28-2022-detailed-analysis/
+dexrouter-2023-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DEXRouter,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-09/DEXRouter_exp.sol
+dexrouter-2023-09,X (Twitter),DEXRouter incident analysis,https://twitter.com/DecurityHQ/status/1707851321909428688
+dexrouter-2023-09,BscScan,DEXRouter attack transaction,https://bscscan.com/tx/0xf77c5904da98d3d4a6e651d0846d35545ef5ca0b969132ae81a9c63e1efc2113
+dfs-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DFS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/DFS_exp.sol
+dfs-2022-12,X (Twitter),DFS incident analysis,https://twitter.com/CertiKAlert/status/1608788290785665024
+dfs-2022-12,BscScan,DFS attack transaction,https://bscscan.com/tx/0xcddcb447d64c2ce4b3ac5ebaa6d42e26d3ed0ff3831c08923c53ea998f598a7c
+discover-2022-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Discover,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-06/Discover_exp.sol
+discover-2022-06,anquanke.com,Discover incident analysis,https://www.anquanke.com/post/id/274003
+discover-2022-06,BscScan,Discover incident analysis,https://bscscan.com/tx/0x8a33a1f8c7af372a9c81ede9e442114f0aabb537e5c3a22c0fd7231c4820f1e9
+dogealliance-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DogeAlliance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/DogeAlliance_exp.sol
+dogealliance-2025-05,t.me,DogeAlliance incident analysis,https://t.me/defimon_alerts/1215
+dogealliance-2025-05,BscScan,DogeAlliance attack transaction,https://bscscan.com/tx/0xcf2b8c46e5f6f761a716619800de6754058921cbde0cd5ff12cd2ce4ea6a818d
+dominott-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DominoTT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/DominoTT_exp.sol
+dominott-2023-12,app.blocksec.com,DominoTT incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x1ee617cd739b1afcc673a180e60b9a32ad3ba856226a68e8748d58fcccc877a8
+dpc-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DPC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/DPC_exp.sol
+dpc-2022-09,X (Twitter),DPC incident analysis,https://twitter.com/BeosinAlert/status/1568429355919089664
+dpc-2022-09,learnblockchain.cn,DPC incident analysis,https://learnblockchain.cn/article/4733
+dualpools-2024-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: DualPools,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-02/DualPools_exp.sol
+dualpools-2024-02,Medium,DualPools incident analysis,https://medium.com/@lunaray/dualpools-hack-analysis-5209233801fa
+dualpools-2024-02,BscScan,DualPools attack transaction,https://bscscan.com/tx/0x90f374ca33fbd5aaa0d01f5fcf5dee4c7af49a98dc56b47459d8b7ad52ef1e93
+dumbo-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Dumbo,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/Dumbo_exp.sol
+dumbo-2025-05,t.me,Dumbo incident analysis,https://t.me/defimon_alerts/1181
+dumbo-2025-05,BscScan,Dumbo attack transaction,https://bscscan.com/tx/0xbfd59a18d4500649c6a15e578fdd0a05fdef5b932f3e3d51b8e2a5640cd4fb6c
+eac-2023-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: EAC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-08/EAC_exp.sol
+eac-2023-08,X (Twitter),EAC incident analysis,https://twitter.com/bbbb/status/1696520866564350157
+eac-2023-08,BscScan,EAC attack transaction,https://bscscan.com/tx/0x477f9ee698ac8ae800ffa012ab52fd8de39b58996245c5e39a4233c1ae5f1baa
+eee-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: EEE,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/EEE_exp.sol
+eee-2023-11,BscScan,EEE attack transaction,https://bscscan.com/tx/0x7312d9f9c13fc69f00f58e92a112a3e7f036ced7e65f7e0fa67382488d5557dc
+egd-finance-2022-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: EGD Finance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/EGD_Finance_exp.sol
+egd-finance-2022-08,X (Twitter),EGD Finance incident analysis,https://twitter.com/BlockSecTeam/status/1556483435388350464
+egd-finance-2022-08,X (Twitter),EGD Finance incident analysis,https://twitter.com/PeckShieldAlert/status/1556486817406283776
+ehx-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: EHX,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/EHX_exp.sol
+ehx-2023-11,X (Twitter),EHX incident analysis,https://x.com/MetaSec_xyz/status/1724691996638618086
+ehx-2023-11,app.blocksec.com,EHX incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x8b528372b743b4b8c4eb0904c96529482653187c19e13afaa22f3ba4e08fbfbb
+elephant-money-2022-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ElephantMoney,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Elephant_Money_exp.sol
+elephant-money-2022-04,Medium,ElephantMoney incident analysis,https://medium.com/elephant-money/reserve-exploit-52fd36ccc7e8
+elephant-money-2022-04,X (Twitter),ElephantMoney incident analysis,https://twitter.com/BlockSecTeam/status/1513966074357698563
+elephantstatus-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ElephantStatus,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/ElephantStatus_exp.sol
+elephantstatus-2023-12,X (Twitter),ElephantStatus incident analysis,https://twitter.com/Phalcon_xyz/status/1732354930529435940
+eleven-finance-2021-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Eleven Finance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-06/Eleven_exp.sol
+eleven-finance-2021-06,Medium,Eleven Finance incident analysis,https://peckshield.medium.com/eleven-finance-incident-root-cause-analysis-123b5675fa76
+est-token-2026-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: EST Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-03/EST_exp.sol
+est-token-2026-03,BscScan,EST Token incident analysis,https://bscscan.com/address/0xD4524Be41cd452576aB9FF7b68a0b89aF8498a91
+est-token-2026-03,BscScan,EST Token attack transaction,https://bscscan.com/tx/0x2f1c33eaaaace728f6101ff527793387341021ef465a4a33f53a0037f5bd1626
+ethfin-2024-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ETHFIN,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/ETHFIN_exp.sol
+ethfin-2024-03,BscScan,ETHFIN attack transaction,https://bscscan.com/tx/0xfe031685d84f3bae1785f5b2bd0ed480b87815c3f23ce6ced73b8573b7e367c6
+etnproduct-2022-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: EtnProduct,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/EtnProduct_exp.sol
+etnproduct-2022-08,X (Twitter),EtnProduct incident analysis,https://x.com/BeosinAlert/status/1555439220474642432
+etnproduct-2022-08,app.blocksec.com,EtnProduct incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x72321a3b50bb68ac3b46b0ab973b0e87b6c48ab73d23c4ba2cb73527f978d995
+ffist-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: FFIST,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/FFIST_exp.sol
+ffist-2023-07,X (Twitter),FFIST incident analysis,https://twitter.com/Phalcon_xyz/status/1681869807698984961
+ffist-2023-07,BscScan,FFIST attack transaction,https://bscscan.com/tx/0x199c4b88cab6b4b495b9d91af98e746811dd8f82f43117c48205e6332db9f0e0
+fiberrouter-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: FiberRouter,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/FiberRouter_exp.sol
+fiberrouter-2023-11,X (Twitter),FiberRouter incident analysis,https://x.com/MetaSec_xyz/status/1729323254610002277
+fil314-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: FIL314,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/FIL314_exp.sol
+fil314-2024-04,BscScan,FIL314 attack transaction,https://bscscan.com/tx/0x9f2eb13417190e5139d57821422fc99bced025f24452a8b31f7d68133c9b0a6c
+flylong-2025-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: FlyLong,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-04/flylong_exp.sol
+flylong-2025-04,t.me,FlyLong incident analysis,https://t.me/defimon_alerts/968
+flylong-2025-04,BscScan,FlyLong attack transaction,https://bscscan.com/tx/0x45f6a7df540933b3d2b1a275fcbfc146bbd48934ffb6635c4839d8590a9efc88
+four-meme-2025-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: FourMeme,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-02/FourMeme_exp.sol
+four-meme-2025-02,X (Twitter),FourMeme incident analysis,https://x.com/PeckShieldAlert/status/1889210001220423765
+four-meme-2025-02,X (Twitter),FourMeme incident analysis,https://x.com/four_meme_/status/1889198796695044138
+fpc-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: FPC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/FPC_exp.sol
+fpc-2025-07,X (Twitter),FPC incident analysis,https://x.com/TenArmorAlert/status/1940423393880244327
+fpc-2025-07,BscScan,FPC attack transaction,https://bscscan.com/tx/0x3a9dd216fb6314c013fa8c4f85bfbbe0ed0a73209f54c57c1aab02ba989f5937
+fpr-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: FPR,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/FPR_exp.sol
+fpr-2022-12,X (Twitter),FPR incident analysis,https://twitter.com/peckshield/status/1603226968706936832
+fpr-2022-12,X (Twitter),FPR incident analysis,https://twitter.com/chainlight_io/status/1603282848311480320
+freedom-2024-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Freedom,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-01/Freedom_exp.sol
+freedom-2024-01,app.blocksec.com,Freedom incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x309523343cc1bb9d28b960ebf83175fac941b4a590830caccff44263d9a80ff0
+freedom-2024-01,BscScan,Freedom attack transaction,https://bscscan.com/tx/0x309523343cc1bb9d28b960ebf83175fac941b4a590830caccff44263d9a80ff0
+gds-2023-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GDS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/GDS_exp.sol
+gds-2023-01,X (Twitter),GDS incident analysis,https://twitter.com/peckshield/status/1610095490368180224
+gds-2023-01,X (Twitter),GDS incident analysis,https://twitter.com/BlockSecTeam/status/1610167174978760704
+gfa-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GFA,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/GFA_exp.sol
+gfa-2024-04,X (Twitter),GFA incident analysis,https://x.com/ChainAegis/status/1779809931962827055
+gfa-2024-04,app.blocksec.com,GFA incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xe15d6f7fa891c2626819209edf2d5ded6948310eaada067b400062aa022ce718
+gmt7-2025-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GMT7,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-02/GMT7_exp.sol
+gmt7-2025-02,t.me,GMT7 incident analysis,https://t.me/defimon_alerts/443
+gmt7-2025-02,BscScan,GMT7 attack transaction,https://bscscan.com/tx/0x5eb225ce9fb2c7a169e1736eb3b2bf2b6a5843839dd84cdcf6fe2ab0577ae21f
+gold-reserve-2025-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GoldReserve,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-02/GoldReserve_exp.sol
+gold-reserve-2025-02,t.me,GoldReserve incident analysis,https://t.me/defimon_alerts/434
+gold-reserve-2025-02,BscScan,GoldReserve attack transaction,https://bscscan.com/tx/0x79c2e41b10462d374f21ecd4da048029cc71692e0c9ef275d4aad228e6f8afe0
+grizzifi-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Grizzifi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/Grizzifi_exp.sol
+grizzifi-2025-08,X (Twitter),Grizzifi incident analysis,https://x.com/MetaTrustAlert/status/1955967862276829375
+grizzifi-2025-08,BscScan,Grizzifi attack transaction,https://bscscan.com/tx/0x36438165d701c883fd9a03631ee0cdeec35a138153720006ab59264db7e075c1
+grokd-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GROKD,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/GROKD_exp.sol
+grokd-2024-04,X (Twitter),GROKD incident analysis,https://x.com/hipalex921/status/1778482890705416323?t=KvvG83s7SXr9I55aftOc6w&s=05
+grokd-2024-04,app.blocksec.com,GROKD incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x383dbb44a91687b2b9bbd8b6779957a198d114f24af662776f384569b84fc549
+gss-2023-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GSS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-08/GSS_exp.sol
+gss-2023-08,X (Twitter),GSS incident analysis,https://twitter.com/bbbb/status/1694571228185723099
+gss-2023-08,BscScan,GSS attack transaction,https://bscscan.com/tx/0x4f8cb9efb3cc9930bd38af5f5d34d15ce683111599a80df7ae50b003e746e336
+gym-network-2022-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GYMNetwork,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Gym_1_exp.sol
+gym-network-2022-04,X (Twitter),GYMNetwork incident analysis,https://twitter.com/BlockSecTeam/status/1512832398643265537
+gym-network-2022-04,Medium,GYMNetwork incident analysis,https://medium.com/@Beosin_com/beosin-analysis-of-the-attack-on-gymdefi-e5a23bfd93fe
+gymnet-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GYMNET,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/GYMNET_exp.sol
+gymnet-2023-07,X (Twitter),GYMNET incident analysis,https://twitter.com/AnciliaInc/status/1686605510655811584
+gymnet-2023-07,BscScan,GYMNET attack transaction,https://bscscan.com/tx/0x7fe96c00880b329aa0fcb00f0ef3a0766c54e13965becf9cc5e0df6fbd0deca6
+gymnetwork-2022-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: GYMNetwork,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-06/Gym_2_exp.sol
+gymnetwork-2022-06,X (Twitter),GYMNetwork incident analysis,https://twitter.com/peckshield/status/1534423219607719936
+gymnetwork-2022-06,jinse.com,GYMNetwork incident analysis,https://www.jinse.com/news/blockchain/1658455.html
+h2o-2025-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: H2O,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-03/H2O_exp.sol
+h2o-2025-03,X (Twitter),H2O incident analysis,https://x.com/TenArmorAlert/status/1900525198157205692
+hackathon-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Hackathon,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/Hackathon_exp.sol
+hackathon-2024-04,X (Twitter),Hackathon incident analysis,https://x.com/EXVULSEC/status/1779519508375613827
+hackathon-2024-04,app.blocksec.com,Hackathon incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xea181f730886ece947e255ab508f5af1d0f569fee3368b651d5dbb28549087b5
+hackdao-2022-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: HackDao,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-05/HackDao_exp.sol
+hackdao-2022-05,X (Twitter),HackDao incident analysis,https://twitter.com/BlockSecTeam/status/1529084919976034304
+hct-2023-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: HCT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-09/HCT_exp.sol
+hct-2023-09,X (Twitter),HCT incident analysis,https://twitter.com/leovctech/status/1699775506785198499
+hct-2023-09,BscScan,HCT attack transaction,https://bscscan.com/tx/0x84bd77f25cc0db493c339a187c920f104a69f89053ab2deabb93c35220e6dfc0
+health-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: HEALTH,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/HEALTH_exp.sol
+health-2022-10,X (Twitter),HEALTH incident analysis,https://twitter.com/BlockSecTeam/status/1583073442433495040
+health-2022-10,BscScan,HEALTH attack transaction,https://bscscan.com/tx/0xae8ca9dc8258ae32899fe641985739c3fa53ab1f603973ac74b424e165c66ccf
+hnet-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: HNet,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/HNet_exp.sol
+hnet-2023-12,app.blocksec.com,HNet incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x1ee617cd739b1afcc673a180e60b9a32ad3ba856226a68e8748d58fcccc877a8
+holdsafe-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: HoldSafe,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/HoldSafe_exp.sol
+holdsafe-2025-06,t.me,HoldSafe incident analysis,https://t.me/defimon_alerts/1320
+holdsafe-2025-06,BscScan,HoldSafe attack transaction,https://bscscan.com/tx/0xa9b4cead820eaa750d72cd4ba4ba4d926c2db867746c637a1642ea4ab9721399
+hors-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: HORS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/HORS_exp.sol
+hors-2025-01,X (Twitter),HORS incident analysis,https://x.com/TenArmorAlert/status/1877032470098428058
+hors-2025-01,BscScan,HORS attack transaction,https://bscscan.com/tx/0xc8572846ed313b12bf835e2748ff37dacf6b8ee1bab36972dc4ace5e9f25fed7
+hpay-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: HPAY,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/HPAY_exp.sol
+hpay-2022-10,X (Twitter),HPAY incident analysis,https://twitter.com/Supremacy_CA/status/1582345448190140417
+inuko-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: INUKO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/INUKO_exp.sol
+inuko-2022-10,X (Twitter),INUKO incident analysis,https://twitter.com/AnciliaInc/status/1587848874076430336
+invistech-2025-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: INVISTECH,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-02/INVISTECH_exp.sol
+invistech-2025-02,t.me,INVISTECH incident analysis,https://t.me/defimon_alerts/515
+invistech-2025-02,BscScan,INVISTECH attack transaction,https://bscscan.com/tx/0x92126f0bde98d360b37b7074fea6f41fd47fd19d1cced134681ff64b1aef56b8
+ipc-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: IPC Incorrect burn pairs,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/IPC_exp.sol
+ipc-2025-01,X (Twitter),IPC Incorrect burn pairs incident analysis,https://x.com/TenArmorAlert/status/1876663900663370056
+ipc-2025-01,app.blocksec.com,IPC Incorrect burn pairs incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x5ef1edb9749af6cec511741225e6d47103e0b647d1e41e08649caaff66942a91?line=30
+it-2024-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: IT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/IT_exp.sol
+it-2024-03,app.blocksec.com,IT incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xb33057f57ce451aa8cbb65508d298fe3c627509cc64a394736dace2671b6dcfa
+jhy-2024-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: JHY,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-12/JHY_exp.sol
+jhy-2024-12,X (Twitter),JHY incident analysis,https://x.com/TenArmorAlert/status/1867950089156575317
+jhy-2024-12,BscScan,JHY attack transaction,https://bscscan.com/tx/0xb6a9055e3ce7f006391760fbbcc4e4bc8df8228dc47a8bb4ff657370ccc49256
+joe-agent-2026-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Joe Agent,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/JoeAgent_exp.sol
+joe-agent-2026-05,X (Twitter),Joe Agent incident analysis,https://x.com/SlowMist_Team/status/2059887450663551352
+jpulsepot-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: JPulsepot,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/JPulsepot_exp.sol
+jpulsepot-2025-01,X (Twitter),JPulsepot incident analysis,https://x.com/CertiKAlert/status/1877662352834793639
+jpulsepot-2025-01,BscScan,JPulsepot attack transaction,https://bscscan.com/tx/0xd6ba15ecf3df9aaae37450df8f79233267af41535793ee1f69c565b50e28f7da
+judao-2026-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: JUDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-04/JUDAO_exp.sol
+judao-2026-04,t.me,JUDAO incident analysis,https://t.me/defimon_alerts/2955
+judao-2026-04,BscScan,JUDAO attack transaction,https://bscscan.com/tx/0x956e38b8ddb40ba080c8042c685ae52ee5c1b096f1d7f0c4a6c59be3eb4265bd
+julswap-2021-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: JulSwap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/JulSwap_exp.sol
+julswap-2021-05,X (Twitter),JulSwap incident analysis,https://x.com/tg_cryptos/status/1398090345368408064
+julswap-2021-05,BscScan,JulSwap attack transaction,https://bscscan.com/tx/0x1751268e620767ff117c5c280e9214389b7c1961c42e77fc704fd88e22f4f77a
+kest-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: KEST,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/KEST_exp.sol
+kest-2023-12,X (Twitter),KEST incident analysis,https://x.com/MetaSec_xyz/status/1736077719849623718
+kest-2023-12,app.blocksec.com,KEST incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x2fcee04e64e54f3dd9c15db9ae44e4cbdd57ab4c6f01941a3acf470dc60bfc16
+kr-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: KR,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/KR_exp.sol
+kr-2023-11,app.blocksec.com,KR incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x2abf871eb91d03bc8145bf2a415e79132a103ae9f2b5bbf18b8342ea9207ccd7
+kr-2023-11,BscScan,KR attack transaction,https://bscscan.com/tx/0x2abf871eb91d03bc8145bf2a415e79132a103ae9f2b5bbf18b8342ea9207ccd7
+kubsplit-2023-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: KubSplit,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-09/Kub_Split_exp.sol
+kubsplit-2023-09,X (Twitter),KubSplit incident analysis,https://twitter.com/CertiKAlert/status/1705966214319612092
+kubsplit-2023-09,BscScan,KubSplit attack transaction,https://bscscan.com/tx/0x2b0877b5495065e90d956e44ffde6aaee5e0fcf99dd3c86f5ff53e33774ea52d
+labubu-token-2024-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: LABUBU Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-12/LABUBU_exp.sol
+labubu-token-2024-12,X (Twitter),LABUBU Token incident analysis,https://x.com/TenArmorAlert/status/1866481066610958431
+labubu-token-2024-12,BscScan,LABUBU Token attack transaction,https://bscscan.com/tx/0xb06df371029456f2bf2d2edb732d1f3c8292d4271d362390961fdcc63a2382de
+laeeb-2023-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: LaEeb,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-10/LaEeb_exp.sol
+laeeb-2023-10,X (Twitter),LaEeb incident analysis,https://x.com/MetaSec_xyz/status/1718964562165420076
+laeeb-2023-10,app.blocksec.com,LaEeb incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x0d13a61e9dc81cfae324d3d80e49830d9bbae300f760e016a15600889a896a1b
+laxo-token-2026-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: LAXO Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-02/LAXO_Token_exp.sol
+laxo-token-2026-02,X (Twitter),LAXO Token incident analysis,https://x.com/CertiKAlert/status/2027317095420072317
+legendarymoneymonnft-2026-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: LegendaryMoneyMonNft,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/LegendaryMoneyMonNft_exp.sol
+legendarymoneymonnft-2026-05,X (Twitter),LegendaryMoneyMonNft incident analysis,https://x.com/SlowMist_Team/status/2060205558687486441
+levyathan-finance-2021-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Levyathan Finance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-07/Levyathan_exp.sol
+levyathan-finance-2021-07,Medium,Levyathan Finance incident analysis,https://levyathan-index.medium.com/post-mortem-levyathan-c3ff7f9a6f65
+levyathan-finance-2021-07,BscScan,Levyathan Finance attack transaction,https://bscscan.com/tx/0xe6e504208ba90d121c3212a4f2547ae28e69790ab541d459c080ec8b1f3efab2
+lifeprotocol-2025-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Lifeprotocol,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-04/Lifeprotocol_exp.sol
+lifeprotocol-2025-04,X (Twitter),Lifeprotocol incident analysis,https://x.com/TenArmorAlert/status/1916312483792408688
+lifeprotocol-2025-04,BscScan,Lifeprotocol attack transaction,https://bscscan.com/tx/0x487fb71e3d2574e747c67a45971ec3966d275d0069d4f9da6d43901401f8f3c0
+linkdao-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: LinkDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/LinkDao_exp.sol
+linkdao-2023-11,X (Twitter),LinkDAO incident analysis,https://x.com/phalcon_xyz/status/1725058908144746992
+lpc-2022-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: LPC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-07/LPC_exp.sol
+lpc-2022-07,panewslab.com,LPC incident analysis,https://www.panewslab.com/zh_hk/articledetails/uwv4sma2.html
+lpc-2022-07,X (Twitter),LPC incident analysis,https://twitter.com/BeosinAlert/status/1551535854681718784
+lusd-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: LUSD,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/LUSD_exp.sol
+lusd-2023-07,X (Twitter),LUSD incident analysis,https://twitter.com/AnciliaInc/status/1677391242878140417
+mamo-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MAMO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/MAMO_exp.sol
+mamo-2023-12,BscScan,MAMO attack transaction,https://bscscan.com/tx/0x189a8dc1e0fea34fd7f5fa78c6e9bdf099a8d575ff5c557fa30d90c6acd0b29f
+mars-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MARS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/MARS_exp.sol
+mars-2024-04,X (Twitter),MARS incident analysis,https://twitter.com/Phalcon_xyz/status/1780150315603701933
+mars-2024-04,app.blocksec.com,MARS incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x25e2af0a55581d5629a933af9fedd3c70e6d0c320f0b72700ca80e5cdd36c80b
+matez-2024-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Matez,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-11/Matez_exp.sol
+matez-2024-11,X (Twitter),Matez incident analysis,https://x.com/TenArmorAlert/status/1859830885966905670
+matez-2024-11,BscScan,Matez attack transaction,https://bscscan.com/tx/0x840b0dc64dbb91e8aba524f67189f639a0bc94ee9256c57d79083bb3fd46ec91
+mbc-zzsh-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MBC & ZZSH,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/MBC_ZZSH_exp.sol
+mbc-zzsh-2022-11,X (Twitter),MBC & ZZSH incident analysis,https://twitter.com/CertiKAlert/status/1597639717096460288
+mbc-zzsh-2022-11,phalcon.blocksec.com,MBC & ZZSH incident analysis,https://phalcon.blocksec.com/tx/bsc/0xdc53a6b5bf8e2962cf0e0eada6451f10956f4c0845a3ce134ddb050365f15c86
+mbutoken-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MBUToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/MBUToken_exp.sol
+mbutoken-2025-05,X (Twitter),MBUToken incident analysis,https://x.com/CertiKAlert/status/1921483904483000457
+mbutoken-2025-05,BscScan,MBUToken attack transaction,https://bscscan.com/tx/0x2a65254b41b42f39331a0bcc9f893518d6b106e80d9a476b8ca3816325f4a150
+mevbot-0x8c2d-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MEVBot_0x8c2d,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/MEV_0x8c2d_exp.sol
+mevbot-0x8c2d-2023-11,X (Twitter),MEVBot_0x8c2d incident analysis,https://twitter.com/Phalcon_xyz/status/1723897569661657553
+mevbot-private-tx-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MevBot private tx,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/BNB48MEVBot_exp.sol
+mevbot-private-tx-2022-09,Medium,MevBot private tx incident analysis,https://blocksecteam.medium.com/the-two-sides-of-the-private-tx-service-on-binance-smart-chain-a76917c3ce51
+mft-2024-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MFT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-11/MFT_exp.sol
+mft-2024-11,X (Twitter),MFT incident analysis,https://x.com/TenArmorAlert/status/1858351609371406617
+mft-2024-11,BscScan,MFT attack transaction,https://bscscan.com/tx/0xe24ee2af7ceee6d6fad1cacda26004adfe0f44d397a17d2aca56c9a01d759142
+mic-2024-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MIC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-01/MIC_exp.sol
+mic-2024-01,X (Twitter),MIC incident analysis,https://x.com/MetaSec_xyz/status/1742484748239536173
+mic-2024-01,app.blocksec.com,MIC incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x316c35d483b72700e6f4984650d217304146b3732bb148e32fa7f8017843eb24
+micdao-2023-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MicDao,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-10/MicDao_exp.sol
+micdao-2023-10,X (Twitter),MicDao incident analysis,https://twitter.com/CertiKAlert/status/1714677875427684544
+micdao-2023-10,BscScan,MicDao attack transaction,https://bscscan.com/tx/0x24a2fbb27d433d91372525954f0d7d1af7509547b9ada29cc6c078e732c6d075
+miner-2024-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MINER,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-02/MINER_bsc_exp.sol
+miner-2024-02,app.blocksec.com,MINER incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x15ab671c9bf918fa4b6a9eed9ccb527f32aca40e926ede2aec2c84dfa9c30512?line=6
+miner-2024-02,BscScan,MINER attack transaction,https://bscscan.com/tx/0x15ab671c9bf918fa4b6a9eed9ccb527f32aca40e926ede2aec2c84dfa9c30512
+minto-finance-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MintoFinance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/MintoFinance_exp.sol
+minto-finance-2023-07,X (Twitter),MintoFinance incident analysis,https://twitter.com/bbbb/status/1683180340548890631
+mona-lisavault-2026-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MONA LisaVault,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-04/MONA_LisaVault_exp.sol
+mona-lisavault-2026-04,X (Twitter),MONA LisaVault incident analysis,https://x.com/exvulsec/status/2043928546662592949
+mona-lisavault-2026-04,app.blocksec.com,MONA LisaVault incident analysis,https://app.blocksec.com/phalcon/explorer/tx/bsc/0x3a60e1b3a4b0736be4f31839bfd7abc8bfc53b93ddbd3702e77fbc64561a7ea4
+moocakectx-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MooCAKECTX,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/MooCAKECTX_exp.sol
+moocakectx-2022-11,X (Twitter),MooCAKECTX incident analysis,https://twitter.com/BeosinAlert/status/1589501207181393920
+moocakectx-2022-11,BscScan,MooCAKECTX attack transaction,https://bscscan.com/tx/0x03d363462519029cf9a544d44046cad0c7e64c5fb1f2adf5dd5438a9a0d2ec8e
+mosca-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Mosca,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/Mosca_exp.sol
+mosca-2025-01,BscScan,Mosca attack transaction,https://bscscan.com/tx/0x4e5bb7e3f552f5ee6ee97db9a9fcf07287aae9a1974e24999690855741121aff
+mosca2-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Mosca2,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/Mosca2_exp.sol
+mosca2-2025-01,X (Twitter),Mosca2 incident analysis,https://x.com/TenArmorAlert/status/1878699517450883407
+mosca2-2025-01,BscScan,Mosca2 attack transaction,https://bscscan.com/tx/0xf13d281d4aa95f1aca457bd17f2531581b0ce918c90905d65934c9e67f6ae0ec
+mttoken-2026-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MTToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-01/MTToken_exp.sol
+mttoken-2026-01,X (Twitter),MTToken incident analysis,https://x.com/TenArmorAlert/status/2010630024274010460?s=20
+mttoken-2026-01,X (Twitter),MTToken incident analysis,https://x.com/nn0b0dyyy/status/2010638145155661942?s=20
+multicall-with-xera-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MulticallWithXera,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/MulticallWithXera_exp.sol
+multicall-with-xera-2025-08,X (Twitter),MulticallWithXera incident analysis,https://x.com/TenArmorAlert/status/1958354933247590450
+multicall-with-xera-2025-08,BscScan,MulticallWithXera attack transaction,https://bscscan.com/tx/0xed6fd61c1eb2858a1594616ddebaa414ad3b732dcdb26ac7833b46803c5c18db
+multicallwitheth-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MulticallWithETH,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/MulticallWithETH_exp.sol
+multicallwitheth-2025-07,BscScan,MulticallWithETH attack transaction,https://bscscan.com/tx/0x6da7be6edf3176c7c4b15064937ee7148031f92a4b72043ae80a2b3403ab6302
+my-coin-master-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MyCoinMaster,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/MyCoinMaster_exp.sol
+my-coin-master-2025-08,t.me,MyCoinMaster incident analysis,https://t.me/defimon_alerts/1628
+my-coin-master-2025-08,BscScan,MyCoinMaster attack transaction,https://bscscan.com/tx/0x57865009e1cfb7516240eb901342f3b434c2a2754e14604c838024ffe2e191a7
+myai-2023-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: MyAi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-06/MyAi_exp.sol
+myai-2023-06,X (Twitter),MyAi incident analysis,https://x.com/DecurityHQ/status/1674781372182048776
+myai-2023-06,BscScan,MyAi attack transaction,https://bscscan.com/tx/0x346f65ac333eb6d69886f5614aaf569a561a53a8d93db4384bd7c0bec15ae9f6
+nerve-bridge-2021-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Nerve Bridge,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-12/NerveBridge_exp.sol
+nerve-bridge-2021-12,Medium,Nerve Bridge incident analysis,https://blocksecteam.medium.com/the-analysis-of-nerve-bridge-security-incident-ead361a21025
+nerve-bridge-2021-12,BscScan,Nerve Bridge attack transaction,https://bscscan.com/tx/0xea95925eb0438e04d0d81dc270a99ca9fa18b94ca8c6e34272fc9e09266fcf1d
+newfi-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: NewFi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/NewFi_exp.sol
+newfi-2023-07,X (Twitter),NewFi incident analysis,https://twitter.com/Phalcon_xyz/status/1680961588323557376
+newfi-2023-07,BscScan,NewFi attack transaction,https://bscscan.com/tx/0x557628123d137ea49564e4dccff5f5d1e508607e96dd20fe99a670519b679cb5
+newfreedao-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: NewFreeDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/NewFreeDAO_exp.sol
+newfreedao-2022-09,X (Twitter),NewFreeDAO incident analysis,https://twitter.com/SlowMist_Team/status/1567854876633309186
+newfreedao-2022-09,X (Twitter),NewFreeDAO incident analysis,https://twitter.com/BeosinAlert/status/1567757251024396288
+nftg-2024-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: NFTG,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-11/NFTG_exp.sol
+nftg-2024-11,X (Twitter),NFTG incident analysis,https://x.com/TenArmorAlert/status/1861430745572745245
+nftg-2024-11,BscScan,NFTG attack transaction,https://bscscan.com/tx/0xbd330fd17d0f825042474843a223547132a49abb0746a7e762a0b15cf4bd28f6
+ngfs-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: NGFS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/NGFS_exp.sol
+ngfs-2024-04,X (Twitter),NGFS incident analysis,https://twitter.com/CertiKAlert/status/1783476515331616847
+ngfs-2024-04,BscScan,NGFS attack transaction,https://bscscan.com/tx/0x8ff764dde572928c353716358e271638fa05af54be69f043df72ad9ad054de25
+ngp-2025-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: NGP,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-09/NGP_exp.sol
+ngp-2025-09,blog.solidityscan.com,NGP incident analysis,https://blog.solidityscan.com/ngp-token-hack-analysis-414b6ca16d96
+ngp-2025-09,BscScan,NGP attack transaction,https://bscscan.com/tx/0xc2066e0dff1a8a042057387d7356ad7ced76ab90904baa1e0b5ecbc2434df8e1
+nmbplatform-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Nmbplatform,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/Nmbplatform_exp.sol
+nmbplatform-2022-12,X (Twitter),Nmbplatform incident analysis,https://twitter.com/BlockSecTeam/status/1602877048124735489
+nmbplatform-2022-12,BscScan,Nmbplatform attack transaction,https://bscscan.com/tx/0x42f56d3e86fb47e1edffa59222b33b73e7407d4b5bb05e23b83cb1771790f6c1
+novo-protocol-2022-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: NOVO Protocol,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-05/Novo_exp.sol
+novo-protocol-2022-05,panewslab.com,NOVO Protocol incident analysis,https://www.panewslab.com/zh_hk/articledetails/f40t9xb4.html
+novo-protocol-2022-05,BscScan,NOVO Protocol incident analysis,https://bscscan.com/tx/0xc346adf14e5082e6df5aeae650f3d7f606d7e08247c2b856510766b4dfcdc57f
+okc-project-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: OKC Project,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/OKC_exp.sol
+okc-project-2023-11,Medium,OKC Project incident analysis,https://lunaray.medium.com/okc-project-hack-analysis-0907312f519b
+omniestate-2023-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: OmniEstate,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/OmniEstate_exp.sol
+omniestate-2023-01,X (Twitter),OmniEstate incident analysis,https://twitter.com/BlockSecTeam/status/1615232012834705408
+omniestate-2023-01,BscScan,OmniEstate attack transaction,https://bscscan.com/tx/0x49bed801b9a9432728b1939951acaa8f2e874453d39c7d881a62c2c157aa7613
+openleverage-2023-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: OpenLeverage,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-10/OpenLeverage_exp.sol
+openleverage-2023-10,defimon.xyz,OpenLeverage incident analysis,https://defimon.xyz/exploit/bsc/0x5366c6ba729d9cf8d472500afc1a2976ac2fe9ff
+openleverage-2023-10,BscScan,OpenLeverage attack transaction,https://bscscan.com/tx/0xd88f26f2f9145fa413db0cfd5d3eb121e3a50a3fdcee16c9bd4731e68332ce4b
+openleverage-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: OpenLeverage,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/OpenLeverage2_exp.sol
+openleverage-2024-04,app.blocksec.com,OpenLeverage incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xf78a85eb32a193e3ed2e708803b57ea8ea22a7f25792851e3de2d7945e6d02d5
+openleverage-2024-04,app.blocksec.com,OpenLeverage incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x210071108f3e5cd24f49ef4b8bcdc11804984b0c0334e18a9a2cdb4cd5186067
+p719token-2024-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: P719Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/P719Token_exp.sol
+p719token-2024-10,X (Twitter),P719Token incident analysis,https://x.com/TenArmorAlert/status/1844929489823989953
+p719token-2024-10,BscScan,P719Token attack transaction,https://bscscan.com/tx/0x9afcac8e82180fa5b2f346ca66cf6eb343cd1da5a2cd1b5117eb7eaaebe953b3
+palmswap-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Palmswap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Palmswap_exp.sol
+palmswap-2023-07,X (Twitter),Palmswap incident analysis,https://twitter.com/BlockSecTeam/status/1683680026766737408
+palmswap-2023-07,BscScan,Palmswap attack transaction,https://bscscan.com/tx/0x62dba55054fa628845fecded658ff5b1ec1c5823f1a5e0118601aa455a30eac9
+pancakebunny-2021-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: PancakeBunny,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/PancakeBunny_exp.sol
+pancakebunny-2021-05,rekt.news,PancakeBunny incident analysis,https://rekt.news/pancakebunny-rekt/
+pancakebunny-2021-05,BscScan,PancakeBunny incident analysis,https://bscscan.com/tx/0x897c2de73dd55d7701e1b69ffb3a17b0f4801ced88b0c75fe1551c5fcce6a979
+pancakehunny-2021-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: PancakeHunny,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-06/PancakeHunny_exp.sol
+pancakehunny-2021-06,Medium,PancakeHunny incident analysis,https://medium.com/hunnyfinance/pancakehunny-post-mortem-analysis-de78967401d8
+pancakehunny-2021-06,BscScan,PancakeHunny attack transaction,https://bscscan.com/tx/0x765de8357994a206bb90af57dcf427f48a2021f2f28ca81f2c00bc3b9842be8e
+paraluni-2022-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Paraluni,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-03/Paraluni_exp.sol
+paraluni-2022-03,halborn.com,Paraluni incident analysis,https://halborn.com/explained-the-paraluni-hack-march-2022/
+paraluni-2022-03,X (Twitter),Paraluni incident analysis,https://twitter.com/peckshield/status/1502815435498176514
+pdz-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: PDZ,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/PDZ_exp.sol
+pdz-2025-08,X (Twitter),PDZ incident analysis,https://x.com/tikkalaresearch/status/1957500585965678828
+pdz-2025-08,BscScan,PDZ attack transaction,https://bscscan.com/tx/0x81fd00eab3434eac93bfdf919400ae5ca280acd891f95f47691bbe3cbf6f05a5
+phil-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: PHIL,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/PHIL_exp.sol
+phil-2023-12,app.blocksec.com,PHIL incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x20ecd8310a2cc7f7774aa5a045c8a99ad84a8451d6650f24e0911e9f4355b13a
+phil-2023-12,BscScan,PHIL attack transaction,https://bscscan.com/tx/0x20ecd8310a2cc7f7774aa5a045c8a99ad84a8451d6650f24e0911e9f4355b13a
+pledge-2024-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Pledge,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-12/Pledge_exp.sol
+pledge-2024-12,X (Twitter),Pledge incident analysis,https://x.com/TenArmorAlert/status/1864126176848965810
+pledge-2024-12,BscScan,Pledge attack transaction,https://bscscan.com/tx/0x63ac9bc4e53dbcfaac3a65cb90917531cfdb1c79c0a334dda3f06e42373ff3a0
+ploutoz-2021-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Ploutoz,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-11/Ploutoz_exp.sol
+ploutoz-2021-11,X (Twitter),Ploutoz incident analysis,https://x.com/peckshield/status/1463113809111896065
+ploutoz-2021-11,BscScan,Ploutoz attack transaction,https://bscscan.com/tx/0x7fe46c2746855dd57e18f4d33522849ff192e4e26c74835799ba8dab89099457
+pltd-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: PLTD,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/PLTD_exp.sol
+pltd-2022-10,X (Twitter),PLTD incident analysis,https://twitter.com/BeosinAlert/status/1582181583343484928
+pltd-2022-10,BscScan,PLTD attack transaction,https://bscscan.com/tx/0x8385625e9d8011f4ad5d023d64dc7985f0315b6a4be37424c7212fe4c10dafe0
+proxy-b7e1-2024-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Proxy_b7e1,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-11/proxy_b7e1_exp.sol
+proxy-b7e1-2024-11,X (Twitter),Proxy_b7e1 incident analysis,https://x.com/TenArmorAlert/status/1860867560885150050
+proxy-b7e1-2024-11,BscScan,Proxy_b7e1 attack transaction,https://bscscan.com/tx/0x864d33d006e5c39c9ee8b35be5ae05a2013e556be3e078e2881b0cc6281bb265
+ptm-2025-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: PTM,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-03/PTM_exp.sol
+ptm-2025-03,t.me,PTM incident analysis,https://t.me/defimon_alerts/556
+ptm-2025-03,BscScan,PTM attack transaction,https://bscscan.com/tx/0x1bb9c2a30564ed685580f17890d5fa153edb3e86cc39fe6804cfb6dbfa0cae92
+pump-2025-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Pump,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-03/Pump_exp.sol
+pump-2025-03,X (Twitter),Pump incident analysis,https://x.com/TenArmorAlert/status/1897115993962635520
+qixi-2022-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Qixi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-08/Qixi_exp.sol
+qixi-2022-08,X (Twitter),Qixi incident analysis,https://x.com/8olidity/status/1555366421693345792
+qixi-2022-08,app.blocksec.com,Qixi incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x16be4fe1c8fcab578fcb999cbc40885ba0d4ba9f3782a67bd215fb56dc579062
+radt-dao-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: RADT-DAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/RADT_exp.sol
+radt-dao-2022-09,X (Twitter),RADT-DAO incident analysis,https://twitter.com/BlockSecTeam/status/1573252869322846209
+radt-dao-2022-09,BscScan,RADT-DAO incident analysis,https://bscscan.com/tx/0xd692f71de2768017390395db815d34033013136c378177c05d0d46ef3b6f0897
+ragnarok-online-invasion-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Ragnarok Online Invasion,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/ROI_exp.sol
+ragnarok-online-invasion-2022-09,X (Twitter),Ragnarok Online Invasion incident analysis,https://twitter.com/BlockSecTeam/status/1567746825616236544
+ragnarok-online-invasion-2022-09,X (Twitter),Ragnarok Online Invasion incident analysis,https://twitter.com/CertiKAlert/status/1567754904663429123
+rant-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: RANT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/RANTToken_exp.sol
+rant-2025-07,X (Twitter),RANT incident analysis,https://x.com/Phalcon_xyz/status/1941788315549946225
+rant-2025-07,BscScan,RANT attack transaction,https://bscscan.com/tx/0x2d9c1a00cf3d2fda268d0d11794ad2956774b156355e16441d6edb9a448e5a99
+res-token-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: RES-Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/RES_exp.sol
+res-token-2022-10,Medium,RES-Token incident analysis,https://quillaudits.medium.com/res-token-290k-flash-loan-exploit-quillaudits-9300657fff7b
+res-token-2022-10,BscScan,RES-Token incident analysis,https://bscscan.com/tx/0xe59fa48212c4ee716c03e648e04f0ca390f4a4fc921a890fded0e01afa4ba96d
+revamp-2026-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Revamp,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-03/Revamp_exp.sol
+revamp-2026-03,X (Twitter),Revamp incident analysis,https://x.com/DefimonAlerts/status/2034532544239088053
+revamp-2026-03,BscScan,Revamp attack transaction,https://bscscan.com/tx/0xa0ff1de61793b0915038e644a2b45372be8d49e1060b6b2cd5e3482d7d4325ba
+rfb-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: RFB,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/RFB_exp.sol
+rfb-2022-12,X (Twitter),RFB incident analysis,https://twitter.com/BlockSecTeam/status/1599991294947778560
+rfb-2022-12,BscScan,RFB attack transaction,https://bscscan.com/tx/0xcc8fdb3c6af8bb9dfd87e913b743a13bbf138a143c27e0f387037887d28e3c7a
+rikkei-finance-2022-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Rikkei Finance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Rikkei_exp.sol
+rikkei-finance-2022-04,Medium,Rikkei Finance incident analysis,https://rikkeifinance.medium.com/rikkei-finance-incident-investigation-report-b5b1745b0155
+rikkei-finance-2022-04,blockmagnates.com,Rikkei Finance incident analysis,https://blockmagnates.com/rikkei-finance-hack/
+rl-token-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: RL Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/RL_exp.sol
+rl-token-2022-10,X (Twitter),RL Token incident analysis,https://twitter.com/CertiKAlert/status/1576195971003858944
+roulettepotv2-2025-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: RoulettePotV2,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-01/RoulettePotV2_exp.sol
+roulettepotv2-2025-01,X (Twitter),RoulettePotV2 incident analysis,https://x.com/TenArmorAlert/status/1878008055717376068
+roulettepotv2-2025-01,BscScan,RoulettePotV2 attack transaction,https://bscscan.com/tx/0xd9e0014a32d96cfc8b72864988a6e1664a9b6a2e90aeaa895fcd42da11cc3490
+rpp-2024-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: RPP,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-11/RPP_exp.sol
+rpp-2024-11,X (Twitter),RPP incident analysis,https://x.com/TenArmorAlert/status/1853984974309142768
+rpp-2024-11,BscScan,RPP attack transaction,https://bscscan.com/tx/0x76c39537374e7fa7f206ed3c99aa6b14ccf1d2dadaabe6139164cc37966e40bd
+satx-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SATX,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/SATX_exp.sol
+satx-2024-04,X (Twitter),SATX incident analysis,https://x.com/bbbb/status/1780341239801393479
+satx-2024-04,BscScan,SATX attack transaction,https://bscscan.com/tx/0x7e02ee7242a672fb84458d12198fae4122d7029ba64f3673e7800d811a8de93f
+sdao-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: sDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/SDAO_exp.sol
+sdao-2022-11,X (Twitter),sDAO incident analysis,https://twitter.com/CertiKAlert/status/1594615286556393478
+sdao-2022-11,BscScan,sDAO attack transaction,https://bscscan.com/tx/0xb3ac111d294ea9dedfd99349304a9606df0b572d05da8cedf47ba169d10791ed
+seaman-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SEAMAN,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/SEAMAN_exp.sol
+seaman-2022-11,X (Twitter),SEAMAN incident analysis,https://twitter.com/peckshield/status/1597493955939405825
+seaman-2022-11,BscScan,SEAMAN attack transaction,https://bscscan.com/tx/0x6f1af27d08b10caa7e96ec3d580bf39e29fd5ece00abda7d8955715403bf34a8
+shadowfi-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ShadowFi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/Shadowfi_exp.sol
+shadowfi-2022-09,X (Twitter),ShadowFi incident analysis,https://twitter.com/PeckShieldAlert/status/1565549688509861888
+shadowfi-2022-09,BscScan,ShadowFi incident analysis,https://bscscan.com/tx/0xe30dc75253eecec3377e03c532aa41bae1c26909bc8618f21fb83d4330a01018
+sheepfarm-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SheepFarm,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/SheepFarm_exp.sol
+sheepfarm-2022-11,X (Twitter),SheepFarm incident analysis,https://twitter.com/BlockSecTeam/status/1592734292727455744
+sheepfarm-2022-11,BscScan,SheepFarm attack transaction,https://bscscan.com/tx/0x5735026e5de6d1968ab5baef0cc436cc0a3f4de4ab735335c5b1bd31fa60c582
+shell-mev-0xa898-2024-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Shell_MEV_0xa898,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-01/Shell_MEV_0xa898_exp.sol
+shell-mev-0xa898-2024-01,app.blocksec.com,Shell_MEV_0xa898 incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x24f114c0ef65d39e0988d164e052ce8052fe4a4fd303399a8c1bb855e8da01e9
+shell-mev-0xa898-2024-01,BscScan,Shell_MEV_0xa898 attack transaction,https://bscscan.com/tx/0x24f114c0ef65d39e0988d164e052ce8052fe4a4fd303399a8c1bb855e8da01e9
+shibatoken-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ShibaToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/ShibaToken_exp.sol
+sinstake-zombie-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SinstakeZombie,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/SinstakeZombie_exp.sol
+sinstake-zombie-2025-06,t.me,SinstakeZombie incident analysis,https://t.me/defimon_alerts/1319
+sinstake-zombie-2025-06,BscScan,SinstakeZombie attack transaction,https://bscscan.com/tx/0x8b8e655c0ab0cd400e23e6d6a935aa23226a8a060bb37f40663f2d81ee63b94f
+skp-token-2026-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SKP Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/SKP_exp.sol
+skp-token-2026-05,cryptotimes.io,SKP Token incident analysis,https://www.cryptotimes.io/2026/05/27/skp-liquidity-exploit-drains-212k-across-bnb-chain-defi-protocols/
+slurpycoin-2024-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SlurpyCoin,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-12/SlurpyCoin_exp.sol
+slurpycoin-2024-12,X (Twitter),SlurpyCoin incident analysis,https://x.com/CertiKAlert/status/1869580379675590731
+slurpycoin-2024-12,BscScan,SlurpyCoin attack transaction,https://bscscan.com/tx/0x6c729ee778332244de099ba0cb68808fcd7be4a667303fcdf2f54dd4b3d29051
+spacegodzilla-2022-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SpaceGodzilla,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-07/SpaceGodzilla_exp.sol
+spacegodzilla-2022-07,Medium,SpaceGodzilla incident analysis,https://medium.com/numen-cyber-labs/spacegodzilla-attack-event-analysis-d29a061b17e1
+spacegodzilla-2022-07,BscScan,SpaceGodzilla attack transaction,https://bscscan.com/tx/0x7f183df11f1a0225b5eb5bb2296b5dc51c0f3570e8cc15f0754de8e6f8b4cca4
+spartan-protocol-2021-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Spartan,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/Spartan_exp.sol
+spartan-protocol-2021-05,rekt.news,Spartan incident analysis,https://rekt.news/spartan-rekt/
+spartan-protocol-2021-05,Medium,Spartan incident analysis,https://medium.com/amber-group/exploiting-spartan-protocols-lp-share-calculation-flaws-391437855e74
+sqtokenstaking-2026-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SQTokenStaking,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/SQTokenStaking_exp.sol
+sqtokenstaking-2026-05,X (Twitter),SQTokenStaking incident analysis,https://x.com/Defi_Nerd_sec/status/2054425936746148148
+sqtokenstaking-2026-05,BscScan,SQTokenStaking attack transaction,https://bscscan.com/tx/0x1bae633eda9b3d98999ea116bc403712eaa07093ec32bd6d559085cc4607f5b8
+squid-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SQUID,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/SQUID_exp.sol
+squid-2024-04,X (Twitter),SQUID incident analysis,https://twitter.com/bbbb/status/1777228277415039304
+squid-2024-04,app.blocksec.com,SQUID incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x9fcf38d0af4dd08f4d60f7658b623e35664e74bca0eaebdb0c3b9a6965d6257b
+squid-multicall-allowance-drain-2026-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SquidMulticallAllowanceDrain,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-04/SquidMulticallAllowanceDrain_exp.sol
+squid-multicall-allowance-drain-2026-04,X (Twitter),SquidMulticallAllowanceDrain incident analysis,https://x.com/DefimonAlerts/status/2041530294369386806
+squid-multicall-allowance-drain-2026-04,BscScan,SquidMulticallAllowanceDrain attack transaction,https://bscscan.com/tx/0x81d0c429ee7eae19d8c4d9d797dbd3828279060096e703b11cca739c9b1301e9
+stephero-nfts-2025-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: StepHeroNFTs,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-02/StepHeroNFTs_exp.sol
+stephero-nfts-2025-02,X (Twitter),StepHeroNFTs incident analysis,https://x.com/SlowMist_Team/status/1892822286715277344
+stephero-nfts-2025-02,BscScan,StepHeroNFTs attack transaction,https://bscscan.com/tx/0xef386a69ca6a147c374258a1bf40221b0b6bd9bc449a7016dbe5240644581877
+stepp2p-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Stepp2p,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/Stepp2p_exp.sol
+stepp2p-2025-07,X (Twitter),Stepp2p incident analysis,https://x.com/TenArmorAlert/status/1946887946877149520
+stepp2p-2025-07,BscScan,Stepp2p attack transaction,https://bscscan.com/tx/0xe94752783519da14315d47cde34da55496c39546813ef4624c94825e2d69c6a8
+sut-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SUT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/SUT_exp.sol
+sut-2023-07,X (Twitter),SUT incident analysis,https://twitter.com/bulu4477/status/1682983956080377857
+sut-2023-07,BscScan,SUT attack transaction,https://bscscan.com/tx/0xfa1ece5381b9e2b2b83cb10faefde7632ca411bb38dd6bafe1f1140b1360f6ae
+svt-2023-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SVT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-08/SVT_exp.sol
+svt-2023-08,X (Twitter),SVT incident analysis,https://twitter.com/Phalcon_xyz/status/1695285435671392504?s=20
+svt-2023-08,BscScan,SVT attack transaction,https://bscscan.com/tx/0xf2a0c957fef493af44f55b201fbc6d82db2e4a045c5c856bfe3d8cb80fa30c12
+swampfinance-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: SwampFinance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/SwampFinance_exp.sol
+swampfinance-2023-11,X (Twitter),SwampFinance incident analysis,https://x.com/MetaSec_xyz/status/1720373044517208261
+swampfinance-2023-11,app.blocksec.com,SwampFinance incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x13e75878a21af9a9b2207f5d9e18f19a43083a9ffbac36df5a7d4d67a52c164f
+tgbs-2024-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TGBS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/TGBS_exp.sol
+tgbs-2024-03,X (Twitter),TGBS incident analysis,https://twitter.com/Phalcon_xyz/status/1765285257949974747
+tgbs-2024-03,app.blocksec.com,TGBS incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xa0408770d158af99a10c60474d6433f4c20f3052e54423f4e590321341d4f2a4
+thunder-brawl-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Thunder Brawl,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/THB_exp.sol
+thunder-brawl-2022-10,X (Twitter),Thunder Brawl incident analysis,https://twitter.com/peckshield/status/1575890733373849601
+thunder-brawl-2022-10,BscScan,Thunder Brawl incident analysis,https://bscscan.com/tx/0x57aa9c85e03eb25ac5d94f15f22b3ba3ab2ef60b603b97ae76f855072ea9e3a0
+tifitoken-2022-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TIFIToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-12/TIFI_exp.sol
+tifitoken-2022-12,X (Twitter),TIFIToken incident analysis,https://twitter.com/peckshield/status/1601492605535399936
+tifitoken-2022-12,BscScan,TIFIToken attack transaction,https://bscscan.com/tx/0x1c5272ce35338c57c6b9ea710a09766a17bbf14b61438940c3072ed49bfec402
+token-factory-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TokenFactory,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/TokenFactory_exp.sol
+token-factory-2025-06,t.me,TokenFactory incident analysis,https://t.me/defimon_alerts/1242
+token-factory-2025-06,BscScan,TokenFactory attack transaction,https://bscscan.com/tx/0xf74bf7f41c8ca380d439dd94eab95d1bbb1f6fc934e69f2e42eb3325def8514a
+token-vault-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TokenVault,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/TokenVault_exp.sol
+token-vault-2025-06,t.me,TokenVault incident analysis,https://t.me/defimon_alerts/1325
+token-vault-2025-06,BscScan,TokenVault attack transaction,https://bscscan.com/tx/0x00e5c8e39eece020ad21d965402d2f9248f0a6ab62030830b12f9823c2b6d763
+token8633-9419-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Token8633_9419,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/Token8633_9419_exp.sol
+tokenholder-2025-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TokenHolder,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-10/TokenHolder_exp.sol
+tokenholder-2025-10,t.me,TokenHolder incident analysis,https://t.me/defimon_alerts/2027
+tokenholder-2025-10,BscScan,TokenHolder attack transaction,https://bscscan.com/tx/0xc291d70f281dbb6976820fbc4dbb3cfcf56be7bf360f2e823f339af4161f64c6
+transit-finance-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TransitFinance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/TransitFinance_exp.sol
+transit-finance-2023-12,X (Twitter),TransitFinance incident analysis,https://twitter.com/Phalcon_xyz/status/1737355152779030570
+transit-finance-2023-12,explorer.phalcon.xyz,TransitFinance incident analysis,https://explorer.phalcon.xyz/tx/bsc/0x93ae5f0a121d5e1aadae052c36bc5ecf2d406d35222f4c6a5d63fef1d6de1081
+transit-swap-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Transit Swap,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/TransitSwap_exp.sol
+transit-swap-2022-10,X (Twitter),Transit Swap incident analysis,https://twitter.com/TransitFinance/status/1576463550557483008
+transit-swap-2022-10,BscScan,Transit Swap attack transaction,https://bscscan.com/tx/0x181a7882aac0eab1036eedba25bc95a16e10f61b5df2e99d240a16c334b9b189
+trustpad-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TrustPad,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/TrustPad_exp.sol
+trustpad-2023-11,X (Twitter),TrustPad incident analysis,https://twitter.com/BeosinAlert/status/1721800306101793188
+ts-aggregator-generic-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: TSAggregatorGeneric,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/TSAggregatorGeneric_exp.sol
+ts-aggregator-generic-2025-06,t.me,TSAggregatorGeneric incident analysis,https://t.me/defimon_alerts/1278
+ts-aggregator-generic-2025-06,BscScan,TSAggregatorGeneric attack transaction,https://bscscan.com/tx/0x077ea419bd5f0a20dc8f3da1281fbc96d6893201ebfd237742d01ae00a78e610
+uearnpool-2022-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: UEarnPool,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-11/UEarnPool_exp.sol
+uearnpool-2022-11,X (Twitter),UEarnPool incident analysis,https://twitter.com/CertiKAlert/status/1593094922160128000
+uearnpool-2022-11,BscScan,UEarnPool attack transaction,https://bscscan.com/tx/0x824de0989f2ce3230866cb61d588153e5312151aebb1e905ad775864885cd418
+ufdao-2023-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: UFDao,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-01/UFDao_exp.sol
+ufdao-2023-01,X (Twitter),UFDao incident analysis,https://twitter.com/BlockSecTeam/status/1613507804412940289
+ufdao-2023-01,BscScan,UFDao attack transaction,https://bscscan.com/tx/0x933d19d7d822e84e34ca47ac733226367fbee0d9c0c89d88d431c4f99629d77a
+ulme-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ULME,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/ULME_exp.sol
+ulme-2022-10,X (Twitter),ULME incident analysis,https://twitter.com/BlockSecTeam/status/1584839309781135361
+ulme-2022-10,Medium,ULME incident analysis,https://medium.com/neptune-mutual/decoding-ulme-token-flash-loan-attack-56470d261787
+unverified-0000-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Unverified_0000,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/unverified_0000_exp.sol
+unverified-0000-2025-05,t.me,Unverified_0000 incident analysis,https://t.me/defimon_alerts/1184
+unverified-0000-2025-05,BscScan,Unverified_0000 attack transaction,https://bscscan.com/tx/0x7ca804d016be67c570a10a620b9ae3027fd6b03d0965da3ec78912be067af024
+unverified-35bc-2025-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Unverified_35bc,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-02/unverified_35bc_exp.sol
+unverified-35bc-2025-02,X (Twitter),Unverified_35bc incident analysis,https://x.com/TenArmorAlert/status/1893333680417890648
+unverified-35bc-2025-02,app.blocksec.com,Unverified_35bc incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xd7a61b07ca4dc5966d00b3cc99b03c6ab2cee688fa13b30bea08f5142023777d
+unverified-8490-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Unverified_8490,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/unverified_8490_exp.sol
+unverified-8490-2025-06,X (Twitter),Unverified_8490 incident analysis,https://x.com/TenArmorAlert/status/1932309011564781774
+unverified-8490-2025-06,BscScan,Unverified_8490 attack transaction,https://bscscan.com/tx/0x9191153c8523d97f3441a08fef1da5e4169d9c2983db9398364071daa33f59d1
+unverified-8fd3-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: unverified,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/unverified_8fd3_exp.sol
+unverified-8fd3-2025-07,t.me,unverified incident analysis,https://t.me/defimon_alerts/1508
+unverified-8fd3-2025-07,BscScan,unverified attack transaction,https://bscscan.com/tx/0xf2eeaa87a049fb914dfe8c9f1a878fa9a3aab78688107844794dacd5ada99563
+unverified-b5cb-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Unverified_b5cb,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/unverified_b5cb_exp.sol
+unverified-b5cb-2025-06,X (Twitter),Unverified_b5cb incident analysis,https://x.com/TenArmorAlert/status/1937761064713941187
+unverified-b5cb-2025-06,app.blocksec.com,Unverified_b5cb incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x8c026c3939f7e2d0376d13e30859fa918a5a567348ca1329836df88bef30c73e
+unverified-d4f1-2025-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: unverified_d4f1,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-02/unverified_d4f1_exp.sol
+unverified-d4f1-2025-02,X (Twitter),unverified_d4f1 incident analysis,https://x.com/TenArmorAlert/status/1890776122918309932
+unverified-d4f1-2025-02,app.blocksec.com,unverified_d4f1 incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xc7fc7e066ec2d4ea659061b75308c9016c0efab329d1055c2a8d91cc11dc3868
+unverifiedcontr-0x431abb-2023-12,DeFiHackLabs (GitHub),DeFiHackLabs PoC: UnverifiedContr_0x431abb,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-12/UnverifiedContr_0x431abb_exp.sol
+unverifiedcontr-0x431abb-2023-12,X (Twitter),UnverifiedContr_0x431abb incident analysis,https://twitter.com/Phalcon_xyz/status/1730625352953901123
+upeng-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: UPENG,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/UPENGBurnSync_exp.sol
+upeng-2025-07,t.me,UPENG incident analysis,https://t.me/defimon_alerts/1470
+upeng-2025-07,BscScan,UPENG attack transaction,https://bscscan.com/tx/0x33de1ed2d33f79e9b6dfccff8d4536ecda126f4eff18c295f16e9169b4ea5df1
+ups-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: UPS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/UPS_exp.sol
+ups-2024-04,app.blocksec.com,UPS incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xd03702e17171a32464ce748b8797008d59e2dbcecd3b3847d5138414566c886d
+uranium-finance-2021-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Uranium,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-04/Uranium_exp.sol
+uranium-finance-2021-04,Medium,Uranium incident analysis,https://medium.com/immunefi/building-a-poc-for-the-uranium-heist-ec83fbd83e9f
+uranium-finance-2021-04,BscScan,Uranium attack transaction,https://bscscan.com/tx/0x5a504fe72ef7fc76dfeb4d979e533af4e23fe37e90b5516186d5787893c37991
+utopia-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Utopia,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/Utopia_exp.sol
+utopia-2023-07,X (Twitter),Utopia incident analysis,https://twitter.com/DeDotFiSecurity/status/1681923729645871104
+utopia-2023-07,BscScan,Utopia attack transaction,https://bscscan.com/tx/0xeb4eb487f58d39c05778fed30cd001b986d3c52279e44f46b2de2773e7ee1d5e
+value-defi-2021-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Value Defi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/ValueDefi_exp.sol
+value-defi-2021-05,phalcon.blocksec.com,Value Defi incident analysis,https://phalcon.blocksec.com/tx/bsc/0xa00def91954ba9f1a1320ef582420d41ca886d417d996362bf3ac3fe2bfb9006
+value-defi-2021-05,BscScan,Value Defi attack transaction,https://bscscan.com/tx/0xa00def91954ba9f1a1320ef582420d41ca886d417d996362bf3ac3fe2bfb9006
+vds-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: VDS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/VDS_exp.sol
+vds-2025-07,X (Twitter),VDS incident analysis,https://x.com/SlowMist_Team/status/1945672192471302645
+vds-2025-07,BscScan,VDS attack transaction,https://bscscan.com/tx/0x0e01fd8798f970fd689014cb215e622aca8b7c8c243176c5b504e0043402e31f
+venus-the-2026-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Venus THE,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-03/Venus_THE_exp.sol
+venus-the-2026-03,BscScan,Venus THE attack transaction,https://bscscan.com/tx/0x4f477e941c12bbf32a58dc12db7bb0cb4d31d41ff25b2457e6af3c15d7f5663f
+vista-2024-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Vista,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-10/VISTA_exp.sol
+vista-2024-10,X (Twitter),Vista incident analysis,https://x.com/TenArmorAlert/status/1848403791881900130
+vista-2024-10,app.blocksec.com,Vista incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x84c385aab658d86b64e132e8db0c092756d5a9331a1131bf05f8214d08efba56
+vtf-token-2022-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: VTF Token,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-10/VTF_exp.sol
+vtf-token-2022-10,X (Twitter),VTF Token incident analysis,https://twitter.com/BlockSecTeam/status/1585575129936977920
+vtf-token-2022-10,BscScan,VTF Token attack transaction,https://bscscan.com/tx/0xc2d2d7164a9d3cfce1e1dac7dc328b350c693feb0a492a6989ceca7104eef9b7
+wale-coin-2025-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: WaleCoin,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-06/WaleCoin_exp.sol
+wale-coin-2025-06,t.me,WaleCoin incident analysis,https://t.me/defimon_alerts/1279
+wale-coin-2025-06,BscScan,WaleCoin attack transaction,https://bscscan.com/tx/0xa3607a9db9ef422f19d341f728f5eaff3514358b7fe7d46aaf5de059ca67cd64
+wault-finance-2021-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: WaultFinace,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-08/WaultFinance_exp.sol
+wault-finance-2021-08,Medium,WaultFinace incident analysis,https://inspexco.medium.com/wault-finance-incident-analysis-wex-price-manipulation-using-wusdmaster-contract-c344be3ed376
+wault-finance-2021-08,BscScan,WaultFinace attack transaction,https://bscscan.com/tx/0x31262f15a5b82999bf8d9d0f7e58dcb1656108e6031a2797b612216a95e1670e
+weco-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: WECO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/WECO_exp.sol
+weco-2023-11,X (Twitter),WECO incident analysis,https://x.com/MetaSec_xyz/status/1725311048625041887
+weco-2023-11,app.blocksec.com,WECO incident analysis,https://app.blocksec.com/explorer/tx/BSC/0x2040a481c933b50ee31aba257c2041c48bb7a0b4bf4b4fad1ac165f19c4269e8
+wetc-2025-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: WETC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-07/WETC_Token_exp.sol
+wetc-2025-07,t.me,WETC incident analysis,https://t.me/evmhacks/78?single
+wetc-2025-07,BscScan,WETC attack transaction,https://bscscan.com/tx/0x2b6b411adf6c452825e48b97857375ff82b9487064b2f3d5bc2ca7a5ed08d615
+wgpt-2023-07,DeFiHackLabs (GitHub),DeFiHackLabs PoC: WGPT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-07/WGPT_exp.sol
+wgpt-2023-07,X (Twitter),WGPT incident analysis,https://twitter.com/Phalcon_xyz/status/1679042549946933248
+wgpt-2023-07,BscScan,WGPT attack transaction,https://bscscan.com/tx/0x258e53526e5a48feb1e4beadbf7ee53e07e816681ea297332533371032446bfd
+wiener-doge-2022-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Wiener DOGE,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Wdoge_exp.sol
+wiener-doge-2022-04,BscScan,Wiener DOGE incident analysis,https://bscscan.com/tx/0x4f2005e3815c15d1a9abd8588dd1464769a00414a6b7adcbfd75a5331d378e1d
+wiener-doge-2022-04,X (Twitter),Wiener DOGE incident analysis,https://twitter.com/solid_group_1/status/1519034573354676224
+wkeydao-2025-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: wKeyDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-03/wKeyDAO_exp.sol
+wkeydao-2025-03,X (Twitter),wKeyDAO incident analysis,https://x.com/Phalcon_xyz/status/1900809936906711549
+wkeydao-2025-03,app.blocksec.com,wKeyDAO incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xc9bccafdb0cd977556d1f88ac39bf8b455c0275ac1dd4b51d75950fb58bad4c8?line=12
+wsm-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: wsm,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/WSM_exp.sol
+wsm-2024-04,hacked.slowmist.io,wsm incident analysis,https://hacked.slowmist.io/#:~:text=Hacked%20target%3A%20Wall%20Street%20Memes
+wsm-2024-04,BscScan,wsm attack transaction,https://bscscan.com/tx/0x5a475a73343519f899527fdb9850f68f8fc73168073c72a3cff8c0c7b8a1e520
+wxc-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: WXC,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/WXC_Token_exp.sol
+wxc-2025-08,X (Twitter),WXC incident analysis,https://x.com/TenArmorAlert/status/1954774967481962832
+wxc-2025-08,BscScan,WXC attack transaction,https://bscscan.com/tx/0x1397bc7f0d284f8e2e30d0a9edd0db1f3eb0dd284c75e30d226b02bf09ad068f
+x319-2024-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: X319,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-11/X319_exp.sol
+x319-2024-11,X (Twitter),X319 incident analysis,https://x.com/TenArmorAlert/status/1855263208124416377
+x319-2024-11,app.blocksec.com,X319 incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x679028cb0a5af35f57cbea120ec668a5caf72d74fcc6972adc7c75ef6c9a9092
+xai-2023-11,DeFiHackLabs (GitHub),DeFiHackLabs PoC: XAI,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/XAI_exp.sol
+xai-2023-11,X (Twitter),XAI incident analysis,https://x.com/MetaSec_xyz/status/1724683082064855455
+xai-2023-11,app.blocksec.com,XAI incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x2b251e456c434992b9ac7ec56dc166550c4cd7db3adefbf7eb3ab91cef55f9bf
+xdkrecycle-2026-02,DeFiHackLabs (GitHub),DeFiHackLabs PoC: XDKRecycle,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-02/XDKRecycle_exp.sol
+xdkrecycle-2026-02,X (Twitter),XDKRecycle incident analysis,https://x.com/DefimonAlerts/status/2024163654631882916
+xdkrecycle-2026-02,BscScan,XDKRecycle attack transaction,https://bscscan.com/tx/0x4848bae0fe22f781a94b4613596e7640f70d443db03b6a18fdaffcd30de718d0
+xsdwethpool-2023-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: XSDWETHpool,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-09/XSDWETHpool_exp.sol
+xsdwethpool-2023-09,X (Twitter),XSDWETHpool incident analysis,https://twitter.com/CertiKAlert/status/1706765042916450781
+xsdwethpool-2023-09,BscScan,XSDWETHpool attack transaction,https://bscscan.com/tx/0xbdf76f22c41fe212f07e24ca7266d436ef4517dc1395077fabf8125ebe304442
+xsij-2024-01,DeFiHackLabs (GitHub),DeFiHackLabs PoC: XSIJ,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-01/XSIJ_exp.sol
+xsij-2024-01,X (Twitter),XSIJ incident analysis,https://x.com/CertiKAlert/status/1752384801535918264
+xsij-2024-01,app.blocksec.com,XSIJ incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xf477089602fefcfc1dbdce15834476267914d64a1e6a52f07d3f135f091e1d27
+xsurge-2021-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: XSURGE,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-08/XSURGE_exp.sol
+xsurge-2021-08,Medium,XSURGE incident analysis,https://medium.com/@Knownsec_Blockchain_Lab/knownsec-blockchain-lab-comprehensive-analysis-of-xsurge-attacks-c83d238fbc55
+xsurge-2021-08,BscScan,XSURGE incident analysis,https://bscscan.com/tx/0x8c93d6e5d6b3ec7478b4195123a696dbc82a3441be090e048fe4b33a242ef09d
+xwin-finance-2021-06,DeFiHackLabs (GitHub),DeFiHackLabs PoC: xWin Finance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-06/xWin_exp.sol
+xwin-finance-2021-06,Medium,xWin Finance incident analysis,https://peckshield.medium.com/xwin-finance-incident-root-cause-analysis-71d0820e6bc1
+xwin-finance-2021-06,BscScan,xWin Finance attack transaction,https://bscscan.com/tx/0xba0fa8c150b2408eec9bbbbfe63f9ca63e99f3ff53ac46ee08d691883ac05c1d
+ydt-2025-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: YDT,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-05/YDTtoken_exp.sol
+ydt-2025-05,X (Twitter),YDT incident analysis,https://x.com/TenArmorAlert/status/1926587721885040686
+yiedl-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: YIEDL,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/YIEDL_exp.sol
+yiedl-2024-04,X (Twitter),YIEDL incident analysis,https://twitter.com/Phalcon_xyz/status/1782966566042181957
+yiedl-2024-04,app.blocksec.com,YIEDL incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x49ca5e188c538b4f2efb45552f13309cc0dd1f3592eee54decfc9da54620c2ec
+ysdao-2026-05,DeFiHackLabs (GitHub),DeFiHackLabs PoC: YSDAO,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2026-05/YSDAO_exp.sol
+ysdao-2026-05,BscScan,YSDAO attack transaction,https://bscscan.com/tx/0x91f26d96373bbec6a6a8517c7be995a739d65f20fed589d53bc47d8140f91907
+yuliai-2025-08,DeFiHackLabs (GitHub),DeFiHackLabs PoC: YuliAI,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-08/YuliAI_exp.sol
+yuliai-2025-08,X (Twitter),YuliAI incident analysis,https://x.com/TenArmorAlert/status/1955817707808432584
+yuliai-2025-08,BscScan,YuliAI attack transaction,https://bscscan.com/tx/0xeab946cfea49b240284d3baef24a4071313d76c39de2ee9ab00d957896a6c1c4
+yvtoken-2025-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: YVToken,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2025-04/YBToken_exp.sol
+yvtoken-2025-04,X (Twitter),YVToken incident analysis,https://x.com/TenArmorAlert/status/1912684902664782087
+yvtoken-2025-04,BscScan,YVToken attack transaction,https://bscscan.com/tx/0xe1e7fa81c3761e2698aa83e084f7dd4a1ff907bcfc4a612d54d92175d4e8a28b
+yyds-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: YYDS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/Yyds_exp.sol
+yyds-2022-09,X (Twitter),YYDS incident analysis,https://twitter.com/BlockSecTeam/status/1567928377432051713
+yyds-2022-09,BscScan,YYDS incident analysis,https://bscscan.com/tx/0x04a1f0d1694242515ecb14faa71053901f11a1286cd21c27fe5542f9eeb62356
+z123-2024-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Z123,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-04/Z123_exp.sol
+z123-2024-04,X (Twitter),Z123 incident analysis,https://twitter.com/PeckShieldAlert/status/1782322484911784385
+z123-2024-04,BscScan,Z123 attack transaction,https://bscscan.com/tx/0xc0c4e99a76da80a4cf43d3110364840151226c0a197c1728bb60dc3f1b3a6a27
+zeed-finance-2022-04,DeFiHackLabs (GitHub),DeFiHackLabs PoC: Zeed Finance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Zeed_exp.sol
+zeed-finance-2022-04,Medium,Zeed Finance incident analysis,https://medium.com/@zeedcommunity/the-solution-for-the-yeed-lp-pool-attack-a120c53948cd
+zeed-finance-2022-04,BscScan,Zeed Finance incident analysis,https://bscscan.com/tx/0x0507476234193a9a5c7ae2c47e4c4b833a7c3923cefc6fd7667b72f3ca3fa83a
+zongzi-2024-03,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ZongZi,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/ZongZi_exp.sol
+zongzi-2024-03,app.blocksec.com,ZongZi incident analysis,https://app.blocksec.com/explorer/tx/bsc/0x247f4b3dbde9d8ab95c9766588d80f8dae835129225775ebd05a6dd2c69cd79f
+zoomprofinance-2022-09,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ZoomproFinance,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-09/ZoomproFinance_exp.sol
+zoomprofinance-2022-09,X (Twitter),ZoomproFinance incident analysis,https://twitter.com/blocksecteam/status/1567027459207606273
+zoomprofinance-2022-09,BscScan,ZoomproFinance incident analysis,https://bscscan.com/tx/0xe176bd9cfefd40dc03508e91d856bd1fe72ffc1e9260cd63502db68962b4de1a
+zs-2023-10,DeFiHackLabs (GitHub),DeFiHackLabs PoC: ZS,https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-10/ZS_exp.sol
+zs-2023-10,X (Twitter),ZS incident analysis,https://x.com/MetaSec_xyz/status/1711189697534513327
+zs-2023-10,app.blocksec.com,ZS incident analysis,https://app.blocksec.com/explorer/tx/bsc/0xbc88aa6057f9da6f88e28bc908baad111ae7545e69fb0c90fbdfd485c9e72192

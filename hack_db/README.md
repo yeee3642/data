@@ -5,8 +5,8 @@
 | 案例庫 | 狀態 | 說明 |
 |---|---|---|
 | [`solana_hacks/`](../solana_hacks/README.md) | ✅ 111 起事件 | 見該資料夾 README |
-| `ethereum_hacks/` | ⏳ 匯入中 | DeFiHackLabs 的 345 起以太坊攻擊事件；交易所 / 釣魚等其他類型需要網路搜尋額度 |
-| `bsc_hacks/` | ⏳ 匯入中 | DeFiHackLabs 的 371 起 BSC 攻擊事件；其他類型同上 |
+| [`ethereum_hacks/`](../ethereum_hacks/README.md) | 🟡 236 起初稿 | DeFiHackLabs 345 起中已寫 236 起、105 起待寫；尚未獨立審查；交易所 / 釣魚等其他類型需要網路搜尋額度 |
+| [`bsc_hacks/`](../bsc_hacks/README.md) | 🟡 266 起初稿 | DeFiHackLabs 371 起中已寫 266 起、101 起待寫；尚未獨立審查；其他類型同上 |
 | `crypto_hacks.db` | ✅ 自動產生 | 三條鏈合併的跨鏈資料庫，主鍵為 `(chain, id)` |
 
 ## 結構

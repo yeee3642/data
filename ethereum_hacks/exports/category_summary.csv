@@ -1,0 +1,8 @@
+﻿category,category_zh,incidents,total_loss_usd,single_chain_loss_usd
+third_party_compromise,第三方服務遭入侵,1,1500000000.0,1500000000.0
+private_key_compromise,私鑰外洩 / 盜用,4,808000000.0,808000000.0
+smart_contract_bug,合約 / 程式邏輯漏洞,196,738720806.78,738720806.78
+governance_attack,治理攻擊,4,182000000.0,182000000.0
+oracle_price_manipulation,預言機 / 價格操縱,24,74028264.54,74028264.54
+economic_exploit,經濟模型攻擊,6,1198872.17,1198872.17
+operational_error,操作失誤,1,300000.0,300000.0
