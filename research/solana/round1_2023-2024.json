@@ -1,0 +1,610 @@
+[
+  {
+    "id": "magic-eden-fake-nft-listings-2023",
+    "date": "2023-01-04",
+    "project": "Magic Eden",
+    "project_type": "nft_gaming",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Off-chain activity-indexer/UI bug let counterfeit NFTs appear inside verified collections",
+    "loss_usd": 15000,
+    "assets_stolen": "~1,100 SOL paid by buyers for counterfeit NFTs (~$15K)",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2023年1月4日，Solana NFT 市場 Magic Eden 在部署新功能後出現問題，偽造的 NFT 被當成 ABC、y00ts 等已驗證系列的正品上架並售出。據報導，約13枚偽造 NFT 橫跨五個系列共成交27次，買家付出約1,100 SOL（約1.5萬美元）。",
+    "root_cause_zh": "Snappy Marketplace 與 Pro Trade 工具上線新功能後，鏈下「活動索引器」的集合驗證出錯，沒有正確核驗 NFT 屬於哪個系列，假冒資產因此出現在正品系列之中。這是平台鏈下的缺陷，不是鏈上程式漏洞。",
+    "aftermath_zh": "Magic Eden 加上額外驗證層並修復問題，隔日宣布事件已解決，並承諾退款給受影響的買家。",
+    "sources": [
+      {
+        "title": "Magic Eden Issue Leads to Fake NFT Listings, Will Refund Affected Users",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/web3/2023/01/04/magic-eden-issue-leads-to-fake-nft-listings"
+      },
+      {
+        "title": "Magic Eden to refund users after fake NFTs sold due to exploit",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/magic-eden-to-refund-users-after-25-fake-nfts-sold-due-to-exploit"
+      },
+      {
+        "title": "Fake Solana NFTs Are Being Sold on Magic Eden in 'Massive' Exploit",
+        "publisher": "Decrypt",
+        "url": "https://decrypt.co/118412/fake-solana-nfts-magic-eden-massive-exploit"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Small loss (<$100K) but well documented. Cointelegraph's headline says 25 fake NFTs; its body cites 13 fraudulent NFTs across five collections traded 27 times for ~1,100 SOL (~$15K). CoinDesk attributes it to a UI issue caused by a new feature deployment. Classified as an off-chain platform bug. Refund total not published."
+  },
+  {
+    "id": "cypher-protocol-2023",
+    "date": "2023-08-07",
+    "project": "Cypher Protocol",
+    "project_type": "perp_derivatives",
+    "category": "smart_contract_bug",
+    "attack_vector": "Logic flaw in on-chain margin/futures program let attacker withdraw protocol collateral",
+    "loss_usd": 1035000,
+    "assets_stolen": "38,530 SOL + 123,184 USDC",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2023年8月7日，Solana 上的去中心化期貨／保證金交易所 Cypher Protocol 遭攻擊，約38,530 SOL 與123,184 USDC（約103萬美元）被盜，團隊隨即凍結智能合約。攻擊者之後將部分 USDC 轉入 Binance 存款地址，疑似準備套現。",
+    "root_cause_zh": "攻擊者利用 Cypher 鏈上程式在保證金／期貨（子帳戶）邏輯中的缺陷，提領了超出應得額度的抵押資產。團隊沒有公開完整的技術細節。",
+    "aftermath_zh": "Cypher 凍結合約並試圖與駭客談判，沒有公開成果。之後團隊把約60萬美元資產放進贖回合約，讓用戶按比例領回，但這筆贖回資金後來又被內部貢獻者 Hoak 挪用。",
+    "sources": [
+      {
+        "title": "Solana-Based Cypher Protocol Experiences Exploit, Freezes Smart Contract",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2023/08/07/solana-based-cypher-protocol-experiences-exploit-freezes-smart-contract"
+      },
+      {
+        "title": "Cypher Protocol freezes smart contract after an estimated $1M exploit",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/cypher-protocol-solana-hack-exploited-smart-contract"
+      },
+      {
+        "title": "Solana-Based Cypher Protocol Loses $1 Million in Exploit",
+        "publisher": "Unchained",
+        "url": "https://unchainedcrypto.com/solana-based-cypher-protocol-loses-1-million-in-exploit/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss cited as ~$1.0M-$1.04M (Helius: $1.04M; Cointelegraph: ~$1,035,203). Public reporting describes the root cause only in general terms (a margin/futures logic flaw). About $600K was later made available to users through a redemption contract. Reports call it 'recovered', but it is unclear whether any of it came from the attacker. See cypher-insider-hoak-2023 for the later insider theft."
+  },
+  {
+    "id": "svt-token-flash-loan-2023",
+    "date": "2023-08-26",
+    "project": "SVT Token",
+    "project_type": "other",
+    "category": "economic_exploit",
+    "attack_vector": "Flash-loan-funded repeated buy/sell cycles exploiting SVT token pricing logic",
+    "loss_usd": 400000,
+    "assets_stolen": "~$400K (asset breakdown not verified)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "Helius 整理的 Solana 安全事件清單把「SVT Token」列為2023年8月的應用層攻擊，損失約40萬美元。手法是用閃電貸放大資金，反覆買賣以操縱代幣價格並從中獲利。",
+    "root_cause_zh": "SVT 代幣交易合約的經濟模型有缺陷，允許攻擊者用閃電貸在單筆交易中反覆買賣、操縱價格而獲利。",
+    "aftermath_zh": "找不到項目方的事後報告，也沒有資金追回的相關資訊。",
+    "sources": [
+      {
+        "title": "Solana Hacks, Bugs, and Exploits: A Complete History",
+        "publisher": "Helius",
+        "url": "https://www.helius.dev/blog/solana-hacks"
+      }
+    ],
+    "confidence": "low",
+    "notes": "Could NOT independently confirm this happened on Solana. A widely reported ~$400K flash-loan exploit of an 'SVT' token on BNB Chain happened around 2023-08-26, and Helius's entry may refer to or conflate with it. Some secondary datasets link it to Solvent Protocol (whose token is SVT) without evidence. The date comes from a secondary dataset. Verify before use; drop the entry if it is confirmed as BSC."
+  },
+  {
+    "id": "synthetify-dao-governance-attack-2023",
+    "date": "2023-10-19",
+    "project": "Synthetify DAO",
+    "project_type": "dao_governance",
+    "category": "governance_attack",
+    "attack_vector": "Backdoored proposal hidden among decoy proposals, passed with attacker-owned votes in an inactive DAO",
+    "loss_usd": 230000,
+    "assets_stolen": "~$230K in USDC, mSOL and stSOL from the DAO treasury",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2023年10月，攻擊者鎖定幾乎停擺的 Synthetify DAO（Solana 合成資產協議）。他花了約三個月提交多個看似垃圾或重複的提案作掩護，再用自己持有的代幣達到法定票數，通過其中一個惡意提案，把約23萬美元的 USDC、mSOL 與 stSOL 從金庫轉走。社群發現時，資金已經轉入 Tornado Cash。",
+    "root_cause_zh": "DAO 長期沒有活動、治理代幣便宜、通過門檻又低，攻擊者只花約4,000美元（約流通量1.25%）買幣就能確保提案通過。惡意提案複製了舊提案的程式碼並加入可替換程式碼的後門，說明中卻聲稱邏輯相同。",
+    "aftermath_zh": "資金沒有追回，已經透過 Tornado Cash 洗出。Neodyme 等安全公司把此事當作「不活躍 DAO 治理攻擊」的典型案例撰文分析。",
+    "sources": [
+      {
+        "title": "DAO on Solana loses $230K after 'attack proposal' goes unnoticed",
+        "publisher": "Blockworks",
+        "url": "https://blockworks.co/news/solana-exploit-dao-hacker"
+      },
+      {
+        "title": "How to Hack a DAO",
+        "publisher": "Neodyme",
+        "url": "https://neodyme.io/en/blog/how_to_hack_a_dao/"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "The mechanism and the ~$230K amount are consistent across sources. The exact day of the treasury drain is NOT verified: secondary datasets give 2023-10-11 and 2023-10-19. The attack was prepared over about three months of proposal spam before the drain."
+  },
+  {
+    "id": "cypher-insider-hoak-2023",
+    "date": "2023-12-07",
+    "project": "Cypher Protocol (post-exploit redemption contract)",
+    "project_type": "perp_derivatives",
+    "category": "insider_threat",
+    "attack_vector": "Core contributor abused privileged access to withdraw from the user redemption contract",
+    "loss_usd": 300000,
+    "assets_stolen": "~$300K in ETH, RLB, BONK, ORCA and wrapped SOL (36 withdrawals)",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Cypher core contributor 'Hoak' (pseudonymous; publicly admitted)",
+    "chain_scope": "solana_only",
+    "summary_zh": "Cypher Protocol 在2023年8月遭駭後，把剩餘資產放進贖回合約供用戶領回。留下來參與重建的核心貢獻者 Hoak 卻分36筆從中取走約30萬美元的 ETH、RLB、BONK、ORCA 與 wSOL 等資產。另一名貢獻者公開鏈上證據後，Hoak 承認挪用，並稱資金已經賭光。",
+    "root_cause_zh": "贖回資金由少數內部人員掌控，沒有多簽與獨立監督，有權限的貢獻者可以單方面提領用戶資金。",
+    "aftermath_zh": "Hoak 公開承認拿走資金並全數賭光，說「是時候面對後果」。資金已轉往 Binance，沒有追回的報導，受害用戶的損失因此擴大。",
+    "sources": [
+      {
+        "title": "Cypher Protocol contributor admits to taking and gambling funds recovered from exploit",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/294459/cypher-protocol-contributor-admits-to-taking-and-gambling-funds-recovered-from-exploit"
+      },
+      {
+        "title": "Cypher Protocol Insider Steals From Exploit Redemption Contract",
+        "publisher": "Unchained",
+        "url": "https://unchainedcrypto.com/cypher-protocol-insider-steals-from-exploit-redemption-contract/"
+      },
+      {
+        "title": "Insider at Solana protocol Cypher admits to taking $300,000: 'It's time to face the music'",
+        "publisher": "DL News",
+        "url": "https://www.dlnews.com/articles/defi/cypher-developer-says-he-gambled-away-hack-victim-funds/"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Amount reported as ~$260K (early reports), ~$300K (DL News/Cryptonews) and ~$317K (Helius). The withdrawals were spread over time. The earliest documented data point is the wallet's peak holdings (~$68K) on 2023-12-07, so the start date is approximate. The theft was revealed and admitted publicly around May 2024, not in Dec 2023."
+  },
+  {
+    "id": "rainbow-node-drainers-2023",
+    "date": "2023-12-16",
+    "project": "Rainbow Drainer & Node Drainer (Solana wallet-drainer kits)",
+    "project_type": "other",
+    "category": "phishing_social_engineering",
+    "attack_vector": "Drainer-as-a-Service phishing sites (fake airdrops/holiday promos) tricking users into signing draining transactions",
+    "loss_usd": 4170000,
+    "assets_stolen": "~$4.17M in SOL and SPL tokens from 3,947 victims",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Rainbow Drainer and Node Drainer DaaS operators (Mandiant reports Rainbow Drainer is a rebrand of Chick Drainer)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2023年12月中旬到2024年1月，專門針對 Solana 用戶的釣魚工具 Rainbow Drainer 與 Node Drainer 大規模活動，用假空投、耶誕活動等釣魚網站誘騙用戶簽署惡意交易。兩者合計從3,947名受害者手中竊取超過417萬美元，其中 Rainbow Drainer 約214萬美元（2,189人），Node Drainer 約200萬美元（1,762人）。",
+    "root_cause_zh": "受害者在偽冒網站上連接錢包，簽署了看似無害、實際上授權轉走 SOL 與 SPL 代幣的交易。用戶對惡意交易的辨識能力不足，是這類攻擊得逞的原因。",
+    "aftermath_zh": "安全公司發出警示並標記相關網域與地址，沒有找到資金追回的公開報導。",
+    "sources": [
+      {
+        "title": "How Hackers Drained $4.17 Million from Solana Wallet",
+        "publisher": "BeInCrypto",
+        "url": "https://beincrypto.com/solana-wallet-drainers/"
+      },
+      {
+        "title": "Solana wallet drainers becoming a serious threat in crypto space",
+        "publisher": "Coinpaper",
+        "url": "https://coinpaper.com/3043/solana-army-won-t-help-rainbow-and-node-drainers-on-the-rampage"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "This is an aggregate campaign figure as of Jan 2024, likely from ScamSniffer data. Per BeInCrypto, Rainbow Drainer was first observed 2023-12-16 and Node Drainer started with a Christmas phishing campaign. Mandiant says Chick Drainer was renamed Rainbow Drainer on 2023-12-23, which slightly conflicts with that date. This is a different DaaS from CLINKSINK (separate entry)."
+  },
+  {
+    "id": "aurory-syncspace-2023",
+    "date": "2023-12-17",
+    "project": "Aurory (SyncSpace)",
+    "project_type": "nft_gaming",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Race condition in off-chain marketplace buy endpoint (concurrent purchase requests double-credited seller)",
+    "loss_usd": 830000,
+    "assets_stolen": "~600,000 AURY",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown",
+    "chain_scope": "multi_chain",
+    "summary_zh": "2023年12月17日（週日晚間），Solana 鏈遊 Aurory 的 SyncSpace 鏈下市場遭攻擊。攻擊者取得約60萬枚 AURY（約83萬美元），經 SyncSpace 橋提領到 Arbitrum 後在 Camelot 拋售，AURY-USDC 池約八成流動性被抽走（由約150萬美元降到約31.2萬美元）。",
+    "root_cause_zh": "鏈下市場的購買端點有競態條件（race condition）：同時送出多筆購買請求時，賣方被重複入帳，買方卻只扣一次款，攻擊者因此憑空取得 AURY 餘額並提領。",
+    "aftermath_zh": "Aurory 立即停用 SyncSpace 進行維護，並說明被盜的 AURY 來自團隊用來支付提領的錢包，用戶資金與 NFT 沒有受影響，損失由團隊承擔。",
+    "sources": [
+      {
+        "title": "Solana Hacks, Bugs, and Exploits: A Complete History",
+        "publisher": "Helius",
+        "url": "https://www.helius.dev/blog/solana-hacks"
+      },
+      {
+        "title": "Solana-Based Aurory Suffers Devastating Hack, Loses 80% Liquidity",
+        "publisher": "Crypto Daily",
+        "url": "https://cryptodaily.co.uk/2023/12/solana-based-aurory-suffers-devastating-hack-loses-80-liquidity"
+      },
+      {
+        "title": "Aurory Gaming Platform Suffers Exploit Resulting in Loss of $830,000 Worth of AURY Tokens",
+        "publisher": "Binance Square (Binance News)",
+        "url": "https://www.binance.com/en-IN/feed/post/2023-12-18-aurory-gaming-platform-suffers-exploit-resulting-in-loss-of-830-000-worth-of-aury-tokens-1560581579050"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Some secondary summaries call this a flash-loan/pricing attack dated 2023-12-15. Aurory's statement and most coverage describe a race condition on 2023-12-17. Helius lists the loss as 'mitigated' because the stolen AURY came from a team wallet. This is an off-chain backend bug, classified as protocol_vulnerability rather than an on-chain program bug. It is multi_chain because proceeds were bridged to Arbitrum and dumped on Camelot."
+  },
+  {
+    "id": "thunder-terminal-2023",
+    "date": "2023-12-27",
+    "project": "Thunder Terminal",
+    "project_type": "trading_bot",
+    "category": "third_party_compromise",
+    "attack_vector": "Leaked MongoDB connection URL used to pull session tokens and execute withdrawals for users",
+    "loss_usd": 240000,
+    "assets_stolen": "86.5 ETH + 439 SOL",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "multi_chain",
+    "summary_zh": "2023年12月27日，同時支援 Solana 與以太坊的交易終端 Thunder Terminal 遭駭。攻擊者在約9分鐘內從114個用戶錢包（全平台超過1.4萬個）轉走86.5 ETH 與439 SOL，合計約24萬美元，並在鏈上留言勒索50 ETH，聲稱握有全部用戶資料。",
+    "root_cause_zh": "攻擊者取得 Thunder 的 MongoDB 資料庫連線 URL（Thunder 稱與八天前 MongoDB 本身的資安事件有關），從中拿到用戶 session token，冒用用戶身分發起提領。",
+    "aftermath_zh": "Thunder 撤銷相關憑證與 session，強調私鑰沒有外洩，並承諾全額賠償受影響用戶、提供手續費減免。",
+    "sources": [
+      {
+        "title": "Thunder Terminal claims funds safe after $240K attack, hacker says otherwise",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/thunder-terminal-hack-exploit-wallet-compromise-hacker-demands-ransom"
+      },
+      {
+        "title": "Thunder Terminal suffers hacker attack, losses amount to $240k",
+        "publisher": "crypto.news",
+        "url": "https://crypto.news/thunder-terminal-suffers-hacker-attack-losses-amount-to-240k/"
+      },
+      {
+        "title": "Thunder Terminal Hack Leads to More Than 86 ETH and 439 SOL Drained",
+        "publisher": "nft now",
+        "url": "https://nftnow.com/news/thunder-terminal-hack-leads-to-86-eth-and-439-sol-drained/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Reported as ~$239K-$240K. Thunder says private keys were not compromised; the attacker's on-chain memo called this 'all lies' and demanded 50 ETH to delete the data. Thunder reimbursed users itself; 'reimbursed_by_backer' is the closest status."
+  },
+  {
+    "id": "clinksink-mandiant-x-hijack-2024",
+    "date": "2024-01-03",
+    "project": "CLINKSINK drainer campaign (Mandiant X account hijack)",
+    "project_type": "other",
+    "category": "phishing_social_engineering",
+    "attack_vector": "Hijacked X accounts and fake airdrop sites serving the CLINKSINK JavaScript drainer",
+    "loss_usd": 900000,
+    "assets_stolen": ">=$900K in SOL and tokens (Mandiant estimate)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "CLINKSINK Drainer-as-a-Service operator and 35+ affiliates",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年1月3日，資安公司 Mandiant 的 X 帳號遭挾持，被改名為 @phantomsolw 冒充 Phantom 錢包，並推廣假的 $PHNTM 空投連結。Mandiant 調查後發現，這是 CLINKSINK 錢包清空即服務（DaaS）活動的一部分：至少35個分支成員自2023年12月起冒充 Phantom、DappRadar、BONK 等品牌，估計已從 Solana 用戶竊取至少90萬美元。",
+    "root_cause_zh": "Mandiant 的 X 帳號疑似遭暴力破解密碼而被接管。受害者在釣魚網站連接 Phantom 等錢包並簽署惡意交易後，JavaScript drainer 隨即轉走資產，營運者與分支成員通常按約20%／80%分帳。",
+    "aftermath_zh": "Mandiant 收回帳號，並在1月10日發布 CLINKSINK 分析報告，公開營運者錢包地址與惡意樣本特徵。沒有資金追回的報導。",
+    "sources": [
+      {
+        "title": "Solana Cryptocurrency Stolen in CLINKSINK Drainer Campaigns",
+        "publisher": "Mandiant / Google Cloud",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/solana-cryptocurrency-stolen-clinksink-drainer-campaigns"
+      },
+      {
+        "title": "Mandiant's X account hacked by crypto Drainer-as-a-Service gang",
+        "publisher": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/mandiants-x-account-hacked-by-crypto-drainer-as-a-service-gang/"
+      },
+      {
+        "title": "Mandiant Details How Its X Account Was Hacked",
+        "publisher": "SecurityWeek",
+        "url": "https://www.securityweek.com/mandiant-details-crypto-theft-campaign-that-hacked-its-x-account-via-brute-force-attack/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "The $900K figure is Mandiant's extrapolation: at least $180K reached operator wallets, assuming a ~20% operator cut (observed cuts ranged 5-25%). The campaigns ran from at least Dec 2023; the date used here is the Mandiant X hijack. Mandiant attributes the takeover to a likely brute-force password attack."
+  },
+  {
+    "id": "saga-dao-treasury-2024",
+    "date": "2024-01-24",
+    "project": "Saga DAO",
+    "project_type": "dao_governance",
+    "category": "private_key_compromise",
+    "attack_vector": "Treasury 'multisig' effectively 1-of-12; one signer's machine reportedly compromised",
+    "loss_usd": 60000,
+    "assets_stolen": "~750 SOL",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown (founder 'zkRedDevil' claimed a remote hack; co-founder 'Ashen' disputed it; insider allegations unresolved)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年1月，Solana Saga 手機粉絲社群 Saga DAO 的金庫被轉走約750 SOL（約6萬美元）。這個金庫雖然叫多簽，實際上12名簽署人中任何1人就能動用資金。",
+    "root_cause_zh": "多簽門檻設成 1/12，等同單簽。一名創辦人聲稱個人電腦遭遠端入侵、金鑰外洩，攻擊者因此能獨自轉走資金。",
+    "aftermath_zh": "Saga DAO 在1月24日公開事件，並把相關人員移出領導職務。另一名創辦人質疑「遠端入侵」的說法，社群也有內部作案的指控。資金沒有追回。",
+    "sources": [
+      {
+        "title": "Fan Club for Solana's Saga Phone Loses 750 SOL",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2024/01/24/fan-club-for-solanas-saga-phone-loses-750-sol-to-hack"
+      },
+      {
+        "title": "Community-run Solana mobile DAO puzzled over $60k hack",
+        "publisher": "crypto.news",
+        "url": "https://crypto.news/community-run-solana-mobile-dao-puzzled-over-60k-hack/"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Below the ~$100K threshold, but well documented (CoinDesk) and listed by Helius. The date is the public disclosure date; the exact drain time was not verified. It is disputed whether this was an external key compromise or insider theft."
+  },
+  {
+    "id": "solareum-2024",
+    "date": "2024-03-29",
+    "project": "Solareum",
+    "project_type": "trading_bot",
+    "category": "insider_threat",
+    "attack_vector": "Bot users' private keys exfiltrated with help of a North Korean IT worker hired as a developer",
+    "loss_usd": 523000,
+    "assets_stolen": "2,800+ SOL initially reported (US prosecutors later: 6,045 SOL, ~$1.4M)",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "North Korean (DPRK) IT worker embedded as developer, per US prosecutors",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年3月29日，Solana 上的 Telegram 交易機器人 Solareum 的用戶錢包遭大規模清空，超過300名用戶共損失約2,800 SOL（約52萬美元）。有些受害者一開始以為是 BONKbot 出事，後來查明他們的共同點是曾把私鑰匯入 Solareum。Solareum 隨後宣布停止營運。",
+    "root_cause_zh": "Solareum 保管並使用用戶私鑰。事發時團隊推測是 Telegram bot token 外洩，讓攻擊者能從訊息紀錄取得私鑰。美國檢方後來指出，團隊在不知情下僱用了一名北韓開發者，並由此人協助竊取用戶資金。",
+    "aftermath_zh": "Solareum 以資金不足、市場變化與這次安全事件為由結束營運。美國檢方在後續法庭文件中把此案列為北韓 IT 工作者滲透加密公司的案例，稱被盜金額為6,045 SOL（約140萬美元）。",
+    "sources": [
+      {
+        "title": "Solana Telegram Trading Bot to Shut Down After Users Drained of $523K",
+        "publisher": "Decrypt",
+        "url": "https://decrypt.co/224371/solana-telegram-trading-bot-shut-down-users-drained-523k"
+      },
+      {
+        "title": "How a North Korean dev tricked a Solana trading bot team and stole $1.4m",
+        "publisher": "DL News",
+        "url": "https://www.dlnews.com/articles/regulation/how-a-dprk-developer-tricked-solareum-and-stole-14m/"
+      },
+      {
+        "title": "Solana faces wave of drain attacks linked to trading bots including Solareum",
+        "publisher": "Web3 is Going Just Great",
+        "url": "https://www.web3isgoinggreat.com/?id=solana-drain-attacks"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Initial reports put the loss at ~$520-523K (2,800+ SOL) from 300+ users. A later US prosecutors' filing dated January 21 (reported by DL News; year not confirmed here) puts it at 6,045 SOL (~$1.4M). Helius gives $520K-$1.4M and mentions a MongoDB key compromise. The exact exfiltration path was never officially published. Categorized as insider_threat because of the DPRK developer finding."
+  },
+  {
+    "id": "io-net-gpu-metadata-attack-2024",
+    "date": "2024-04-25",
+    "project": "io.net",
+    "project_type": "other",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Exposed user ID tokens plus SQL injection on GPU metadata API; Sybil spoofing of GPU workers",
+    "loss_usd": null,
+    "assets_stolen": "None reported (device metadata tampered; fake GPUs used to farm rewards)",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Unknown (reward-farming Sybil actors)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年4月25日，Solana 生態的去中心化 GPU 算力網路 io.net 偵測到 GPU 元資料 API 的寫入量異常暴增。攻擊者竄改裝置元資料，並大量偽造 GPU 節點（約180萬個假 GPU 嘗試連線）來騙取獎勵。GPU 硬體與用戶資金都沒有失竊。",
+    "root_cause_zh": "攻擊者利用外洩的用戶 ID token 對 API 進行 SQL 注入，未經授權修改裝置元資料。網路缺乏可靠的硬體證明機制，讓偽造 GPU 的 Sybil 攻擊得以進行。",
+    "aftermath_zh": "io.net 封鎖偽造裝置，為 API 加上 SQL 注入檢查並強化未授權存取的日誌紀錄，同時沿用兩天前剛推出的工作量證明機制辨識假 GPU。CEO 發布了詳細的事後報告。",
+    "sources": [
+      {
+        "title": "Solana-based DePIN io.net CEO claims network was attacked in detailed postmortem",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/291315/solana-based-depin-io-net-ceo-claims-network-was-attacked-in-detailed-postmortem"
+      },
+      {
+        "title": "Io.net responds to GPU metadata attack",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/io-net-responds-to-gpu-metadata-attack"
+      },
+      {
+        "title": "25th April Incident Report",
+        "publisher": "io.net (Medium)",
+        "url": "https://ionet.medium.com/25th-april-incident-report-176e5fb5c576"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "No direct theft. Included as a security breach of a Solana-based DePIN that Helius lists. The alert fired at 1:05am PST on April 25. This is an off-chain backend issue, classified as protocol_vulnerability. Spoofed-GPU counts vary: ~400K per Helius vs ~1.8M connection attempts per io.net/Cointelegraph."
+  },
+  {
+    "id": "pump-fun-2024",
+    "date": "2024-05-16",
+    "project": "Pump.fun",
+    "project_type": "launchpad",
+    "category": "insider_threat",
+    "attack_vector": "Former employee abused retained bonding-curve withdraw authority, funded by flash loans",
+    "loss_usd": 1900000,
+    "assets_stolen": "~12,300 SOL",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Jarett Dunn (@STACCoverflow), former Pump.fun developer/contractor; convicted in the UK",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年5月16日，Solana 迷因幣發行平台 Pump.fun 遭前員工 Jarett Dunn 攻擊。他用閃電貸借入 SOL，買滿多個即將完成的聯合曲線（bonding curve），再利用手上仍保有的特權提領權限，取走約12,300 SOL（約190萬美元）的曲線流動性。",
+    "root_cause_zh": "負責把完成的聯合曲線遷移到 Raydium 的「提領權限」沒有在他離職後妥善收回，前員工得以濫用。配合閃電貸，他能在單筆交易內把大量曲線推到100%並取走資金。",
+    "aftermath_zh": "Pump.fun 升級合約阻止進一步損失，並表示會為受影響的代幣補回流動性。Dunn 於5月在倫敦被捕，2024年8月認罪後一度想撤回，2025年再次認罪，最後被判處六年徒刑（詐欺與轉移犯罪財產，兩罪同期執行）。",
+    "sources": [
+      {
+        "title": "Solana token launcher Pump.fun suffers flash loan exploit",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/amp/post/294959/solana-token-launcher-pump-fun-suffers-flash-loan-exploit"
+      },
+      {
+        "title": "Pump dot Fun exploiter identified and arrested in London",
+        "publisher": "Blockworks",
+        "url": "https://blockworks.co/news/pump-dot-fun-exploiter-arrest-london"
+      },
+      {
+        "title": "Former Pump.fun Dev Sentenced to Six Years in Prison for $2 Million Solana Fraud",
+        "publisher": "Decrypt",
+        "url": "https://decrypt.co/352876/former-pump-fun-dev-sentenced-six-years-prison-2-million-solana-fraud"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss cited as ~$1.9M-$2M (12,300+ SOL); Dunn said he was accused of stealing $1.9M and of conspiring to steal a further $80M. Some outlets wrongly say the flash loans came from Raydium; other summaries say a Solana lending protocol. Helius lists the loss as mitigated. The liquidity restoration comes from Pump.fun statements and was not independently checked. Dunn was sentenced at Wood Green Crown Court (per Decrypt); the exact sentencing date was not verified (roughly late 2025/early 2026)."
+  },
+  {
+    "id": "solana-elf-alignment-vulnerability-2024",
+    "date": "2024-08-07",
+    "project": "Solana (Agave and Jito-Solana validator clients)",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Crafted on-chain program exploiting an ELF address-alignment flaw in the program loader to crash leaders",
+    "loss_usd": 0,
+    "assets_stolen": "None (not exploited)",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "N/A - privately reported and patched before exploitation",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年8月，Anza 等 Solana 核心開發者發現驗證者客戶端（Agave 與 Jito）有嚴重漏洞：攻擊者可以部署特製程式，讓輪值出塊的 leader 一個接一個崩潰，最後讓整個網路停擺。Solana 基金會從8月7日起私下聯繫主要驗證者，在公開披露前完成修補。",
+    "root_cause_zh": "漏洞出在驗證者載入鏈上程式（ELF 檔）時對位址對齊（alignment）的處理。Solana runtime 允許非標準工具鏈產生的程式，一個特製的未對齊 ELF 就能讓節點崩潰。",
+    "aftermath_zh": "修補程式經多家第三方稽核後私下發放。8月8日約20:00 UTC 已有超過67%的質押量完成升級，之後才公開漏洞，Anza 也發布了根因分析。這種「靜默修補」流程引發了外界對 Solana 中心化程度的討論。",
+    "sources": [
+      {
+        "title": "Agave Network Patch: Root Cause Analysis",
+        "publisher": "Anza",
+        "url": "https://www.anza.xyz/blog/agave-network-patch-root-cause-analysis"
+      },
+      {
+        "title": "Solana developers address critical vulnerability with coordinated patch",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/310361/solana-developers-address-critical-vulnerability-with-coordinated-patch"
+      },
+      {
+        "title": "Solana prevents potential outage, patches critical vulnerability",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/solana-fixes-critical-security-vulnerability"
+      }
+    ],
+    "confidence": "high",
+    "notes": "No funds lost. The date is the first private coordination message (Aug 7). Patch instructions went out 2024-08-08 14:00 UTC, over 67% of stake was patched by 20:00 UTC, and validator Laine disclosed it publicly on Aug 9. The seed called it an 'rbpf' bug; Anza describes it as an ELF address-alignment flaw in program loading. A separate rBPF integer-overflow bug reported by BlockSec is a different issue."
+  },
+  {
+    "id": "parcl-frontend-dns-hijack-2024",
+    "date": "2024-08-19",
+    "project": "Parcl",
+    "project_type": "perp_derivatives",
+    "category": "frontend_account_compromise",
+    "attack_vector": "Domain registrar/DNS hijack plus X account takeover redirecting users to a wallet-draining clone site",
+    "loss_usd": null,
+    "assets_stolen": "Undisclosed user wallet assets",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年8月19日前後，Solana 上的房地產價格交易平台 Parcl 的網域與官方 X 帳號遭挾持，parcl.co 被導向仿冒前端，誘騙連接錢包的用戶簽署惡意交易。Parcl 發現後凍結相關活動，並警告用戶不要與網站互動。",
+    "root_cause_zh": "攻擊者取得 Parcl 網域註冊商／DNS 的控制權，把網站指向惡意伺服器。仿冒頁面發出的交易在錢包預覽中看起來安全，實際執行時卻會轉走用戶資產。",
+    "aftermath_zh": "Parcl 奪回 DNS 並恢復網站，開始取回 X 帳號，並請受影響用戶開單回報。損失金額一直沒有公開。",
+    "sources": [
+      {
+        "title": "Solana Hacks, Bugs, and Exploits: A Complete History",
+        "publisher": "Helius",
+        "url": "https://www.helius.dev/blog/solana-hacks"
+      },
+      {
+        "title": "Parcl incident write-up (st-security blog source)",
+        "publisher": "GitHub - Not-Sarthak/st-security",
+        "url": "https://raw.githubusercontent.com/Not-Sarthak/st-security/ad56153827a17eccfda8af57e0ecff8cb8be23fd/app/blog/parcl/page.mdx"
+      }
+    ],
+    "confidence": "low",
+    "notes": "The loss was never disclosed. Helius lists this as a 2024 supply-chain/front-end (DNS hijacking) incident. The timing, the combined registrar and X account compromise, and the wallet-preview-evading transactions come from an independent write-up. Parcl's help account posted a warning on X at ~2024-08-19 22:17 UTC (decoded from the tweet ID). Not checked against an official Parcl post-mortem."
+  },
+  {
+    "id": "banana-gun-2024",
+    "date": "2024-09-19",
+    "project": "Banana Gun",
+    "project_type": "trading_bot",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Flaw in the bot's Telegram message oracle let attacker trigger transfers from users' bot wallets",
+    "loss_usd": 1400000,
+    "assets_stolen": "~563 ETH from 11 users",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "multi_chain",
+    "summary_zh": "2024年9月19日，同時支援以太坊與 Solana 的 Telegram 交易機器人 Banana Gun 遭攻擊。攻擊者趁受害者正在使用機器人時，從11名用戶的錢包手動轉走約563 ETH（約140萬美元），目標多是有知名度的資深交易者。",
+    "root_cause_zh": "Banana Gun 的 Telegram 訊息預言機（message oracle）有漏洞，攻擊者能攔截訊息並取得用戶機器人錢包的操作權，進而發起轉帳。據 Helius 說法，這個缺陷同時影響以太坊與 Solana 機器人。",
+    "aftermath_zh": "據報 Banana Gun 暫停機器人、修補漏洞，並用團隊資金全額賠償受害用戶。",
+    "sources": [
+      {
+        "title": "Solana Hacks, Bugs, and Exploits: A Complete History",
+        "publisher": "Helius",
+        "url": "https://www.helius.dev/blog/solana-hacks"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "The stolen funds were ETH on Ethereum. Included only because Helius lists it as a Solana-ecosystem incident (the flaw also affected Banana Gun's Solana bots). Loss per Helius is ~$1.4M (refunded); some reports give larger refund totals, not verified here. Off-chain bot vulnerability, classified as protocol_vulnerability."
+  },
+  {
+    "id": "dexx-2024",
+    "date": "2024-11-16",
+    "project": "DEXX",
+    "project_type": "trading_bot",
+    "category": "private_key_compromise",
+    "attack_vector": "Leak of custodially held user private keys (plaintext key exposure in wallet-export flow)",
+    "loss_usd": 21000000,
+    "assets_stolen": "SOL and numerous memecoins/SPL tokens from 8,612+ Solana addresses",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年11月16日，主打 Solana 迷因幣交易的託管式交易終端 DEXX 遭駭，攻擊者按餘額高低優先轉走用戶錢包中的高價值代幣。初估損失約2,100萬美元；SlowMist 追查後把事件關聯到超過8,612個 Solana 地址，估計損失約3,000萬美元，受害用戶至少900人。",
+    "root_cause_zh": "DEXX 以中心化方式託管用戶私鑰，私鑰在匯出錢包（export_wallet）請求中以明文傳輸與顯示，導致私鑰外洩並被大規模利用。",
+    "aftermath_zh": "DEXX 公開承諾賠償用戶損失，但最終的賠償與資金追回情況沒有得到獨立證實。",
+    "sources": [
+      {
+        "title": "Over 8.6K Solana wallets linked to $21M DEXX hacker",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/solana-dexx-hack-november-2024-suspicious-wallets"
+      },
+      {
+        "title": "Around $21 million in losses reported by users of DEXX",
+        "publisher": "Web3 is Going Just Great",
+        "url": "https://www.web3isgoinggreat.com/?id=dexx-losses"
+      },
+      {
+        "title": "Dexx Hack Investigation Unveils Over 8,600 Solana Wallet Links: SlowMist Report",
+        "publisher": "Brave New Coin",
+        "url": "https://bravenewcoin.com/insights/dexx-hack-investigation-unveils-over-8600-solana-wallet-links-slowmist-report"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Losses range from $21M (initial, most cited) to ~$30M (SlowMist, higher because of memecoin price moves); one user reportedly lost ~$1M. SlowMist gives the start as 04:47:23 on 2024-11-16 and cites 'suspected private key leakage in a centralized custody model'. The plaintext export_wallet detail comes from Helius-derived summaries. Losses were mostly on Solana, though DEXX also supported other chains. Compensation outcome not verified."
+  },
+  {
+    "id": "solana-web3js-npm-supply-chain-2024",
+    "date": "2024-12-03",
+    "project": "@solana/web3.js (npm package)",
+    "project_type": "infrastructure_sdk",
+    "category": "supply_chain",
+    "attack_vector": "Phished npm publish-access account used to publish backdoored v1.95.6 and v1.95.7 that exfiltrated private keys",
+    "loss_usd": 184000,
+    "assets_stolen": "~674.86 SOL plus other tokens",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown (spear-phishing of npm maintainers)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024年12月3日，Solana 官方 JavaScript 函式庫 @solana/web3.js 在 npm 上被發布了含後門的 1.95.6 與 1.95.7 版本，約在 15:10 到 20:25 UTC 之間可被下載。惡意程式會竊取直接處理私鑰的應用（例如交易機器人、後端服務）的私鑰並清空資金，估計損失約16萬至19萬美元。",
+    "root_cause_zh": "攻擊者用偽裝成 npm 協作邀請的魚叉式釣魚郵件，取得具 @solana 命名空間發布權限的帳號，再在套件中注入竊取並外傳私鑰的惡意程式碼。",
+    "aftermath_zh": "惡意版本在幾小時內被下架，乾淨的 1.95.8 隨即發布。官方發布了 GitHub 安全公告與 Anza 根因分析，呼籲可能受影響的開發者輪換各種權限金鑰；非託管錢包與 Solana 協議本身不受影響。",
+    "sources": [
+      {
+        "title": "Security advisory GHSA-jcxm-7wvp-g6p5: Modified package published to npm, containing malware that exfiltrates private key material",
+        "publisher": "GitHub (solana-labs/solana-web3.js)",
+        "url": "https://github.com/solana-labs/solana-web3.js/security/advisories/GHSA-jcxm-7wvp-g6p5"
+      },
+      {
+        "title": "web3.js Exploit: Root Cause Analysis",
+        "publisher": "Anza",
+        "url": "https://www.anza.xyz/blog/web3-js-exploit-root-cause-analysis"
+      },
+      {
+        "title": "Official Solana JavaScript library compromised in supply chain attack, at least $184,000 taken",
+        "publisher": "Web3 is Going Just Great",
+        "url": "https://www.web3isgoinggreat.com/single/solana-javascript-library-compromised"
+      }
+    ],
+    "confidence": "high",
+    "notes": "npm registry timestamps: 1.95.6 published 2024-12-03T15:10Z, 1.95.7 at 15:20Z, fixed 1.95.8 at 20:25Z. The GitHub advisory gives a window of 3:20pm-8:25pm UTC on Dec 3, 2024; many outlets wrongly say Dec 2. Loss estimates: ~$130K (Helius), ~$160-164K in SOL alone (674.86 SOL), ~$184K (Web3 is Going Just Great), ~$190K including other tokens."
+  }
+]

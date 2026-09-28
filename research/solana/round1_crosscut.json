@@ -1,0 +1,826 @@
+[
+  {
+    "id": "spl-token-lending-rounding-bug-2021-12",
+    "date": "2021-12-03",
+    "project": "SPL Token Lending program (Solana Program Library) and forks (Solend, Tulip, Larix, etc.)",
+    "project_type": "lending",
+    "category": "smart_contract_bug",
+    "attack_vector": "Integer rounding error in deposit/withdraw collateral conversion",
+    "loss_usd": 0,
+    "assets_stolen": "None (assets at risk only)",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: Neodyme",
+    "chain_scope": "solana_only",
+    "summary_zh": "Neodyme 於 2021 年 12 月公開揭露 Solana 官方 SPL Token Lending 程式中的一個關鍵算術漏洞，該程式被 Solend、Tulip、Larix 等多個借貸協議採用。攻擊者可透過反覆進行極小額的存取操作，利用捨入誤差逐步掏空借貸池，揭露時約有 20 億至 26 億美元資產面臨風險。",
+    "root_cause_zh": "存款兌換 cToken（及反向提領）時的整數捨入方向錯誤，使每次操作都可多獲得一點點價值；由於 Solana 交易費極低，攻擊者可大量重複此操作累積獲利。",
+    "aftermath_zh": "Neodyme 先與 Solana Labs 及受影響協議私下協調修補，確認所有平台安全後才於 2021-12-03 發布技術文章；未有資金遭竊的報告。",
+    "sources": [
+      {
+        "title": "How to Become a Millionaire, 0.000001 BTC at a Time",
+        "publisher": "Neodyme",
+        "url": "https://neodyme.io/en/blog/lending_disclosure/"
+      },
+      {
+        "title": "Bug in Solana Token Lending Contract Fixed, More Than $2 Billion Made Exploitable – Bitcoin News",
+        "publisher": "Bitcoin.com News (via ExciteCrypto)",
+        "url": "https://excitecrypto.com/2021/12/bug-in-solana-token-lending-contract-fixed-more-than-2-billion-made-exploitable-bitcoin-news/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Date is the public write-up date (Dec 3, 2021); the private report and fix came earlier. Value at risk is cited as 'more than $2 billion' in news coverage and ~$2.6B in secondary summaries. Neodyme credited Larix, Solana Labs, Solend and Tulip for fast fixes. Bug bounty amounts not verified. Primary pages could not be fetched (egress blocked); facts come from search-result content."
+  },
+  {
+    "id": "solana-rbpf-integer-overflow-cve-2021-46102-2021-12",
+    "date": "2021-12-06",
+    "project": "Solana rBPF (eBPF VM / ELF loader)",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Integer overflow in ELF relocation parsing (malicious program)",
+    "loss_usd": 0,
+    "assets_stolen": "None",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: BlockSec",
+    "chain_scope": "solana_only",
+    "summary_zh": "BlockSec 於 2021 年 12 月 6 日向 Solana 安全團隊回報 rBPF 虛擬機 ELF 載入器中的整數溢位漏洞（CVE-2021-46102，CVSS 7.5）。惡意構造的 ELF 程式檔可在部署或載入時觸發溢位，可能導致驗證節點異常。",
+    "root_cause_zh": "src/elf.rs 的 relocate 函式直接信任 ELF 檔中的 sym.st_value，在計算 addr = sym.st_value + refd_pa 時未做溢位檢查，影響 rBPF 0.2.14 至 0.2.16 版本。",
+    "aftermath_zh": "Solana 在收到回報後數小時內以 safe-math 修補並發布 0.2.17；BlockSec 於 2021-12-30 公開細節，CVE 於 2022 年 1 月指派，無資金損失。",
+    "sources": [
+      {
+        "title": "New Integer Overflow Bug Discovered in Solana rBPF",
+        "publisher": "BlockSec",
+        "url": "https://blocksec.com/blog/new-integer-overflow-bug-discovered-in-solana-r-bpf"
+      },
+      {
+        "title": "CVE-2021-46102",
+        "publisher": "OSV (Open Source Vulnerabilities)",
+        "url": "https://osv.dev/vulnerability/CVE-2021-46102"
+      },
+      {
+        "title": "CVE-2021-46102 (solana_rbpf)",
+        "publisher": "GitLab Advisory Database",
+        "url": "https://advisories.gitlab.com/pkg/cargo/solana_rbpf/CVE-2021-46102/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Date is the private report to Solana (Dec 6, 2021). Public write-up Dec 30, 2021; CVE published ~Jan 27, 2022. Treated as a validator crash/DoS risk; the full real-world impact is as described in BlockSec's write-up."
+  },
+  {
+    "id": "slope-wallet-key-leak-2022-08",
+    "date": "2022-08-02",
+    "project": "Slope Wallet (mobile)",
+    "project_type": "wallet",
+    "category": "private_key_compromise",
+    "attack_vector": "Seed phrases/private keys leaked via app telemetry (Sentry) logging",
+    "loss_usd": 4100000,
+    "assets_stolen": "SOL, SPL tokens (incl. USDC) from ~9,231 user wallets",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022 年 8 月 2 日 22:37 UTC 起約 4 小時內，攻擊者使用外洩的私鑰簽署交易，掏空約 9,231 個 Solana 錢包、價值約 410 萬美元的資產。調查指向 Slope 行動錢包曾將使用者助記詞/私鑰傳送至監控服務。",
+    "root_cause_zh": "Slope 行動版 App 將敏感私鑰資訊透過 Sentry SDK 傳送並以未加密形式儲存於自架 Sentry 伺服器（o7e.slope.finance），造成大規模私鑰外洩。",
+    "aftermath_zh": "Solana 生態與資安公司協助調查，Slope 發布數位鑑識報告，但在 Sentry 資料庫中僅能對應 1,444 個受害錢包，無法完整解釋全部事件；未見資金追回。",
+    "sources": [
+      {
+        "title": "8/2/2022 Slope Wallet Incident Update",
+        "publisher": "Solana Foundation",
+        "url": "https://solana.com/news/8-2-2022-application-wallet-incident"
+      },
+      {
+        "title": "Slope Wallet Sentry Vulnerability — Digital Forensics and Incident Response Report",
+        "publisher": "Slope Finance (Medium)",
+        "url": "https://slope-finance.medium.com/slope-wallet-sentry-vulnerability-digital-forensics-and-incident-response-report-d7a5904e5a39"
+      },
+      {
+        "title": "Solana's $6M Exploit Likely Tied to Slope Wallet, Developers Say",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2022/08/03/solanas-latest-6m-exploit-likely-tied-to-slope-wallet-devs-say"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss figures range from ~$4.1M (Solana Foundation/Slope count, 9,231 wallets) to ~$6M (early CoinDesk), with higher figures in some early reports. Some Phantom users were affected because they had imported Slope-generated seed phrases. The forensic report found keys for 6,811 unique wallets in the Sentry DB, but only 1,444 matched drained wallets, so the root cause was never fully proven."
+  },
+  {
+    "id": "ftx-hot-wallet-drain-2022-11",
+    "date": "2022-11-12",
+    "project": "FTX (exchange wallets incl. Solana-based assets)",
+    "project_type": "cex",
+    "category": "private_key_compromise",
+    "attack_vector": "Unauthorized withdrawals from exchange wallets (alleged SIM-swap access)",
+    "loss_usd": 477000000,
+    "assets_stolen": "ETH and ERC-20s, BSC tokens and Solana-based tokens (bridged to Ethereum via Wormhole), plus USDT, PAXG etc.",
+    "recovered_usd": null,
+    "recovery_status": "partial",
+    "attribution": "Alleged: 'Powell SIM Swapping Crew' (Robert Powell, Carter Rohn, Emily Hernandez; indicted Jan 2024)",
+    "chain_scope": "multi_chain",
+    "summary_zh": "FTX 宣告破產數小時後（2022 年 11 月 11 日晚，UTC 11 月 12 日），其錢包遭未授權轉出約 4.77 億美元資產，涵蓋 Ethereum、BSC 及 Solana 上的代幣。Solana 上被盜資產經 Wormhole 等跨鏈橋轉至攻擊者的 Ethereum 地址後再洗錢。",
+    "root_cause_zh": "據美國檢方起訴，嫌犯以 SIM 卡置換（SIM swap）手法冒用身分取得帳戶存取權，進而控制交易所錢包；並非鏈上合約漏洞。",
+    "aftermath_zh": "2024 年 1 月 24 日美國聯邦大陪審團起訴 Robert Powell 等三人；事件亦促使 Solana 開發者分叉由 FTX/Alameda 掌控升級權限的 Serum DEX（後成為 OpenBook）。部分 USDT/PAXG 遭發行方凍結。",
+    "sources": [
+      {
+        "title": "The $477 million FTX hack: a new blockchain trail",
+        "publisher": "Elliptic",
+        "url": "https://www.elliptic.co/blog/the-477-million-ftx-hack-following-the-blockchain-trail"
+      },
+      {
+        "title": "Three people indicted in $400 million FTX crypto hack conspiracy",
+        "publisher": "CNBC",
+        "url": "https://www.cnbc.com/2024/02/02/three-people-indicted-in-400-million-ftx-hack-conspiracy.html"
+      },
+      {
+        "title": "FTX Hack Sparks Revolution at Serum DEX as Solana Devs Plot Alameda's Ouster",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2022/11/12/ftx-hack-spooks-solana-defi-community-igniting-revolution-at-alameda-controlled-serum-dex"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Total loss estimates range from ~$338M-$415M (early) to $477M (Elliptic, most cited); the indictment references ~$400M. The sources reviewed do not quantify the Solana-specific portion, so loss_usd is the multi-chain total. Elliptic reports ~$100M of USDT/PAXG frozen by issuers (from a search summary, not independently verified). The indictment names 'Victim Company-1', widely reported to be FTX."
+  },
+  {
+    "id": "clinksink-drainer-campaign-2024-01",
+    "date": "2024-01-03",
+    "project": "CLINKSINK drainer-as-a-service (fake Phantom/DappRadar/BONK airdrops)",
+    "project_type": "wallet",
+    "category": "phishing_social_engineering",
+    "attack_vector": "Fake airdrop phishing pages prompting malicious transaction signatures",
+    "loss_usd": 900000,
+    "assets_stolen": "SOL, SPL tokens and NFTs from Solana users' wallets",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown DaaS operator(s) with at least 35 affiliate IDs",
+    "chain_scope": "solana_only",
+    "summary_zh": "自 2023 年 12 月起，多個犯罪集團使用名為 CLINKSINK 的「竊取器即服務」（DaaS）針對 Solana 使用者，以偽造的 Phantom、DappRadar、BONK 空投頁面誘騙受害者連接錢包並簽署交易。Mandiant 估計至少造成 90 萬美元損失，其 X 帳號亦於 2024 年 1 月 3 日遭挾持並被用來散布 CLINKSINK 釣魚連結。",
+    "root_cause_zh": "受害者被社交工程誘導簽署惡意交易，惡意 JavaScript 竊取腳本隨即轉走錢包內 SOL、代幣與 NFT；並非區塊鏈本身漏洞。",
+    "aftermath_zh": "Mandiant 於 2024-01-10 發布分析，指出運營者通常抽成約 20%（5%–25%），並追蹤到至少 1,491 SOL 流入運營者地址；未見資金追回。",
+    "sources": [
+      {
+        "title": "Hundreds of Thousands of Dollars Worth of Solana Cryptocurrency Assets Stolen in Recent CLINKSINK Drainer Campaigns",
+        "publisher": "Mandiant / Google Cloud",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/solana-cryptocurrency-stolen-clinksink-drainer-campaigns"
+      },
+      {
+        "title": "Mandiant X Account was hacked because not adequately protected",
+        "publisher": "Security Affairs",
+        "url": "https://securityaffairs.com/157296/cyber-crime/mandiant-x-account-hacked-2.html"
+      },
+      {
+        "title": "Massive Solana Heist: CLINKSINK Drainer Campaigns Swipe Nearly $1M Worth Of SOL",
+        "publisher": "NewsBTC",
+        "url": "https://www.newsbtc.com/news/solana/massive-solana-heist-clinksink-drainer-campaigns-swipe-nearly-1m-worth-of-sol/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Campaigns began in Dec 2023. The date used is the Mandiant X account hijack (Jan 3, 2024); the Mandiant report was published Jan 10, 2024 (primary page fetched and verified). $900K is Mandiant's 'at least' estimate; over $180K (1,491+ SOL plus tokens) was traced to the operator's address alone."
+  },
+  {
+    "id": "agave-elf-alignment-coordinated-patch-2024-08",
+    "date": "2024-08-07",
+    "project": "Agave and Jito validator clients (rBPF / ELF program loading)",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Crafted program with misaligned ELF .text section crashing validators",
+    "loss_usd": 0,
+    "assets_stolen": "None",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: privately reported to Anza core engineers (reporting party not confirmed in sources reviewed)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024 年 8 月，Anza 工程師處理 Agave 與 Jito 驗證者客戶端中的一個關鍵漏洞，若被利用可使未修補節點崩潰並造成全網停擺。Solana Foundation 自 8 月 7 日起透過私下管道聯繫驗證者部署修補，在約 70% 質押完成升級後才公開揭露。",
+    "root_cause_zh": "程式執行對位址對齊有錯誤假設：攻擊者可部署一個使用 CALL_REG 指令、並刻意讓 ELF 檔 .text 區段未對齊的程式，未修補節點執行時會發生主機端記憶體區段錯誤（segfault）而崩潰。",
+    "aftermath_zh": "修補透過 Anza 工程師的 GitHub 儲存庫發布供驗證者自行驗證，至 8 月 8 日 14:00 UTC 約 66.6% 質押完成更新；Anza、Firedancer、Jito 與 OtterSec、Asymmetric Research、Neodyme 等資安團隊協作，無已知利用，但私下協調方式引發中心化討論。",
+    "sources": [
+      {
+        "title": "Solana developers address critical vulnerability with coordinated patch",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/310361/solana-developers-address-critical-vulnerability-with-coordinated-patch"
+      },
+      {
+        "title": "Agave Network Patch: Root Cause Analysis",
+        "publisher": "Anza",
+        "url": "https://www.anza.xyz/blog/agave-network-patch-root-cause-analysis"
+      },
+      {
+        "title": "Postmortem Analysis: A case study on Agave network patch",
+        "publisher": "Astralane (Medium)",
+        "url": "https://medium.com/@astralaneio/postmortem-analysis-a-case-study-on-agave-network-patch-3a5c44a04e3d"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Date is the start of private outreach to operators (Aug 7, 2024). About 66.6-67% of stake was patched by Aug 8 14:00 UTC, and public disclosure followed at ~70%. The brief suggested OtterSec may have reported this bug. The sources reviewed only say Anza core engineers were alerted to it or discovered it, and that OtterSec, Asymmetric Research and Neodyme assisted. The reporter is therefore left unconfirmed."
+  },
+  {
+    "id": "dexx-trading-terminal-key-leak-2024-11",
+    "date": "2024-11-16",
+    "project": "DEXX (memecoin trading terminal)",
+    "project_type": "trading_bot",
+    "category": "private_key_compromise",
+    "attack_vector": "Leak of custodially held user private keys",
+    "loss_usd": 21000000,
+    "assets_stolen": "SOL, USDC and memecoins from ~8,600 user wallets",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2024 年 11 月 16 日，Solana 迷因幣交易平台 DEXX 發生私鑰外洩事件，攻擊者直接從使用者錢包轉走資產。SlowMist 調查關聯到逾 8,600 個 Solana 地址，損失初估 2,100 萬美元，後因迷因幣價格波動估值升至約 3,000 萬美元。",
+    "root_cause_zh": "DEXX 以中心化方式保管/處理使用者錢包私鑰，該私鑰管理機制遭攻擊者取得並濫用；確切入侵途徑未被公開完整證實。",
+    "aftermath_zh": "DEXX 與 SlowMist 及執法機關合作追查，承諾依追回資金程度補償使用者；多數受害者損失低於 1 萬美元，但有個人損失逾 100 萬美元。",
+    "sources": [
+      {
+        "title": "Over 8.6K Solana wallets linked to $21M DEXX hacker",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/solana-dexx-hack-november-2024-suspicious-wallets"
+      },
+      {
+        "title": "Over 8,600 Solana Wallets Linked to Dexx Hacker: SlowMist",
+        "publisher": "Cryptonews",
+        "url": "https://cryptonews.com/exclusives/over-8600-solana-wallets-linked-to-dexx-hacker-slowmist/"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Loss ranges from $21M (initial, most cited in headlines) to ~$30M (later SlowMist-based estimate, driven by memecoin price moves). At least 900 individual users were affected. Compensation outcome not verified. DeFi-focused researchers may also cover this one."
+  },
+  {
+    "id": "solana-web3js-npm-backdoor-2024-12",
+    "date": "2024-12-03",
+    "project": "@solana/web3.js npm library (v1.95.6, v1.95.7)",
+    "project_type": "infrastructure_sdk",
+    "category": "supply_chain",
+    "attack_vector": "Maintainer npm account phished; backdoored package versions published",
+    "loss_usd": 160000,
+    "assets_stolen": "SOL and SPL tokens from bots/dApps that handled private keys directly",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown (attacker Solana address FnvLGtucz4E1ppJHRTev6Qv4X7g8Pw6WPStHCcbAKbfx)",
+    "chain_scope": "solana_only",
+    "summary_zh": "攻擊者以魚叉式釣魚取得 @solana npm 組織中具發布權限成員的帳密與 2FA，並於約 5 小時窗口內發布含後門的 @solana/web3.js 1.95.6 與 1.95.7 版本。直接處理私鑰的機器人與後端服務若在此期間更新，私鑰即被竊取並遭盜領，損失約 16 萬至 19 萬美元。",
+    "root_cause_zh": "惡意版本植入 addToQueue 函式，在程式使用私鑰簽章時擷取私鑰並外傳至攻擊者伺服器（CVE-2024-54134，CVSS 8.3）；根源為套件維護者帳號遭釣魚。",
+    "aftermath_zh": "惡意版本迅速被 npm 移除，官方發布 1.95.8 並呼籲受影響專案輪換金鑰；非託管錢包使用者不受影響，未見資金追回。",
+    "sources": [
+      {
+        "title": "Supply Chain Attack Detected in Solana's web3.js Library",
+        "publisher": "Socket",
+        "url": "https://socket.dev/blog/supply-chain-attack-solana-web3-js-library"
+      },
+      {
+        "title": "Researchers Uncover Backdoor in Solana's Popular Web3.js npm Library",
+        "publisher": "The Hacker News",
+        "url": "https://thehackernews.com/2024/12/researchers-uncover-backdoor-in-solanas.html"
+      },
+      {
+        "title": "Solana Web3.js Library Compromised in Targeted Supply Chain Attack",
+        "publisher": "Decrypt",
+        "url": "https://decrypt.co/294742/solana-web3-js-library-compromised-in-targeted-supply-chain-attack"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Malicious window was 15:20-20:25 UTC. The notice described the day as Tuesday, which was Dec 3, 2024; some outlets wrote 'December 2'. Loss estimates: ~$130K (early), $160K (Solscan-based, used here), $184K, up to 'over $190K'. CVE-2024-54134."
+  },
+  {
+    "id": "npm-gmail-smtp-solana-key-stealers-2025-01",
+    "date": "2025-01-08",
+    "project": "Malicious npm packages (@async-mutex/mutex, dexscreener, solana-transaction-toolkit, solana-stable-web-huks)",
+    "project_type": "infrastructure_sdk",
+    "category": "supply_chain",
+    "attack_vector": "Typosquatted npm packages exfiltrating Solana keys via Gmail SMTP",
+    "loss_usd": null,
+    "assets_stolen": "Solana private keys; wallets programmatically drained (up to 98% of balance)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown (drain address 3RbBjhVRi8qYoGB5NLiKEszq2ci559so4nPqv2iNjs8Q)",
+    "chain_scope": "solana_only",
+    "summary_zh": "Socket 於 2025 年 1 月 8 日揭露多個仿冒常見工具的惡意 npm 套件，專門攔截開發者的 Solana 私鑰。其中 solana-transaction-toolkit 與 solana-stable-web-huks 甚至會直接以程式轉走受害錢包最多 98% 的資產。",
+    "root_cause_zh": "開發者誤裝名稱近似的惡意套件，套件在錢包互動時攔截私鑰並透過 Gmail SMTP 外傳，因 smtp.gmail.com 屬可信流量而不易被防火牆或 EDR 偵測。",
+    "aftermath_zh": "Socket 回報後相關套件被下架；下載量約 130 次以上，未有公開的總損失金額。",
+    "sources": [
+      {
+        "title": "Gmail For Exfiltration: Malicious npm Packages Target Solana Private Keys and Drain Victim's Wallets",
+        "publisher": "Socket",
+        "url": "https://socket.dev/blog/gmail-for-exfiltration-malicious-npm-packages-target-solana-private-keys-and-drain-victim-s"
+      },
+      {
+        "title": "Hackers Deploy Malicious npm Packages to Steal Solana Wallet Keys via Gmail SMTP",
+        "publisher": "The Hacker News",
+        "url": "https://thehackernews.com/2025/01/hackers-deploy-malicious-npm-packages.html"
+      }
+    ],
+    "confidence": "high",
+    "notes": "No aggregate USD loss was published. Security Affairs also reported related PyPI activity in the same period. Date is Socket's disclosure date."
+  },
+  {
+    "id": "phemex-hot-wallet-hack-2025-01",
+    "date": "2025-01-23",
+    "project": "Phemex (centralized exchange)",
+    "project_type": "cex",
+    "category": "private_key_compromise",
+    "attack_vector": "Hot wallet compromise across 16 chains",
+    "loss_usd": 73000000,
+    "assets_stolen": "Assets on ~16 chains incl. ETH, SOL/Solana tokens (~$14.5M), BTC, XRP, BSC etc.",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Suspected DPRK (Lazarus Group) per analysts; not officially confirmed",
+    "chain_scope": "multi_chain",
+    "summary_zh": "新加坡交易所 Phemex 於 2025 年 1 月 23 日 11:30 UTC 偵測到熱錢包異常，攻擊者自約 16 條鏈的熱錢包轉走約 7,300 萬美元資產，其中 Solana 部分約 1,454 萬美元，僅次於 Ethereum。",
+    "root_cause_zh": "交易所熱錢包私鑰或簽章基礎設施遭入侵，攻擊者得以跨多條鏈同步提領；確切入侵方式未公開。",
+    "aftermath_zh": "Phemex 表示冷錢包安全並承諾全額承擔損失，並分鏈逐步恢復提款（Solana 上 SOL/USDT/USDC 於事件後數日恢復）。",
+    "sources": [
+      {
+        "title": "Hackers steal $85 million worth of cryptocurrency from Phemex",
+        "publisher": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-85-million-worth-of-cryptocurrency-from-phemex/"
+      },
+      {
+        "title": "Hackers steal $70m from Phemex in 2025's largest attack so far",
+        "publisher": "crypto.news",
+        "url": "https://crypto.news/hackers-steal-70m-from-phemex-in-2025s-largest-attack-so-far/"
+      },
+      {
+        "title": "Phemex Hot Wallet Security Incident Update and Timeline",
+        "publisher": "Phemex",
+        "url": "https://phemex.com/announcements/phemex-hot-wallet-security-incident-update-and-timeline"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Estimates evolved from $29M (initial) to $69-70M (PeckShield), then $73M, then at least $85M (Taylor Monahan). The Solana-chain loss was ~$14.54M per the chain breakdown. The DPRK attribution is analyst speculation."
+  },
+  {
+    "id": "zk-elgamal-proof-bug-2025-04",
+    "date": "2025-04-16",
+    "project": "ZK ElGamal Proof program (Token-2022 confidential transfers)",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Forgeable zero-knowledge proofs (incomplete Fiat-Shamir transcript)",
+    "loss_usd": 0,
+    "assets_stolen": "None",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: LonelySloth",
+    "chain_scope": "solana_only",
+    "summary_zh": "2025 年 4 月 16 日，研究員 LonelySloth 透過 Anza GitHub 安全通報回報 ZK ElGamal Proof 原生程式可接受任意偽造證明的漏洞。攻擊者理論上可無限鑄造 Token-2022 機密代幣或掏空受害者的機密餘額。",
+    "root_cause_zh": "Fiat-Shamir 轉換中未將部分代數元件納入雜湊（transcript 不完整），使攻擊者能偽造可通過鏈上驗證的無效零知識證明。",
+    "aftermath_zh": "Anza、Firedancer、Jito 工程師確認後，於 4 月 17 日由 Solana Foundation 與 Jito 私下聯繫驗證者部署兩個修補，並請 Asymmetric Research、Neodyme、OtterSec 審查；絕大多數質押完成升級，無已知利用，5 月 2 日發布事後報告，但私下修補方式引發中心化爭議。",
+    "sources": [
+      {
+        "title": "Post Mortem: ZK ElGamal Proof Program Bug",
+        "publisher": "Solana Foundation",
+        "url": "https://solana.com/news/post-mortem-may-2-2025"
+      },
+      {
+        "title": "Solana Quietly Fixes Bug That Could Have Let Attackers Mint and Steal Certain Tokens",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/markets/2025/05/05/solana-quietly-fixes-bug-that-could-have-let-attackers-mint-and-steal-certain-tokens"
+      }
+    ],
+    "confidence": "high",
+    "notes": "A second related patch was identified ~23:00 UTC on Apr 17 for a similar issue elsewhere in the codebase. Only Token-2022 confidential-transfer tokens were affected. The public post-mortem is dated May 2, 2025."
+  },
+  {
+    "id": "zk-elgamal-proof-bug-2025-06",
+    "date": "2025-06-11",
+    "project": "ZK ElGamal Proof program / Token-2022 confidential transfers",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Forgeable sigma OR-proof (prover challenge not absorbed in transcript)",
+    "loss_usd": 0,
+    "assets_stolen": "None",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: zkSecurity researchers (\"Phantom Challenge\" bug)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2025 年 6 月，ZK ElGamal Proof 程式再被發現第二個嚴重健全性（soundness）漏洞，惡意證明者可偽造 sigma OR 證明，繞過機密轉帳中的手續費驗證，理論上同樣可導致機密代幣被無限鑄造或餘額被掏空。",
+    "root_cause_zh": "證明者產生的某個「挑戰值」（challenge）未被吸收進 Fiat-Shamir transcript，使攻擊者可操控該值構造通過驗證的假證明。",
+    "aftermath_zh": "為審慎起見，Token-2022 程式於 2025-06-11 更新以停用機密轉帳，並透過功能開關於主網 epoch 805 起停用 ZK ElGamal 程式以進行更多審計；無已知利用，6 月 25 日發布事後報告，後續另開議題規劃重新啟用。",
+    "sources": [
+      {
+        "title": "Post Mortem: ZK ElGamal Proof Program Bug, June 2025",
+        "publisher": "Solana Foundation",
+        "url": "https://solana.com/news/post-mortem-june-25-2025"
+      },
+      {
+        "title": "Uncovering the Phantom Challenge Soundness Bug in Solana's ZK ElGamal Proof Program",
+        "publisher": "zkSecurity (ZK/SEC Quarterly)",
+        "url": "https://blog.zksecurity.xyz/posts/solana-phantom-challenge-bug/"
+      },
+      {
+        "title": "Re-enabling the ZK ElGamal Proof Program and Token-22 Confidential Transfer Features (Issue #657)",
+        "publisher": "GitHub solana-program/token-2022",
+        "url": "https://github.com/solana-program/token-2022/issues/657"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Date used is the Token-2022 update disabling confidential transfers (2025-06-11); the exact private report date was not verified. Post-mortem published June 25, 2025. Crediting zkSecurity as reporter is an inference from its 'Uncovering the Phantom Challenge' write-up, so treat that attribution as medium confidence."
+  },
+  {
+    "id": "solana-pumpfun-bot-github-malware-2025-07",
+    "date": "2025-07-02",
+    "project": "Malicious GitHub repo 'zldp2002/solana-pumpfun-bot' (dependency bs58-encrypt-utils)",
+    "project_type": "trading_bot",
+    "category": "supply_chain",
+    "attack_vector": "Fake open-source trading bot with malicious dependency stealing keys",
+    "loss_usd": null,
+    "assets_stolen": "Wallet private keys and funds of users who ran the bot",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown (proceeds moved to FixedFloat)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2025 年 7 月 2 日，一名受害者向 SlowMist 求助，稱執行 GitHub 上的開源專案 solana-pumpfun-bot 後資產被盜。該專案以偽造的星數與分支數營造可信度，實際暗藏竊取私鑰的相依套件。",
+    "root_cause_zh": "專案的相依套件未取自官方 npm，而是指向特製的 GitHub 來源（bs58-encrypt-utils 等），執行後掃描本機錢包檔案、擷取私鑰並回傳攻擊者伺服器。",
+    "aftermath_zh": "SlowMist 發布威脅情報並提醒使用者在執行涉及錢包的開源程式前先審閱程式碼；被盜資金流向 FixedFloat，未見追回。",
+    "sources": [
+      {
+        "title": "A Popular Solana Tool on GitHub Conceals a Crypto-Stealing Trap",
+        "publisher": "SlowMist (Medium)",
+        "url": "https://slowmist.medium.com/a-popular-solana-tool-on-github-conceals-a-crypto-stealing-trap-bfef0aed63d7"
+      },
+      {
+        "title": "SlowMist finds 'Solana-pumpfun-bot' on GitHub contains a coin theft trap",
+        "publisher": "Cryptopolitan",
+        "url": "https://www.cryptopolitan.com/slowmist-solana-pumpfun-bot-on-github-theft/"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Date is the victim's report to SlowMist. The malicious package bs58-encrypt-utils was reportedly created on June 12, 2025. The sources reviewed do not disclose the victim's loss amount."
+  },
+  {
+    "id": "coindcx-solana-operational-wallet-hack-2025-07",
+    "date": "2025-07-19",
+    "project": "CoinDCX (Indian centralized exchange) – internal operational account on Solana",
+    "project_type": "cex",
+    "category": "private_key_compromise",
+    "attack_vector": "Server breach giving access to internal liquidity-operations wallet",
+    "loss_usd": 44200000,
+    "assets_stolen": "USDT and USDC on Solana (partly bridged to Ethereum)",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "印度交易所 CoinDCX 於 2025 年 7 月 19 日披露，其用於與合作交易所進行流動性操作的 Solana 內部營運錢包遭入侵，約 4,420 萬美元的 USDT/USDC 在約五分鐘內被多筆轉出。攻擊者事前以 Tornado Cash 取得 1 ETH 資金，並將部分贓款從 Solana 跨鏈至 Ethereum。",
+    "root_cause_zh": "官方稱為「複雜的伺服器入侵」，攻擊者取得內部營運帳戶的存取權並直接簽出資金；確切入侵手法未完整公開。",
+    "aftermath_zh": "CoinDCX 表示損失全數由公司儲備吸收，客戶資產存於冷錢包未受影響，並迅速隔離受影響帳戶。",
+    "sources": [
+      {
+        "title": "Indian Crypto Exchange CoinDCX Suffers $44M Hack",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/web3/2025/07/19/indian-crypto-exchange-coindcx-suffers-44m-hack"
+      },
+      {
+        "title": "Indian crypto exchange CoinDCX confirms $44 million stolen during hack",
+        "publisher": "TechCrunch",
+        "url": "https://techcrunch.com/2025/07/21/indian-crypto-exchange-coindcx-confirms-44-million-stolen-during-hack"
+      },
+      {
+        "title": "Indian Exchange Suffers $44M Hack—Solana Hot Wallet Compromised in Sophisticated Attack",
+        "publisher": "Bitcoin.com News",
+        "url": "https://news.bitcoin.com/indian-exchange-suffers-44m-hack-solana-hot-wallet-compromised-in-sophisticated-attack/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Reported as $44.2M-$44.3M. The theft happened on Solana and funds were later bridged to Ethereum; chain_scope reflects where the theft happened. No user funds were lost and the company absorbed the loss, so recovery_status is 'none' for the stolen funds. Attribution not confirmed in the sources reviewed."
+  },
+  {
+    "id": "swissborg-kiln-sol-staking-theft-2025-09",
+    "date": "2025-09-08",
+    "project": "SwissBorg Solana Earn via Kiln staking API",
+    "project_type": "cex",
+    "category": "third_party_compromise",
+    "attack_vector": "Compromised staking-provider API (stolen GitHub token) reassigning stake authority",
+    "loss_usd": 41000000,
+    "assets_stolen": "~193,000 SOL",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2025 年 9 月 8 日，瑞士加密理財平台 SwissBorg 用於 Solana 質押的錢包遭盜約 19.3 萬枚 SOL（約 4,100 萬美元），僅影響 Solana Earn 產品（約 1% 用戶、2% 管理資產）。攻擊經由其質押合作夥伴 Kiln 的 API 進行。",
+    "root_cause_zh": "攻擊者竊取 Kiln 基礎設施工程師的 GitHub 存取權杖，在 Kiln Connect API 中植入惡意負載；8 月 31 日一筆看似例行的 975 SOL 解除質押交易暗中將多個質押帳戶的權限轉給攻擊者，8 天後在約 3 分鐘內全數提走。",
+    "aftermath_zh": "SwissBorg 承諾以其 Solana 國庫全額補償受影響用戶；Kiln 展開調查，並作為預防措施有序退出其 Ethereum 驗證者，造成質押/解除質押延遲。",
+    "sources": [
+      {
+        "title": "Kiln Breach (Sep 2025): Security Impact on SwissBorg",
+        "publisher": "SwissBorg",
+        "url": "https://swissborg.com/blog/swissborg-security-update-kiln-breach"
+      },
+      {
+        "title": "SwissBorg CEO blames $41M loss on staking partner Kiln",
+        "publisher": "Protos",
+        "url": "https://protos.com/swissborg-ceo-blames-41m-loss-on-staking-partner-kiln/"
+      },
+      {
+        "title": "Crypto Security Breach: SwissBorg Faces $41M Solana Theft",
+        "publisher": "Crowdfund Insider",
+        "url": "https://www.crowdfundinsider.com/2025/09/250488-crypto-security-breach-swissborg-faces-41m-solana-theft/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Some reports cite ~192,600 SOL; USD value was ~$41M at the time. The preparatory authority-change transaction happened Aug 31, 2025, and the drain on Sep 8. SwissBorg is a custodial wealth/exchange app; Kiln is the compromised third party. Any partial freezes or recoveries not verified."
+  },
+  {
+    "id": "malicious-rust-crates-faster-log-2025-09",
+    "date": "2025-09-24",
+    "project": "Malicious crates.io packages faster_log and async_println",
+    "project_type": "infrastructure_sdk",
+    "category": "supply_chain",
+    "attack_vector": "Typosquatted Rust crates scanning source files for private keys",
+    "loss_usd": null,
+    "assets_stolen": "Solana (Base58/byte-array) and Ethereum private keys found in developer code/logs",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown (crates.io accounts 'rustguruman' and 'dumbnbased')",
+    "chain_scope": "multi_chain",
+    "summary_zh": "Socket 發現兩個仿冒熱門日誌函式庫 fast_log 的惡意 Rust crate（faster_log、async_println），自 2025 年 5 月 25 日上架後累計下載約 8,400 次。它們保留正常日誌功能作掩護，同時掃描開發者檔案中的 Solana 與 Ethereum 私鑰並外傳。",
+    "root_cause_zh": "開發者誤用名稱近似的惡意套件；程式在日誌打包流程中以正規表示式搜尋 Solana Base58 私鑰、位元組陣列及 0x 開頭的以太坊私鑰，再以 HTTP POST 傳至寫死的 C2 端點。",
+    "aftermath_zh": "crates.io 於 2025-09-24 移除兩個 crate 並停權發布帳號，Rust 官方部落格發布公告；未有公開的損失金額。",
+    "sources": [
+      {
+        "title": "Two Malicious Rust Crates Impersonate Popular Logger to Steal Wallet Keys",
+        "publisher": "Socket",
+        "url": "https://socket.dev/blog/two-malicious-rust-crates-impersonate-popular-logger-to-steal-wallet-keys"
+      },
+      {
+        "title": "crates.io: Malicious crates faster_log and async_println",
+        "publisher": "Rust Blog",
+        "url": "https://blog.rust-lang.org/2025/09/24/crates.io-malicious-crates-fasterlog-and-asyncprintln"
+      },
+      {
+        "title": "Malicious Rust Crates Steal Solana and Ethereum Keys — 8,424 Downloads Confirmed",
+        "publisher": "The Hacker News",
+        "url": "https://thehackernews.com/2025/09/malicious-rust-crates-steal-solana-and.html"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Published May 25, 2025; removed and disclosed Sep 24, 2025 (date used). Downloads were ~7,200 (faster_log) and ~1,200 (async_println), 8,424 total per The Hacker News. No confirmed theft amounts."
+  },
+  {
+    "id": "upbit-solana-hot-wallet-hack-2025-11",
+    "date": "2025-11-26",
+    "project": "Upbit (South Korean exchange) Solana hot wallet",
+    "project_type": "cex",
+    "category": "private_key_compromise",
+    "attack_vector": "Hot wallet key compromise (possible weak/predictable signature data)",
+    "loss_usd": 36000000,
+    "assets_stolen": "SOL and Solana tokens incl. USDC, BONK, JUP, RAY, RENDER, ORCA, PYTH, JTO, TRUMP, etc.",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Suspected DPRK Lazarus Group (per South Korean authorities' preliminary view)",
+    "chain_scope": "solana_only",
+    "summary_zh": "韓國最大交易所 Upbit 於韓國時間 2025 年 11 月 27 日 04:42 偵測到 Solana 熱錢包遭未授權提領，約 540 億韓元（約 3,600 萬美元）的 SOL 及多種 Solana 代幣被轉走。事件恰發生於其 2019 年遭駭六週年當天，南韓當局初步懷疑北韓 Lazarus 所為。",
+    "root_cause_zh": "Solana 熱錢包私鑰遭攻擊者取得；Upbit 事後披露其簽章演算法曾產生弱或可預測的簽章資料，理論上可由歷史交易推導私鑰，但未證實即為本次入侵成因。",
+    "aftermath_zh": "Upbit 暫停存提款、將剩餘熱錢包資產移至冷儲存，並承諾以自有資產承擔全部損失，其後逐步恢復服務。",
+    "sources": [
+      {
+        "title": "South Korea Suspects North Korea-Linked Lazarus Behind $36M Upbit Hack",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/markets/2025/11/28/south-korea-suspects-north-korea-linked-lazarus-behind-usd36m-upbit-hack"
+      },
+      {
+        "title": "Explained: The Upbit Hack (November 2025)",
+        "publisher": "Halborn",
+        "url": "https://www.halborn.com/blog/post/explained-the-upbit-hack-november-2025"
+      },
+      {
+        "title": "Upbit's $36M SOL Hack Hits on Naver Merger Day",
+        "publisher": "BeInCrypto",
+        "url": "https://beincrypto.com/upbit-solana-hack-2025-loss/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "04:42 KST on Nov 27 is 19:42 UTC on Nov 26, so the UTC date is used. Reported loss ~KRW 54B; USD figures range ~$30M-$37M, with $36M most cited. Upbit also disclosed a signature-randomness weakness that could allow key derivation, but did not confirm it as the breach vector. Any token freezes or recoveries not verified."
+  },
+  {
+    "id": "solana-owner-permission-phishing-2025-12",
+    "date": "2025-12-04",
+    "project": "Solana user wallet – account Owner reassignment phishing",
+    "project_type": "wallet",
+    "category": "phishing_social_engineering",
+    "attack_vector": "Phishing signature reassigning account Owner (SetAuthority-style)",
+    "loss_usd": 3000000,
+    "assets_stolen": "More than $3M in crypto assets from one victim",
+    "recovered_usd": null,
+    "recovery_status": "none",
+    "attribution": "Unknown (attacker address GKJBELftW5Rjg24wP88NRaKGsEBtrPLgMiv3DhbJwbzQ)",
+    "chain_scope": "solana_only",
+    "summary_zh": "SlowMist 於 2025 年 12 月 4 日披露一起 Solana 釣魚案：受害者在偽裝的工具網站簽署一筆看似無資產變動的交易，導致其帳戶的 Owner 權限被轉移給攻擊者，損失逾 300 萬美元，另有約 200 萬美元鎖在 DeFi 協議中的資產一度無法動用。",
+    "root_cause_zh": "與以太坊 EOA 不同，Solana 帳戶的 Owner 欄位可被重新指派；惡意交易不涉及餘額變動，錢包模擬畫面難以察覺，受害者簽署後即喪失帳戶控制權。",
+    "aftermath_zh": "約 200 萬美元的 DeFi 部位在相關協議協助下成功救回，但已損失的逾 300 萬美元未見追回；SlowMist 呼籲使用者警惕授權/權限變更類簽章。",
+    "sources": [
+      {
+        "title": "Beware of Solana Phishing Attacks: Wallet Owner Permissions May Be Altered",
+        "publisher": "SlowMist (Medium)",
+        "url": "https://slowmist.medium.com/beware-of-solana-phishing-attacks-wallet-owner-permissions-may-be-altered-708bbb30518e"
+      },
+      {
+        "title": "Beware of Solana Phishing Attacks That Let Hackers Initiate Unauthorized Account Transfer",
+        "publisher": "Cyber Security News",
+        "url": "https://cybersecuritynews.com/beware-of-solana-phishing-attacks/"
+      },
+      {
+        "title": "Solana User Loses $3M as Hidden Wallet Permissions Exploited",
+        "publisher": "Coinpaper",
+        "url": "https://coinpaper.com/12892/solana-user-loses-3-m-as-hidden-wallet-permissions-exploited"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Date is SlowMist's public warning (X post, Dec 4, 2025); the phishing signature happened earlier. The ~$2M rescued was DeFi-locked assets saved with protocol help, not a recovery of the $3M already lost, so recovered_usd is left null."
+  },
+  {
+    "id": "agave-gossip-vote-processing-vulns-2026-01",
+    "date": "2026-01-10",
+    "project": "Agave / Jito validator clients (gossip and vote processing)",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Gossip defragmentation crash and vote-censoring via unauthenticated votes",
+    "loss_usd": 0,
+    "assets_stolen": "None",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: undisclosed researcher(s) via Anza GitHub Security Advisories",
+    "chain_scope": "solana_only",
+    "summary_zh": "2025 年 12 月有研究者透過 GitHub 安全通報向 Anza 揭露兩個關鍵漏洞：一個可藉 gossip 協定讓驗證節點崩潰，另一個可發動投票審查攻擊，若大規模執行可能使共識停滯。Solana 於 2026 年 1 月 10 日發布標示為「緊急」的 Agave v3.0.14 修補。",
+    "root_cause_zh": "gossip 需將大於單一封包的重複 shred 證明放入重組（defragmentation）緩衝區再驗證，其處理邏輯可被濫用致節點崩潰；另 VoteStorage 實作缺少投票授權檢查，攻擊者可灌入無效投票排擠合法投票。",
+    "aftermath_zh": "Anza 與 Firedancer、Jito、Solana Foundation 協作修補（Agave/Jito v3.0.14、Frankendancer 0.808.30014），無已知攻擊；發布一天後僅約 18% 質押升級，引發對快速協調升級能力的討論，Anza 於 1 月 16 日發布安全修補摘要。",
+    "sources": [
+      {
+        "title": "January 2026: Gossip and Vote Processing Security Patch Summary",
+        "publisher": "Anza",
+        "url": "https://www.anza.xyz/blog/january-2026-gossip-and-vote-processing-security-patch-summary"
+      },
+      {
+        "title": "Terrifying Solana flaw just exposed how easily the \"always-on\" network could have been stalled by hackers",
+        "publisher": "CryptoSlate",
+        "url": "https://cryptoslate.com/terrifying-solana-flaw-just-exposed-how-easily-the-always-on-network-could-have-been-stalled-by-hackers/"
+      },
+      {
+        "title": "Solana Urgent Patch Reveals How Easily Hackers Could Have Stalled Network",
+        "publisher": "CoinCentral",
+        "url": "https://coincentral.com/solana-urgent-patch-reveals-how-easily-hackers-could-have-stalled-network/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Date is the v3.0.14 release (Jan 10, 2026). Private disclosure was in Dec 2025, and Anza's summary was published Jan 16, 2026. One day after release only ~18% of stake was on v3.0.14; at one point ~51% was still on v3.0.13. The sources reviewed do not name the reporter. Solana Foundation delegation criteria later listed v3.0.14 as a required version."
+  },
+  {
+    "id": "quinn-quic-dos-agave-2026-03",
+    "date": "2026-03-09",
+    "project": "Quinn QUIC library (quinn-proto) used by Agave validators",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "Remote unauthenticated DoS via malformed QUIC transport parameters",
+    "loss_usd": 0,
+    "assets_stolen": "None",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: disclosed via RustSec advisory (reporter not verified)",
+    "chain_scope": "multi_chain",
+    "summary_zh": "2026 年 3 月，Rust QUIC 函式庫 Quinn 被揭露可遭遠端未經認證攻擊者以特製 QUIC Initial 封包觸發 panic 的阻斷服務漏洞（RUSTSEC-2026-0037）。由於 Agave 驗證者依賴 Quinn，Solana 驗證者社群被強烈建議立即升級至 Agave 3.1.10，以免節點被遠端擊垮。",
+    "root_cause_zh": "quinn-proto 解碼 quic_transport_parameters 時對攻擊者可控的 varint 使用 unwrap()，截斷的編碼會產生 UnexpectedEnd 錯誤並導致 panic，影響 0.11.14 之前版本。",
+    "aftermath_zh": "Quinn 於 0.11.14 修補，Agave 發布 3.1.10 納入修正並呼籲主網驗證者儘速升級；未見針對 Solana 主網的實際攻擊報告。",
+    "sources": [
+      {
+        "title": "RUSTSEC-2026-0037: quinn-proto: Denial of service in Quinn endpoints",
+        "publisher": "RustSec Advisory Database",
+        "url": "https://rustsec.org/advisories/RUSTSEC-2026-0037.html"
+      },
+      {
+        "title": "Solana Foundation Validator Discussion Recap, March 12, 2026",
+        "publisher": "Chainflow (Substack)",
+        "url": "https://chainflowsol.substack.com/p/solana-foundation-validator-discussion-173"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "This is a third-party dependency flaw affecting many projects, hence the multi_chain scope. It is included because Solana validators were urged to upgrade to Agave 3.1.10. The advisory date (Mar 9, 2026) and the link between RUSTSEC-2026-0037 and Agave 3.1.10 come from search summaries only. The associated CVE ID was not verified."
+  },
+  {
+    "id": "npm-typosquat-raydium-bs58-key-stealers-2026-03",
+    "date": "2026-03-24",
+    "project": "Malicious npm packages raydium-bs58, base-x-64, base_xd, bs58-basic, ethersproject-wallet",
+    "project_type": "infrastructure_sdk",
+    "category": "supply_chain",
+    "attack_vector": "Typosquatted npm packages hooking Base58 decode to exfiltrate keys via Telegram",
+    "loss_usd": null,
+    "assets_stolen": "Solana and Ethereum private keys of developers/bots",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown (npm account 'galedonovan'; Telegram bot @Test20131_Bot)",
+    "chain_scope": "multi_chain",
+    "summary_zh": "Socket 威脅研究團隊於 2026 年 3 月 24 日揭露五個由同一帳號發布的惡意 npm 套件，偽裝成 Raydium、bs58、base-x 與 ethers 相關工具，鎖定 Solana 與以太坊開發者。套件會在正常功能執行前把私鑰送往攻擊者的 Telegram 機器人，使錢包可被掏空。",
+    "root_cause_zh": "針對 Solana 的套件劫持 Base58 decode() 呼叫——Solana 私鑰常以 Base58 編碼——在解碼時擷取私鑰並外傳，開發者誤裝近似名稱套件即中招。",
+    "aftermath_zh": "相關套件經回報後下架；未有公開的受害金額統計，研究者建議鎖定相依版本並檢查套件發布者。",
+    "sources": [
+      {
+        "title": "Five Malicious npm Packages Target Crypto Developers, Exfiltrate Wallet Keys via Telegram",
+        "publisher": "Cyber Security News",
+        "url": "https://cybersecuritynews.com/five-malicious-npm-packages/"
+      },
+      {
+        "title": "Supply Chain Key Theft in npm: How 5 Typosquatted Packages Silently Drain Solana and Ethereum Wallets",
+        "publisher": "DEV Community",
+        "url": "https://dev.to/ohmygod/supply-chain-key-theft-in-npm-how-5-typosquatted-packages-silently-drain-solana-and-ethereum-3pk1"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "The primary Socket write-up URL was not captured; details come from secondary coverage. No confirmed USD losses. JFrog also reported a separate June 2026 'Solana FakeFix' campaign (25 npm/PyPI packages such as solana-web3-stable and @solana-labs/web3.js). It has no entry here because its exact disclosure date could not be verified."
+  },
+  {
+    "id": "solana-genesis-whale-theft-2026-07",
+    "date": "2026-07-10",
+    "project": "Early Solana (genesis-allocation) whale wallet",
+    "project_type": "wallet",
+    "category": "private_key_compromise",
+    "attack_vector": "Suspected key compromise; unstaked SOL bridged to Ethereum",
+    "loss_usd": 14200000,
+    "assets_stolen": "~180,900 SOL",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "鏈上偵探 ZachXBT 與 Specter 於 2026 年 7 月 10 日指出，一個與 Solana 創世分配相關的早期巨鯨錢包疑似遭駭，約 18.09 萬枚 SOL（約 1,420 萬美元）在異常解除質押後被跨鏈轉往 Ethereum。",
+    "root_cause_zh": "確切攻擊手法未公開；鏈上行為（異常解除質押後迅速跨鏈）顯示攻擊者已取得該錢包或其質押權限的簽署能力。",
+    "aftermath_zh": "受害地址與可疑收款地址已被公開追蹤，最終資金去向與攻擊方式仍在調查中，未見追回。",
+    "sources": [
+      {
+        "title": "Early Solana Whale May Have Lost $14.2 Million in SOL to Hackers",
+        "publisher": "CryptoRank",
+        "url": "https://cryptorank.io/news/feed/ea11a-solana-whale-14-million-sol-stolen-hack"
+      },
+      {
+        "title": "ZachXBT Says Early Solana Whale Was Hacked, 180,900 SOL Stolen",
+        "publisher": "Bloomingbit",
+        "url": "https://en.bloomingbit.io/feed/news/116011"
+      }
+    ],
+    "confidence": "low",
+    "notes": "Date is the public report (Cointelegraph/ZachXBT alert, Jul 10, 2026); the theft itself may have happened slightly earlier. The attack vector (phishing, key leak or stake-authority abuse) is not established, so the category is a best guess."
+  },
+  {
+    "id": "triple-a-hot-wallet-compromise-2026-07",
+    "date": "2026-07-24",
+    "project": "Triple-A (Singapore licensed crypto payment gateway) hot wallets",
+    "project_type": "other",
+    "category": "private_key_compromise",
+    "attack_vector": "Hot wallet key compromise across six chains",
+    "loss_usd": 9700000,
+    "assets_stolen": "Assets on Ethereum, TRON, Polygon, Arbitrum, Solana and TON (consolidated to ~5,227 ETH)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "multi_chain",
+    "summary_zh": "新加坡持牌加密支付機構 Triple-A 於 2026 年 7 月 24 至 25 日遭攻擊，其在 Ethereum、TRON、Polygon、Arbitrum、Solana 與 TON 上的熱錢包被持續掏空約 31 小時，損失初估約 970 萬美元，後上修至約 1,180 萬至 1,200 萬美元。",
+    "root_cause_zh": "PeckShield 與多家媒體指出根因為熱錢包私鑰遭入侵，而非智能合約漏洞；攻擊者將各鏈資產兌換並跨鏈彙集至單一 Ethereum 地址。",
+    "aftermath_zh": "事件由鏈上偵探 Specter 首先披露並經 PeckShield 確認；截至資料蒐集時未有公開的攻擊者歸屬或資金追回資訊。",
+    "sources": [
+      {
+        "title": "Triple-A hot wallets lose $9.7M in suspected exploit",
+        "publisher": "crypto.news",
+        "url": "https://crypto.news/triple-a-hot-wallets-lose-9-7m-in-suspected-exploit/"
+      },
+      {
+        "title": "Triple-A Hot Wallets Drained of $9.7 Million Across Six Chains: Here's What Peckshield Found",
+        "publisher": "Bitcoin.com News",
+        "url": "https://news.bitcoin.com/triple-a-hot-wallet-exploit-9-7-million-peckshield/"
+      },
+      {
+        "title": "Triple-A hot wallet losses reach $12M amid security incident",
+        "publisher": "Crypto Briefing",
+        "url": "https://cryptobriefing.com/triple-a-hot-wallet-12m-security-breach/"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Loss was $9.3M-$9.7M initially, revised to ~$11.8M-$12M as draining continued; $9.7M is most cited. The Solana-specific portion is not quantified. Triple-A is a payment institution/custodian rather than an exchange, so project_type is 'other'."
+  },
+  {
+    "id": "simd-0376-ed25519-zero-key-signing-flaw-2026-09",
+    "date": "2026-09-17",
+    "project": "SIMD-0376 (proposed ed25519 signature verification change, pre-activation)",
+    "project_type": "l1_runtime",
+    "category": "protocol_vulnerability",
+    "attack_vector": "ZIP-215 small-order key acceptance making all-zero pubkey signable",
+    "loss_usd": 0,
+    "assets_stolen": "None",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Whitehat: hackhack.ai autonomous research agent (@r0bre)",
+    "chain_scope": "solana_only",
+    "summary_zh": "hackhack.ai 的自主研究代理在尚未於主網啟用的 SIMD-0376 提案中發現關鍵缺陷：新的 ed25519 驗證規則會讓任何人都能為全零公鑰（System Program ID）產生有效簽章。若上線，約 433 個已將更新權限「停用」為零地址的可變 Metaplex 中繼資料帳戶可能被竄改。",
+    "root_cause_zh": "SIMD-0376 採用為批次驗證而放寬檢查的 ZIP-215 規範，未拒絕小階（small-order）公鑰與簽章點，導致全零公鑰可被偽造簽署。",
+    "aftermath_zh": "Anza 確認問題並在主網啟用前準備修正：於驗證器加入逐簽章的標準編碼與小階點檢查，並提交 SIMD 修正案改用拒絕小階點的 ZIP-215 變體；Solana 開發者更新日誌於 9 月 18 日提及已修補多個相關關鍵問題。",
+    "sources": [
+      {
+        "title": "hackhack.ai Finds SIMD-0376 Zero-Key Signing Flaw in Solana Ed25519 Change",
+        "publisher": "Solana Compass",
+        "url": "https://solanacompass.com/news/ai-research-agent-flags-zero-key-signing-risk-in-simd-0376-before-mainnet-activation"
+      },
+      {
+        "title": "Hackhackai identifies critical flaw in Solana's SIMD-0376 proposal",
+        "publisher": "Crypto Briefing",
+        "url": "https://cryptobriefing.com/hackhackai-solana-simd-0376-zero-address-flaw/"
+      },
+      {
+        "title": "Amend simd 0376 ed25519-zebra verification (PR #616)",
+        "publisher": "GitHub solana-foundation/solana-improvement-documents",
+        "url": "https://github.com/solana-foundation/solana-improvement-documents/pull/616"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Date is approximate, based on a Sept 17, 2026 write-up and the Sept 18, 2026 Solana Changelog; the exact private report date was not verified. The flaw was caught before mainnet activation, so it never affected live consensus."
+  }
+]

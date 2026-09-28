@@ -1,0 +1,681 @@
+[
+  {
+    "id": "solend-auth-bypass-2021",
+    "date": "2021-08-19",
+    "project": "Solend",
+    "project_type": "lending",
+    "category": "smart_contract_bug",
+    "attack_vector": "Insecure authorization check in UpdateReserveConfig bypassed by passing an attacker-created lending market",
+    "loss_usd": 16000,
+    "assets_stolen": "No funds stolen; ~$16K lost by 5 users through wrongful liquidations (~$2M was put at risk)",
+    "recovered_usd": 16000,
+    "recovery_status": "full",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2021年8月19日12:40(GMT)，攻擊者利用Solend借貸協議`UpdateReserveConfig`指令中不安全的權限檢查，傳入自行建立的借貸市場帳戶以繞過管理員驗證，竄改USDC、SOL、ETH、BTC等儲備的風險參數。攻擊者調低清算門檻、提高清算獎勵並把借款年利率調到250%，使幾乎所有借款帳戶都可被清算，約200萬美元資金面臨風險。",
+    "root_cause_zh": "`UpdateReserveConfig`的管理員檢查只確認簽署者是『傳入的借貸市場』的擁有者，卻沒有驗證這個市場帳戶就是該儲備實際所屬的市場，因此任何人都能用自建市場冒充管理員。",
+    "aftermath_zh": "團隊在約41分鐘內偵測、1小時10分緩解、1小時38分修補，攻擊者未能盜走資金。5名遭錯誤清算的用戶損失約1.6萬美元，已全額補償並加發2%獎勵。Solend之後加強程式碼審查、安排追加稽核、提高漏洞賞金並加入監控告警。",
+    "sources": [
+      {
+        "title": "At 2021-08-19 12:40 GMT, an attacker attempted to exploit the Solend smart contract",
+        "publisher": "Solend (X/Twitter)",
+        "url": "https://twitter.com/solendprotocol/status/1428611597941891082"
+      },
+      {
+        "title": "Solend Protocol - Hacker Attempts To Steal ~$2M By Manipulating Core Parameters",
+        "publisher": "HackMD",
+        "url": "https://hackmd.io/@prastut/r1wMdtcf3"
+      },
+      {
+        "title": "Aug 2021 - Solend Insecure Authentication Check - $16k (Global)",
+        "publisher": "Quadriga Initiative",
+        "url": "https://www.quadrigainitiative.com/casestudy/solendinsecureauthenticationcheck.php"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Attack began 2021-08-19 12:40 GMT; Solend's public tweet was posted ~2021-08-20 06:55 UTC (decoded from tweet ID). ~$2M is the value put at risk, not stolen. Detect/mitigate/fix times (41m / 1h10m / 1h38m) come from secondary summaries of Solend's incident report (Google Doc linked in the sannykim/solsec list). Affected users were reimbursed plus a 2% bonus taken from liquidator earnings."
+  },
+  {
+    "id": "aurory-nft-drop-phishing-2021",
+    "date": "2021-08-30",
+    "project": "Aurory (NFT drop users)",
+    "project_type": "nft_gaming",
+    "category": "phishing_social_engineering",
+    "attack_vector": "Cloned mint site on look-alike domain promoted in Discord during NFT drop; malicious transaction drained SOL",
+    "loss_usd": 500000,
+    "assets_stolen": "SOL from victims' wallets (attacker wallet at one point held >10,600 SOL, ~$1.1M)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown (receiving address AUrox7sHx1L8mxEPrNqkVjHa16CXQ73UbgZtZTNPNLjx)",
+    "chain_scope": "solana_only",
+    "summary_zh": "Solana遊戲項目Aurory發售NFT期間，詐騙者複製官方鑄造網站並架設在相似網域(aurory.app，正牌為app.aurory.io)，再趁發售時在Aurory的Discord中散布連結。連接錢包並簽署惡意交易的用戶，其SOL被立即轉到攻擊者地址。",
+    "root_cause_zh": "屬於針對用戶的網釣攻擊：用戶在搶購壓力下未核對網域，簽署了看似鑄造、實為轉帳的交易；Aurory自身合約沒有被攻破。",
+    "aftermath_zh": "攻擊者迅速把SOL換成wETH並跨鏈到以太坊，沒有追回資金的報導；此事件成為NFT發售網釣風險的案例，TRM Labs等機構據此提出安全建議。",
+    "sources": [
+      {
+        "title": "'Completely wrecked': Phishing attack during Aurory Project NFT drop steals millions; others get 500x gains",
+        "publisher": "Stockhead",
+        "url": "https://stockhead.com.au/cryptocurrency/completely-wrecked-phishing-attack-during-aurory-project-nft-drop-steals-millions-others-get-500x-gains/"
+      },
+      {
+        "title": "Hurts the SOL: Security Considerations for NFT Drops",
+        "publisher": "TRM Labs",
+        "url": "https://www.trmlabs.com/post/hurts-the-sol-security-considerations-for-nft-drops"
+      },
+      {
+        "title": "Phishing Website for NFT Drop on Solana Sweeps Over $500k Tokens",
+        "publisher": "Coinfomania",
+        "url": "https://coinfomania.com/phishing-aurory-nft-drop-solana-sweeps-sol-tokens/"
+      }
+    ],
+    "confidence": "low",
+    "notes": "Loss is an early community estimate ('could be over $500,000', first flagged by @hoaktrades). Stockhead's headline says 'millions', and the attacker wallet peaked at >10,600 SOL (~$1.1M), though not all of that is proven to be victim funds. Range: $0.5M–$1.1M+. Stockhead puts the drop at 1am AEST on 2021-08-31 (= 2021-08-30 ~15:00 UTC); some outlets date it Aug 31. User-targeted phishing, not a protocol exploit."
+  },
+  {
+    "id": "pyth-btc-price-glitch-2021",
+    "date": "2021-09-20",
+    "project": "Pyth Network (BTC/USD price feed)",
+    "project_type": "infrastructure_sdk",
+    "category": "operational_error",
+    "attack_vector": "Erroneous publisher inputs pushed aggregate BTC/USD oracle price to ~$5,402; consumers ignored the confidence interval",
+    "loss_usd": null,
+    "assets_stolen": "None stolen; triggered liquidations on dependent protocols (e.g., Audaces perpetuals)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Not an attack (oracle data error)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2021年9月20日，Solana上的預言機Pyth Network的BTC/USD匯總價格在單一slot內一度跌到約5,402美元，信賴區間卻高達約21,600美元。依賴該價格源的協議(例如永續合約平台Audaces)因此觸發一連串清算。",
+    "root_cause_zh": "少數資料發布者提交了錯誤價格，當時的匯總機制未能過濾；部分下游程式只讀取匯總價格而不檢查信賴區間，導致異常價格直接觸發清算。",
+    "aftermath_zh": "Pyth在事發數小時後承認問題並展開調查，之後發布月度報告說明事件。此事件突顯DeFi協議整合預言機時必須檢查信賴區間與異常偏離。",
+    "sources": [
+      {
+        "title": "Whoops! Bitcoin briefly crashes to $5,402 on network glitch",
+        "publisher": "Fortune",
+        "url": "https://fortune.com/2021/09/22/bitcoin-briefly-crashes-5402-pyth-network-glitch/"
+      },
+      {
+        "title": "Oracle Pyth Goes Haywire on Solana with Bad Prices",
+        "publisher": "The Defiant",
+        "url": "https://thedefiant.io/news/defi/pyth-solana-bad-pricing-meltdown"
+      },
+      {
+        "title": "Pythiad 3: Pyth laboured in September",
+        "publisher": "Pyth Network (Medium)",
+        "url": "https://pythnetwork.medium.com/pythiad-3-pyth-laboured-in-september-d9e833383235"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Included as an oracle-integrity incident, not a malicious exploit. Total user losses from the resulting liquidations were not reliably quantified in the sources found, so loss_usd is null. The exact publisher-side bug is described in Pyth's own report; it was not independently verified here. Critics (e.g., ChainLinkGod) attributed the impact to the small number of publishers."
+  },
+  {
+    "id": "spl-token-lending-rounding-disclosure-2021",
+    "date": "2021-12-02",
+    "project": "SPL Token-Lending program and forks (Solend, Tulip, Larix, Port, Soda, Acumen)",
+    "project_type": "lending",
+    "category": "smart_contract_bug",
+    "attack_vector": "Rounding (round instead of floor/ceil) in collateral/liquidity conversion let tiny repeated operations each gain one base unit",
+    "loss_usd": 0,
+    "assets_stolen": "None (white-hat disclosure; ~$2.6B TVL at risk)",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Discovered and responsibly disclosed by Neodyme (white-hat)",
+    "chain_scope": "solana_only",
+    "summary_zh": "資安公司Neodyme在Solana Program Library(SPL)的token-lending參考程式中發現一個看似無害的捨入錯誤。多個分叉此程式的借貸協議都受影響，當時合計約26億美元TVL面臨風險。",
+    "root_cause_zh": "存提款在cToken與底層資產換算時使用四捨五入而非依方向取floor/ceil，攻擊者可透過大量極小額操作，每次多拿到一個最小單位(例如0.000001 BTC)，在單筆交易中重複執行即可累積獲利。",
+    "aftermath_zh": "Neodyme先私下通報Solana Labs與受影響專案，約48小時內完成修補部署，確認安全後才公開〈How to Become a Millionaire, 0.000001 BTC at a Time〉。沒有用戶損失資金，Solend等協議支付了漏洞賞金。",
+    "sources": [
+      {
+        "title": "How to Become a Millionaire, 0.000001 BTC at a Time",
+        "publisher": "Neodyme",
+        "url": "https://blog.neodyme.io/posts/lending_disclosure"
+      },
+      {
+        "title": "Bug bounty and response to SPL lending vulnerability",
+        "publisher": "Solend (Medium)",
+        "url": "https://blog.solend.fi/bug-bounty-and-response-to-spl-lending-vulnerability-f4c8874342d0"
+      },
+      {
+        "title": "The Neodyme firm detects a security bug that risked millions of dollars in Solana",
+        "publisher": "Bit2Me News",
+        "url": "https://news.bit2me.com/en/neodyme-detecta-bug-de-seguridad-que-arriesgaba-millones-en-solana/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "No-loss coordinated disclosure, included on request. The public write-up date is cited as Dec 2–3, 2021; private disclosure and patching came first; news coverage followed Dec 5–6. Neodyme listed six vulnerable candidates: Larix, Tulip, Port, Solend, Soda, Acumen. Its proof of concept netted 0.000001 BTC (~$0.05). Some coverage claimed up to ~$27M/hour could have been extracted; that figure is not verified here."
+  },
+  {
+    "id": "monkey-kingdom-discord-phishing-2021",
+    "date": "2021-12-21",
+    "project": "Monkey Kingdom",
+    "project_type": "nft_gaming",
+    "category": "third_party_compromise",
+    "attack_vector": "Compromised Grape Protocol admin access abused Discord webhooks to post fake Baepes presale mint link that drained wallets",
+    "loss_usd": 1300000,
+    "assets_stolen": ">7,000 SOL",
+    "recovered_usd": 1200000,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2021年12月21日，香港NFT項目Monkey Kingdom在Baepes系列預售期間，官方Discord公告頻道被駭客用來張貼假的鑄造連結。連接錢包的用戶SOL遭盜，總計超過7,000 SOL(約125萬至130萬美元)。",
+    "root_cause_zh": "Solana社群驗證工具Grape Protocol的一名設定管理員帳戶遭網釣入侵，攻擊者取得存取權杖後濫用Discord webhook，在多個合作項目的公告頻道發布釣魚訊息。",
+    "aftermath_zh": "Grape Protocol承認其管理員帳戶在事發7天前遭駭，呼籲各項目立即檢查webhook。Monkey Kingdom設立補償基金並處理受害者申請，報導指退款約120萬美元。",
+    "sources": [
+      {
+        "title": "Hot Hong Kong NFT project Monkey Kingdom loses US$1.3 million in hack, exposing security concerns",
+        "publisher": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/tech-trends/article/3160707/hot-hong-kong-nft-project-monkey-kingdom-loses-us13-million-hack"
+      },
+      {
+        "title": "We've just discovered that one of our setup admins got hacked 7 days ago ... affected the @fractalwagmi and @monkeykingdom_",
+        "publisher": "Grape Protocol (X/Twitter)",
+        "url": "https://twitter.com/grapeprotocol/status/1473422238250680320"
+      },
+      {
+        "title": "Monkey Kingdom Refunds $1.2 Million to Discord Phishing Scam Victims",
+        "publisher": "NFT News UK",
+        "url": "http://nftnewsuk.com/monkey-kingdom-refunds-1-2-million-to-discord-phishing-scam-victims"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Same campaign as the Fractal incident the same day (separate entry). Grape's tweet was posted ~2021-12-21 22:36 UTC. Loss reported as ~$1.25M–$1.3M (>7,000 SOL). The ~$1.2M refund figure comes from secondary coverage and was not checked against a Monkey Kingdom primary statement. Category is third_party_compromise because the entry point was the compromised Grape bot/admin; the end-user attack was phishing."
+  },
+  {
+    "id": "fractal-discord-phishing-2021",
+    "date": "2021-12-21",
+    "project": "Fractal",
+    "project_type": "nft_gaming",
+    "category": "third_party_compromise",
+    "attack_vector": "Discord announcement channel hijacked via compromised Grape Protocol webhooks; fake NFT airdrop/mint link drained wallets",
+    "loss_usd": 150000,
+    "assets_stolen": "~862 SOL from 373 users",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2021年12月21日，Twitch共同創辦人Justin Kan創立的遊戲NFT市集Fractal上線前夕，官方Discord公告頻道被用來發布假的『忠實粉絲NFT空投』連結，要求用戶以1 SOL鑄造。約373名用戶連接錢包後被自動化腳本盜空，損失約862 SOL(約15萬美元)。",
+    "root_cause_zh": "攻擊者透過遭入侵的Grape Protocol管理員權杖取得Discord webhook存取權，冒用官方頻道發布釣魚連結；Fractal自身系統與鏈上合約並未被攻破。",
+    "aftermath_zh": "Fractal迅速示警並表示會在數日內全額補償所有受害用戶；此事件與同日Monkey Kingdom案同源，促使NFT社群檢討Discord webhook與第三方機器人權限管理。",
+    "sources": [
+      {
+        "title": "Justin Kan's NFT platform suffers rocky debut as scammer makes off with $150K in user funds",
+        "publisher": "TechCrunch",
+        "url": "https://techcrunch.com/2021/12/21/justin-kans-nft-platform-suffers-rocky-debut-as-scammer-makes-off-with-150k-in-user-funds/"
+      },
+      {
+        "title": "NFT Gaming Project Hack Sees $150K Of Crypto Stolen",
+        "publisher": "GameSpot",
+        "url": "https://www.gamespot.com/articles/nft-gaming-project-hack-sees-150k-of-crypto-stolen/1100-6499194/"
+      },
+      {
+        "title": "The $150k Discord Crypto Hack",
+        "publisher": "Cotten.IO (Medium)",
+        "url": "https://medium.com/cotten-io/the-150k-discord-crypto-hack-b3dde6698072"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "~862 SOL ≈ $150K–$155K. Fractal said all 373 affected users would be fully compensated; that the payouts were completed was not independently confirmed. Linked to the Monkey Kingdom entry (same Grape Protocol admin compromise)."
+  },
+  {
+    "id": "metaplex-candy-machine-v1-2022",
+    "date": "2022-01-04",
+    "project": "Metaplex Candy Machine v1",
+    "project_type": "launchpad",
+    "category": "smart_contract_bug",
+    "attack_vector": "Re-initialization bug: attacker injected pre-initialized accounts to set itself as candy machine authority and withdraw funds",
+    "loss_usd": 155000,
+    "assets_stolen": "~1,027 SOL drained from ~3,470 candy machine accounts (swapped to ~155K USDC)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown (address cHfYkrVAwfEoe3Mr2GbvzpNQJboDL6AiBoFZDsf8dxj; proceeds sent to an FTX account)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年1月4日，攻擊者利用Metaplex Candy Machine v1(Solana主流NFT發行程式)的重新初始化漏洞，對當時約14,800台candy machine中的4,410台發動提款交易，其中3,470台被完全提空。攻擊者將約1,027 SOL經Raydium換成約15.5萬USDC後轉入FTX帳戶。",
+    "root_cause_zh": "程式沒有檢查傳入的帳戶是否已經初始化，攻擊者可注入預先初始化的帳戶，把自己的地址寫成合約authority，再提走candy machine中的資金。",
+    "aftermath_zh": "Metaplex在攻擊進行中(美東時間6:20am)部署修補版本，之後的攻擊交易全部失敗；未見資金追回的報導。",
+    "sources": [
+      {
+        "title": "Web3, Free Candy, and exploits galore",
+        "publisher": "JonLuca's Blog",
+        "url": "https://jonlu.ca/posts/candy-machine"
+      },
+      {
+        "title": "Web3, Free Candy, and exploits galore",
+        "publisher": "JonLuca (Substack)",
+        "url": "https://jonluca.substack.com/p/candy-machine"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Based mainly on one independent on-chain analysis (JonLuca). Withdrawals ran 5:57–6:49am EST (10:57–11:49 UTC); the patch landed at 6:20am EST. Loss is approximate: it is the value of the SOL the attacker swapped. No Metaplex primary post-mortem was retrieved. Separate from the Candy Machine v2 vulnerability disclosed ~2021-12-31 (no loss) and from the May 2022 bot-induced network outage (excluded)."
+  },
+  {
+    "id": "jet-protocol-collateral-bug-2022",
+    "date": "2022-01-27",
+    "project": "Jet Protocol",
+    "project_type": "lending",
+    "category": "smart_contract_bug",
+    "attack_vector": "Obligation health-check loop (take_while/break on default Pubkey) could skip loans, enabling undercollateralized borrowing of pool TVL",
+    "loss_usd": 0,
+    "assets_stolen": "None (white-hat disclosure; ~$20M–$25M at risk)",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "Disclosed by security researcher Charlie You (white-hat)",
+    "chain_scope": "solana_only",
+    "summary_zh": "研究人員Charlie You向Solana借貸協議Jet Protocol揭露一個嚴重漏洞，若被利用可在幾乎不提供抵押的情況下借走池中資金，估計可造成約2,000萬美元損失。Jet在任何用戶受影響前完成修補。",
+    "root_cause_zh": "計算用戶抵押率的迴圈使用`take_while`/`break`，一遇到預設值`Pubkey::default()`就提前停止，搭配未充分驗證的輸入帳戶，部分借款會被排除在健康度檢查之外；修補方式是改用`continue`與`filter`。",
+    "aftermath_zh": "Jet於2022年1月27日修補漏洞並公開說明；Sec3等資安公司撰文分析，把它當作Solana程式迴圈邏輯與帳戶驗證的教材案例。",
+    "sources": [
+      {
+        "title": "On a $20M Bug in Jet Protocol",
+        "publisher": "Sec3",
+        "url": "https://sec3.dev/blog/on-a-20m-bug-in-jet-protocol"
+      },
+      {
+        "title": "How to freely borrow all the TVL from the Jet Protocol",
+        "publisher": "Jayne (Medium)",
+        "url": "https://medium.com/@0xjayne/-how-to-freely-borrow-all-the-tvl-from-the-jet-protocol-25d40e35920e"
+      },
+      {
+        "title": "Jet Protocol - $25 million vulnerability",
+        "publisher": "HackMD",
+        "url": "https://hackmd.io/wMcjwC3dR6K2or_RArLP-w"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "No-loss disclosure. Per Sec3, the bug was introduced in commit 6133de (2021-12-15) and became exploitable after commit 1f7da4 (2021-12-21). The exploitable window ran 2021-12-21 to 2022-01-27; the date field uses the patch date. Sec3 cites a potential $20M loss; HackMD calls it a '$25 million vulnerability'. The Jayne write-up describes the same break/loop bug; whether Jayne and Charlie You are the same person is unconfirmed."
+  },
+  {
+    "id": "wormhole-2022",
+    "date": "2022-02-02",
+    "project": "Wormhole (Solana–Ethereum token bridge)",
+    "project_type": "bridge",
+    "category": "smart_contract_bug",
+    "attack_vector": "Signature-verification bypass via spoofed Instructions sysvar (deprecated load_instruction_at) to forge a VAA and mint unbacked wETH",
+    "loss_usd": 326000000,
+    "assets_stolen": "120,000 wETH (Wormhole-wrapped ETH) minted on Solana without collateral; most bridged to Ethereum",
+    "recovered_usd": 326000000,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "multi_chain",
+    "summary_zh": "2022年2月2日，攻擊者利用Wormhole跨鏈橋Solana端核心程式的簽名驗證漏洞，偽造看似經守護者(Guardian)簽署的跨鏈訊息(VAA)，在沒有存入任何ETH的情況下於Solana鑄造120,000枚wETH(約3.26億美元)。攻擊者隨後把大部分資產跨回以太坊，其餘在Solana換成其他資產，是當時史上第二大DeFi攻擊。",
+    "root_cause_zh": "`verify_signatures`使用已棄用的`load_instruction_at`，沒有驗證傳入的Instructions sysvar帳戶是否為真正的系統帳戶。攻擊者傳入偽造帳戶即可繞過secp256k1簽名驗證，產生看似有效的SignatureSet並據此鑄幣。",
+    "aftermath_zh": "Wormhole修補漏洞，並透過鏈上訊息向攻擊者提供1,000萬美元白帽賞金，但沒有得到回應。母公司Jump Crypto於次日補入120,000 ETH，恢復wETH的1:1擔保。2023年2月，Jump與Oasis對攻擊者存放在Oasis的部位進行『反向利用』，追回約1.4億美元資產。",
+    "sources": [
+      {
+        "title": "Explained: The Wormhole Hack (February 2022)",
+        "publisher": "Halborn",
+        "url": "https://www.halborn.com/blog/post/explained-the-wormhole-hack-february-2022"
+      },
+      {
+        "title": "Jump Trading Backstops Wormhole's $320M Exploit Loss",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2022/02/03/jump-trading-backstops-wormholes-320m-exploit-loss-sources"
+      },
+      {
+        "title": "Jump Crypto Just Counter-Exploited the Wormhole Hacker for $140 Million",
+        "publisher": "Blockworks",
+        "url": "https://blockworks.com/news/jump-crypto-wormhole-hack-recovery"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss is quoted as $320M–$326M depending on the ETH price used; $326M is the most-cited figure. recovered_usd reflects Jump's full 120k ETH replenishment (users made whole). Separately, the Feb 2023 Jump/Oasis counter-exploit recovered ~$140M of the attacker's assets for Jump; reports say this was done under a court order, which was not verified here. Some coverage says ~120k ETH-equivalent was recovered. The attacker is still unidentified."
+  },
+  {
+    "id": "cashio-2022",
+    "date": "2022-03-23",
+    "project": "Cashio",
+    "project_type": "stablecoin",
+    "category": "smart_contract_bug",
+    "attack_vector": "Missing mint validation on saber_swap.arrow account allowed fake collateral chain to mint 2B CASH (infinite mint)",
+    "loss_usd": 52800000,
+    "assets_stolen": "2,000,000,000 CASH minted; redeemed/swapped for ~$27.2M (UST+USDC from Saber LP collateral) plus ~$25.6M (UST+USDC from CASH pools); largely converted to >16,000 ETH",
+    "recovered_usd": null,
+    "recovery_status": "partial",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年3月23日08:23(UTC)，攻擊者利用Cashio(以Saber USDC-USDT LP代幣作抵押的Solana穩定幣)的抵押驗證漏洞，以一連串偽造帳戶和毫無價值的假LP代幣作抵押，憑空鑄造20億枚CASH。攻擊者隨即贖回真實抵押品並在Saber池拋售CASH，取得約5,280萬美元的USDC與UST，CASH價格崩跌至接近零。",
+    "root_cause_zh": "程式沒有驗證`saber_swap.arrow`帳戶的mint欄位，也沒有從可信任的根帳戶逐層驗證抵押品帳戶鏈，攻擊者可構造假帳戶通過抵押檢查。該項目未經稽核。",
+    "aftermath_zh": "攻擊者在交易訊息中聲稱已退還持有額低於10萬美元帳戶的資金，其餘『將捐給慈善』，並要求其他受害者說明資金來源後申請退款。大部分資金已跨鏈到以太坊換成逾16,000 ETH，之後沒有進一步追回或起訴的報導。",
+    "sources": [
+      {
+        "title": "Cashio App Incident Analysis",
+        "publisher": "CertiK",
+        "url": "https://www.certik.com/resources/blog/cashio-app-incident-analysis"
+      },
+      {
+        "title": "Stablecoin Cashio on Solana exploited for $52.8 million in 'infinite mint glitch'",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/138934/stablecoin-cashio-on-solana-exploited-for-28-million-in-infinite-mint-glitch"
+      },
+      {
+        "title": "Cashio Hacker Asks Victims To 'Apply' For Refunds After $52M Heist",
+        "publisher": "The Defiant",
+        "url": "https://thedefiant.io/news/hacks/cashio-exploit-refund"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss range $48M–$52.8M ($48M is the ETH value after conversion; $52M/$52.8M is the value at the time of the exploit). The total refunded to small holders is not publicly quantified; one secondary claim of ~$27.8M returned is unverified and conflicts with other reporting, so recovered_usd is null. samczsun's analysis thread was posted ~10:29 UTC the same day."
+  },
+  {
+    "id": "crema-finance-2022",
+    "date": "2022-07-02",
+    "project": "Crema Finance",
+    "project_type": "dex_amm",
+    "category": "smart_contract_bug",
+    "attack_vector": "Fake tick account with forged fee data (no owner check) plus flash-loaned liquidity to claim inflated LP fees",
+    "loss_usd": 8800000,
+    "assets_stolen": "~$8.8M from multiple CLMM pools (swapped largely to SOL/ETH and bridged to Ethereum)",
+    "recovered_usd": 7100000,
+    "recovery_status": "returned_by_attacker",
+    "attribution": "Shakeeb Ahmed (former Amazon security engineer; pleaded guilty Dec 2023)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年7月2日，攻擊者針對Solana集中流動性(CLMM)DEX Crema Finance，偽造一個存放價格tick資料的帳戶並寫入假的手續費數據，再用Solend等來源的閃電貸添加流動性、領取巨額虛假手續費，從多個流動性池盜走約880萬美元。",
+    "root_cause_zh": "CLMM程式讀取tick帳戶時沒有驗證該帳戶的擁有者是否為協議本身，攻擊者可傳入自建的假tick帳戶，使手續費累計計算採用被竄改的資料。",
+    "aftermath_zh": "Crema暫停協議並與攻擊者談判，對方歸還大部分資產，保留45,455 SOL(約160萬至170萬美元)作為『白帽賞金』。美國檢方其後起訴Shakeeb Ahmed，他於2023年12月認罪，2024年4月被判刑3年，並須沒收約1,230萬美元、支付逾500萬美元賠償(與Nirvana案合併)。",
+    "sources": [
+      {
+        "title": "Crema Finance Attacker Returns Almost $8M, Keeps $1.7M Bounty",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/tech/2022/07/07/crema-finance-attacker-returns-almost-8m-keeps-17m-bounty"
+      },
+      {
+        "title": "Explained: The Crema Finance Hack (July 2022)",
+        "publisher": "Halborn",
+        "url": "https://www.halborn.com/blog/post/explained-the-crema-finance-hack-july-2022"
+      },
+      {
+        "title": "Former Security Engineer Sentenced To Three Years In Prison For Hacking Two Decentralized Cryptocurrency Exchanges",
+        "publisher": "U.S. DOJ (SDNY)",
+        "url": "https://www.justice.gov/usao-sdny/pr/former-security-engineer-sentenced-three-years-prison-hacking-two-decentralized"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Some sources date the attack July 3 (Asia time zones); CertiK and Halborn say July 2. recovered_usd is derived as the $8.8M loss minus the ~$1.68M bounty. CoinDesk reported 'almost $8M' returned at the token prices of the day, and other summaries say ~$7.2M. The DOJ release names the victim only as 'a decentralized cryptocurrency exchange'; several outlets (e.g., FinanceFeeds, Web3IsGoingGreat) identify it as Crema. The $12.3M forfeiture and >$5M restitution cover both Crema and Nirvana."
+  },
+  {
+    "id": "audius-governance-2022",
+    "date": "2022-07-23",
+    "project": "Audius",
+    "project_type": "dao_governance",
+    "category": "governance_attack",
+    "attack_vector": "Re-invocable initialize() in governance/staking/delegation contracts let attacker take over governance and pass a treasury-transfer proposal",
+    "loss_usd": 6000000,
+    "assets_stolen": "18,000,000 AUDIO from the community treasury (sold for ~705 ETH, ~$1.08M)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "multi_chain",
+    "summary_zh": "2022年7月23日，攻擊者利用Audius在以太坊主網上的治理、質押與委託合約漏洞接管治理系統，竄改質押與投票數據並通過惡意提案，將社群金庫中1,800萬枚AUDIO(市值約600萬美元)轉入自己的錢包。受限於流動性，攻擊者僅以約705 ETH(約108萬至110萬美元)售出，並透過Tornado Cash混幣。",
+    "root_cause_zh": "治理、質押與委託合約的初始化程式碼有缺陷，允許`initialize`函式被重複呼叫；攻擊者藉此重新初始化合約、取得治理控制權並竄改投票與質押數據。",
+    "aftermath_zh": "Audius修補受影響合約並發布事後檢討報告(Governance Takeover Post-Mortem)，此事件常被引用為『稽核不等於安全』的案例。",
+    "sources": [
+      {
+        "title": "Audius Governance Takeover Post-Mortem 7/23/22",
+        "publisher": "Audius Blog",
+        "url": "https://blog.audius.co/article/audius-governance-takeover-post-mortem-7-23-22"
+      },
+      {
+        "title": "'Audits Are Not Bulletproof': How Audius Was Hacked for $6M in Ethereum Tokens",
+        "publisher": "Decrypt",
+        "url": "https://decrypt.co/105913/how-audius-was-hacked-6m-ethereum-tokens"
+      },
+      {
+        "title": "Hacker pockets $1.1 million after stealing from music streaming protocol Audius",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/159308/hacker-pockets-1-1-million-after-stealing-from-music-streaming-protocol-audius"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "The exploit was against Audius' Ethereum mainnet contracts, not Solana programs. It is included because Audius is a Solana-ecosystem project and Solana incident catalogs (e.g., Helius) list it; drop it if the database requires on-Solana execution. Loss is the $6M market value of the stolen tokens; the attacker realized only ~$1.08M–$1.1M. Category could also be smart_contract_bug (the root cause is the re-initialization bug). The mechanism of the initializer flaw is described in the Audius post-mortem and was not independently verified here."
+  },
+  {
+    "id": "nirvana-finance-2022",
+    "date": "2022-07-28",
+    "project": "Nirvana Finance",
+    "project_type": "yield_vault",
+    "category": "economic_exploit",
+    "attack_vector": "$10M Solend USDC flash loan used to manipulate ANA bonding-curve pricing and drain treasury liquidity",
+    "loss_usd": 3500000,
+    "assets_stolen": "~3.49M USDT (bridged to Ethereum via Wormhole)",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Shakeeb Ahmed (former Amazon security engineer; pleaded guilty Dec 2023, sentenced Apr 2024)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年7月28日，攻擊者從Solend借入1,000萬美元USDC閃電貸，在Solana收益協議Nirvana Finance大量鑄造ANA並推高價格，再以虛高價格把ANA換回約1,349萬美元USDT。償還閃電貸後獲利約349萬美元；ANA暴跌逾80%，穩定幣NIRV脫鉤跌至約0.08美元。",
+    "root_cause_zh": "ANA的鑄造與贖回價格由協議內部的聯合曲線(bonding curve)依即時交易決定，缺乏對大額或閃電貸交易的防護，攻擊者可在單筆交易內操縱價格並從金庫套利。",
+    "aftermath_zh": "被盜資金經Wormhole跨鏈到以太坊。美國檢方起訴Shakeeb Ahmed，他於2023年12月認罪(合併Crema案)，2024年4月被判刑3年，須沒收約1,230萬美元並支付逾500萬美元賠償；檢方稱這是首宗智能合約駭客定罪案。",
+    "sources": [
+      {
+        "title": "Solana stablecoin Nirvana sinks 90% amid $3.5 million flash loan exploit",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/159975/solana-stablecoin-nirvana-sinks-90-amid-3-5-million-flash-loan-exploit"
+      },
+      {
+        "title": "Former Security Engineer For International Technology Company Pleads Guilty To Hacking Two Decentralized Cryptocurrency Exchanges",
+        "publisher": "U.S. DOJ (SDNY)",
+        "url": "https://www.justice.gov/usao-sdny/pr/former-security-engineer-international-technology-company-pleads-guilty-hacking-two"
+      },
+      {
+        "title": "Nirvana hacker sentenced to 3 years after pleading guilty",
+        "publisher": "Blockworks",
+        "url": "https://blockworks.com/news/nirvana-finance-hacker-sentenced"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss is $3.49M (commonly rounded to $3.5M). Some reports describe the mechanism as oracle manipulation; Helius and others call it flash-loan bonding-curve manipulation, so it is categorized here as economic_exploit. Court-ordered forfeiture (~$12.3M) and restitution (>$5M) cover both Crema and Nirvana; how much reached Nirvana users is unverified, so recovery_status is unknown."
+  },
+  {
+    "id": "slope-wallet-2022",
+    "date": "2022-08-02",
+    "project": "Slope Wallet",
+    "project_type": "wallet",
+    "category": "private_key_compromise",
+    "attack_vector": "Mobile wallet logged BIP-39 seed phrases in plaintext to its Sentry telemetry server; leaked keys used to drain wallets",
+    "loss_usd": 8000000,
+    "assets_stolen": "SOL and SPL tokens from ~9,231 wallets",
+    "recovered_usd": 0,
+    "recovery_status": "none",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年8月2日約22:37(UTC)起，大量Solana錢包在約四小時內被批量盜空，受害錢包約9,231個。調查發現受影響地址都曾在Slope行動錢包中建立或匯入，攻擊者取得助記詞後轉走SOL與SPL代幣，一些之後改用Phantom等錢包的用戶也受害。",
+    "root_cause_zh": "Slope行動版App整合Sentry事件監控時，把用戶的BIP-39助記詞以明文記錄並傳送到其Sentry伺服器，導致私鑰外洩；Solana協議本身沒有漏洞。",
+    "aftermath_zh": "Solana基金會與多家資安公司調查後，指出共同點是Slope錢包，並呼籲受影響用戶建立新助記詞、轉移資產。被盜資金沒有追回，攻擊者身分至今不明。",
+    "sources": [
+      {
+        "title": "8/2/2022 Slope Wallet Incident Update",
+        "publisher": "Solana Foundation",
+        "url": "https://solana.com/news/8-2-2022-application-wallet-incident"
+      },
+      {
+        "title": "Slope wallet provider saved user seed phrases in plain text, Solana security researchers find",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/161425/slope-wallet-provider-saved-user-seed-phrases-in-plain-text-solana-security-researchers-find"
+      },
+      {
+        "title": "2022 Solana Exploits Overview",
+        "publisher": "CertiK",
+        "url": "https://www.certik.com/resources/blog/2022-solana-exploits-overview"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "Loss estimates vary widely: $8M was the figure most cited at the time (CertiK, Helius, many news outlets), while later on-chain assessments put it at ~$4.1M. Range: $4.1M–$8M. The wallet count was first reported as ~8,000 and later 9,231. Sentry published its own explainer (blog.sentry.io/slope-wallet-solana-hack) stressing the issue was Slope's logging, not a Sentry vulnerability. Some Slope-derived Ethereum addresses may also have been affected; this was not verified."
+  },
+  {
+    "id": "optifi-2022",
+    "date": "2022-08-29",
+    "project": "OptiFi",
+    "project_type": "perp_derivatives",
+    "category": "operational_error",
+    "attack_vector": "Accidental `solana program close` during mainnet upgrade permanently closed the program, locking funds",
+    "loss_usd": 661000,
+    "assets_stolen": "None stolen; ~661,000 USDC permanently locked",
+    "recovered_usd": 0,
+    "recovery_status": "none",
+    "attribution": "Not an attack (internal operational error)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年8月29日，Solana去中心化期權交易平台OptiFi在升級主網程式時，誤用`solana program close`指令，把程式永久關閉，約66.1萬美元USDC因此被永久鎖在程式控制的帳戶中。",
+    "root_cause_zh": "這是營運操作失誤而非攻擊：`solana program close`會永久關閉程式並回收租金，關閉後同一程式ID無法重新部署，由該程式控制的資金也無法再提取；部署流程缺乏覆核機制。",
+    "aftermath_zh": "OptiFi表示約95%被鎖資金屬於團隊成員，並承諾手動結算部位、返還用戶存款；之後改為至少三人互相監督的部署流程。",
+    "sources": [
+      {
+        "title": "Solana-Based DeFi Protocol OptiFi Loses $661K in Programming Blunder",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2022/08/30/solana-based-defi-protocol-optifi-loses-661k-in-programming-blunder"
+      },
+      {
+        "title": "Solana DeFi Exchange Accidentally Bricks Itself, Locks Up $661K Forever",
+        "publisher": "Decrypt",
+        "url": "https://decrypt.co/108585/solana-defi-exchange-optifi-bricks-itself-loses-661k"
+      },
+      {
+        "title": "DeFi OptiFi locks up $661,000 of assets in code snafu",
+        "publisher": "The Register",
+        "url": "https://www.theregister.com/offbeat/2022/09/02/defi-optifi-locks-up-661000-of-assets-in-code-snafu/513633"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Operational error, not a hack. The locked funds are unrecoverable (recovered_usd 0), but OptiFi pledged to repay users' deposits (~5% of the locked amount belonged to external users) manually; whether that was completed was not verified. project_type perp_derivatives is used because OptiFi was an options/derivatives exchange."
+  },
+  {
+    "id": "mango-markets-2022",
+    "date": "2022-10-11",
+    "project": "Mango Markets",
+    "project_type": "perp_derivatives",
+    "category": "oracle_price_manipulation",
+    "attack_vector": "Self-trading large MNGO-PERP positions and pumping thin MNGO spot markets to inflate oracle price, then borrowing against unrealized PnL",
+    "loss_usd": 114000000,
+    "assets_stolen": "~$114M of protocol deposits (USDC, SOL, BTC, MNGO and other tokens) borrowed against inflated collateral",
+    "recovered_usd": 67000000,
+    "recovery_status": "partial",
+    "attribution": "Avraham Eisenberg (self-identified; convicted Apr 2024, convictions vacated May 2025, DOJ appeal pending)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年10月11日，Avraham Eisenberg用兩個自己控制的Mango Markets帳戶互相對敲，建立大量MNGO永續合約多空部位，並在流動性稀薄的市場買入MNGO現貨，使預言機價格在短時間內暴漲。多頭帳戶的未實現獲利被計為抵押品，他藉此借走平台上約1.14億美元的各種資產，使Mango資不抵債。",
+    "root_cause_zh": "Mango v3允許用未實現盈虧作為借款抵押，對低流動性的MNGO預言機價格又缺乏操縱防護(例如部位上限、價格變動熔斷、TWAP)，現貨價格操縱因此能直接轉成借款額度。",
+    "aftermath_zh": "Eisenberg透過Mango DAO提案歸還約6,700萬美元，換取保留其餘約4,700萬美元並不被追訴；他在2022年12月被捕，CFTC與SEC也於2023年1月提起民事訴訟。2024年4月陪審團裁定商品詐欺、市場操縱與電匯詐欺罪名成立，但2025年5月23日法官以證據不足及審判地不當撤銷全部定罪；檢方已提出上訴。",
+    "sources": [
+      {
+        "title": "SEC Charges Avraham Eisenberg with Manipulating Mango Markets' 'Governance Token' to Steal $116 Million of Crypto Assets",
+        "publisher": "U.S. SEC",
+        "url": "https://www.sec.gov/newsroom/press-releases/2023-13"
+      },
+      {
+        "title": "Judge Overturns Convictions in Mango Markets Exploiter's Crypto Fraud Case",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2025/05/24/judge-overturns-convictions-in-mango-markets-exploiters-crypto-fraud-case"
+      },
+      {
+        "title": "Prosecutors appeal acquittal of Mango Markets exploiter Avraham Eisenberg",
+        "publisher": "DL News",
+        "url": "https://www.dlnews.com/articles/defi/prosecutors-appeal-acquittal-of-mango-markets-exploiter/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss range $110M–$117M (CFTC '>$110M'; SEC ~$116M; press $114M–$117M). ~$67M was returned under a DAO-approved deal; Eisenberg kept ~$47M. Downstream exposure (not double-counted): UXD Protocol had ~$19.9M in Mango and Tulip Protocol ~$2.5M, both recovered after Mango's claims process opened Oct 20, 2022. Judge Arun Subramanian granted the Rule 29 acquittal on 2025-05-23 (insufficient evidence of false representation; improper venue). DL News reported the prosecutors' appeal in January 2026; the outcome was not verified as of this compilation. The arrest date (late Dec 2022, Puerto Rico) is from general reporting and was not checked against a primary source here."
+  },
+  {
+    "id": "solend-usdh-oracle-manipulation-2022",
+    "date": "2022-11-02",
+    "project": "Solend (isolated pools)",
+    "project_type": "lending",
+    "category": "oracle_price_manipulation",
+    "attack_vector": "Pumped USDH on thin Saber pool (single-source Switchboard feed) and write-locked Saber to block arbitrage; borrowed against inflated USDH",
+    "loss_usd": 1260000,
+    "assets_stolen": "Assets borrowed from Stable, Coin98 and Kamino isolated pools, leaving ~$1.26M bad debt",
+    "recovered_usd": null,
+    "recovery_status": "unknown",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年11月2日，攻擊者花費約11.3萬美元USDC在Saber的USDH/USDC池中拉抬USDH價格(從約0.99美元升到8.8美元，之後再推到約15美元)，並用大量交易寫鎖(write-lock)Saber程式帳戶以阻止套利。接著把被高估的USDH存入Solend的Stable、Coin98與Kamino隔離池作抵押借出資產，造成約126萬美元壞帳。",
+    "root_cause_zh": "Solend採用的Switchboard USDH價格源只取自單一低流動性來源(Saber USDH/USDC池)，容易被操縱；隔離池也缺乏對價格異常偏離的防護。",
+    "aftermath_zh": "Solend團隊在數小時內發現壞帳並停用受影響隔離池的借款，只有隔離池受影響；之後與Switchboard合作，為多種Solana穩定幣改良價格源機制。",
+    "sources": [
+      {
+        "title": "USDH price manipulation impact on isolated pools",
+        "publisher": "Solend (Medium)",
+        "url": "https://blog.solend.fi/usdh-price-manipulation-impact-on-isolated-pools-4f79ff6af2ba?gi=18f7ceaa85a8"
+      },
+      {
+        "title": "Solend exploited for $1.26 million in market manipulation attack",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/182055/solend-exploited-attack"
+      },
+      {
+        "title": "2022 Solana Hacks Explained: Solend",
+        "publisher": "Ackee Blockchain",
+        "url": "https://ackee.xyz/blog/2022-solana-hacks-explained-solend/"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Times in secondary summaries (first pump ~00:15, second ~02:16, bad debt discovered 03:37, borrows disabled 03:53) are presumably UTC. Recovery is unclear: one secondary source says ~$900K was recovered and Helius describes the bad debt as 'absorbed', but neither was verified against Solend's primary post, so recovery_status is unknown."
+  },
+  {
+    "id": "serum-ftx-upgrade-authority-2022",
+    "date": "2022-11-12",
+    "project": "Serum DEX (FTX/Alameda-controlled upgrade authority)",
+    "project_type": "dex_amm",
+    "category": "private_key_compromise",
+    "attack_vector": "Serum program upgrade authority held by a single FTX-controlled key feared exposed in FTX hack; risk of malicious program upgrade",
+    "loss_usd": null,
+    "assets_stolen": "None confirmed from Serum (key-compromise risk event)",
+    "recovered_usd": null,
+    "recovery_status": "not_applicable",
+    "attribution": "FTX hack perpetrator(s) (identity not established in sources reviewed)",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年11月FTX破產並遭駭後，外界發現Solana核心訂單簿DEX Serum的程式升級權限(upgrade authority)由FTX控制的單一私鑰持有，擔心駭客能藉此部署惡意程式碼竊取Serum上的資金。Jupiter等協議隨即停用Serum作為流動性來源，社群開發者則分叉出由多簽管理的新版本(OpenBook)。",
+    "root_cause_zh": "關鍵鏈上程式的升級權限集中在單一中心化實體(FTX/Alameda)的私鑰，而不是由DAO或多簽管理；該實體遭入侵時，整個依賴Serum流動性的生態系都暴露在風險中。",
+    "aftermath_zh": "沒有證據顯示Serum程式被惡意升級或資金遭竊。社群分叉版的升級權限與手續費收入改由受信任開發者組成的多簽管理，原版Serum實際上停擺。",
+    "sources": [
+      {
+        "title": "FTX Hack Sparks Revolution at Serum DEX as Solana Devs Plot Alameda's Ouster",
+        "publisher": "CoinDesk",
+        "url": "https://www.coindesk.com/business/2022/11/12/ftx-hack-spooks-solana-defi-community-igniting-revolution-at-alameda-controlled-serum-dex"
+      },
+      {
+        "title": "Liquidity hub Serum forked by developers after FTX hack",
+        "publisher": "Cointelegraph",
+        "url": "https://cointelegraph.com/news/liquidity-hub-serum-forked-by-developers-after-ftx-hack"
+      },
+      {
+        "title": "Serum Fork in the Works Amid Fears That FTX-Owned Upgrade Keys Are Compromised",
+        "publisher": "Unchained",
+        "url": "https://unchainedcrypto.com/serum-fork-in-the-works-amid-fears-that-ftx-owned-upgrade-keys-are-compromised/"
+      }
+    ],
+    "confidence": "medium",
+    "notes": "This is a risk event, not a confirmed Serum theft, so loss_usd is null. The underlying FTX hack (Nov 11–12, 2022; hundreds of millions of dollars drained across multiple chains) is not recorded separately to avoid double-counting and because it was a CEX breach. Later US prosecutions (2024) reportedly tied the FTX theft to a SIM-swap group; this was not verified here. Date uses the FTX breach and CoinDesk coverage of Nov 12 (UTC); the fork followed within days. The fork's name, OpenBook, comes from community knowledge and did not appear in the sources retrieved."
+  },
+  {
+    "id": "raydium-2022",
+    "date": "2022-12-16",
+    "project": "Raydium",
+    "project_type": "dex_amm",
+    "category": "private_key_compromise",
+    "attack_vector": "Compromised AMM pool owner/admin private key (likely Trojan) used to call admin-only withdraw_pnl and drain pools",
+    "loss_usd": 4400000,
+    "assets_stolen": "RAY, stSOL, whETH, USDC, SOL, UXP, ZBC, USDT from 8 constant-product pools",
+    "recovered_usd": null,
+    "recovery_status": "reimbursed_by_backer",
+    "attribution": "Unknown",
+    "chain_scope": "solana_only",
+    "summary_zh": "2022年12月16日，攻擊者取得Raydium AMM流動性池擁有者(管理員)帳戶的私鑰，呼叫僅限管理員使用的`withdraw_pnl`等指令，從8個恆定乘積流動性池提走約440萬美元資產，包括RAY、stSOL、whETH、USDC、SOL、UXP、ZBC與USDT。",
+    "root_cause_zh": "管理員私鑰疑遭木馬程式竊取(攻擊者可能取得部署該帳戶的虛擬機或伺服器存取權)。單一金鑰擁有可提走池內資金的過大權限，也沒有多簽或時間鎖保護。",
+    "aftermath_zh": "治理提案通過以原本用於回購RAY的協議手續費及部分團隊RAY補償LP：含RAY交易對的LP可領回100%本金，其他池可領回90%原資產、剩餘10%以RAY補足，另加發相當於剩餘損失20%的RAY。攻擊者把部分資金跨鏈到以太坊，並透過Tornado Cash混幣約270萬美元。",
+    "sources": [
+      {
+        "title": "Solana-based exchange Raydium suffers $4.4 million exploit",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/amp/post/195712/solana-based-exchange-raydium-suffers-2-million-exploit"
+      },
+      {
+        "title": "Compensation Plan and Next Steps",
+        "publisher": "Raydium (Medium)",
+        "url": "https://raydium.medium.com/compensation-plan-and-next-steps-367246a62277"
+      },
+      {
+        "title": "Raydium hacker funnels $2.7 million through Tornado Cash mixer",
+        "publisher": "The Block",
+        "url": "https://www.theblock.co/post/203732/raydium-hacker-funnels-2-7-million-through-tornado-cash-mixer"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Loss range $4.4M (The Block; Neptune Mutual $4.395M) to $5.5M (CertiK and some analyses). Raydium's disclosure tweet was ~2022-12-16 14:41 UTC; Raydium's own compensation docs refer to 'the exploit on December 15th, 2022', which may reflect when the attack started or a time-zone difference. In total, 2,737,521.92 RAY went to claim-portal vaults and third-party protocols; recovered_usd is left null because the USD value of the compensation was not stated. The Trojan hypothesis comes from Raydium's post-incident analysis as reported by Neptune Mutual and others."
+  }
+]
